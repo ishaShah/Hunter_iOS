@@ -1,0 +1,83 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlignedCollectionViewFlowLayout (1.1.2)
+  - Cartography (4.0.0)
+  - Cosmos (16.0.0)
+  - CropViewController (2.5.2)
+  - iOSDropDown (0.3.4)
+  - IQKeyboardManager (6.5.3)
+  - Kingfisher (4.10.1)
+  - Koloda (5.0):
+    - pop (~> 1.0)
+  - pop (1.0.12)
+  - SDWebImage (5.3.1):
+    - SDWebImage/Core (= 5.3.1)
+  - SDWebImage/Core (5.3.1)
+  - SVProgressHUD (2.2.5)
+  - TagListView (1.4.0)
+  - TinderSwipeView (1.1.8)
+  - Toast-Swift (4.0.1)
+  - "UIColor+FlatColors (0.0.2)"
+  - VBRRollingPit (1.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AlignedCollectionViewFlowLayout
+  - Cartography
+  - Cosmos (~> 16.0)
+  - CropViewController
+  - iOSDropDown
+  - IQKeyboardManager
+  - Kingfisher (~> 4.0)
+  - Koloda
+  - SDWebImage
+  - SVProgressHUD
+  - TagListView (~> 1.0)
+  - TinderSwipeView
+  - Toast-Swift (~> 4.0.0)
+  - "UIColor+FlatColors"
+  - VBRRollingPit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlignedCollectionViewFlowLayout
+    - Cartography
+    - Cosmos
+    - CropViewController
+    - iOSDropDown
+    - IQKeyboardManager
+    - Kingfisher
+    - Koloda
+    - pop
+    - SDWebImage
+    - SVProgressHUD
+    - TagListView
+    - TinderSwipeView
+    - Toast-Swift
+    - "UIColor+FlatColors"
+  trunk:
+    - VBRRollingPit
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
+  Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
+  Cosmos: 7bcee0fa858a9355a214f2a181be5dffcee42c81
+  CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Koloda: 75302d21882cc3e274c1561b1155805ea5919dab
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  SDWebImage: 7137d57385fb632129838c1e6ab9528a22c666cc
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TagListView: 987b0bdbb16cd9d9e7c0e2ec32aff37ecba8b173
+  TinderSwipeView: 13e7de167edb6b9883b398878a0e36e3633e01a0
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  "UIColor+FlatColors": 6c699df7a575281794c688c64cee6c44fd1f93b4
+  VBRRollingPit: 62a79cc663aeea6a196878b3a907056617f96b6a
+
+PODFILE CHECKSUM: 818322119ce48f4843baf3cbb3c6d69f333cbeea
+
+COCOAPODS: 1.9.1
