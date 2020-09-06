@@ -68,6 +68,10 @@ enum API{
     static let reportProblemURL = "support/report-problem"
     static let jobsSwipesURL = "jobs/swipe"
     static let profileUpdateURL = "profile/update"
+    static let getJobExpURL = "registration/get-job-experiences"
+
+    
+    
     //Recruiter
     static let candidate_profileURL = "candidate-profile"
     static let detailsURL = "details"

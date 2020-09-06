@@ -2905,17 +2905,17 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-u0-ios">
-                                        <rect key="frame" x="105.33333333333333" y="351.33333333333331" width="164.33333333333337" height="109.66666666666669"/>
+                                        <rect key="frame" x="92.000000000000014" y="350.66666666666669" width="191.33333333333337" height="110.66666666666669"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-bS-5wI">
-                                                <rect key="frame" x="52.333333333333329" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="65.666666666666657" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="gZU-0n-9Dh"/>
                                                     <constraint firstAttribute="height" constant="60" id="wb1-v0-1qv"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Created!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nt-Br-PIx">
-                                                <rect key="frame" x="0.0" y="85" width="164.33333333333334" height="24.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="85" width="191.33333333333334" height="25.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="21"/>
                                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3015,11 +3015,15 @@
                                     <constraint firstAttribute="width" constant="48" id="lqX-TT-QSg"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6sl-fA-YDH">
+                                <rect key="frame" x="60" y="234" width="255" height="57"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjG-1p-jfw">
                                 <rect key="frame" x="60" y="234" width="255" height="57"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search job function" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xvs-8o-vPF" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="57"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3034,9 +3038,6 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                                <real key="value" value="0.10000000000000001"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                 <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
@@ -3047,7 +3048,7 @@
                                                 <size key="value" width="0.0" height="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.40780189630000002" green="0.24317812920000001" blue="0.66946464780000003" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -3193,13 +3194,17 @@
                             <constraint firstItem="4mp-c1-dU3" firstAttribute="trailing" secondItem="clx-H0-qA3" secondAttribute="trailing" id="g0U-bL-khm"/>
                             <constraint firstItem="kKI-my-X6K" firstAttribute="centerX" secondItem="clx-H0-qA3" secondAttribute="centerX" id="ghr-20-mlA"/>
                             <constraint firstItem="PjG-1p-jfw" firstAttribute="top" secondItem="geu-Zg-Tb8" secondAttribute="bottom" constant="60" id="gqx-me-IrT"/>
+                            <constraint firstItem="6sl-fA-YDH" firstAttribute="top" secondItem="PjG-1p-jfw" secondAttribute="top" id="hI7-B5-fSN"/>
                             <constraint firstItem="o5k-2o-U8R" firstAttribute="centerX" secondItem="clx-H0-qA3" secondAttribute="centerX" id="js9-Fg-4mJ"/>
+                            <constraint firstItem="6sl-fA-YDH" firstAttribute="trailing" secondItem="PjG-1p-jfw" secondAttribute="trailing" id="k8S-in-usl"/>
                             <constraint firstItem="geu-Zg-Tb8" firstAttribute="leading" secondItem="clx-H0-qA3" secondAttribute="leading" constant="30" id="kdY-VY-JhK"/>
                             <constraint firstItem="4mp-c1-dU3" firstAttribute="top" secondItem="clx-H0-qA3" secondAttribute="top" id="mAD-PF-Sbg"/>
                             <constraint firstItem="geu-Zg-Tb8" firstAttribute="top" secondItem="SpO-ZN-QyS" secondAttribute="bottom" constant="100" id="nBu-EP-H5J"/>
+                            <constraint firstItem="6sl-fA-YDH" firstAttribute="leading" secondItem="PjG-1p-jfw" secondAttribute="leading" id="o2U-tl-kmD"/>
                             <constraint firstAttribute="bottom" secondItem="4mp-c1-dU3" secondAttribute="bottom" id="pMN-Zy-Jx6"/>
                             <constraint firstItem="k7K-Dc-k4S" firstAttribute="top" secondItem="SpO-ZN-QyS" secondAttribute="bottom" constant="40" id="rKL-2p-ICs"/>
                             <constraint firstItem="o5k-2o-U8R" firstAttribute="top" secondItem="PjG-1p-jfw" secondAttribute="bottom" constant="58.670000000000002" id="t80-Dg-LDN"/>
+                            <constraint firstItem="6sl-fA-YDH" firstAttribute="bottom" secondItem="PjG-1p-jfw" secondAttribute="bottom" id="utm-Cv-kop"/>
                             <constraint firstItem="o5k-2o-U8R" firstAttribute="centerX" secondItem="clx-H0-qA3" secondAttribute="centerX" id="z59-LK-alH"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -6690,6 +6695,367 @@ that we recommend for you.</string>
             </objects>
             <point key="canvasLocation" x="18035" y="527"/>
         </scene>
+        <!--Hunter Work ExpVC-->
+        <scene sceneID="Zuh-Vt-rHt">
+            <objects>
+                <viewController storyboardIdentifier="HunterWorkExpVC" id="Ytc-uG-cX1" customClass="HunterWorkExpVC" customModule="Hunter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nZB-fa-zFe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nq3-Jc-3B7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VnU-Ts-lVA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workEx" translatesAutoresizingMaskIntoConstraints="NO" id="Luy-VM-t1G">
+                                <rect key="frame" x="163.66666666666666" y="79" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="h1k-cD-zjt"/>
+                                    <constraint firstAttribute="height" constant="48" id="oiE-qW-HEW"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP3-ms-3NJ">
+                                <rect key="frame" x="40" y="52" width="15" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="JdI-iI-4oD"/>
+                                    <constraint firstAttribute="width" constant="15" id="R2r-dk-AWN"/>
+                                </constraints>
+                                <state key="normal" image="arrow-left"/>
+                                <connections>
+                                    <action selector="back:" destination="Ytc-uG-cX1" eventType="touchUpInside" id="umT-by-uPb"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2H-YN-l6H">
+                                <rect key="frame" x="0.0" y="226.66666666666666" width="375" height="454.33333333333337"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7c-hA-uFC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="413"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-UC-Ocf">
+                                                <rect key="frame" x="54" y="5" width="267" height="403"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UX-YL-cJq" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="57"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="57" id="mGM-aT-GpT"/>
+                                                            <constraint firstAttribute="width" constant="267" id="xD9-EH-2HY"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                                                <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Company Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdp-BV-GYw" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70.000000000000028" width="267" height="57"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="57" id="J9M-Bi-03v"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                                                <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Employment Type" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7t-gD-s2u" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="140.00000000000003" width="267" height="57"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="57" id="QJc-dZ-FuB"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                                                <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHR-b8-FOS" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="210.00000000000003" width="267" height="56.999999999999972"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="57" id="3v0-tE-j8z"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                                                <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-jk-L9T">
+                                                        <rect key="frame" x="0.0" y="280" width="267" height="57"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghS-NG-PSK" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="127" height="57"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="57" id="Qwa-7D-oD0"/>
+                                                                </constraints>
+                                                                <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
+                                                                        <real key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                                                        <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-VZ-cG6" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                                <rect key="frame" x="140" y="0.0" width="127" height="57"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="57" id="3YB-7z-u3o"/>
+                                                                </constraints>
+                                                                <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
+                                                                        <real key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                                                        <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="TCe-VZ-cG6" firstAttribute="width" secondItem="ghS-NG-PSK" secondAttribute="width" id="jRP-tk-8A6"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-Gu-YaR">
+                                                        <rect key="frame" x="0.0" y="350" width="188.66666666666666" height="20"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7E-n4-0qH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="20" id="Clq-b8-X8x"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="KF8-iP-dAv"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                                                        <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="workExp:" destination="cBb-ih-KzP" eventType="touchUpInside" id="Fj1-BB-HFH"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am currently working here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-7Y-7jA">
+                                                                <rect key="frame" x="30" y="0.0" width="158.66666666666666" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="fm9-Bp-Sfu"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-Zi-ep7">
+                                                        <rect key="frame" x="0.0" y="383" width="261" height="20"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqm-Ov-5FU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="d9G-hi-U84"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="vFK-p3-u0T"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                                                        <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="workExp:" destination="cBb-ih-KzP" eventType="touchUpInside" id="he1-bG-0x2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not show my profile to this company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2K-O4-LIF">
+                                                                <rect key="frame" x="30" y="0.0" width="231" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="8Jt-c6-7oX"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="8UX-YL-cJq" firstAttribute="width" secondItem="wdp-BV-GYw" secondAttribute="width" id="2f3-7J-XKH"/>
+                                                    <constraint firstItem="mN9-jk-L9T" firstAttribute="leading" secondItem="WgK-UC-Ocf" secondAttribute="leading" id="Kl9-Rz-LS9"/>
+                                                    <constraint firstItem="J7t-gD-s2u" firstAttribute="width" secondItem="wdp-BV-GYw" secondAttribute="width" id="Z4K-7o-eKp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mN9-jk-L9T" secondAttribute="trailing" id="fNk-I2-TPv"/>
+                                                    <constraint firstItem="rHR-b8-FOS" firstAttribute="width" secondItem="J7t-gD-s2u" secondAttribute="width" id="upV-Jm-r9l"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="WgK-UC-Ocf" firstAttribute="top" secondItem="Q7c-hA-uFC" secondAttribute="top" constant="5" id="C90-af-efE"/>
+                                            <constraint firstAttribute="bottom" secondItem="WgK-UC-Ocf" secondAttribute="bottom" constant="5" id="KjC-z8-uiI"/>
+                                            <constraint firstItem="WgK-UC-Ocf" firstAttribute="centerX" secondItem="Q7c-hA-uFC" secondAttribute="centerX" id="pwZ-My-rWz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Q7c-hA-uFC" firstAttribute="top" secondItem="D2H-YN-l6H" secondAttribute="top" id="IIM-rF-nfv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q7c-hA-uFC" secondAttribute="bottom" constant="5.3300000000000001" id="LyZ-ck-TEQ"/>
+                                    <constraint firstItem="Q7c-hA-uFC" firstAttribute="leading" secondItem="D2H-YN-l6H" secondAttribute="leading" id="qkP-Ab-3Ow"/>
+                                    <constraint firstItem="Q7c-hA-uFC" firstAttribute="centerX" secondItem="D2H-YN-l6H" secondAttribute="centerX" id="t4B-bl-Gyo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q7c-hA-uFC" secondAttribute="trailing" id="xgA-z9-yDw"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your Work Experience?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwd-9N-m8p">
+                                <rect key="frame" x="40" y="142" width="295" height="59.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59.670000000000002" id="pNU-0R-D66"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="25"/>
+                                <color key="textColor" red="0.20784313725490194" green="0.043137254901960784" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgW-m8-P9k">
+                                <rect key="frame" x="60" y="701" width="255" height="57"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="2a7-4Y-bv1"/>
+                                    <constraint firstAttribute="width" constant="255" id="zXl-Ru-GOL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <state key="normal" title="Add Work Experience">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                        <real key="value" value="28.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iwd-9N-m8p" firstAttribute="top" secondItem="Luy-VM-t1G" secondAttribute="bottom" constant="15" id="17d-6W-3Vt"/>
+                            <constraint firstItem="Luy-VM-t1G" firstAttribute="centerX" secondItem="VnU-Ts-lVA" secondAttribute="centerX" id="1LI-dW-DtW"/>
+                            <constraint firstAttribute="trailing" secondItem="D2H-YN-l6H" secondAttribute="trailing" id="61t-AW-SCt"/>
+                            <constraint firstItem="iwd-9N-m8p" firstAttribute="centerX" secondItem="VnU-Ts-lVA" secondAttribute="centerX" id="J4d-Xi-NNV"/>
+                            <constraint firstItem="iP3-ms-3NJ" firstAttribute="leading" secondItem="VnU-Ts-lVA" secondAttribute="leading" constant="40" id="LAz-DB-6yF"/>
+                            <constraint firstItem="iwd-9N-m8p" firstAttribute="leading" secondItem="VnU-Ts-lVA" secondAttribute="leading" constant="40" id="Wej-I8-NBu"/>
+                            <constraint firstItem="IgW-m8-P9k" firstAttribute="top" secondItem="D2H-YN-l6H" secondAttribute="bottom" constant="20" id="Zfh-gV-BSI"/>
+                            <constraint firstItem="D2H-YN-l6H" firstAttribute="top" secondItem="iwd-9N-m8p" secondAttribute="bottom" constant="25" id="iVP-PZ-YLE"/>
+                            <constraint firstItem="Nq3-Jc-3B7" firstAttribute="top" secondItem="IgW-m8-P9k" secondAttribute="bottom" constant="20" id="krG-RF-jtZ"/>
+                            <constraint firstItem="Luy-VM-t1G" firstAttribute="top" secondItem="iP3-ms-3NJ" secondAttribute="top" constant="27" id="qwu-Ow-F7l"/>
+                            <constraint firstItem="D2H-YN-l6H" firstAttribute="leading" secondItem="VnU-Ts-lVA" secondAttribute="leading" id="syj-2H-3oh"/>
+                            <constraint firstItem="iP3-ms-3NJ" firstAttribute="top" secondItem="nZB-fa-zFe" secondAttribute="bottom" constant="8" id="y7Q-hE-g1O"/>
+                            <constraint firstItem="IgW-m8-P9k" firstAttribute="centerX" secondItem="VnU-Ts-lVA" secondAttribute="centerX" id="ybZ-5t-Yj7"/>
+                            <constraint firstAttribute="trailing" secondItem="iwd-9N-m8p" secondAttribute="trailing" constant="40" id="zMk-7X-DBw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn_currentlyWorking" destination="m7E-n4-0qH" id="llx-XQ-4Yb"/>
+                        <outlet property="btn_showMyProfile" destination="Zqm-Ov-5FU" id="Rdn-bx-R9u"/>
+                        <outlet property="txtWorkEndDate" destination="TCe-VZ-cG6" id="8uZ-Jb-65Z"/>
+                        <outlet property="txtWorkExCompany" destination="wdp-BV-GYw" id="2tJ-BZ-abu"/>
+                        <outlet property="txtWorkExEmpType" destination="J7t-gD-s2u" id="IO6-6s-k8c"/>
+                        <outlet property="txtWorkExLoc" destination="rHR-b8-FOS" id="B7e-0Q-n18"/>
+                        <outlet property="txtWorkExTitle" destination="8UX-YL-cJq" id="wgP-jM-7sZ"/>
+                        <outlet property="txtWorkStartDate" destination="ghS-NG-PSK" id="atx-lg-5Fy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfA-70-L9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11424.799999999999" y="-1004.1871921182267"/>
+        </scene>
         <!--Hunter Selection View Controller-->
         <scene sceneID="b6b-7w-6fH">
             <objects>
@@ -6979,6 +7345,6 @@ that we recommend for you.</string>
         <image name="tick-icon" width="114" height="109"/>
         <image name="txtSearchImage" width="10.666666984558105" height="10.666666984558105"/>
         <image name="uae-icon" width="118" height="98"/>
-        <image name="workEx" width="71" height="71"/>
+        <image name="workEx" width="70.333335876464844" height="70.333335876464844"/>
     </resources>
 </document>
