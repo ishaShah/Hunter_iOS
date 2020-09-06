@@ -26,6 +26,13 @@ class HunterSecrectCodeVC: UIViewController , UITextFieldDelegate  {
     }
     
     @IBAction func proceedBtn(_ sender: Any) {
+        
+        
+        
+        
+        
+        
+        
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterChangePassVC") as! HunterChangePassVC
         self.navigationController?.pushViewController(vc, animated: true)
         }
