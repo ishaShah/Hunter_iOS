@@ -85,16 +85,14 @@ class HunterPickerViewController: UIViewController{
         
     }
     
-  
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first
-         if touch?.view != viewBG {
-            dismiss(animated: true) {
-               
-            }
-            
+    @IBAction func actionContinue(_ sender: Any) {
+        
+        dismiss(animated: true) {
+            self.delegate?.selectedData(selectedDict: self.selectedDict, isFrom: self.isFrom)
         }
     }
+    
+
 
 }
 
@@ -133,10 +131,10 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
             dict["name"] = selectedValue
             dict["id"] = passedDict.allKeys[indexOfA!] as! String
 
-            let myDict:NSDictionary =
+            selectedDict =
                 ["name": selectedValue, "id": passedDict.allKeys[indexOfA!] as! String]
             
-            self.delegate?.selectedData(selectedDict: myDict, isFrom: self.isFrom)
+            
         }
         else if isFrom == "PrefWorkType" {
                    let selectedValue = passedDict.allValues[row] as! String
@@ -149,15 +147,15 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
                    dict["name"] = selectedValue
                    dict["id"] = passedDict.allKeys[indexOfA!] as! String
 
-                   let myDict:NSDictionary =
+                   selectedDict =
                     ["name": selectedValue, "id": passedDict.allKeys[indexOfA!] as! String, "index" : index]
                    
-                   self.delegate?.selectedData(selectedDict: myDict, isFrom: self.isFrom)
+                  
                }
         else {
             print(years[row])
             selectedDict = ["selectedYear" : years[row]]
-            self.delegate?.selectedData(selectedDict: self.selectedDict, isFrom: self.isFrom)
+           
          }
   
 }
