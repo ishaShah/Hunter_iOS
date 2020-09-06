@@ -1211,139 +1211,282 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     func connectToGetProfileData(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.recruiterBaseURL + API.candidate_profileURL
-            print(url)
-            HunterUtility.showProgressBar()
-            
-            let headers = [ "Authorization" : "Bearer " + accessToken]
+            var url = ""
             var parameters = [String : Any]()
 
-            parameters = ["candidate_id": candidate_idPassed, "job_id":job_id]
-
-            Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-                
-                switch response.result {
-                case .success:
-                    if let responseDict = response.result.value as? NSDictionary{
-                        print(responseDict)
-                        SVProgressHUD.dismiss()
-                        if let status = responseDict.value(forKey: "status"){
-                            if status as! Int == 1{
-                                if let dataDictionary = responseDict.value(forKey: "data") as? NSDictionary{
-                                    
-                                    let dataDict = dataDictionary["candidate_details"] as! NSDictionary
-                                    print(dataDict)
-
-                                    self.lab_profileName.text = "\(dataDict["first_name"] as! String) ".uppercased() + "\(dataDict["last_name"] as! String)".uppercased()
-                                    self.firstName = dataDict["first_name"] as! String
-                                    self.lastName = dataDict["last_name"] as! String
-//                                    self.textSalary.text = (dataDict["preferred_salary"] as! String)
-//                                    self.txt_workType.text = (dataDict["work_type"] as! String)
-
-//                                    self.lastName = dataDict["last_name"] as! String
-                                    
-                                    self.skillsArrDict = dataDict["skills"] as! [NSDictionary]
-                                    self.jobArrDict = dataDict["job_functions"] as! [NSDictionary]
-                                    self.expArrDict = dataDict["work_experience"] as! [NSDictionary]
-                                    self.locArrDict = dataDict["preferred_location"] as! [NSDictionary]
-//                                    self.socArrDict = dataDict["social_media"] as! [NSDictionary]
-                                    self.langArrDict = dataDict["languages"] as! [NSDictionary]
-                                    self.eduArrDict = dataDict["education"] as! [NSDictionary]
-                                    self.achieveArrDict = dataDict["achievements"] as! [NSDictionary]
-//                                    self.socPNGArr = dataDict["social_media_png"] as! [NSDictionary]
-
-//                                    self.worked_in_uae = (dataDict["worked_in_uae"] as? String)!
-                                    
-                                    
-                                    
-                                    self.txt_desc.text = dataDict["about"] as? String
-                                    self.profileDesc = dataDict["about"] as? String ?? ""
-                                    
-                                    if self.txt_desc.text == "" {
-                                        self.txt_desc.text = "Type description here"
-                                    }
-                                    
-                                    if let url = dataDict["profile_image"] as? String{
-                                        self.imgv_proPic.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
-                                    }
-                                    if let url = dataDict["banner_image"] as? String{
-                                        self.img_thumb.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
-                                    }
-                                    //reload all tableviews and manage height dynamically
-                                    self.tblWorkExp.reloadData()
-                                    self.tblEduation.reloadData()
-                                    self.tblAchievement.reloadData()
-                                    self.autosizeTableView()
-
-//                                    let profile_completion = dataDict["profile_completion"] as! Int
-//                                    self.lab_perc.text = "\(profile_completion)%"
-//
-//                                    self.progV.progress = Float(profile_completion)/100.0
-//
-                                    
-                                    self.selectedSkillsArr = [String]()
-                                    self.selectedIDSkillsArr = [Int]()
-                                    for skilldict in self.skillsArrDict {
-                                        self.selectedSkillsArr.append(skilldict["skill"] as! String)
-                                        let skillId =  skilldict["id"] as! Int
-                                        self.selectedIDSkillsArr.append(skillId)
-                                    }
-                                    //reload all collectionviews and manage height dynamically
-//                                    self.collSocialM.reloadData()
-                                    self.collectionLanguages.reloadData()
-//                                    self.collLoc.reloadData()
-//                                    self.coll_jobType.reloadData()
-                                    self.collectionSkills.reloadData()
-                                    self.autosizeCollectionView()
-
-                                }
-                            }else if status as! Int == 2 {
-                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                }))
-                                self.present(alert, animated: true, completion: nil)
-                                
-                                print("Logout api")
-                                
-                                UserDefaults.standard.removeObject(forKey: "accessToken")
-                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
-                                accessToken = String()
-                                
-                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                                let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
-                                let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
-                                navigationController.viewControllers = [mainRootController]
-                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                appDelegate.window?.rootViewController = navigationController
-                            }
-                            else{
-                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                }))
-                                self.present(alert, animated: true, completion: nil)
-                            }
-                        }
-                        else{
-                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                            }))
-                            self.present(alert, animated: true, completion: nil)
-                        }
-                    }else{
-                        SVProgressHUD.dismiss()
-                        //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
-                        //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
-                        //                        self.present(alert, animated: true, completion: nil)
-                    }
-                    
-                case .failure(let error):
-                    SVProgressHUD.dismiss()
-                    print(error)
-                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
+            var loginType = String()
+            if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                loginType = type
             }
+            // Do any additional setup after loading the view.
+            if loginType == "candidate" {
+                url = API.candidateBaseURL + API.profileURL
+                print(url)
+                            HunterUtility.showProgressBar()
+                            
+                            let headers = [ "Authorization" : "Bearer " + accessToken]
+
+
+                            Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                                
+                                switch response.result {
+                                case .success:
+                                    if let responseDict = response.result.value as? NSDictionary{
+                                        print(responseDict)
+                                        SVProgressHUD.dismiss()
+                                        if let status = responseDict.value(forKey: "status"){
+                                            if status as! Int == 1{
+                                                if let dataDictionary = responseDict.value(forKey: "data") as? NSDictionary{
+                                                    
+                                                    let dataDict = dataDictionary["candidate_details"] as! NSDictionary
+                                                    print(dataDict)
+
+                                                    self.lab_profileName.text = "\(dataDict["first_name"] as! String) ".uppercased() + "\(dataDict["last_name"] as! String)".uppercased()
+                                                    self.firstName = dataDict["first_name"] as! String
+                                                    self.lastName = dataDict["last_name"] as! String
+                //                                    self.textSalary.text = (dataDict["preferred_salary"] as! String)
+                //                                    self.txt_workType.text = (dataDict["work_type"] as! String)
+
+                //                                    self.lastName = dataDict["last_name"] as! String
+                                                    
+                                                    self.skillsArrDict = dataDict["skills"] as! [NSDictionary]
+                                                    self.jobArrDict = dataDict["job_functions"] as! [NSDictionary]
+                                                    self.expArrDict = dataDict["work_experience"] as! [NSDictionary]
+                                                    self.locArrDict = dataDict["preferred_location"] as! [NSDictionary]
+                //                                    self.socArrDict = dataDict["social_media"] as! [NSDictionary]
+                                                    self.langArrDict = dataDict["languages"] as! [NSDictionary]
+                                                    self.eduArrDict = dataDict["education"] as! [NSDictionary]
+                                                    self.achieveArrDict = dataDict["achievements"] as! [NSDictionary]
+                //                                    self.socPNGArr = dataDict["social_media_png"] as! [NSDictionary]
+
+                //                                    self.worked_in_uae = (dataDict["worked_in_uae"] as? String)!
+                                                    
+                                                    
+                                                    
+                                                    self.txt_desc.text = dataDict["about"] as? String
+                                                    self.profileDesc = dataDict["about"] as? String ?? ""
+                                                    
+                                                    if self.txt_desc.text == "" {
+                                                        self.txt_desc.text = "Type description here"
+                                                    }
+                                                    
+                                                    if let url = dataDict["profile_image"] as? String{
+                                                        self.imgv_proPic.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                                    }
+                                                    if let url = dataDict["banner_image"] as? String{
+                                                        self.img_thumb.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                                    }
+                                                    //reload all tableviews and manage height dynamically
+                                                    self.tblWorkExp.reloadData()
+                                                    self.tblEduation.reloadData()
+                                                    self.tblAchievement.reloadData()
+                                                    self.autosizeTableView()
+
+                //                                    let profile_completion = dataDict["profile_completion"] as! Int
+                //                                    self.lab_perc.text = "\(profile_completion)%"
+                //
+                //                                    self.progV.progress = Float(profile_completion)/100.0
+                //
+                                                    
+                                                    self.selectedSkillsArr = [String]()
+                                                    self.selectedIDSkillsArr = [Int]()
+                                                    for skilldict in self.skillsArrDict {
+                                                        self.selectedSkillsArr.append(skilldict["skill"] as! String)
+                                                        let skillId =  skilldict["id"] as! Int
+                                                        self.selectedIDSkillsArr.append(skillId)
+                                                    }
+                                                    //reload all collectionviews and manage height dynamically
+                //                                    self.collSocialM.reloadData()
+                                                    self.collectionLanguages.reloadData()
+                //                                    self.collLoc.reloadData()
+                //                                    self.coll_jobType.reloadData()
+                                                    self.collectionSkills.reloadData()
+                                                    self.autosizeCollectionView()
+
+                                                }
+                                            }else if status as! Int == 2 {
+                                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                }))
+                                                self.present(alert, animated: true, completion: nil)
+                                                
+                                                print("Logout api")
+                                                
+                                                UserDefaults.standard.removeObject(forKey: "accessToken")
+                                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                                accessToken = String()
+                                                
+                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                                let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                                navigationController.viewControllers = [mainRootController]
+                                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                                appDelegate.window?.rootViewController = navigationController
+                                            }
+                                            else{
+                                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                }))
+                                                self.present(alert, animated: true, completion: nil)
+                                            }
+                                        }
+                                        else{
+                                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                            }))
+                                            self.present(alert, animated: true, completion: nil)
+                                        }
+                                    }else{
+                                        SVProgressHUD.dismiss()
+                                        //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
+                                        //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
+                                        //                        self.present(alert, animated: true, completion: nil)
+                                    }
+                                    
+                                case .failure(let error):
+                                    SVProgressHUD.dismiss()
+                                    print(error)
+                                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            }
+             }
+            else {
+                url = API.recruiterBaseURL + API.candidate_profileURL
+                parameters = ["candidate_id": candidate_idPassed, "job_id":job_id]
+                print(url)
+                            HunterUtility.showProgressBar()
+                            
+                            let headers = [ "Authorization" : "Bearer " + accessToken]
+
+
+                            Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                                
+                                switch response.result {
+                                case .success:
+                                    if let responseDict = response.result.value as? NSDictionary{
+                                        print(responseDict)
+                                        SVProgressHUD.dismiss()
+                                        if let status = responseDict.value(forKey: "status"){
+                                            if status as! Int == 1{
+                                                if let dataDictionary = responseDict.value(forKey: "data") as? NSDictionary{
+                                                    
+                                                    let dataDict = dataDictionary["candidate_details"] as! NSDictionary
+                                                    print(dataDict)
+
+                                                    self.lab_profileName.text = "\(dataDict["first_name"] as! String) ".uppercased() + "\(dataDict["last_name"] as! String)".uppercased()
+                                                    self.firstName = dataDict["first_name"] as! String
+                                                    self.lastName = dataDict["last_name"] as! String
+                //                                    self.textSalary.text = (dataDict["preferred_salary"] as! String)
+                //                                    self.txt_workType.text = (dataDict["work_type"] as! String)
+
+                //                                    self.lastName = dataDict["last_name"] as! String
+                                                    
+                                                    self.skillsArrDict = dataDict["skills"] as! [NSDictionary]
+                                                    self.jobArrDict = dataDict["job_functions"] as! [NSDictionary]
+                                                    self.expArrDict = dataDict["work_experience"] as! [NSDictionary]
+                                                    self.locArrDict = dataDict["preferred_location"] as! [NSDictionary]
+                //                                    self.socArrDict = dataDict["social_media"] as! [NSDictionary]
+                                                    self.langArrDict = dataDict["languages"] as! [NSDictionary]
+                                                    self.eduArrDict = dataDict["education"] as! [NSDictionary]
+                                                    self.achieveArrDict = dataDict["achievements"] as! [NSDictionary]
+                //                                    self.socPNGArr = dataDict["social_media_png"] as! [NSDictionary]
+
+                //                                    self.worked_in_uae = (dataDict["worked_in_uae"] as? String)!
+                                                    
+                                                    
+                                                    
+                                                    self.txt_desc.text = dataDict["about"] as? String
+                                                    self.profileDesc = dataDict["about"] as? String ?? ""
+                                                    
+                                                    if self.txt_desc.text == "" {
+                                                        self.txt_desc.text = "Type description here"
+                                                    }
+                                                    
+                                                    if let url = dataDict["profile_image"] as? String{
+                                                        self.imgv_proPic.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                                    }
+                                                    if let url = dataDict["banner_image"] as? String{
+                                                        self.img_thumb.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                                    }
+                                                    //reload all tableviews and manage height dynamically
+                                                    self.tblWorkExp.reloadData()
+                                                    self.tblEduation.reloadData()
+                                                    self.tblAchievement.reloadData()
+                                                    self.autosizeTableView()
+
+                //                                    let profile_completion = dataDict["profile_completion"] as! Int
+                //                                    self.lab_perc.text = "\(profile_completion)%"
+                //
+                //                                    self.progV.progress = Float(profile_completion)/100.0
+                //
+                                                    
+                                                    self.selectedSkillsArr = [String]()
+                                                    self.selectedIDSkillsArr = [Int]()
+                                                    for skilldict in self.skillsArrDict {
+                                                        self.selectedSkillsArr.append(skilldict["skill"] as! String)
+                                                        let skillId =  skilldict["id"] as! Int
+                                                        self.selectedIDSkillsArr.append(skillId)
+                                                    }
+                                                    //reload all collectionviews and manage height dynamically
+                //                                    self.collSocialM.reloadData()
+                                                    self.collectionLanguages.reloadData()
+                //                                    self.collLoc.reloadData()
+                //                                    self.coll_jobType.reloadData()
+                                                    self.collectionSkills.reloadData()
+                                                    self.autosizeCollectionView()
+
+                                                }
+                                            }else if status as! Int == 2 {
+                                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                }))
+                                                self.present(alert, animated: true, completion: nil)
+                                                
+                                                print("Logout api")
+                                                
+                                                UserDefaults.standard.removeObject(forKey: "accessToken")
+                                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                                accessToken = String()
+                                                
+                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                                let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                                navigationController.viewControllers = [mainRootController]
+                                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                                appDelegate.window?.rootViewController = navigationController
+                                            }
+                                            else{
+                                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                }))
+                                                self.present(alert, animated: true, completion: nil)
+                                            }
+                                        }
+                                        else{
+                                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                            }))
+                                            self.present(alert, animated: true, completion: nil)
+                                        }
+                                    }else{
+                                        SVProgressHUD.dismiss()
+                                        //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
+                                        //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
+                                        //                        self.present(alert, animated: true, completion: nil)
+                                    }
+                                    
+                                case .failure(let error):
+                                    SVProgressHUD.dismiss()
+                                    print(error)
+                                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            }
+            }
+            
         }else{
             print("no internet")
         }
