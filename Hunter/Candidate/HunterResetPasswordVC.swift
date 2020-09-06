@@ -12,7 +12,7 @@ import SVProgressHUD
 import Toast_Swift
 
 class HunterResetPasswordVC: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var viewHeader: GradientView!
+    @IBOutlet weak var viewHeader: UIView!
     @IBOutlet weak var textCurrentPassword: UITextField!
     @IBOutlet weak var textNewPassword: UITextField!
     @IBOutlet weak var textRepeatPassword: UITextField!
@@ -24,7 +24,7 @@ class HunterResetPasswordVC: UIViewController, UITextFieldDelegate {
         self.hideKeyboardWhenTappedAround()
     }
     override func viewDidLayoutSubviews() {
-        viewHeader.roundCorners([.bottomLeft, .bottomRight], radius: 30)
+        viewHeader.roundCorners([.topLeft, .topRight], radius: 30)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -37,6 +37,15 @@ class HunterResetPasswordVC: UIViewController, UITextFieldDelegate {
         textNewPassword.text = ""
         textRepeatPassword.text = ""
     }
+    @IBAction func actionDismiss(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
     @IBAction func buttonSave(_ sender: UIButton) {
         guard let currentPass = textCurrentPassword.text, currentPass.count > 0 else {
             self.view.makeToast("Current Password cannot be empty", duration: 1.0, point: CGPoint(x: screenWidth/2, y: screenHeight-130), title: nil, image: nil) { didTap in}

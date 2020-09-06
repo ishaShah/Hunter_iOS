@@ -54,10 +54,11 @@ enum API{
     static let profileURL = "profile"
     
     static let settingsURL = "settings"
-    static let changeNotifyStatusURl = "settings/notification"
+    static let changeNotifyStatusURl = "settings/enable-notification"
     static let changeShowStatusURL = "settings/show-me-on-hunter"
-    static let basicInformationURL = "basic-information"
-    static let resetPasswordURL = "reset-password"
+    static let basicInformationURL = "settings/basic-information"
+    static let updateBasicInfoURL = "settings/update-basic-information"
+    static let resetPasswordURL = "settings/reset-password"
     static let disableCandidateAccURL = "disable-account"
     static let enableCandidateAccURL = "enable-account"
     static let disableRecruiterAccURL = "settings/disable-account"
@@ -68,6 +69,10 @@ enum API{
     static let reportProblemURL = "support/report-problem"
     static let jobsSwipesURL = "jobs/swipe"
     static let profileUpdateURL = "profile/update"
+    static let getJobExpURL = "registration/get-job-experiences"
+
+    
+    
     //Recruiter
     static let candidate_profileURL = "candidate-profile"
     static let detailsURL = "details"
