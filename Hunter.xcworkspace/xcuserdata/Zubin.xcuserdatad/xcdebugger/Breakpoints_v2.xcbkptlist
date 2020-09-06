@@ -19,54 +19,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CBCCC7F7-8991-49A6-A147-EE039016EAC4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterCandidateProVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1223"
-            endingLineNumber = "1223"
-            landmarkName = "connectToGetProfileData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CBCCC7F7-8991-49A6-A147-EE039016EAC4 - 9cd42de61370294d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Hunter.HunterCandidateProVC.connectToGetProfileData() -&gt; ()"
-                  moduleName = "Hunter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Zubin/Documents/Hunter/Hunter/Candidate/HunterCandidateProVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1223"
-                  endingLineNumber = "1223"
-                  offsetFromSymbolStart = "1275">
-               </Location>
-               <Location
-                  uuid = "CBCCC7F7-8991-49A6-A147-EE039016EAC4 - a8f7a7e8fa3d9cc2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Hunter.HunterCandidateProVC.connectToGetProfileData() -&gt; ()"
-                  moduleName = "Hunter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Zubin/Documents/Hunter/Hunter/Candidate/HunterCandidateProVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1225"
-                  endingLineNumber = "1225"
-                  offsetFromSymbolStart = "221">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9F8E6E4B-F7EA-45BB-833A-99EC2F242DE7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -125,22 +77,6 @@
             startingLineNumber = "553"
             endingLineNumber = "553"
             landmarkName = "connectToGetJobs()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "81CB16DC-B943-4677-BD79-2AE0E3A9BE75"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterCandidateProVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1231"
-            endingLineNumber = "1231"
-            landmarkName = "connectToGetProfileData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

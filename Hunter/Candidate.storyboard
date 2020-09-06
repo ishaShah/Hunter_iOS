@@ -1962,7 +1962,7 @@
                                                 <color key="textColor" red="0.17651039360000001" green="0.0144051183" blue="0.41571259500000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqS-ro-Ez7" customClass="CosmosView" customModule="Cosmos">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqS-ro-Ez7" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="12.5" y="209" width="195" height="35"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1980,7 +1980,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="We'd love to hear your feedback..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hhr-Z7-mzf">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="We'd love to hear your feedback..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hhr-Z7-mzf">
                                                 <rect key="frame" x="40" y="259" width="150" height="10"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3154,7 +3154,7 @@ Thank you for your feedback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qht-bs-3pD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2116.875" y="-1192.605633802817"/>
+            <point key="canvasLocation" x="414" y="-1913"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wj3-Lp-ZTj">
@@ -6136,7 +6136,7 @@ Thank you for your feedback.</string>
                                 <rect key="frame" x="1000" y="0.0" width="414" height="2500"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tx7-e7-PUm">
-                                        <rect key="frame" x="30" y="50" width="354" height="2801"/>
+                                        <rect key="frame" x="30" y="50" width="354" height="2850"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT5-ZD-yqC" userLabel="Content View">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="630"/>
@@ -6760,7 +6760,7 @@ Thank you for your feedback.</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7af-cX-JFS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="2752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="2703"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLz-mJ-Jg7" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1818"/>
@@ -9230,7 +9230,7 @@ Thank you for your feedback.</string>
                                 <rect key="frame" x="1000" y="0.0" width="414" height="3000"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woh-Tj-q0w">
-                                        <rect key="frame" x="30" y="50" width="354" height="2602"/>
+                                        <rect key="frame" x="30" y="50" width="354" height="2553"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7d-Wu-zd5" userLabel="Content View">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="630"/>
@@ -9783,7 +9783,7 @@ Thank you for your feedback.</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DgO-Ux-irR" kind="relationship" relationship="rootViewController" id="L4q-hd-fE4"/>
+                        <segue destination="CXh-ol-Had" kind="relationship" relationship="rootViewController" id="Jsy-b6-dS3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7U-39-XFU" userLabel="First Responder" sceneMemberID="firstResponder"/>

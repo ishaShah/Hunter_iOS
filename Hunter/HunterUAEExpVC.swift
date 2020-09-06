@@ -13,7 +13,7 @@ import SVProgressHUD
 class HunterUAEExpVC: UIViewController {
     @IBOutlet weak var contButton: UIButton!
 
-    var currentWorkStatus = -1
+    var currentWorkStatus = 0
     @IBOutlet weak var btn_wrkExp: UIButton!
     
     override func viewDidLoad() {
@@ -35,6 +35,7 @@ class HunterUAEExpVC: UIViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         }
+        
     }
     @IBAction func workExp(_ sender: Any) {
         
@@ -43,15 +44,16 @@ class HunterUAEExpVC: UIViewController {
         self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
         
         self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
-         
+            btn_wrkExp.backgroundColor = UIColor.init(hexString:"6B3E99" )
         }
         else {
             currentWorkStatus = 0
             self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
             
             self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
-            
-            
+            btn_wrkExp.backgroundColor = UIColor.white
+
+
         }
     }
     func connectToSaveWorkedInUAE(){
