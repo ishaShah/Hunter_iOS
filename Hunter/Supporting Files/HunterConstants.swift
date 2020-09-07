@@ -32,7 +32,9 @@ enum API{
     static let registerSavePreferedCompaniesURL = "registration/save-worked-companies-in-uae"
     static let saveCurrentWorkStatusURL = "registration/save-current-work-status"
     static let saveCandidateJobExpURL = "registration/save-candidate-job-experience"
-    
+    static let registerEduLookUpDataURL = "registration/get-lookup-data-educational-qualification"
+    static let saveEduQualificationURL = "registration/save-candidate-educational-qualification"
+    static let getEducationQualification = "registration/get-educational-qualification"
     
     
     static let saveLangURL = "profile/add-language"
@@ -82,7 +84,6 @@ enum API{
     static let registerCompanySizeURL = "registration/company-size"
     static let registerCompanyTypeURL = "registration/company-type"
     static let registerSaveCompanyBioStep3URL = "registration/save-company-bio-step-3"
-    static let registerEduLookUpDataURL = "registration/get-lookup-data-educational-qualification"
     static let registerSaveCompanyFoundedURL = "registration/save-company-founded"
     static let registerSaveCompanyDetailsURL = "registration/save-company-details"
     static let registerSaveCompanyLogoURL = "registration/save-company-logo"

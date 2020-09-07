@@ -58,8 +58,117 @@ class HunterEducationStep2VC: UIViewController {
     }
 
     @IBAction func actionAddEducation(_ sender: Any) {
-        
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep2VC") as! HunterEducationStep2VC
+        // save action
+        if txtSchool.text == ""{
+            let alert = UIAlertController(title: "", message:
+                "Please select your school.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else if txtFieldOfStudy.text == ""{
+            let alert = UIAlertController(title: "", message:
+                "Please select Field of Study.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else if txtLevelOfStudy.text == ""{
+            let alert = UIAlertController(title: "", message:
+                "Please select Level of Study.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else if txtStartDate.text == ""{
+            let alert = UIAlertController(title: "", message:
+                "Please select Start Date.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else if txtEndDate.text == ""{
+            let alert = UIAlertController(title: "", message:
+                "Please select End Date.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            connectToSaveEduQualicficationURL()
+        }
+         
+    }
+    
+    func connectToSaveEduQualicficationURL(){
+        if HunterUtility.isConnectedToInternet(){
+            let url = API.candidateBaseURL + API.saveEduQualificationURL
+            print(url)
+            HunterUtility.showProgressBar()
+            
+            let paramsDict = ["school": selectedData.school_ID , "level_of_study" : selectedData.level_of_study_ID, "field_of_study" : selectedData.field_of_study_ID, "start_date":selectedData.startDate , "end_date": selectedData.endDate ] as [String : Any]
+            
+            let headers    = [ "Authorization" : "Bearer " + accessToken]
+            
+            Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                
+                switch response.result {
+                case .success:
+                    if let responseDict = response.result.value as? NSDictionary{
+                        print(responseDict)
+                        SVProgressHUD.dismiss()
+                        if let status = responseDict.value(forKey: "status"){
+                            if status as! Int == 1   {
+                                
+                                Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.goToListEducationVC), userInfo: nil, repeats: false)
+                                
+                            }else if status as! Int == 2 {
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                                
+                                print("Logout api")
+                                
+                                UserDefaults.standard.removeObject(forKey: "accessToken")
+                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                accessToken = String()
+                                
+                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                navigationController.viewControllers = [mainRootController]
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = navigationController
+                            }else{
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }else{
+                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }else{
+                        SVProgressHUD.dismiss()
+                        //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
+                        //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
+                        //                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error)
+                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }else{
+            print("no internet")
+        }
+    }
+    
+    @objc func goToListEducationVC() {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterListAllEduVC") as! HunterListAllEduVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
