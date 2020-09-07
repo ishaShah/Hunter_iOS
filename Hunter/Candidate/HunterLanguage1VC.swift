@@ -56,13 +56,13 @@ class HunterLanguage1VC: UIViewController {
         
         
                if HunterUtility.isConnectedToInternet(){
-                   let url = API.candidateBaseURL + API.updateLangDataURL
+                   let url = API.candidateBaseURL + API.saveLangDataURL
                    print(url)
                    HunterUtility.showProgressBar()
                    
                    let headers    = [ "Authorization" : "Bearer " + accessToken]
                  let parameters = ["language_id" : selectedData.lang_ID , "proficiency_id" : selectedData.level_of_prof_ID ]
-                   Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                   Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                        
                        switch response.result {
                        case .success:

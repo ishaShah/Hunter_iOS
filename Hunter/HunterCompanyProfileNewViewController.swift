@@ -62,26 +62,37 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
     @IBOutlet weak var edit_ImageV: UIView!
     @IBOutlet weak var edit_businessT: UIView!
     var isEdit = false
-    var isFrom = ""
+    var isFrom = String()
     var candidate_Id = 0
     var arrayImages = [String]()
 
 
     var selectedBusinessTypeID = String()
     var selectedCompanySizeID = String()
+    @IBOutlet weak var btn_back: UIButton!
+    @IBOutlet weak var btn_threeLines: UIButton!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if isFrom == "cards"{
+            btn_back.isHidden = false
+            btn_threeLines.isHidden = true
+        }
+        else {
+            btn_back.isHidden = true
+            btn_threeLines.isHidden = false
+
+
+        }
         editView.isHidden = true;
 
         collImages.delegate = nil
         collImages.dataSource = nil
         applyUIChanges()
         
-        isFrom = ""
-        
+ 
         edit_abt.isHidden = !isEdit
         edit_companyS.isHidden = !isEdit
         edit_basic.isHidden = !isEdit
@@ -96,6 +107,9 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func applyUIChanges(){
         
         
@@ -133,13 +147,13 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         if isFrom == "cards" {
             if HunterUtility.isConnectedToInternet(){
                 
-                let url = API.recruiterBaseURL + API.candidate_profileURL
+                let url = API.candidateBaseURL + API.recruiterViewURL
                 
                 print(url)
                 HunterUtility.showProgressBar()
                 
                 let headers    = [ "Authorization" : "Bearer " + accessToken]
-                let params = ["candidate_id" : candidate_Id]
+                let params = ["recruiter_id" : candidate_Id]
                 Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                     
                     switch response.result {

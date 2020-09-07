@@ -3053,6 +3053,12 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                                <real key="value" value="0.10000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                                <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -3062,7 +3068,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o5k-2o-U8R">
-                                <rect key="frame" x="47.666666666666657" y="349.66666666666669" width="280" height="250.00000000000006"/>
+                                <rect key="frame" x="47.666666666666657" y="321" width="280" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="9aq-cF-Qhj"/>
@@ -3159,13 +3165,13 @@
                                     <action selector="continueBtn:" destination="iO8-GR-JoS" eventType="touchUpInside" id="wSd-wF-CCs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 (Maximum 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKI-my-X6K">
+                            <label hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 (Maximum 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKI-my-X6K">
                                 <rect key="frame" x="131" y="684.66666666666663" width="113.33333333333331" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Functions Added:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-PE-zIU">
+                            <label hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Functions Added:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-PE-zIU">
                                 <rect key="frame" x="109.00000000000001" y="659.33333333333337" width="157.33333333333337" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3206,7 +3212,7 @@
                             <constraint firstItem="6sl-fA-YDH" firstAttribute="leading" secondItem="PjG-1p-jfw" secondAttribute="leading" id="o2U-tl-kmD"/>
                             <constraint firstAttribute="bottom" secondItem="4mp-c1-dU3" secondAttribute="bottom" id="pMN-Zy-Jx6"/>
                             <constraint firstItem="k7K-Dc-k4S" firstAttribute="top" secondItem="SpO-ZN-QyS" secondAttribute="bottom" constant="40" id="rKL-2p-ICs"/>
-                            <constraint firstItem="o5k-2o-U8R" firstAttribute="top" secondItem="PjG-1p-jfw" secondAttribute="bottom" constant="58.670000000000002" id="t80-Dg-LDN"/>
+                            <constraint firstItem="o5k-2o-U8R" firstAttribute="top" secondItem="PjG-1p-jfw" secondAttribute="bottom" constant="30" id="t80-Dg-LDN"/>
                             <constraint firstItem="6sl-fA-YDH" firstAttribute="bottom" secondItem="PjG-1p-jfw" secondAttribute="bottom" id="utm-Cv-kop"/>
                             <constraint firstItem="o5k-2o-U8R" firstAttribute="centerX" secondItem="clx-H0-qA3" secondAttribute="centerX" id="z59-LK-alH"/>
                         </constraints>
@@ -7983,7 +7989,7 @@ that we recommend for you.</string>
                                     <constraint firstAttribute="width" constant="207.40000000000001" id="ju2-Q8-g9h"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
-                                <state key="normal" title="Add Work Experience">
+                                <state key="normal" title="Add Education">
                                     <color key="titleColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -7992,8 +7998,7 @@ that we recommend for you.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="actionAddNewEducation:" destination="ZRc-aH-Pb2" eventType="touchUpInside" id="05A-GE-GYg"/>
-                                    <action selector="buttonRegister:" destination="je0-pn-rbX" eventType="touchUpInside" id="wDQ-1j-yUr"/>
+                                    <action selector="actionAddNewEducation:" destination="ZRc-aH-Pb2" eventType="touchUpInside" id="tEZ-NH-rwN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUG-ig-ezH">
@@ -8004,7 +8009,7 @@ that we recommend for you.</string>
                                 </constraints>
                                 <state key="normal" image="arrow-left"/>
                                 <connections>
-                                    <action selector="backToVC:" destination="ZRc-aH-Pb2" eventType="touchUpInside" id="yfd-Nx-GTB"/>
+                                    <action selector="actionBack:" destination="ZRc-aH-Pb2" eventType="touchUpInside" id="kmT-ec-2Lj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your Educational Background?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt0-iS-hmR">
@@ -8028,7 +8033,7 @@ that we recommend for you.</string>
                                     <constraint firstAttribute="height" constant="55" id="xzI-y7-j9z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Add Education">
+                                <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.18823529410000001" green="0.015686274510000001" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -8037,7 +8042,7 @@ that we recommend for you.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="actionAddEducation:" destination="ZRc-aH-Pb2" eventType="touchUpInside" id="Hge-Zj-hd5"/>
+                                    <action selector="actionAddEducation:" destination="ZRc-aH-Pb2" eventType="touchUpInside" id="8XI-t4-vpe"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yBN-OT-hZF">
@@ -8214,7 +8219,6 @@ that we recommend for you.</string>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="btnAddEdu" destination="j4h-X4-NJQ" id="xqX-HX-zkI"/>
                         <outlet property="collEducation" destination="yBN-OT-hZF" id="j6f-Wc-ut0"/>
                     </connections>
                 </viewController>

@@ -325,7 +325,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
 
         if HunterUtility.isConnectedToInternet(){
             
-            let url = baseURL + API.getChatURl
+            let url = baseURL + API.getChatCandidateMessagesURL
             print(url)
             HunterUtility.showProgressBar()
             
@@ -436,7 +436,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
 
         if HunterUtility.isConnectedToInternet(){
             
-            let url = baseURL + API.getChatURl
+            let url = baseURL + API.getMatchesURL
             print(url)
             HunterUtility.showProgressBar()
             

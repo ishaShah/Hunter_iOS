@@ -256,10 +256,19 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         
     }
     @IBAction func edit_Achievement(_ sender: Any) {
+        
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterAchieveVC") as! HunterAchieveVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func upload_profile(_ sender: Any) {
+        // additional image/video
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditProPicVC") as! HunterEditProPicVC
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     @IBAction func edit_lang(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguage1VC") as! HunterLanguage1VC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_edu(_ sender: Any) {
     }
@@ -269,11 +278,20 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     }
     
     @IBAction func edit_About(_ sender: Any) {
+        // about
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditBioVC") as! HunterEditBioVC
+        vc.modalPresentationStyle = .overFullScreen
+        vc.txt = txt_desc.text!
+        self.present(vc, animated: true, completion: nil)
+
     }
     @IBAction func edit_Skills(_ sender: Any) {
     }
     @IBAction func uploadCover(_ sender: Any) {
-        
+        // additional image/video
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditCoverImVC") as! HunterEditCoverImVC
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     @IBAction func cancelProfile(_ sender: Any) {
         hidenAndShowBtns(false)

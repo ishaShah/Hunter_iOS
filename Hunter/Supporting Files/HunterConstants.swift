@@ -32,9 +32,15 @@ enum API{
     static let registerSavePreferedCompaniesURL = "registration/save-worked-companies-in-uae"
     static let saveCurrentWorkStatusURL = "registration/save-current-work-status"
     static let saveCandidateJobExpURL = "registration/save-candidate-job-experience"
-    
+    static let getAchievementsURL = "profile/get-achievements"
+    static let saveAchievementsURL = "profile/save-achievements"
     static let getLookUpLangDataURL = "profile/get-lookup-language-data"
-    static let updateLangDataURL = "candidate/profile/update-languages"
+    static let updateLangDataURL = "profile/update-languages"
+    static let registerEduLookUpDataURL = "registration/get-lookup-data-educational-qualification"
+    static let saveEduQualificationURL = "registration/save-candidate-educational-qualification"
+    static let getEducationQualification = "registration/get-educational-qualification"
+    static let saveLangDataURL = "profile/save-languages"
+    
     static let saveLangURL = "profile/add-language"
     static let deleteLangURL = "profile/delete-language"
     static let addAchievementURL = "profile/add-achievement"
@@ -45,12 +51,13 @@ enum API{
     static let deleteWorkExpURL = "profile/delete-work-experience"
     static let addEduQualificationURL = "profile/add-education-qualification"
     static let deleteEduQualificationURL = "profile/delete-education-qualification"
-
+ static let getJobSuggestionsURL = "job/suggestions"
     static let getJobsURL = "jobs"
     static let getChatURl = "chat"
     static let getMatchesURL = "chat/matches"
-    static let getChatCandidateMessagesURL = "chat/job-messages"// for getting personal messages while candidate login
-    static let sendCandidateMessageURL = "chat/send-job-message"// for sending message from candidate login
+    static let chatMessageViewURL = "chat/chat-messages-view"
+    static let getChatCandidateMessagesURL = "chat/get-message"// for getting personal messages while candidate login
+    static let sendCandidateMessageURL = "chat/send-message-to-recruiter"// for sending message from candidate login
     static let profileURL = "profile"
     
     static let settingsURL = "settings"
@@ -67,6 +74,7 @@ enum API{
     static let elevatorPitchURL = "jobs/elevator-pitch"
     static let supportCategoriesURL = "support/report-category"
     static let reportProblemURL = "support/report-problem"
+    
     static let jobsSwipesURL = "jobs/swipe"
     static let profileUpdateURL = "profile/update"
     static let getJobExpURL = "registration/get-job-experiences"
@@ -74,6 +82,7 @@ enum API{
     static let getWorkExpURL = "registration/get-lookup-data-experiences"
     
     //Recruiter
+    static let recruiterViewURL = "job/recruiter-view"
     static let candidate_profileURL = "candidate-profile"
     static let detailsURL = "details"
     static let registerRecruiterURL = "registration/save-recruiter"
@@ -82,12 +91,13 @@ enum API{
     static let registerCompanySizeURL = "registration/company-size"
     static let registerCompanyTypeURL = "registration/company-type"
     static let registerSaveCompanyBioStep3URL = "registration/save-company-bio-step-3"
-    static let registerEduLookUpDataURL = "registration/get-lookup-data-educational-qualification"
     static let registerSaveCompanyFoundedURL = "registration/save-company-founded"
     static let registerSaveCompanyDetailsURL = "registration/save-company-details"
     static let registerSaveCompanyLogoURL = "registration/save-company-logo"
     static let registerUpdateCompanyLogoURL = "profile/update-company-logo"
+    static let registerUpdateCandidateProfileURL = "profile/update-candidate-profile-image"
     static let registerUpdateCompanyBannerImageURL = "profile/update-company-banner-image"
+    static let registerUpdateBannerImageURL = "profile/update-banner-image"
     static let registerSaveAdditionalMediaURL = "registration/save-additional-media"
     static let registerDeleteAdditionalMediaURL = "registration/delete-additional-media"
     static let registerFetchSocialMediaURL = "registration/fetch-social-media"
@@ -130,6 +140,8 @@ enum API{
     
     static let candidateSuggestionsURL = "candidate-suggestions"
     static let updateCompanyBioURL = "profile/update-company-bio"
+    
+     static let updateCandidateBioURL = "profile/update-candidate-Bio"
  }
 enum FontName: String {
     case MontserratRegular            = "Montserrat-Regular"

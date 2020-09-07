@@ -66,7 +66,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             loginType = type
         }
         if loginType == "candidate" {
-            getMessagesURL = API.candidateBaseURL + API.getChatCandidateMessagesURL
+            getMessagesURL = API.candidateBaseURL + API.chatMessageViewURL
             sendMessageURL = API.candidateBaseURL + API.sendCandidateMessageURL
         }else{
             getMessagesURL = API.recruiterBaseURL + API.getChatRecruiterMessagesURL

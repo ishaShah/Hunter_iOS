@@ -35,13 +35,28 @@ class HunterEditBioVC: UIViewController {
     }
     func connectToUpdateCompanyBio(){
             if HunterUtility.isConnectedToInternet(){
-                
-                let url = API.recruiterBaseURL + API.updateCompanyBioURL
+                var loginType = String()
+                var url = ""
+                var paramsDict = [String : Any]()
+
+                if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                    loginType = type
+                }
+                // Do any additional setup after loading the view.
+                if loginType == "candidate" {
+                 url = API.candidateBaseURL + API.updateCandidateBioURL
+                    paramsDict = ["bio": txt_view.text! ]
+
+                }
+                else {
+                 url = API.recruiterBaseURL + API.updateCompanyBioURL
+                     paramsDict = ["company_bio": txt_view.text! ]
+
+                }
                 print(url)
                 HunterUtility.showProgressBar()
                 
                 
-                let paramsDict = ["company_bio": txt_view.text! ] as [String : Any]
                 
                 let headers    = [ "Authorization" : "Bearer " + accessToken]
                 

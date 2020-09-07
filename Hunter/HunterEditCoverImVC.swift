@@ -138,7 +138,22 @@ class HunterEditCoverImVC : UIViewController, CropViewControllerDelegate, UIImag
     func connectToRegisterSaveCompanyDetails(_ selectedImg: UIImage){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.recruiterBaseURL + API.registerUpdateCompanyBannerImageURL
+            
+            var url = ""
+            
+            HunterUtility.showProgressBar()
+            var loginType = String()
+            if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                loginType = type
+            }
+            // Do any additional setup after loading the view.
+            if loginType == "candidate" {
+             url = API.candidateBaseURL + API.registerUpdateBannerImageURL
+
+            }
+            else {
+             url = API.recruiterBaseURL + API.registerUpdateCompanyBannerImageURL
+            }
             print(url)
             HunterUtility.showProgressBar()
             

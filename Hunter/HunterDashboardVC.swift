@@ -68,12 +68,20 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     func instantiateNewSecondView(tagged tag : Int){
         
-        if (tag == 0) {
-            
-            swipe_top.constant = 0.0
-            swipe_left.constant = 0.0
-            swipe_bottom.constant = 0.0
-            self.view.layoutIfNeeded()
+        
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterCompanyProfileNewViewController") as! HunterCompanyProfileNewViewController
+        vc.isFrom = "cards"
+        vc.candidate_Id = tag
+        vc.modalPresentationStyle = .overFullScreen
+
+         self.present(vc, animated: true, completion: nil)
+        
+//        if (tag == 0) {
+//
+//            swipe_top.constant = 0.0
+//            swipe_left.constant = 0.0
+//            swipe_bottom.constant = 0.0
+//            self.view.layoutIfNeeded()
 
 //            let screenCenter = CGPoint(x:UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
 //            let subviewCenter = self.view.convert(self.swipeView.center, to: self.view)
@@ -89,18 +97,18 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 //
 //            })
             
-        } else {
-            swipe_top.constant = 55.0
-            swipe_left.constant = 10.0
-            swipe_bottom.constant = 80.0
-            self.view.layoutIfNeeded()
-
-//            UIView.animate(withDuration: 1.0, animations: {
-//                self.swipeView.transform = CGAffineTransform.identity
-//            }, completion: { (finished) in
+//        } else {
+//            swipe_top.constant = 55.0
+//            swipe_left.constant = 10.0
+//            swipe_bottom.constant = 80.0
+//            self.view.layoutIfNeeded()
 //
-//            })
-        }
+////            UIView.animate(withDuration: 1.0, animations: {
+////                self.swipeView.transform = CGAffineTransform.identity
+////            }, completion: { (finished) in
+////
+////            })
+//        }
     }
     @IBAction func dropDownList(_ sender: Any) {
         
@@ -511,7 +519,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     //MARK:- Webservice
     func connectToGetJobs(){
         if HunterUtility.isConnectedToInternet(){
-             let url = API.candidateBaseURL + API.getJobsURL
+             let url = API.candidateBaseURL + API.getJobSuggestionsURL
             print(url)
             HunterUtility.showProgressBar()
             
@@ -531,33 +539,61 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                 if status as! Int == 1 {
                                 if let data = responseDict.value(forKey: "data") as? NSDictionary {
                                 print (data)
-                                var n = 0
+//                                var n = 0
+//
+//                                    if data.allKeys.count == 0 {
+//                                        self.noCardLeft.isHidden = false
+//
+//                                    }
+//                                    else  {
+//                                        self.noCardLeft.isHidden = true
+//
+//                                    }
+//                                for key in data.allKeys {
+//
+//                                    let mainDic = data[key] as! NSDictionary
+//                                    let recruiterDict = mainDic["recruiter"] as! NSDictionary
+//                                    let companyName =  recruiterDict["company_name"] as! String
+//                                    let job_detailsDict = mainDic["job_details"] as! NSDictionary
+//                                    let skillsArrDict = mainDic["skills"] as! [NSDictionary]
+//                                    let candidate_Id = recruiterDict["recruiter_id"] as! Int
+//
+//                                    self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
+//                                    n = n + 1
+//
+//                                }
                                     
-                                    if data.allKeys.count == 0 {
-                                        self.noCardLeft.isHidden = false
+                                    var n = 0
+                                
+                                let job_cards = data.value(forKey: "job_cards") as! [NSDictionary]
+
+                                    if job_cards.count == 0 {
+                                      self.noCardLeft.isHidden = false
                                         
-                                    }
-                                    else  {
-                                        self.noCardLeft.isHidden = true
-                                        
-                                    }
-                                for key in data.allKeys {
                                     
-                                    let mainDic = data[key] as! NSDictionary
-                                    let recruiterDict = mainDic["recruiter"] as! NSDictionary
+                                    
+                                        
+                                    
+                                }
+                                else {
+                                    
+                                    self.noCardLeft.isHidden = true
+                                for mainDic in job_cards{
+                                    print(mainDic)
+                                    let recruiterDict = mainDic
+
                                     let companyName =  recruiterDict["company_name"] as! String
-                                    let job_detailsDict = mainDic["job_details"] as! NSDictionary
+                                    let job_detailsDict = recruiterDict
                                     let skillsArrDict = mainDic["skills"] as! [NSDictionary]
-                                    let candidate_Id = recruiterDict["candidate_id"] as! Int
+                                    let candidate_Id = recruiterDict["job_id"] as! Int
 
                                     self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
                                     n = n + 1
-                                    
                                 }
-                                
-                                
-  //                                self.jobsDict = data
                                 self.createCards()
+                                }
+  //                                self.jobsDict = data
+//                                self.createCards()
                                 
                                 
                                 }
@@ -806,7 +842,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
 
         if loginType == "candidate" {
-            connectToSwipeCandidates(0, 1, userModel.job_details["id"] as! Int)
+            connectToSwipeCandidates(0, 1, userModel.candidate_id!)
 
         }
         else {
@@ -822,7 +858,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
         
         if loginType == "candidate" {
-            connectToSwipeCandidates(0, 0,userModel.job_details["id"] as! Int)
+            connectToSwipeCandidates(0, 0,userModel.candidate_id!)
          }
         else {
         connectToSwipeCandidates(userModel.candidate_id!, 0 , self.job_id)

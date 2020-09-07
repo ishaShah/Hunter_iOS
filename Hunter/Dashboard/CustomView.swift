@@ -12,6 +12,8 @@ import SDWebImage
 class CustomView: UIView {
     var delegate: MyProtocol!
  
+    @IBOutlet weak var lab_otherDetails: UILabel!
+    @IBOutlet weak var lab_designer: UILabel!
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var profImg: UIImageView!
     @IBOutlet weak var logoImg: UIImageView!
@@ -19,7 +21,8 @@ class CustomView: UIView {
     @IBOutlet weak var desigNameLab: UILabel!
     @IBOutlet weak var jobDesc: UITextView!
     @IBOutlet weak var coll_industry: UICollectionView!
- 
+    @IBOutlet weak var lab_loc: UILabel!
+    var recruiter_id = Int()
 //    @IBOutlet weak var labelText: UILabel!
 //    @IBOutlet weak var imageViewProfile: UIImageView!
 //    @IBOutlet weak var imageViewBackground: UIImageView!
@@ -32,14 +35,17 @@ class CustomView: UIView {
              self.profNameLab.text = userModel.name
             
             self.desigNameLab.text = (userModel.job_details["title"] as! String)
-            self.jobDesc.text = (userModel.job_details["description"] as! String)
+            self.jobDesc.text = (userModel.job_details["job_summary"] as! String)
             if let url = userModel.recruiter["rectangle_logo"] as? String{
                 self.profImg.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "placeholder.png"))
 
             }
             self.logoImg.sd_setImage(with: URL(string: userModel.recruiter["square_logo"] as! String), placeholderImage: UIImage(named: "placeholder.png"))
-            print(userModel.job_details)
 
+            self.lab_loc.text = (userModel.job_details["location"] as! String)
+            self.lab_designer.text = (userModel.job_details["work_type"] as! String)
+            self.lab_otherDetails.text = "\(userModel.job_details["work_type"] as! String)\nSalary: \(userModel.job_details["salary_range"] as! String)"
+            self.recruiter_id = userModel.job_details["recruiter_id"] as! Int
 //            self.imageViewBackground.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
         }
     }
@@ -79,15 +85,12 @@ class CustomView: UIView {
  
     }
     
-     
+    @IBAction func profileView(_ sender: Any) {
+    }
+    
     @IBAction func fullView(sender:UIButton) {
-        if sender.tag == 0 {
-            sender.tag = 1
-        }
-        else {
-            sender.tag = 0
-        }
-        self.delegate?.instantiateNewSecondView(tagged: sender.tag)
+         
+        self.delegate?.instantiateNewSecondView(tagged: self.recruiter_id)
     }
     
     
