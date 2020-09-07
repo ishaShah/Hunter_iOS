@@ -57,7 +57,7 @@ class HunterWorkExpVC: UIViewController {
         txtWorkEndDate.delegate = self
         
  
-        //getLookUpData()
+        getLookUpData()
         
         
     }

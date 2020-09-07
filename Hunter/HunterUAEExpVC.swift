@@ -44,19 +44,21 @@ class HunterUAEExpVC: UIViewController {
     
     @IBAction func workExp(_ sender: Any) {
         
-        if currentWorkStatus == 0 {
-        currentWorkStatus = 1
-        self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
-        
-        self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
-            btn_wrkExp.backgroundColor = UIColor.init(hexString:"6B3E99" )
-        }
-        else {
+        if currentWorkStatus == 1 {
+            
             currentWorkStatus = 0
             self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
             
             self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
             btn_wrkExp.backgroundColor = UIColor.white
+        
+        }
+        else {
+            currentWorkStatus = 1
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+                btn_wrkExp.backgroundColor = UIColor.init(hexString:"6B3E99" )
 
 
         }

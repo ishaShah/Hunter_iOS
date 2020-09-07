@@ -4526,7 +4526,6 @@ makes them perfect fit!</string>
                                 <state key="normal" image="menu"/>
                                 <connections>
                                     <action selector="threeLine:" destination="MSW-dV-Ivl" eventType="touchUpInside" id="2fB-FI-8SH"/>
-                                    <action selector="uploadCover:" destination="cBK-Jp-Zkz" eventType="touchUpInside" id="9J3-V5-QZQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBd-uj-t1V">

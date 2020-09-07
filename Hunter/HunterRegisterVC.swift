@@ -194,7 +194,7 @@ class HunterRegisterVC: UIViewController, UITextFieldDelegate {
                                                 self.navigationController?.pushViewController(vc, animated: true)
                                             }
                                             else if registration_step == 6 {
-                                                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
+                                                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterUAEExpVC") as! HunterUAEExpVC
                                                 self.navigationController?.pushViewController(vc, animated: true)
                                             }
                                             else if registration_step == 7 {
