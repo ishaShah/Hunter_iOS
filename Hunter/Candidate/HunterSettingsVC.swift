@@ -33,11 +33,9 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        arrayMenuNames = ["Basic Infomation", "Privacy Information", "Notifications", "Show me on Hunter", "Help and Support", "Enable/Disable Account", "Sign Out"]
-        arrayMenuImages = ["email-icon-color", "lock-icon", "email-icon-color", "email-icon-color", "email-icon-color", "email-icon-color", "email-icon-color"]
-        mainViewPopUp.isHidden = true
-        viewPopup.isHidden = true
-        viewPopupAccDisabled.isHidden = true
+        arrayMenuNames = ["Basic Infomation", "Privacy", "Notifications", "Help and Support", "Sign Out"]
+        arrayMenuImages = ["email-icon-color", "password-icon", "notifications", "support", "logoutnew"]
+       
         if UIDevice.current.hasNotch {
             //... consider notch
         } else {
@@ -73,9 +71,9 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     @IBAction func buttonBack(_ sender: UIButton) {
-        mainViewPopUp.isHidden = true
-        viewPopup.isHidden = true
-        viewPopupAccDisabled.isHidden = true
+//        mainViewPopUp.isHidden = true
+//        viewPopup.isHidden = true
+//        viewPopupAccDisabled.isHidden = true
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func buttonYesPopUp(_ sender: UIButton) {
@@ -108,7 +106,7 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             self.view.layoutIfNeeded()
             self.tableSettings.layoutIfNeeded()
             let height = self.tableSettings.contentSize.height
-            self.heightTableSettings.constant = height
+//            self.heightTableSettings.constant = height
             self.tableSettings.needsUpdateConstraints()
         }
     }
@@ -120,13 +118,14 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         return 55
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterSettingsCell", for: indexPath) as! HunterSettingsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterRecSettingsCollectionCell", for: indexPath) as! HunterRecSettingsCollectionCell
+        tableView.separatorStyle = .none
         cell.selectionStyle = .none
-        cell.switchChange.tag = indexPath.row
         cell.imageArrow.transform = CGAffineTransform(scaleX: -1, y: 1)
+        cell.switchChange.tag = indexPath.row
         cell.labelTitle.text = arrayMenuNames[indexPath.row]
-        cell.imageIcon.image = UIImage(named: arrayMenuImages[indexPath.row]) 
-        if indexPath.row == 2 || indexPath.row == 3{
+        cell.imageIcon.image = UIImage(named: arrayMenuImages[indexPath.row])
+        if indexPath.row == 2{
             cell.switchChange.transform = CGAffineTransform(scaleX: 0.65, y: 0.65)
             cell.switchChange.isHidden = false
             cell.imageArrow.isHidden = true
@@ -141,32 +140,22 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                     }
                 }
             }
-            if indexPath.row == 3{
-                if let showStatus = dictSettingsData.show_me_on_app{
-                    if showStatus{
-                        cell.switchChange.isOn = true
-                        self.showStatus = 1
-                    }else{
-                        cell.switchChange.isOn = false
-                        self.showStatus = 0
-                    }
-                }
-            }
-        }else if indexPath.row == 5{
-            cell.switchChange.isHidden = true
-            cell.imageArrow.isHidden = false
-            if let status = dictSettingsData.acccount_status{
-                accountStatus = status
-                if status == 1{//Account status is 1 when account is enabled
-                    cell.labelTitle.text = "Disable Account"
-                }else{
-                    cell.labelTitle.text = "Enable Account"
-                }
-            }
+            //            if indexPath.row == 3{
+            //                if let showStatus = dictSettingsData.show_me_on_hunterapp{
+            //                    if showStatus{
+            //                        cell.switchChange.isOn = true
+            //                        self.showStatus = 1
+            //                    }else{
+            //                        cell.switchChange.isOn = false
+            //                        self.showStatus = 0
+            //                    }
+            //                }
+            //            }
         }else{
             cell.switchChange.isHidden = true
             cell.imageArrow.isHidden = false
         }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -179,10 +168,13 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         case 2:
             print("Turn Notification On/Off here")
         case 3:
-            print("Turn show me on hunter On/Off here")
-        case 4:
             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
             self.navigationController?.pushViewController(vc, animated: true)
+        case 4:
+           
+            labelPopUpTitle.text = "Logout"
+            isLogout = true
+            labelPopUpMessage.text = "Are you sure you would like to Log Out?"
         case 5:
             mainViewPopUp.isHidden = false
             viewPopup.isHidden = false
@@ -197,13 +189,7 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 labelPopUpMessage.text = "Are you sure you would like to enable your Hunter Account"
             }
         case 6:
-            mainViewPopUp.isHidden = false
-            viewPopup.isHidden = false
-            viewPopupAccDisabled.isHidden = true
-            imagePopUpIcon.image = UIImage(named: "logoutnew")
-            labelPopUpTitle.text = "Logout"
-            isLogout = true
-            labelPopUpMessage.text = "Are you sure you would like to Log Out?"
+            print("default case")
         default:
             print("default case")
         }
@@ -229,7 +215,7 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                             self.dictSettingsData = HunterSettingsModel()
                             if status as! Int == 1{
                                 if let dataDict = responseDict.value(forKey: "data") as? NSDictionary{
-                                    self.dictSettingsData = HunterSettingsModel().initWithDict(dictionary: dataDict)
+                                    self.dictSettingsData = HunterSettingsModel().initWithDict(dictionary: dataDict["settings"] as! NSDictionary)
                                     DispatchQueue.main.async {
                                         self.tableSettings.reloadData()
                                         self.autosizeTableView()

@@ -1207,6 +1207,11 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }
         }
     }
+    @IBAction func goToSettings(_ sender: Any) {
+        
+        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterSettingsVC") as! HunterSettingsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     //MARK:- Webservice
     func connectToGetProfileData(){
         if HunterUtility.isConnectedToInternet(){

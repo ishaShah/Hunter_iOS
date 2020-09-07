@@ -25,7 +25,7 @@ class HunterProfileVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        imageArrow.transform = CGAffineTransform(scaleX: -1, y: 1)
+//        imageArrow.transform = CGAffineTransform(scaleX: -1, y: 1)
         self.hideKeyboardWhenTappedAround()
     }
     override func viewDidLayoutSubviews() {
@@ -68,6 +68,16 @@ class HunterProfileVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
+    @IBAction func actionResetPopUp(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Candidate", bundle: nil)
+        let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterResetPasswordVC") as! HunterResetPasswordVC
+        
+        HunterPickerViewController.modalPresentationStyle = .overFullScreen
+        self.present(HunterPickerViewController, animated: true, completion: nil)
+        
+        
+        
+    }
     //MARK: Webservice
     func connectToGetBasicInfo(){
         if HunterUtility.isConnectedToInternet(){
@@ -88,6 +98,7 @@ class HunterProfileVC: UIViewController, UITextFieldDelegate {
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
                                 if let dataDict = responseDict.value(forKey: "data") as? NSDictionary{
+                                    
                                     self.dictBasicInfo = HunterBasicInfoModel().initWithDict(dictionary: dataDict)
                                     DispatchQueue.main.async {
                                         if let firstName = self.dictBasicInfo.first_name{
@@ -99,12 +110,14 @@ class HunterProfileVC: UIViewController, UITextFieldDelegate {
                                         if let email = self.dictBasicInfo.email{
                                             self.textEmail.text = email
                                         }
-/*                                        if let image = dataDict.value(forKey: "profile_image") as? String{
-                                            self.imageProfile.contentMode = .scaleToFill
-                                            let url = URL(string: image)
-                                            self.imageProfile.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholder"))
-                                        }*/
+                                        /*                                        if let image = dataDict.value(forKey: "profile_image") as? String{
+                                         self.imageProfile.contentMode = .scaleToFill
+                                         let url = URL(string: image)
+                                         self.imageProfile.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholder"))
+                                         }*/
                                     }
+                                    
+                                    
                                 }
                             }else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
@@ -157,10 +170,14 @@ class HunterProfileVC: UIViewController, UITextFieldDelegate {
             print("no internet")
         }
     }
+
+    
+    
+    
     func connectToUpdateBasicInfo(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.candidateBaseURL + API.basicInformationURL
+            let url = API.candidateBaseURL + API.updateBasicInfoURL
             print(url)
             HunterUtility.showProgressBar()
             

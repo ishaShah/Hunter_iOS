@@ -28,7 +28,11 @@ class HunterReportAProblemVC: UIViewController {
         }
         // Do any additional setup after loading the view.
         if loginType == "candidate" {
-        connectToGetCategories()
+            arrayCategories = ["Something Isn’t Working" , "Spam or Abuse" , "General Feedback" , "Review" ]
+            self.button1.setTitle(self.arrayCategories[0], for: .normal)
+            self.button2.setTitle(self.arrayCategories[1], for: .normal)
+            self.button3.setTitle(self.arrayCategories[2], for: .normal)
+            self.button4.setTitle(self.arrayCategories[3], for: .normal)
         }
         else {
             arrayCategories = ["Something Isn’t Working" , "Spam or Abuse" , "General Feedback" , "Review" ]
