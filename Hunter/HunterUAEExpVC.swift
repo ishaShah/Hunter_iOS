@@ -13,7 +13,7 @@ import SVProgressHUD
 class HunterUAEExpVC: UIViewController {
     @IBOutlet weak var contButton: UIButton!
 
-    var currentWorkStatus = 0
+    var currentWorkStatus = -1
     @IBOutlet weak var btn_wrkExp: UIButton!
     
     override func viewDidLoad() {
@@ -26,14 +26,15 @@ class HunterUAEExpVC: UIViewController {
     }
      
     @IBAction func continueBtn(_ sender: Any) {
-        if currentWorkStatus != -1{
-            connectToSaveWorkedInUAE()
-        }else{
+        if currentWorkStatus == -1 || currentWorkStatus == 0 {
             let alert = UIAlertController(title: "", message:
                 "Please select an option to proceed.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
             }))
             self.present(alert, animated: true, completion: nil)
+        }else{
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep1VC") as! HunterEducationStep1VC
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
@@ -44,19 +45,21 @@ class HunterUAEExpVC: UIViewController {
     
     @IBAction func workExp(_ sender: Any) {
         
-        if currentWorkStatus == 0 {
-        currentWorkStatus = 1
-        self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
-        
-        self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
-            btn_wrkExp.backgroundColor = UIColor.init(hexString:"6B3E99" )
-        }
-        else {
+        if currentWorkStatus == 1 {
+            
             currentWorkStatus = 0
             self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
             
             self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
             btn_wrkExp.backgroundColor = UIColor.white
+        
+        }
+        else {
+            currentWorkStatus = 1
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+                btn_wrkExp.backgroundColor = UIColor.init(hexString:"6B3E99" )
 
 
         }

@@ -82,6 +82,7 @@ enum API{
     static let registerCompanySizeURL = "registration/company-size"
     static let registerCompanyTypeURL = "registration/company-type"
     static let registerSaveCompanyBioStep3URL = "registration/save-company-bio-step-3"
+    static let registerEduLookUpDataURL = "registration/get-lookup-data-educational-qualification"
     static let registerSaveCompanyFoundedURL = "registration/save-company-founded"
     static let registerSaveCompanyDetailsURL = "registration/save-company-details"
     static let registerSaveCompanyLogoURL = "registration/save-company-logo"
