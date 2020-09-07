@@ -31,7 +31,7 @@ enum API{
     static let registerPreferedCompaniesURL = "registration/prefered-companies"
     static let registerSavePreferedCompaniesURL = "registration/save-worked-companies-in-uae"
     static let saveCurrentWorkStatusURL = "registration/save-current-work-status"
-    
+    static let saveCandidateJobExpURL = "registration/save-candidate-job-experience"
     
     
     
@@ -71,7 +71,7 @@ enum API{
     static let profileUpdateURL = "profile/update"
     static let getJobExpURL = "registration/get-job-experiences"
 
-    
+    static let getWorkExpURL = "registration/get-lookup-data-experiences"
     
     //Recruiter
     static let candidate_profileURL = "candidate-profile"
@@ -129,8 +129,7 @@ enum API{
     
     static let candidateSuggestionsURL = "candidate-suggestions"
     static let updateCompanyBioURL = "profile/update-company-bio"
-    
-}
+ }
 enum FontName: String {
     case MontserratRegular            = "Montserrat-Regular"
     case MontserratBold               = "Gill Sans SemiBold"

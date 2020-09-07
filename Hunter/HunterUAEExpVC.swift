@@ -37,6 +37,11 @@ class HunterUAEExpVC: UIViewController {
         }
         
     }
+    @IBAction func addWorkExp(_ sender: Any){
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    
     @IBAction func workExp(_ sender: Any) {
         
         if currentWorkStatus == 0 {

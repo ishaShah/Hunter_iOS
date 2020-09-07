@@ -1758,13 +1758,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="row-two-(6)" translatesAutoresizingMaskIntoConstraints="NO" id="qlF-bB-rcD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZl-0L-hmi" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
-                                <rect key="frame" x="25" y="-20" width="270" height="558"/>
-                                <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b1-EG-7CM">
                                 <rect key="frame" x="50" y="104" width="220" height="384"/>
                                 <subviews>
@@ -1986,21 +1979,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215692280000001" green="0.99215692280000001" blue="0.99215680360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="qlF-bB-rcD" firstAttribute="leading" secondItem="g7U-JV-QID" secondAttribute="leading" id="EcQ-Zb-yly"/>
                             <constraint firstItem="6GH-69-wpj" firstAttribute="leading" secondItem="g7U-JV-QID" secondAttribute="leading" id="FmY-Jf-DYC"/>
-                            <constraint firstItem="fZl-0L-hmi" firstAttribute="leading" secondItem="g7U-JV-QID" secondAttribute="leading" constant="25" id="KCu-ei-I2J"/>
-                            <constraint firstItem="fZl-0L-hmi" firstAttribute="top" secondItem="g7U-JV-QID" secondAttribute="top" constant="-20" id="RlS-ev-LmK"/>
                             <constraint firstAttribute="trailing" secondItem="8b1-EG-7CM" secondAttribute="trailing" constant="50" id="TzI-EY-x0F"/>
                             <constraint firstItem="8b1-EG-7CM" firstAttribute="leading" secondItem="g7U-JV-QID" secondAttribute="leading" constant="50" id="Ula-23-nyg"/>
                             <constraint firstItem="6GH-69-wpj" firstAttribute="trailing" secondItem="g7U-JV-QID" secondAttribute="trailing" id="YKv-dG-cbC"/>
                             <constraint firstItem="8b1-EG-7CM" firstAttribute="top" secondItem="6GH-69-wpj" secondAttribute="bottom" constant="20" id="b4D-e4-hdn"/>
                             <constraint firstItem="6GH-69-wpj" firstAttribute="top" secondItem="g7U-JV-QID" secondAttribute="top" id="caj-Gu-0IU"/>
-                            <constraint firstAttribute="trailing" secondItem="fZl-0L-hmi" secondAttribute="trailing" constant="25" id="cxJ-Oh-Q2k"/>
-                            <constraint firstAttribute="bottom" secondItem="qlF-bB-rcD" secondAttribute="bottom" id="eeF-VP-L1k"/>
-                            <constraint firstItem="qlF-bB-rcD" firstAttribute="top" secondItem="g7U-JV-QID" secondAttribute="top" id="eo4-ce-oFQ"/>
                             <constraint firstItem="xru-Ti-DHC" firstAttribute="top" secondItem="8b1-EG-7CM" secondAttribute="bottom" constant="80" id="gCS-fr-byn"/>
-                            <constraint firstAttribute="trailing" secondItem="qlF-bB-rcD" secondAttribute="trailing" id="ovC-qR-QWW"/>
-                            <constraint firstItem="xru-Ti-DHC" firstAttribute="top" secondItem="fZl-0L-hmi" secondAttribute="bottom" constant="30" id="z4G-jX-XH5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2025,13 +2010,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="row-two-(8)" translatesAutoresizingMaskIntoConstraints="NO" id="nSo-eS-lNl">
-                                <rect key="frame" x="0.0" y="1" width="320" height="567"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5LA-jb-pzb" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
-                                <rect key="frame" x="25" y="-20" width="270" height="558"/>
-                                <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpn-R2-hg5" customClass="GradientView" customModule="Hunter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                                 <subviews>
@@ -2078,7 +2056,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAd-ws-0PY">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YAd-ws-0PY">
                                 <rect key="frame" x="50" y="241" width="220" height="87"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kzu-tT-vQL">
@@ -2115,18 +2093,8 @@ Thank you for your feedback.</string>
                         <color key="backgroundColor" red="0.99215692280000001" green="0.99215692280000001" blue="0.99215680360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="wpn-R2-hg5" firstAttribute="leading" secondItem="c9r-HM-2tJ" secondAttribute="leading" id="5qi-rX-4nC"/>
-                            <constraint firstAttribute="trailing" secondItem="nSo-eS-lNl" secondAttribute="trailing" id="Jdz-Af-S2u"/>
-                            <constraint firstItem="bnf-Ck-VLD" firstAttribute="top" secondItem="5LA-jb-pzb" secondAttribute="bottom" constant="30" id="O1u-Gc-Vlt"/>
                             <constraint firstItem="wpn-R2-hg5" firstAttribute="trailing" secondItem="c9r-HM-2tJ" secondAttribute="trailing" id="Pkm-I7-qwt"/>
-                            <constraint firstItem="nSo-eS-lNl" firstAttribute="leading" secondItem="c9r-HM-2tJ" secondAttribute="leading" id="RZw-hj-Zfl"/>
-                            <constraint firstItem="YAd-ws-0PY" firstAttribute="centerY" secondItem="nSo-eS-lNl" secondAttribute="centerY" id="UeU-63-ata"/>
-                            <constraint firstItem="bnf-Ck-VLD" firstAttribute="top" secondItem="nSo-eS-lNl" secondAttribute="bottom" id="d0h-Zu-d5L"/>
-                            <constraint firstAttribute="trailing" secondItem="5LA-jb-pzb" secondAttribute="trailing" constant="25" id="dQ3-6v-fO5"/>
-                            <constraint firstItem="5LA-jb-pzb" firstAttribute="leading" secondItem="c9r-HM-2tJ" secondAttribute="leading" constant="25" id="g3c-7y-csY"/>
-                            <constraint firstItem="nSo-eS-lNl" firstAttribute="top" secondItem="c9r-HM-2tJ" secondAttribute="top" constant="1" id="hsi-ya-dLo"/>
-                            <constraint firstItem="5LA-jb-pzb" firstAttribute="top" secondItem="c9r-HM-2tJ" secondAttribute="top" constant="-20" id="jCs-dn-hAY"/>
                             <constraint firstItem="wpn-R2-hg5" firstAttribute="top" secondItem="c9r-HM-2tJ" secondAttribute="top" id="nDk-ls-eCK"/>
-                            <constraint firstItem="YAd-ws-0PY" firstAttribute="centerX" secondItem="nSo-eS-lNl" secondAttribute="centerX" id="oQT-Bv-cYj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -26021,8 +25989,6 @@ G5sAARujAAAAAAAABAEAAAAAAAAAZwAAAAAAAAAAAAAAAAABG6Y
         <image name="nocards-shape-2" width="108" height="283"/>
         <image name="nocards-shape-3" width="323" height="256"/>
         <image name="report" width="375" height="812"/>
-        <image name="row-two-(6)" width="750" height="1334"/>
-        <image name="row-two-(8)" width="750" height="1334"/>
         <image name="settings" width="128" height="128"/>
         <image name="share-24px" width="24" height="24"/>
         <image name="undoButton" width="16" height="16"/>
