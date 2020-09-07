@@ -30,6 +30,11 @@ class HunterWorkExpListVC: UIViewController {
         
     }
     
+    @IBAction func actionContinue(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep1VC") as! HunterEducationStep1VC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
  
     
@@ -128,7 +133,7 @@ extension HunterWorkExpListVC : UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 250, height: 240)
+        CGSize(width: 250, height: 250)
     }
     
     

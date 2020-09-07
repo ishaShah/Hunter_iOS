@@ -64,16 +64,16 @@ class HunterWorkExpVC: UIViewController {
     @IBAction func showMyProfile(_ sender: Any) {
         
         if showMyProfile == 0 {
-        showMyProfile = 1
-         
+            showMyProfile = 1
+            
             btn_showMyProfile.backgroundColor = UIColor.init(hexString:"6B3E99" )
         }
         else {
             showMyProfile = 0
-             
+            
             btn_showMyProfile.backgroundColor = UIColor.white
-
-
+            
+            
         }
     }
     @IBAction func workExp(_ sender: Any) {
@@ -303,7 +303,9 @@ extension HunterWorkExpVC : hunterDelegate{
  
         case  "EmpType":
              
-                
+            guard selectedDict["name"]  != nil else {
+                return
+            }
                 self.selectedEmpType = selectedDict["name"] as! String
                 self.selectedEmpTypeID = Int( selectedDict["id"] as! String)!
             

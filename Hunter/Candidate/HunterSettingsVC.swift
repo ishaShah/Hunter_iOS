@@ -171,10 +171,10 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
-           
-            labelPopUpTitle.text = "Logout"
-            isLogout = true
-            labelPopUpMessage.text = "Are you sure you would like to Log Out?"
+           print("logout")
+//            labelPopUpTitle.text = "Logout"
+//            isLogout = true
+//            labelPopUpMessage.text = "Are you sure you would like to Log Out?"
         case 5:
             mainViewPopUp.isHidden = false
             viewPopup.isHidden = false
