@@ -28,6 +28,8 @@
 		4B5ACD3824C2D2EF00AEDC95 /* HunterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5ACD3724C2D2EF00AEDC95 /* HunterTextField.swift */; };
 		4B5D930B23E4C61B00FB7C1A /* RecCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D930A23E4C61B00FB7C1A /* RecCustomView.swift */; };
 		4B5D930D23E4C63500FB7C1A /* RecCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B5D930C23E4C63500FB7C1A /* RecCustomView.xib */; };
+		4B5E09DE25068CB7005CDD91 /* HunterLanguage1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5E09DD25068CB7005CDD91 /* HunterLanguage1VC.swift */; };
+		4B5E09E025068CD7005CDD91 /* HunterLanguageListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5E09DF25068CD7005CDD91 /* HunterLanguageListVC.swift */; };
 		4B6ABB1323B490240032A701 /* Recruiter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6ABB1223B490240032A701 /* Recruiter.storyboard */; };
 		4B6E303523C82770005EED04 /* HunterRecEditJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E303423C82770005EED04 /* HunterRecEditJobVC.swift */; };
 		4B6E303723C829ED005EED04 /* HunterRecViewAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E303623C829ED005EED04 /* HunterRecViewAppVC.swift */; };
@@ -160,6 +162,8 @@
 		4B5ACD3724C2D2EF00AEDC95 /* HunterTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HunterTextField.swift; sourceTree = "<group>"; };
 		4B5D930A23E4C61B00FB7C1A /* RecCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecCustomView.swift; sourceTree = "<group>"; };
 		4B5D930C23E4C63500FB7C1A /* RecCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecCustomView.xib; sourceTree = "<group>"; };
+		4B5E09DD25068CB7005CDD91 /* HunterLanguage1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterLanguage1VC.swift; sourceTree = "<group>"; };
+		4B5E09DF25068CD7005CDD91 /* HunterLanguageListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterLanguageListVC.swift; sourceTree = "<group>"; };
 		4B6ABB1223B490240032A701 /* Recruiter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recruiter.storyboard; sourceTree = "<group>"; };
 		4B6E303423C82770005EED04 /* HunterRecEditJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterRecEditJobVC.swift; sourceTree = "<group>"; };
 		4B6E303623C829ED005EED04 /* HunterRecViewAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterRecViewAppVC.swift; sourceTree = "<group>"; };
@@ -545,6 +549,8 @@
 				756292BA25061E8C00F4DD5E /* HunterEducationStep1VC.swift */,
 				756292BC25062B8B00F4DD5E /* HunterEducationStep2VC.swift */,
 				756292BE25066FDB00F4DD5E /* HunterListAllEduVC.swift */,
+				4B5E09DD25068CB7005CDD91 /* HunterLanguage1VC.swift */,
+				4B5E09DF25068CD7005CDD91 /* HunterLanguageListVC.swift */,
 			);
 			path = Candidate;
 			sourceTree = "<group>";
@@ -742,8 +748,10 @@
 				4BC5586A2351B2C600296E49 /* UPCarouselFlowLayout.swift in Sources */,
 				D7920AE023C130AD008A223F /* HunterMatchesModel.swift in Sources */,
 				4BE1183023349C1600FE866E /* DesignableUITextField.swift in Sources */,
+				4B5E09DE25068CB7005CDD91 /* HunterLanguage1VC.swift in Sources */,
 				4BC558532350FF7600296E49 /* HunterAccountVerVC.swift in Sources */,
 				D725C81D233BCE110004FD36 /* HunterSkillsCell.swift in Sources */,
+				4B5E09E025068CD7005CDD91 /* HunterLanguageListVC.swift in Sources */,
 				757FE66E24ED97E60014C8BF /* HunterAllJobsViewController.swift in Sources */,
 				D7E4FB90242696CB0074CF48 /* HunterCandidateProVC.swift in Sources */,
 				D7486F4123372BBE00ADC5B3 /* HunterPendingJobsVC.swift in Sources */,

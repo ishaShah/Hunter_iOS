@@ -380,6 +380,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }
         }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            tableView.separatorStyle = .none
+
             if tableView == tblWorkExp {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HunterWorEXTableViewCell", for: indexPath) as! HunterWorEXTableViewCell
                 cell.selectionStyle = .none

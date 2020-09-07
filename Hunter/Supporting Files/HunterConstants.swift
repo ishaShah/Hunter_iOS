@@ -33,8 +33,8 @@ enum API{
     static let saveCurrentWorkStatusURL = "registration/save-current-work-status"
     static let saveCandidateJobExpURL = "registration/save-candidate-job-experience"
     
-    
-    
+    static let getLookUpLangDataURL = "profile/get-lookup-language-data"
+    static let updateLangDataURL = "candidate/profile/update-languages"
     static let saveLangURL = "profile/add-language"
     static let deleteLangURL = "profile/delete-language"
     static let addAchievementURL = "profile/add-achievement"
@@ -70,7 +70,7 @@ enum API{
     static let jobsSwipesURL = "jobs/swipe"
     static let profileUpdateURL = "profile/update"
     static let getJobExpURL = "registration/get-job-experiences"
-
+    static let getAllLangURL = "profile/get-languages"
     static let getWorkExpURL = "registration/get-lookup-data-experiences"
     
     //Recruiter

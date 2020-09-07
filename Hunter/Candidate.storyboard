@@ -7122,11 +7122,11 @@ Thank you for your feedback.</string>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6T-tE-rqo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="97"/>
+                                                                            <rect key="frame" x="0.0" y="2" width="374" height="93"/>
                                                                             <color key="backgroundColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                                    <real key="value" value="48.5"/>
+                                                                                    <real key="value" value="46.5"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
@@ -7192,8 +7192,8 @@ Thank you for your feedback.</string>
                                                                         <constraint firstItem="Cea-yv-2uQ" firstAttribute="leading" secondItem="oiv-mO-WtD" secondAttribute="trailing" constant="8" id="Def-P5-PfV"/>
                                                                         <constraint firstItem="i6T-tE-rqo" firstAttribute="leading" secondItem="9Xc-rf-w8F" secondAttribute="leading" id="FQA-io-mqe"/>
                                                                         <constraint firstItem="Cea-yv-2uQ" firstAttribute="centerY" secondItem="oiv-mO-WtD" secondAttribute="centerY" id="KOT-X1-Kcm"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="i6T-tE-rqo" secondAttribute="bottom" id="Ym2-Zo-HwA"/>
-                                                                        <constraint firstItem="i6T-tE-rqo" firstAttribute="top" secondItem="9Xc-rf-w8F" secondAttribute="top" id="gVt-Ha-geM"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="i6T-tE-rqo" secondAttribute="bottom" constant="2" id="Ym2-Zo-HwA"/>
+                                                                        <constraint firstItem="i6T-tE-rqo" firstAttribute="top" secondItem="9Xc-rf-w8F" secondAttribute="top" constant="2" id="gVt-Ha-geM"/>
                                                                         <constraint firstAttribute="trailing" secondItem="i6T-tE-rqo" secondAttribute="trailing" id="zg1-U8-b16"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
@@ -7298,6 +7298,7 @@ Thank you for your feedback.</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="177" id="GXs-1X-xCb"/>
                                                         </constraints>
+                                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HunterWorEXTableViewCell" rowHeight="70" id="r4W-O7-DUc" customClass="HunterWorEXTableViewCell" customModule="Hunter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="374" height="70"/>
@@ -7307,11 +7308,11 @@ Thank you for your feedback.</string>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQ3-yU-Crb">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                                                            <rect key="frame" x="0.0" y="2" width="374" height="66"/>
                                                                             <color key="backgroundColor" red="0.96470588235294119" green="0.95686274509803915" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                                    <real key="value" value="35"/>
+                                                                                    <real key="value" value="33"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
@@ -7361,20 +7362,20 @@ Thank you for your feedback.</string>
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstItem="TQ3-yU-Crb" firstAttribute="leading" secondItem="BEW-Dy-10p" secondAttribute="leading" id="6Ho-5h-evP"/>
                                                                         <constraint firstItem="n1u-zY-ZjL" firstAttribute="leading" secondItem="BEW-Dy-10p" secondAttribute="leading" constant="15" id="AUl-XQ-ee1"/>
                                                                         <constraint firstItem="biL-Cb-pVk" firstAttribute="centerY" secondItem="n1u-zY-ZjL" secondAttribute="centerY" id="C2m-do-6HQ"/>
                                                                         <constraint firstAttribute="trailing" secondItem="biL-Cb-pVk" secondAttribute="trailing" constant="20" id="H4v-cR-rBv"/>
                                                                         <constraint firstAttribute="trailing" secondItem="TQ3-yU-Crb" secondAttribute="trailing" id="bIb-ow-T7H"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="TQ3-yU-Crb" secondAttribute="bottom" id="ePd-2X-AIB"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="TQ3-yU-Crb" secondAttribute="bottom" constant="2" id="ePd-2X-AIB"/>
                                                                         <constraint firstItem="biL-Cb-pVk" firstAttribute="leading" secondItem="n1u-zY-ZjL" secondAttribute="trailing" constant="5" id="jVw-lN-J6M"/>
                                                                         <constraint firstItem="n1u-zY-ZjL" firstAttribute="centerY" secondItem="BEW-Dy-10p" secondAttribute="centerY" id="p7H-ew-4Ql"/>
-                                                                        <constraint firstItem="TQ3-yU-Crb" firstAttribute="top" secondItem="BEW-Dy-10p" secondAttribute="top" id="pVa-dI-fyF"/>
+                                                                        <constraint firstItem="TQ3-yU-Crb" firstAttribute="top" secondItem="BEW-Dy-10p" secondAttribute="top" constant="2" id="pVa-dI-fyF"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
-                                                                <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <outlet property="img_appIcon" destination="n1u-zY-ZjL" id="vuG-CM-GEc"/>
                                                                     <outlet property="lab_StartDateTxt" destination="880-yz-fpZ" id="nFY-z2-DXX"/>
