@@ -128,7 +128,25 @@ class HunterRecSettingsVC: UIViewController, UITableViewDelegate, UITableViewDat
             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
-
+        case 4 :
+            let alert = UIAlertController(title: "Are you sure you would like to Log Out?", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+                 alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action: UIAlertAction!) in
+                     print("Logout api")
+                     
+                     UserDefaults.standard.removeObject(forKey: "accessToken")
+                     UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                     accessToken = String()
+                     
+                     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                     let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                     let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                     navigationController.viewControllers = [mainRootController]
+                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                     appDelegate.window?.rootViewController = navigationController
+                 }))
+                 self.present(alert, animated: true, completion: nil)
 //        case 6:
 //            mainViewPopUp.isHidden = false
 //            viewPopup.isHidden = false

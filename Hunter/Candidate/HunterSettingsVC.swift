@@ -172,9 +172,38 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
            print("logout")
-//            labelPopUpTitle.text = "Logout"
+
+//            mainViewPopUp.isHidden = false
+//            viewPopup.isHidden = false
+//            viewPopupAccDisabled.isHidden = true
+//            imagePopUpIcon.image = UIImage(named: "error_new")
+//           labelPopUpTitle.text = "Logout"
 //            isLogout = true
 //            labelPopUpMessage.text = "Are you sure you would like to Log Out?"
+//
+//            {
+                let alert = UIAlertController(title: "Are you sure you would like to Log Out?", message: "", preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: { (action: UIAlertAction!) in
+           }))
+                alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action: UIAlertAction!) in
+                    print("Logout api")
+                    
+                    UserDefaults.standard.removeObject(forKey: "accessToken")
+                    UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                    accessToken = String()
+                    
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                    let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                    navigationController.viewControllers = [mainRootController]
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = navigationController
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+                
+//            }
+            
         case 5:
             mainViewPopUp.isHidden = false
             viewPopup.isHidden = false
