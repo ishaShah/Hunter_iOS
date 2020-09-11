@@ -20,7 +20,7 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
     
     var ratioPreset = ""
 
-    
+    var isFrom = ""
     @IBOutlet weak var img_proPic: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,13 +144,25 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
             if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
                 loginType = type
             }
+            
+            var profile_image = ""
             // Do any additional setup after loading the view.
+            if isFrom == "candidateReg" {
+                url = API.candidateBaseURL + API.registerSaveCandidateProfileURL
+                profile_image = "profile_image"
+            }
+            else {
             if loginType == "candidate" {
              
                 url = API.candidateBaseURL + API.registerUpdateCandidateProfileURL
+                profile_image = "profile_image"
+
             }
             else {
                 url = API.recruiterBaseURL + API.registerUpdateCompanyLogoURL
+                profile_image = "logo"
+
+            }
             }
             print(url)
 
@@ -163,8 +175,10 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
                  
                 if let data = imageData{
                     if let newImageData = selectedImg.jpeg(.lowest) {
-                        multipartFormData.append(newImageData, withName: "logo", fileName: "image.png", mimeType: "image/png")
+                        
+                        multipartFormData.append(newImageData, withName:                 profile_image , fileName: "image.png", mimeType: "image/png")
                     }
+                    
                 }
                 
             }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
@@ -186,8 +200,19 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
 
                              
                             self.view.makeToast(dict["message"] as? String, duration: 1.0, point: CGPoint(x: screenWidth/2, y: screenHeight-130), title: nil, image: nil) { didTap in
+                                if self.isFrom == "candidateReg" {
+                                Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.pushToTabBar), userInfo: nil, repeats: false)
+
+                                    }
+                                else {
                                 self.dismiss(animated: true, completion: nil)
+                                }
                             }
+                            
+                                    
+                                
+                                
+                            
                         }
                         else if dict.value(forKey: "status") as! Int == 2 {
                             let alert = UIAlertController(title: "", message: dict.value(forKey: "message") as? String, preferredStyle: .alert)
@@ -224,6 +249,10 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
         }else{
             self.view.makeToast("Please check your internet connection.", duration: 1.0, point: CGPoint(x: screenWidth/2, y: screenHeight-130), title: nil, image: nil) { didTap in}
         }
+    }
+    @objc func pushToTabBar() {
+        let vc = UIStoryboard(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "VBRRollingPit")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     /*
     // MARK: - Navigation

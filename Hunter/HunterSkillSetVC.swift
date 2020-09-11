@@ -98,6 +98,8 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
           HunterSelectionViewController.delegate = self
            HunterSelectionViewController.passedDict = dict_skill
            HunterSelectionViewController.isFrom = "location"
+        HunterSelectionViewController.headerText = "Select Skills"
+
           HunterSelectionViewController.modalPresentationStyle = .overFullScreen
           self.present(HunterSelectionViewController, animated: true, completion: nil)
        }

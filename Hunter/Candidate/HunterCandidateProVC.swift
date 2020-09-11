@@ -21,8 +21,17 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     @IBOutlet weak var tv_lang : UITextView!
     @IBOutlet weak var stack_share: UIStackView!
  
+    @IBOutlet weak var tbl_lang: UITableView!
     @IBOutlet weak var tblEduation: UITableView!
     @IBOutlet weak var tblWorkExp: UITableView!
+    
+    @IBOutlet weak var addAchHt: NSLayoutConstraint!
+    @IBOutlet weak var addLanHt: NSLayoutConstraint!
+    @IBOutlet weak var view_education: UIView!
+    
+    @IBOutlet weak var vieweduHt: NSLayoutConstraint!
+    @IBOutlet weak var viewLanHt: NSLayoutConstraint!
+    @IBOutlet weak var viewAchHt: NSLayoutConstraint!
     
     
     @IBOutlet weak var collectionSkills: UICollectionView!
@@ -32,6 +41,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     @IBOutlet weak var heightTableEducation: NSLayoutConstraint!
 
     
+    @IBOutlet weak var langHt: NSLayoutConstraint!
     let headerViewHeight: CGFloat = 198
     @IBOutlet weak var lab_profileName: UILabel!
  
@@ -73,7 +83,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     
 
     
- 
+    @IBOutlet weak var tblAchievementHt: NSLayoutConstraint!
+    
     var EduAdded = true
  
     var LangAdded = true
@@ -147,7 +158,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     var job_id = Int()
     
     var isFrom = String()
-    
+    @IBOutlet weak var tblAchievement : UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -208,6 +219,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
         }
     }
+    @IBOutlet weak var view_languages: UIView!
+    @IBOutlet weak var view_achievement: UIView!
     func autosizeTableView()  {
         DispatchQueue.main.async {
             self.view.layoutIfNeeded()
@@ -221,7 +234,6 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             self.tblWorkExp.needsUpdateConstraints()
             
             
-            self.tblEduation.layoutIfNeeded()
             var height1 = CGFloat()
             
             height1 = CGFloat(self.eduArrDict.count) * 97.0
@@ -230,9 +242,61 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             self.heightTableEducation.constant = height1
             self.tblEduation.needsUpdateConstraints()
             
-            
+            if (self.eduArrDict.count == 0) {
+                self.view_education.isHidden = true
+                self.vieweduHt.constant = 0.0
+            }
+            else {
+                self.view_education.isHidden = false
+                self.vieweduHt.constant = height1 + 72.0
+
+            }
  
+            self.tblEduation.layoutIfNeeded()
+
             
+            
+            var height2 = CGFloat()
+            
+            height2 = CGFloat(self.langArrDict.count) * 70.0
+            
+            //let height1 = self.tblEduation.contentSize.height
+            self.langHt.constant = height2
+            self.tbl_lang.needsUpdateConstraints()
+            
+            
+            if (self.langArrDict.count == 0) {
+                self.view_languages.isHidden = true
+                self.viewLanHt.constant = 0.0
+            }
+            else {
+                self.view_languages.isHidden = false
+                self.viewLanHt.constant = height2 + 126.0
+
+            }
+            self.tbl_lang.layoutIfNeeded()
+
+            
+            
+            var height3 = CGFloat()
+            
+            height3 = CGFloat(self.achieveArrDict.count) * 90.0
+            
+            //let height1 = self.tblEduation.contentSize.height
+            self.tblAchievementHt.constant = height3
+            self.tblAchievement.needsUpdateConstraints()
+ 
+            if (self.achieveArrDict.count == 0) {
+                self.view_achievement.isHidden = true
+                self.viewAchHt.constant = 0.0
+            }
+            else {
+                self.view_achievement.isHidden = false
+                self.viewAchHt.constant = height3 + 126.0
+
+            }
+            self.tblAchievement.layoutIfNeeded()
+
         }
     }
     func hidenAndShowBtns(_ edit: Bool){
@@ -246,6 +310,17 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         btn_editAdd.isHidden = !edit
         btn_editAdd1.isHidden = !edit
 
+        
+        if edit == false {
+            addLanHt.constant = 0.0
+            addAchHt.constant = 0.0
+
+        }
+        else {
+            addLanHt.constant = 46.0
+            addAchHt.constant = 46.0
+
+        }
         imgEditView.isHidden = !edit
         btn_uploadImg.isHidden = !edit
  
@@ -253,6 +328,91 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         btn_uploadCover.isHidden = !edit
          editMode = !edit
          
+        
+                    var height1 = CGFloat()
+                   
+                   height1 = CGFloat(self.eduArrDict.count) * 97.0
+                   
+                   //let height1 = self.tblEduation.contentSize.height
+                   self.heightTableEducation.constant = height1
+                   self.tblEduation.needsUpdateConstraints()
+                   if edit == false {
+
+                   if (self.eduArrDict.count == 0) {
+                       self.view_education.isHidden = true
+                       self.vieweduHt.constant = 0.0
+                   }
+                   else {
+                       self.view_education.isHidden = false
+                       self.vieweduHt.constant = height1 + 72.0
+
+                   }
+                    
+                    }
+                   else {
+                    self.view_education.isHidden = false
+                    self.vieweduHt.constant = height1 + 72.0
+                    }
+                   self.tblEduation.layoutIfNeeded()
+
+                   
+                   
+                   var height2 = CGFloat()
+                   
+                   height2 = CGFloat(self.langArrDict.count) * 70.0
+                   
+                   //let height1 = self.tblEduation.contentSize.height
+                   self.langHt.constant = height2
+                   self.tbl_lang.needsUpdateConstraints()
+                   
+                   if edit == false {
+
+                   if (self.langArrDict.count == 0) {
+                       self.view_languages.isHidden = true
+                       self.viewLanHt.constant = 0.0
+                   }
+                   else {
+                       self.view_languages.isHidden = false
+                       self.viewLanHt.constant = height2 + 126.0
+
+                   }
+        }
+        else {
+            self.view_languages.isHidden = false
+            self.viewLanHt.constant = height2 + 126.0
+
+        }
+                   self.tbl_lang.layoutIfNeeded()
+
+                   
+                   
+                   var height3 = CGFloat()
+                   
+                   height3 = CGFloat(self.achieveArrDict.count) * 90.0
+                   
+                   //let height1 = self.tblEduation.contentSize.height
+                   self.tblAchievementHt.constant = height3
+                   self.tblAchievement.needsUpdateConstraints()
+        if edit == false {
+                   if (self.achieveArrDict.count == 0) {
+                       self.view_achievement.isHidden = true
+                       self.viewAchHt.constant = 0.0
+                   }
+                   else {
+                       self.view_achievement.isHidden = false
+                       self.viewAchHt.constant = height3 + 126.0
+
+                   }
+        }
+        else {
+            self.view_achievement.isHidden = false
+            self.viewAchHt.constant = height3 + 126.0
+
+        }
+                   self.tblAchievement.layoutIfNeeded()
+
+        
+        
         
     }
     @IBAction func edit_Achievement(_ sender: Any) {
@@ -379,6 +539,10 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                 return self.expArrDict.count
             }else if (tableView == tblEduation) {
                 return self.eduArrDict.count
+            }else if (tableView == tbl_lang) {
+                return self.langArrDict.count
+            }else if (tableView == tblAchievement) {
+                return self.achieveArrDict.count
             }
             else {
                 return 0
@@ -392,6 +556,14 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }else if (tableView == tblEduation) {
                
                 return 97.0
+               
+           }else if (tableView == tbl_lang) {
+               
+                return 70.0
+               
+           }else if (tableView == tblAchievement) {
+               
+                return 90.0
                
            }else {
                 return UITableView.automaticDimension
@@ -416,7 +588,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                      
                 
                 return cell
-            }else  {
+            }else  if tableView == tblEduation {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HunterEduTableViewCell", for: indexPath) as! HunterEduTableViewCell
             
                 cell.selectionStyle = .none
@@ -430,6 +602,35 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                     cell.lab_MajorTxt.text = self.eduArrDict[indexPath.row]["field_of_study"] as? String
                      
                 
+                return cell
+            }
+            else  if tableView == tbl_lang  {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HunterLangTableViewCell", for: indexPath) as! HunterLangTableViewCell
+            
+                cell.selectionStyle = .none
+                 
+                cell.lab_TitleTxt.text = (self.langArrDict[indexPath.row]["language"] as! String).uppercased()
+                
+                
+                
+                cell.lab_prof.text =  self.langArrDict[indexPath.row]["proficiency"] as? String
+                     
+                
+                return cell
+            }
+            else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HunterAchieveTableViewCell", for: indexPath) as! HunterAchieveTableViewCell
+            
+                cell.selectionStyle = .none
+                 
+                cell.lab_TitleTxt.text = (self.achieveArrDict[indexPath.row]["title"] as! String).uppercased()
+                
+                
+                
+                cell.lab_issuedBy.text =  self.achieveArrDict[indexPath.row]["issued_by"] as? String
+                     
+                cell.lab_issuedDate.text =  self.achieveArrDict[indexPath.row]["issued_date"] as? String
+
                 return cell
             }
         }
@@ -508,7 +709,10 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                     //reload all tableviews and manage height dynamically
                                                     self.tblWorkExp.reloadData()
                                                     self.tblEduation.reloadData()
+                                                    self.tbl_lang.reloadData()
+                                                    self.tblAchievement.reloadData()
 
+                                                    
                                                     self.autosizeTableView()
 
                 
@@ -636,7 +840,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                     //reload all tableviews and manage height dynamically
                                                     self.tblWorkExp.reloadData()
                                                     self.tblEduation.reloadData()
-//                                                    self.tblAchievement.reloadData()
+                                                    self.tbl_lang.reloadData()
+                                                    self.tblAchievement.reloadData()
                                                     self.autosizeTableView()
 
                 //                                    let profile_completion = dataDict["profile_completion"] as! Int
@@ -735,6 +940,20 @@ class HunterWorEXTableViewCell: UITableViewCell {
 
      
 }
+
+class HunterLangTableViewCell: UITableViewCell {
+      @IBOutlet weak var lab_TitleTxt: UILabel!
+    @IBOutlet weak var lab_prof: UILabel!
+
+     
+}
+class HunterAchieveTableViewCell: UITableViewCell {
+      @IBOutlet weak var lab_TitleTxt: UILabel!
+    @IBOutlet weak var lab_issuedBy: UILabel!
+    @IBOutlet weak var lab_issuedDate: UILabel!
+
+     
+}
 //class HunterAchieveTableViewCell: UITableViewCell {
 //    @IBOutlet weak var img_appIcon: UIImageView!
 //    @IBOutlet weak var lab_Title: UILabel!
@@ -806,6 +1025,7 @@ class HunterProCollectionCell: UICollectionViewCell {
         self.layer.cornerRadius = 25/2
     }
 }
+
 //extension UIViewController {
 //    func showInputDialog1(title:String? = nil,
 //                         subtitle:String? = nil,

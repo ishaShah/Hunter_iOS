@@ -22,6 +22,12 @@ class HunterEducationStep1VC: UIViewController {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep2VC") as! HunterEducationStep2VC
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+    @IBAction func continueBtnClick(_ sender: Any) {
+        // additional image/video
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditProPicVC") as! HunterEditProPicVC
+        vc.isFrom = "candidateReg"
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 
 }

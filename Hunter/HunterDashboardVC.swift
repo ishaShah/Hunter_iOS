@@ -31,6 +31,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     var userModels : [UserModel] = []
     var candidate_Id = 0
     var job_id = 0
+    var recruiter_idNew = Int()
 
     @IBOutlet weak var topSpace: NSLayoutConstraint!
     @IBOutlet weak var txt_msg: UITextView!
@@ -165,7 +166,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 
                 
                 
-                let parameters    = [ "job_id" : job_id ,  "job_message" : txt_msg.text!] as [String : Any]
+                let parameters    = [ "job_id" : job_id ,  "message" : txt_msg.text! , "recruiter_id" :recruiter_idNew] as [String : Any]
                 print(parameters)
                 
                 //            job_id
@@ -584,7 +585,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 
                                     let companyName =  recruiterDict["company_name"] as! String
                                     let job_detailsDict = recruiterDict
-                                    let skillsArrDict = mainDic["skills"] as! [NSDictionary]
+                                    let skillsArrDict = mainDic["skills"] as! [String]
                                     let candidate_Id = recruiterDict["job_id"] as! Int
 
                                     self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
@@ -697,7 +698,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     let recruiterDict = mainDic
                                     let companyName =  recruiterDict["first_name"] as! String
                                     let job_detailsDict = mainDic
-                                    let skillsArrDict = mainDic["skills"] as! [NSDictionary]
+                                    let skillsArrDict = mainDic["skills"] as! [String]
                                     let candidate_Id = recruiterDict["candidate_id"] as! Int
                                     
 
@@ -721,6 +722,10 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     self.job_id = self.jobIDList[0]
                                     self.tbl_jobs.reloadData()
                                     }
+                                if (self.jobList.count == 0){
+                                    self.lab_selectedJob.text = "Edit/Post a Job"
+
+                                }
                                 
                             }
                             else if status as! Int == 2 {
@@ -842,7 +847,11 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
 
         if loginType == "candidate" {
-            connectToSwipeCandidates(0, 1, userModel.candidate_id!)
+            
+               let recruiter_id = userModel.recruiter["recruiter_id"] as! Int
+
+            
+            connectToSwipeCandidates(recruiter_id, 1, userModel.candidate_id!)
 
         }
         else {
@@ -858,7 +867,9 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
         
         if loginType == "candidate" {
-            connectToSwipeCandidates(0, 0,userModel.candidate_id!)
+            let recruiter_id = userModel.recruiter["recruiter_id"] as! Int
+
+            connectToSwipeCandidates(recruiter_id, 0,userModel.candidate_id!)
          }
         else {
         connectToSwipeCandidates(userModel.candidate_id!, 0 , self.job_id)
@@ -893,7 +904,6 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         }
      }
 
-
     func connectToSwipeCandidates(_ candidate_ID : Int , _ decision : Int, _ job_id : Int){
         if HunterUtility.isConnectedToInternet(){
             
@@ -901,7 +911,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
             var parameters =  [String : Any]()
             if loginType == "candidate" {
                 baseURL = API.candidateBaseURL  + API.jobsSwipesURL
-                parameters = [ "decision" : decision , "job_id" : job_id] as [String : Any]
+                parameters = [ "decision" : decision , "job_id" : job_id, "recruiter_id" : candidate_ID] as [String : Any]
 
             }else{
                 baseURL = API.recruiterBaseURL  + API.getCandidateSwipeURL
@@ -929,6 +939,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
                                     if loginType == "candidate" {
                                         let data = responseDict.value(forKey: "data") as! NSDictionary
                                         
+                                        self.recruiter_idNew = candidate_ID
                                         
                                         self.job_id = Int(data["job_id"] as! String)!
                                         self.txt_msg.text = "Type your message here ..."

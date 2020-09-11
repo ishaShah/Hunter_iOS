@@ -265,9 +265,13 @@ class HunterWorkExpVC: UIViewController {
         case "Location":
             HunterSelectionViewController.passedDict = self.dict_Loc
             HunterSelectionViewController.isMultiSelect = false
+            HunterSelectionViewController.headerText = "Select Location"
+
         case "EmpType":
             HunterSelectionViewController.passedDict = self.dict_EmpType
             HunterSelectionViewController.isMultiSelect = false
+            HunterSelectionViewController.headerText = "Select Employee Type"
+
         default:
             break
         }

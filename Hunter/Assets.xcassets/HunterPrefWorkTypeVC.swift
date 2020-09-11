@@ -128,9 +128,16 @@ class HunterPrefWorkTypeVC: UIViewController {
                                     print(dataDict.allValues)
                                         if self.arrayJobTypes.count == 4{
                                             self.button1.setTitle((work_type!.value(forKey: "1") as! String), for: .normal)
+                                            self.button1.tag = 1
                                             self.button2.setTitle((work_type!.value(forKey: "2") as! String), for: .normal)
+                                            self.button2.tag = 2
+
                                             self.button3.setTitle((work_type!.value(forKey: "3") as! String), for: .normal)
+                                            self.button3.tag = 3
+
                                             self.button4.setTitle((work_type!.value(forKey: "4") as! String), for: .normal)
+                                            self.button4.tag = 4
+
                                         }
 //
  
@@ -278,6 +285,8 @@ class HunterPrefWorkTypeVC: UIViewController {
 }
 extension HunterPrefWorkTypeVC : hunterDelegate{
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
+        if !selectedDict.allKeys.isEmpty {
+            
         
             let txtSalaryRange = selectedDict["name"] as? String ?? ""
             let salary_range_ID = Int(selectedDict["id"] as! String)
@@ -303,7 +312,7 @@ extension HunterPrefWorkTypeVC : hunterDelegate{
             contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
             
             contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
-            if selectedWorkType == 0 {
+            if selectedWorkType == 1 {
             
                 button1.setTitleColor(UIColor.init(hexString:"FFFFFF" ), for: UIControl.State.normal)
                 button2.setTitleColor(UIColor.init(hexString:"6B3E99" ), for: UIControl.State.normal)
@@ -328,7 +337,7 @@ extension HunterPrefWorkTypeVC : hunterDelegate{
                 
 
             }
-            else if selectedWorkType == 1 {
+            else if selectedWorkType == 2 {
                 button2.setTitleColor(UIColor.init(hexString:"FFFFFF" ), for: UIControl.State.normal)
                 button1.setTitleColor(UIColor.init(hexString:"6B3E99" ), for: UIControl.State.normal)
                 button3.setTitleColor(UIColor.init(hexString:"6B3E99" ), for: UIControl.State.normal)
@@ -349,7 +358,7 @@ extension HunterPrefWorkTypeVC : hunterDelegate{
                 slider3Ht.constant = 0
                 slider4Ht.constant = 0
             }
-            else if selectedWorkType == 2 {
+            else if selectedWorkType == 3 {
                 button3.setTitleColor(UIColor.init(hexString:"FFFFFF" ), for: UIControl.State.normal)
                 button1.setTitleColor(UIColor.init(hexString:"6B3E99" ), for: UIControl.State.normal)
                 button2.setTitleColor(UIColor.init(hexString:"6B3E99" ), for: UIControl.State.normal)
@@ -370,7 +379,7 @@ extension HunterPrefWorkTypeVC : hunterDelegate{
                 slider3Ht.constant = 30
                 slider4Ht.constant = 0
             }
-            else if selectedWorkType == 3 {
+            else if selectedWorkType == 4 {
                 button4.setTitleColor(UIColor.init(hexString:"FFFFFF" ), for: UIControl.State.normal)
                 button1.setTitleColor(UIColor.init(hexString:"6B3E99" ), for: UIControl.State.normal)
                 button2.setTitleColor(UIColor.init(hexString:"6B3E99" ), for: UIControl.State.normal)
@@ -392,6 +401,7 @@ extension HunterPrefWorkTypeVC : hunterDelegate{
                 slider4Ht.constant = 30
             }
         }
+    }
         
     }
 

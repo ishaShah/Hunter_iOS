@@ -147,12 +147,14 @@ class HunterEditCoverImVC : UIViewController, CropViewControllerDelegate, UIImag
                 loginType = type
             }
             // Do any additional setup after loading the view.
+            var rectangle_logo = ""
             if loginType == "candidate" {
              url = API.candidateBaseURL + API.registerUpdateBannerImageURL
-
+rectangle_logo = "rectangle_logo"
             }
             else {
              url = API.recruiterBaseURL + API.registerUpdateCompanyBannerImageURL
+                rectangle_logo = "logo"
             }
             print(url)
             HunterUtility.showProgressBar()
@@ -168,7 +170,7 @@ class HunterEditCoverImVC : UIViewController, CropViewControllerDelegate, UIImag
                  
                 if let data = imageData{
                     if let newImageData = selectedImg.jpeg(.lowest) {
-                        multipartFormData.append(newImageData, withName: "logo", fileName: "image.png", mimeType: "image/png")
+                        multipartFormData.append(newImageData, withName: rectangle_logo, fileName: "image.png", mimeType: "image/png")
                     }
                 }
                 

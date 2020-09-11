@@ -306,13 +306,18 @@ class HunterPostAJobNewViewController: UIViewController {
         case "JobFunction":
             HunterSelectionViewController.passedDict = self.dict_job_function
             HunterSelectionViewController.isMultiSelect = true
+            HunterSelectionViewController.headerText = "Select Job Function"
+
         case "Skills":
             HunterSelectionViewController.passedDict = self.dict_skill
             HunterSelectionViewController.isMultiSelect = true
-            
+            HunterSelectionViewController.headerText = "Select Skills"
+
         case "FieldOfEdu":
             HunterSelectionViewController.passedDict = self.dict_field_of_education
             HunterSelectionViewController.isMultiSelect = true
+            HunterSelectionViewController.headerText = "Select Field Of Education"
+
         default:
             break
         }

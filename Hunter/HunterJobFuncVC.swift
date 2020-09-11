@@ -101,6 +101,8 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
           HunterSelectionViewController.delegate = self
            HunterSelectionViewController.passedDict = dict_jobFunc
            HunterSelectionViewController.isFrom = "location"
+        HunterSelectionViewController.headerText = "Select Job Function"
+
           HunterSelectionViewController.modalPresentationStyle = .overFullScreen
           self.present(HunterSelectionViewController, animated: true, completion: nil)
        }

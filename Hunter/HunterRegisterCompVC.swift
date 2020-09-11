@@ -22,10 +22,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
     
     @IBOutlet weak var contButton: UIButton!
 
- 
 
-    
-     
     var isEdit = false
     var arr_industry = [String]()
     var dict_industry = NSDictionary()
@@ -153,6 +150,8 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
        HunterSelectionViewController.delegate = self
         HunterSelectionViewController.passedDict = dict_industry
         HunterSelectionViewController.isFrom = "Industry"
+        HunterSelectionViewController.headerText = "Select Industry"
+
        HunterSelectionViewController.modalPresentationStyle = .overFullScreen
        self.present(HunterSelectionViewController, animated: true, completion: nil)
     }
@@ -162,6 +161,8 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
        HunterSelectionViewController.delegate = self
         HunterSelectionViewController.passedDict = dict_headquarters
         HunterSelectionViewController.isFrom = "Headquaters"
+        HunterSelectionViewController.headerText = "Select Headquaters"
+
        HunterSelectionViewController.modalPresentationStyle = .overFullScreen
        self.present(HunterSelectionViewController, animated: true, completion: nil)
     }
@@ -170,6 +171,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
         let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
         HunterPickerViewController.isFrom = "Founded"
         HunterPickerViewController.delegate = self
+        
         HunterPickerViewController.modalPresentationStyle = .overFullScreen
         self.present(HunterPickerViewController, animated: true, completion: nil)
     }

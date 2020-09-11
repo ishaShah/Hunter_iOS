@@ -73,11 +73,17 @@ class HunterListAllEduVC: UIViewController {
         }
         
     }
-    @IBAction func actionAddNewEducation(_ sender: Any) {
-        
+    @IBAction func actionAddNewEducation(_ sender: Any)
+        {
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep2VC") as! HunterEducationStep2VC
+            self.navigationController?.pushViewController(vc, animated: true)
+            
     }
-    
     @IBAction func actionAddEducation(_ sender: Any) {
+        // additional image/video
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditProPicVC") as! HunterEditProPicVC
+        vc.isFrom = "candidateReg"
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
 }
@@ -113,11 +119,11 @@ extension HunterListAllEduVC : UICollectionViewDelegate,UICollectionViewDataSour
 
         
         
-        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
-        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
-        cell.viewInner.layer.shadowRadius = 3
-        cell.viewInner.layer.shadowOffset = CGSize(width: 1, height: 3)
-        cell.viewInner.layer.shadowOpacity = 0.3
+//        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
+//        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
+//        cell.viewInner.layer.shadowRadius = 3
+//        cell.viewInner.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        cell.viewInner.layer.shadowOpacity = 0.3
         
 
         

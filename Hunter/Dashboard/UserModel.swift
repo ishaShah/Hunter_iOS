@@ -13,7 +13,7 @@ struct UserModel {
     let name : String!
     let recruiter : NSDictionary!
     let job_details : NSDictionary!
-    let skills : [NSDictionary]!
+    let skills : [String]!
     let num : String!
     let candidate_id : Int!
 }

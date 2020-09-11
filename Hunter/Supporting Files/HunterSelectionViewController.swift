@@ -8,9 +8,11 @@
 
 import UIKit
 
-class HunterSelectionViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
-    
-    
+class HunterSelectionViewController: UIViewController, UITableViewDelegate , UITableViewDataSource , UISearchBarDelegate{
+
+    @IBOutlet weak var searchBar: UISearchBar!
+    var searchActive : Bool = false
+
     @IBOutlet weak var lblSelectedCount: UILabel!
     
     @IBOutlet weak var lblHeader: UILabel!
@@ -29,8 +31,18 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
       var isMultiSelect = Bool()
       var isFrom = String()
     
+    
+    var headerText = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        let textField = searchBar.value(forKey: "searchField") as? UITextField
+        textField?.backgroundColor = UIColor.clear
+        textField?.textColor = UIColor.white
+
+        searchBar.setImage(UIImage(), for: .search, state: .normal)
+
         setHeadertTitle()
 
         let username : [String] = passedDict.map { ($0.value as? String ?? "Null") }
@@ -42,24 +54,28 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
         
         print(sections)
+        
+        self.lblHeader.text = headerText
         self.tbl_view.reloadData()
     }
 
     func setHeadertTitle(){
-        switch  isFrom{
-        case "JobFunction":
-            self.lblHeader.text = "Select your job function"
-            self.lblSelectedCount.text = "\(selectedIDArray.count)/5"
-        case "Skills":
-            self.lblHeader.text = "Select your Skill Sets"
-            self.lblSelectedCount.text = "\(selectedIDArray.count)/5"
-        case "FieldOfEdu":
-            self.lblHeader.text = "Search Level of Study"
-            self.lblSelectedCount.text = "\(selectedIDArray.count)/5"
-        default:
-            self.lblHeader.text = "Select your industry"
-            self.lblSelectedCount.text = "\(selectedIDArray.count)/1"
-        }
+        self.lblHeader.text = headerText
+
+//        switch  isFrom{
+//        case "JobFunction":
+//            self.lblHeader.text = "Select your job function"
+//
+//        case "Skills":
+//            self.lblHeader.text = "Select your Skill Sets"
+////            self.lblSelectedCount.text = "\(selectedIDArray.count)/5"
+//        case "FieldOfEdu":
+//            self.lblHeader.text = "Search Level of Study"
+////            self.lblSelectedCount.text = "\(selectedIDArray.count)/5"
+//        default:
+//            self.lblHeader.text = "Select your industry"
+////            self.lblSelectedCount.text = "\(selectedIDArray.count)/1"
+//        }
     }
     @IBAction func dismissAction(_ sender: Any) {
         let myDict:NSDictionary =
@@ -70,7 +86,98 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         }
     }
     
-      
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+          searchActive = true;
+        if searchBar.text?.count == 0 {
+        self.lblHeader.isHidden = false
+        }
+        else {
+            self.lblHeader.isHidden = true
+
+        }
+      }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+          searchActive = false;
+        if searchBar.text?.count == 0 {
+        self.lblHeader.isHidden = false
+        }
+        else {
+            self.lblHeader.isHidden = true
+
+        }
+      }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+          searchActive = false;
+        if searchBar.text?.count == 0 {
+        self.lblHeader.isHidden = false
+        }
+        else {
+            self.lblHeader.isHidden = true
+
+        }
+      }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+          searchActive = false;
+        if searchBar.text?.count == 0 {
+        self.lblHeader.isHidden = false
+        }
+        else {
+            self.lblHeader.isHidden = true
+
+        }
+      }
+    var filtered:[String] = []
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+        let username : [String] = passedDict.map { ($0.value as? String ?? "Null") }
+
+        filtered = username.filter({ (text) -> Bool in
+            let tmp: NSString = text as NSString
+            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return range.location != NSNotFound
+        })
+        if(filtered.count == 0 && searchBar.text!.count == 0){
+            searchActive = false;
+            let username : [String] = passedDict.map { ($0.value as? String ?? "Null") }
+            
+            let groupedDictionary = Dictionary(grouping:username , by: {String($0.prefix(1))})
+            // get the keys and sort them
+            let keys = groupedDictionary.keys.sorted()
+            // map the sorted keys to a struct
+            sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
+            
+            print(sections)
+            if searchBar.text?.count == 0 {
+            self.lblHeader.isHidden = false
+            }
+            else {
+                self.lblHeader.isHidden = true
+
+            }
+            self.tbl_view.reloadData()
+        } else {
+            searchActive = true;
+            let groupedDictionary = Dictionary(grouping:filtered , by: {String($0.prefix(1))})
+                   // get the keys and sort them
+                   let keys = groupedDictionary.keys.sorted()
+                   // map the sorted keys to a struct
+                   sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
+                   
+                   print(sections)
+                   
+                   if searchBar.text?.count == 0 {
+                   self.lblHeader.isHidden = false
+                   }
+                   else {
+                       self.lblHeader.isHidden = true
+
+                   }
+                   self.tbl_view.reloadData()
+        }
+     }
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return sections[section].names.count
@@ -171,6 +278,14 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
                     selectedData.append(myDict)
                 }
             }
+            
+            if isMultiSelect == true {
+                self.lblSelectedCount.text = "\(selectedIDArray.count)/5"
+            }
+            else {
+                self.lblSelectedCount.text = "\(selectedIDArray.count)/1"
+            }
+            
             print(selectedData)
             setHeadertTitle()
             tbl_view.reloadData()

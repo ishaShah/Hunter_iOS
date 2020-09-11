@@ -41,7 +41,7 @@ class HunterAchieveVC: UIViewController {
 //                       issued_date
 //                       description
                        let headers    = [ "Authorization" : "Bearer " + accessToken]
-                     let parameters = ["title" : txtTitle.text , "issued_by" : txtIssueBy.text , "description" : tv_desc.text , "issued_date" : txtIssueDate.text ]
+                    let parameters = ["title" : txtTitle.text! , "issued_by" : txtIssueBy.text! , "description" : tv_desc.text! , "issued_date" : Int(txtIssueDate.text!)! ] as [String : Any]
                        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                            
                            switch response.result {
@@ -51,7 +51,7 @@ class HunterAchieveVC: UIViewController {
                                    SVProgressHUD.dismiss()
                                    if let status = responseDict.value(forKey: "status"){
                                     if status as! Int == 1{
-                                        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguageListVC") as! HunterLanguageListVC
+                                        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguageListVC") as! HunterLanguageListVC
                                         self.navigationController?.pushViewController(vc, animated: true)
                                     }
                                    }
@@ -103,8 +103,12 @@ class HunterAchieveVC: UIViewController {
             switch type {
             case "language":
                 HunterSelectionViewController.passedDict = self.langDict
+                HunterSelectionViewController.headerText = "Select Level Of Language"
+
             case "level_of_prof":
                 HunterSelectionViewController.passedDict = self.level_of_prof
+                HunterSelectionViewController.headerText = "Select Level Of Proficiency"
+
                 
             default:
                 break
@@ -121,8 +125,8 @@ class HunterAchieveVC: UIViewController {
             switch isFrom{
                 
             case  "IssueDate":
-                txtIssueDate.text = selectedDict["name"] as? String ?? ""
-                selectedData.issueDate = selectedDict["name"] as! String
+                txtIssueDate.text = selectedDict["selectedYear"] as? String ?? ""
+                selectedData.issueDate = selectedDict["selectedYear"] as! String
                 
              
                 

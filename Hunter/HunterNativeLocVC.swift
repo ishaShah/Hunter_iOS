@@ -1,16 +1,16 @@
 //
-//  HunterWorkLocVC.swift
+//  HunterNativeLocVC.swift
 //  Hunter
 //
-//  Created by Zubin Manak on 11/11/19.
-//  Copyright © 2019 Zubin Manak. All rights reserved.
+//  Created by Zubin Manak on 09/09/20.
+//  Copyright © 2020 Zubin Manak. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterWorkLocVC: UIViewController,hunterDelegate {
+class HunterNativeLocVC: UIViewController ,hunterDelegate {
     
     @IBOutlet weak var txt_loc: HunterTextField!
     var locationArr = [String]()
@@ -74,46 +74,33 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
 
         
     }
-     
-    func selectedData(selectedDict: NSDictionary, isFrom: String) {
-             selectedlocationArr = []
-        selectedlocationIDArr = []
-                let selectedData = selectedDict["selectedData"] as! [NSDictionary]
-                var name = ""
+     func selectedData(selectedDict: NSDictionary, isFrom: String) {
+ selectedlocationArr = []
+ selectedlocationIDArr = []
+        let name = selectedDict["name"] as? String ?? ""
 
-                for dict in selectedData{
-                   if name != ""{
-                       name = name + "," + "\(dict["name"] ?? "")"
-                   }else{
-                       name = dict["name"] as! String
-                   }
-                    
- 
-                    selectedlocationArr.append(dict["name"] as! String)
+        selectedlocationArr.append(name)
+         let locID = Int(selectedDict["id"] as! String)
+        selectedlocationIDArr.append(locID!)
 
-                     let locID = Int(dict["id"] as! String)
-                    selectedlocationIDArr.append(locID!)
-
-                }
-
-             
-                    self.txt_loc.text = ""
-                       
-                       collView.reloadData()
-                       print(selectedDict)
-                
-            }
+        self.txt_loc.text = ""
+                              
+                              collView.reloadData()
+                              print(selectedDict)
+     }
+    
+  
             
         
     var dict_loc = NSDictionary()
     @IBAction func workLoc(_ sender: Any) {
        let storyboard = UIStoryboard(name: "Main", bundle: nil)
        let HunterSelectionViewController = storyboard.instantiateViewController(withIdentifier: "HunterSelectionViewController") as! HunterSelectionViewController
-        HunterSelectionViewController.isMultiSelect = true
+        HunterSelectionViewController.isMultiSelect = false
        HunterSelectionViewController.delegate = self
         HunterSelectionViewController.passedDict = dict_loc
         HunterSelectionViewController.isFrom = "location"
-        HunterSelectionViewController.headerText = "Select Location"
+        HunterSelectionViewController.headerText = "Select Native Location"
 
        HunterSelectionViewController.modalPresentationStyle = .overFullScreen
        self.present(HunterSelectionViewController, animated: true, completion: nil)
@@ -126,7 +113,7 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
     func connectToRegisterPreferedWorkLocations(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.candidateBaseURL + API.registerPreferedLocationsURL
+            let url = API.candidateBaseURL + API.registerGetNativeLocationsURL
             print(url)
             HunterUtility.showProgressBar()
  
@@ -197,10 +184,10 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
     func connectToRegisterSavePreferedLocations(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.candidateBaseURL + API.registerSavePreferedLocationsURL
+            let url = API.candidateBaseURL + API.registerSaveNativeLocationsURL
             print(url)
             HunterUtility.showProgressBar()
-            let paramsDict = ["location_ids": selectedlocationIDArr ] as [String : Any]
+            let paramsDict = ["location_id": selectedlocationIDArr[0] ] as [String : Any]
             
             let headers    = [ "Authorization" : "Bearer " + accessToken]
             
@@ -213,7 +200,7 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
-                                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterNativeLocVC") as! HunterNativeLocVC
+                                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterJobFuncVC") as! HunterJobFuncVC
                                 self.navigationController?.pushViewController(vc, animated: true)
                             }
                             else if status as! Int == 2 {
@@ -269,7 +256,7 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
     }
 }
 
-extension HunterWorkLocVC : UICollectionViewDataSource {
+extension HunterNativeLocVC : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -283,7 +270,7 @@ extension HunterWorkLocVC : UICollectionViewDataSource {
 //        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterWorkLocCollectionCell", for: indexPath) as! HunterWorkLocCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterNativeLocCollectionCell", for: indexPath) as! HunterNativeLocCollectionCell
 //        if self.selectedlocationArr.count == 0 {
 //            cell.titleLabel.text = locationArr[indexPath.item].uppercased()
 //            cell.buttonRemove.isHidden = true
@@ -307,7 +294,7 @@ extension HunterWorkLocVC : UICollectionViewDataSource {
         return cell
     }
 }
-extension HunterWorkLocVC: UICollectionViewDelegateFlowLayout {
+extension HunterNativeLocVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.selectedlocationArr.count == 0 {
@@ -324,12 +311,13 @@ extension HunterWorkLocVC: UICollectionViewDelegateFlowLayout {
         }
     }
 }
-extension HunterWorkLocVC : UICollectionViewDelegate {
+extension HunterNativeLocVC : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }
-class HunterWorkLocCollectionCell: UICollectionViewCell {
+class HunterNativeLocCollectionCell: UICollectionViewCell {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonRemove: UIButton!
 }
+

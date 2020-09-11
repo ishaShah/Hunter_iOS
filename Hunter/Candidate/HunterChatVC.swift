@@ -69,8 +69,8 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             getMessagesURL = API.candidateBaseURL + API.chatMessageViewURL
             sendMessageURL = API.candidateBaseURL + API.sendCandidateMessageURL
         }else{
-            getMessagesURL = API.recruiterBaseURL + API.getChatRecruiterMessagesURL
-            sendMessageURL = API.recruiterBaseURL + API.sendRecruiterMessageURL
+            getMessagesURL = API.recruiterBaseURL + API.chatMessageViewURL
+            sendMessageURL = API.recruiterBaseURL + API.sendCandidateMessageURL
         }
         connectToGetMessages()
     }

@@ -120,11 +120,11 @@ extension HunterWorkExpListVC : UICollectionViewDelegate,UICollectionViewDataSou
 
         
         
-        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
-        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
-        cell.viewInner.layer.shadowRadius = 3
-        cell.viewInner.layer.shadowOffset = CGSize(width: 1, height: 3)
-        cell.viewInner.layer.shadowOpacity = 0.3
+//        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
+//        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
+//        cell.viewInner.layer.shadowRadius = 3
+//        cell.viewInner.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        cell.viewInner.layer.shadowOpacity = 0.3
         
 
         

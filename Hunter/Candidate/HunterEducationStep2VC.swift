@@ -223,11 +223,13 @@ class HunterEducationStep2VC: UIViewController {
         switch type {
         case "field_of_study":
             HunterSelectionViewController.passedDict = self.field_of_study
+            HunterSelectionViewController.headerText = "Select Field Of Study"
         case "level_of_study":
             HunterSelectionViewController.passedDict = self.level_of_study
-            
+            HunterSelectionViewController.headerText = "Select Level Of Study"
         case "school":
             HunterSelectionViewController.passedDict = self.school
+            HunterSelectionViewController.headerText = "Select School"
         default:
             break
         }

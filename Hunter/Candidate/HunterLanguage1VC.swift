@@ -71,7 +71,7 @@ class HunterLanguage1VC: UIViewController {
                                SVProgressHUD.dismiss()
                                if let status = responseDict.value(forKey: "status"){
                                 if status as! Int == 1{
-                                    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguageListVC") as! HunterLanguageListVC
+                                    let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguageListVC") as! HunterLanguageListVC
                                     self.navigationController?.pushViewController(vc, animated: true)
                                 }
                                }
@@ -139,8 +139,12 @@ class HunterLanguage1VC: UIViewController {
         switch type {
         case "language":
             HunterSelectionViewController.passedDict = self.langDict
+            HunterSelectionViewController.headerText = "Select Language"
+
         case "level_of_prof":
             HunterSelectionViewController.passedDict = self.level_of_prof
+            HunterSelectionViewController.headerText = "Select Level Of Proficiency"
+
             
         default:
             break
