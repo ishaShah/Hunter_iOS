@@ -343,7 +343,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
                             if status as! Int == 1{
                                 self.arrayChatList = [HunterChatListModel]()
                                 if let dataDict = responseDict.value(forKey: "data") as? NSDictionary{
-                                    if let chatDict = dataDict.value(forKey: "chats") as? [NSDictionary]{
+                                    if let chatDict = dataDict.value(forKey: "messages") as? [NSDictionary]{
                                         for data in chatDict{
                                             self.arrayChatList.append(HunterChatListModel().initWithDict(dictionary: data))
                                         }

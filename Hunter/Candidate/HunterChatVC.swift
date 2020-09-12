@@ -172,10 +172,10 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             let headers = [ "Authorization" : "Bearer " + accessToken]
             var paramsDict = [String: Any]()
             if loginType == "candidate" {
-                paramsDict = ["job_id": selectedJobId]
+                paramsDict = ["swipe_id": selectedJobId]
             }else{
-                paramsDict = ["job_id": selectedJobId,
-                              "candidate_id": selectedCandidateId]
+                paramsDict = ["swipe_id": selectedJobId]
+
             }
             print(paramsDict)
             print(getMessagesURL)

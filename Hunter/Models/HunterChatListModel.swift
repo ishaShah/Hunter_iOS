@@ -18,18 +18,25 @@ public class HunterChatListModel {
     public var profile_img : String?
     public var candidate_id : Int?
     public var candidate_name : String?
-    
+    public var un_read_messages : Int?
     func initWithDict(dictionary: NSDictionary) -> HunterChatListModel{
-        job_id = dictionary["job_id"] as? Int
+        job_id = dictionary["swipe_id"] as? Int
         company_name = dictionary["company_name"] as? String
-        logo = dictionary["logo"] as? String
-        title = dictionary["title"] as? String
+        logo = dictionary["square_logo"] as? String
+        title = dictionary["job_title"] as? String
         latest_message = dictionary["latest_message"] as? String
         //recruiter
-        profile_img = dictionary["profile_img"] as? String
+        profile_img = dictionary["'profile_image'"] as? String
         candidate_name = dictionary["candidate_name"] as? String
-        candidate_id = dictionary["candidate_id"] as? Int
+        candidate_id = dictionary["swipe_id"] as? Int
+        un_read_messages = dictionary["un_read_messages"] as? Int
         
+//        swipe_id'
+//        'candidate_name'
+//        'profile_image'
+//        'job_title'
+//        'latest_message'
+//        'un_read_messages
         return self
     }
 }
