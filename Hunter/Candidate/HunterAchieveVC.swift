@@ -51,7 +51,7 @@ class HunterAchieveVC: UIViewController {
                                    SVProgressHUD.dismiss()
                                    if let status = responseDict.value(forKey: "status"){
                                     if status as! Int == 1{
-                                        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguageListVC") as! HunterLanguageListVC
+                                        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterAchieveListVC") as! HunterAchieveListVC
                                         self.navigationController?.pushViewController(vc, animated: true)
                                     }
                                    }
