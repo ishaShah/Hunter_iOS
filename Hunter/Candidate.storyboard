@@ -6979,7 +6979,7 @@ Thank you for your feedback.</string>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkY-gy-hbl">
-                                                        <rect key="frame" x="35" y="35" width="30" height="30"/>
+                                                        <rect key="frame" x="35" y="34.5" width="30" height="31"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.3352476358" green="0.1946695447" blue="0.53919112680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
