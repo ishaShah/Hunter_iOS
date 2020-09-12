@@ -54,7 +54,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         
         scrollV.scrollToBottom(animated: true)
 
-        sendView.round(corners: [.bottomLeft, .bottomRight], radius: 30)
+//        sendView.round(corners: [.bottomLeft, .bottomRight], radius: 30)
 
         sendView.layer.masksToBounds = false
         sendView.layer.shadowRadius = 4
@@ -76,6 +76,11 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     // Apply round corner and border. An extension method of UIView.
     
+    @IBAction func matches(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterMessagesVC") as! HunterMessagesVC
+         
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func buttonSendChat(_ sender: UIButton) {
         if textMessage.text != ""{
             connectToSendChatMessage()
@@ -95,6 +100,12 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
 ////            self.scrollV.setContentOffset(bottomOffset, animated: true)
 //        }
 //    }
+     
+    @IBAction func goToMessages(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     func autosizeChatTable(){
         DispatchQueue.main.async {
             self.view.layoutIfNeeded()
@@ -106,7 +117,8 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
+        
 //        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.tintColor = UIColor.black
 
@@ -157,7 +169,10 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             return cell
         }
     }
-/*    func scrollToBottom(){
+    @IBAction func matchClcik(_ sender: Any) {
+        
+    }
+    /*    func scrollToBottom(){
         DispatchQueue.main.async {
             let bottomOffset = CGPoint(x: 0, y: self.scrollV.contentSize.height - self.scrollV.bounds.size.height)
             self.scrollV.setContentOffset(bottomOffset, animated: false)

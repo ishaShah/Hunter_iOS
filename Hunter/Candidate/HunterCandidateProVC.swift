@@ -301,7 +301,17 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
             }
             self.tblAchievement.layoutIfNeeded()
-
+//            self.scrlCV.needsUpdateConstraints()
+//
+//            self.scrlCV.layoutIfNeeded()
+//
+//            self.scrlV.needsUpdateConstraints()
+//
+//            self.scrlV.layoutIfNeeded()
+//            let contentRect: CGRect = self.scrlV.subviews.reduce(into: .zero) { rect, view in
+//                rect = rect.union(view.frame)
+//            }
+//            self.scrlV.contentSize = contentRect.size
         }
     }
     func hidenAndShowBtns(_ edit: Bool){
@@ -416,8 +426,19 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
         }
                    self.tblAchievement.layoutIfNeeded()
-
-        
+        self.tblAchievement.needsUpdateConstraints()
+        self.tblAchievement.layoutIfNeeded()
+//        self.scrlCV.needsUpdateConstraints()
+//
+//        self.scrlCV.layoutIfNeeded()
+//
+//        self.scrlV.needsUpdateConstraints()
+//
+//        self.scrlV.layoutIfNeeded()
+//        let contentRect: CGRect = self.scrlV.subviews.reduce(into: .zero) { rect, view in
+//            rect = rect.union(view.frame)
+//        }
+//        self.scrlV.contentSize = contentRect.size
         
         
     }
