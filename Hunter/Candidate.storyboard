@@ -6567,7 +6567,7 @@ Thank you for your feedback.</string>
                         <viewControllerLayoutGuide type="bottom" id="K3C-hE-K7z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gb5-om-WlB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2752"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1765"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X0V-FT-bcc">
@@ -6576,7 +6576,7 @@ Thank you for your feedback.</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7af-cX-JFS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="2703"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1716"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLz-mJ-Jg7" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1765"/>
@@ -6979,7 +6979,7 @@ Thank you for your feedback.</string>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkY-gy-hbl">
-                                                        <rect key="frame" x="35" y="35" width="30" height="30"/>
+                                                        <rect key="frame" x="35" y="34.5" width="30" height="31"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.3352476358" green="0.1946695447" blue="0.53919112680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -8030,7 +8030,7 @@ Thank you for your feedback.</string>
                     </view>
                     <navigationItem key="navigationItem" id="UGM-hd-pgz"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <size key="freeformSize" width="414" height="2752"/>
+                    <size key="freeformSize" width="414" height="1765"/>
                     <connections>
                         <outlet property="addAchHt" destination="zF2-wl-BwU" id="cz2-gf-PTT"/>
                         <outlet property="addLanHt" destination="JnI-8g-dwl" id="4qj-O5-XXG"/>
