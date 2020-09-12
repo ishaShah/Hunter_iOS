@@ -46,7 +46,7 @@ class HunterWorkExpListVC: UIViewController {
     
     func getAllJobs(){
         if HunterUtility.isConnectedToInternet(){
-            let url = API.candidateBaseURL + API.getJobExpURL
+            var url = API.candidateBaseURL + API.getJobExpURL
             print(url)
             HunterUtility.showProgressBar()
             

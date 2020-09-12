@@ -30,6 +30,8 @@ enum API{
     static let registerSavePreferedJobsURL = "registration/save-candidate-preferred-jobs"
     static let registerPreferedSkillsURL = "registration/get-preferred-job-skills"
     static let registerSavePreferedSkillsURL = "registration/save-preferred-job-skills"
+    static let registerUpdateJobSkillsURL =  "profile/update-job-skills"
+
     static let saveWorkedInUAEURL = "registration/save-worked-in-uae"
     static let registerPreferedCompaniesURL = "registration/prefered-companies"
     static let registerSavePreferedCompaniesURL = "registration/save-worked-companies-in-uae"

@@ -196,7 +196,13 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
     func connectToRegisterSavePreferedSkills(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.candidateBaseURL + API.registerSavePreferedSkillsURL
+            var url = String()
+            if isFrom == "Profile" {
+                url =  API.candidateBaseURL + API.registerUpdateJobSkillsURL
+            }
+            else {
+              url =  API.candidateBaseURL + API.registerSavePreferedSkillsURL
+            }
             print(url)
             HunterUtility.showProgressBar()
             let paramsDict = ["job_skill_ids": selectedSkillsIDArr ] as [String : Any]
