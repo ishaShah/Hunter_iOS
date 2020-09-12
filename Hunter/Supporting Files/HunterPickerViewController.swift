@@ -65,7 +65,7 @@ class HunterPickerViewController: UIViewController{
         else if isFrom == "businessType" {
             AllCount = passedDict.allValues.count
 
-        }else if isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "PrefWorkType" {
+        }else if isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "PrefWorkType" || isFrom == "CurrentLoc" {
             AllCount = passedDict.allValues.count
 
         }
@@ -114,7 +114,7 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
         }
         else if isFrom == "businessType" {
             return NSAttributedString(string: passedDict.allValues[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
-        }else if isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "PrefWorkType" {
+        }else if isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "PrefWorkType" || isFrom == "CurrentLoc" {
             return NSAttributedString(string: passedDict.allValues[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
         }
         else {
@@ -123,7 +123,7 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        if isFrom == "companySize" || isFrom == "businessType"  || isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" {
+        if isFrom == "companySize" || isFrom == "businessType"  || isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "CurrentLoc" {
             let selectedValue = passedDict.allValues[row] as! String
  
             let allVal = passedDict.allValues as! [String]
@@ -140,21 +140,21 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
             
         }
         else if isFrom == "PrefWorkType" {
-                   let selectedValue = passedDict.allValues[row] as! String
-        
-                   let allVal = passedDict.allValues as! [String]
-                   let indexOfA = allVal.firstIndex(of: selectedValue) // 0
-
-                   
-                    let dict = NSMutableDictionary()
-                   dict["name"] = selectedValue
-                   dict["id"] = passedDict.allKeys[indexOfA!] as! String
-
-                   selectedDict =
-                    ["name": selectedValue, "id": passedDict.allKeys[indexOfA!] as! String, "index" : index]
-                   
-                  
-               }
+            let selectedValue = passedDict.allValues[row] as! String
+            
+            let allVal = passedDict.allValues as! [String]
+            let indexOfA = allVal.firstIndex(of: selectedValue) // 0
+            
+            
+            let dict = NSMutableDictionary()
+            dict["name"] = selectedValue
+            dict["id"] = passedDict.allKeys[indexOfA!] as! String
+            
+            selectedDict =
+                ["name": selectedValue, "id": passedDict.allKeys[indexOfA!] as! String, "index" : index]
+            
+            
+        }
         else {
             print(years[row])
             selectedDict = ["selectedYear" : years[row]]

@@ -84,6 +84,9 @@ enum API{
     static let profileUpdateURL = "profile/update"
     static let getJobExpURL = "registration/get-job-experiences"
     static let getAllLangURL = "profile/get-languages"
+    static let getAllAchievementsURL = "profile/get-achievements"
+    static let getBasicInfoURL = "profile/get-candidate-details"
+    static let updateBasicInformationURL = "profile/update-basic-info"
     static let getWorkExpURL = "registration/get-lookup-data-experiences"
     
     //Recruiter

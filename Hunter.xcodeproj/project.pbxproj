@@ -95,6 +95,7 @@
 		7298D6276D97F8B2097CA124 /* Pods_Hunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929685EA77C4375CED5842BF /* Pods_Hunter.framework */; };
 		753DEC2924E7B854007B8B0D /* HunterPostAJobNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753DEC2824E7B854007B8B0D /* HunterPostAJobNewViewController.swift */; };
 		754136F624D57D2800F7E1DD /* HunterPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754136F524D57D2800F7E1DD /* HunterPickerViewController.swift */; };
+		7550B16D250CD84A008D74BB /* HunterCandiBasicInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550B16C250CD84A008D74BB /* HunterCandiBasicInfoVC.swift */; };
 		756292BB25061E8C00F4DD5E /* HunterEducationStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756292BA25061E8C00F4DD5E /* HunterEducationStep1VC.swift */; };
 		756292BD25062B8B00F4DD5E /* HunterEducationStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756292BC25062B8B00F4DD5E /* HunterEducationStep2VC.swift */; };
 		756292BF25066FDB00F4DD5E /* HunterListAllEduVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756292BE25066FDB00F4DD5E /* HunterListAllEduVC.swift */; };
@@ -231,6 +232,7 @@
 		4BF84F0D23C62FA600CAEDFD /* HunterRecAllJobsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterRecAllJobsVC.swift; sourceTree = "<group>"; };
 		753DEC2824E7B854007B8B0D /* HunterPostAJobNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterPostAJobNewViewController.swift; sourceTree = "<group>"; };
 		754136F524D57D2800F7E1DD /* HunterPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterPickerViewController.swift; sourceTree = "<group>"; };
+		7550B16C250CD84A008D74BB /* HunterCandiBasicInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterCandiBasicInfoVC.swift; sourceTree = "<group>"; };
 		756292BA25061E8C00F4DD5E /* HunterEducationStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterEducationStep1VC.swift; sourceTree = "<group>"; };
 		756292BC25062B8B00F4DD5E /* HunterEducationStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterEducationStep2VC.swift; sourceTree = "<group>"; };
 		756292BE25066FDB00F4DD5E /* HunterListAllEduVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterListAllEduVC.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				4B5E09DF25068CD7005CDD91 /* HunterLanguageListVC.swift */,
 				4B5E09E12506A559005CDD91 /* HunterAchieveVC.swift */,
 				4B5E898D2506A5EF004B11BC /* HunterAchieveListVC.swift */,
+				7550B16C250CD84A008D74BB /* HunterCandiBasicInfoVC.swift */,
 			);
 			path = Candidate;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				4B6E303523C82770005EED04 /* HunterRecEditJobVC.swift in Sources */,
 				4B6E303F23C87987005EED04 /* UserModel.swift in Sources */,
 				4BE1182C23349B8200FE866E /* HunterUtility.swift in Sources */,
+				7550B16D250CD84A008D74BB /* HunterCandiBasicInfoVC.swift in Sources */,
 				D7630FB923F44E8E006E94E6 /* HunterChatVC.swift in Sources */,
 				4B7770F42339EE8600DA37B7 /* HunterRegisterCompOneVC.swift in Sources */,
 				D7B5F43423C9F9B70028AC9B /* HunterElevatorPitchVC.swift in Sources */,
