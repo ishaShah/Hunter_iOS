@@ -672,7 +672,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                 
                 cell.lab_issuedBy.text =  self.achieveArrDict[indexPath.row]["issued_by"] as? String
                      
-                cell.lab_issuedDate.text =  self.achieveArrDict[indexPath.row]["issued_date"] as? String
+                cell.lab_issuedDate.text =  "\(self.achieveArrDict[indexPath.row]["issued_date"]!)"
 
                 return cell
             }
@@ -722,6 +722,15 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                     self.lastName = dataDict["last_name"] as! String
                 
                                                     
+                                                    let preferred_salary = (dataDict["preferred_salary"] as! String)
+                                                    if preferred_salary == "" {
+                                                        self.labelJobFunc.text = "\(dataDict["work_type"] as! String)\n\(dataDict["job_functions_as_string"] as! String)"
+
+                                                    }
+                                                    else {
+                                                        self.labelJobFunc.text = "\(dataDict["work_type"] as! String) | \(dataDict["preferred_salary"] as! String)\n\(dataDict["job_functions_as_string"] as! String)"
+
+                                                    }
                                                     
                                                     self.skillsArrDict = dataDict["skills"] as! [NSDictionary]
                                                     self.jobArrDict = dataDict["job_functions"] as! [NSDictionary]
@@ -733,7 +742,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                     self.achieveArrDict = dataDict["achievements"] as! [NSDictionary]
                 
                                                     
-                                                    
+                                                    self.textFirstName.text = (dataDict["experience"] as! String)
                                                     
                                                     
                                                     self.txt_desc.text = dataDict["about"] as? String

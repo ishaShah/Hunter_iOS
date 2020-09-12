@@ -14,7 +14,7 @@ public class HunterChatDescriptionModel {
     public var company_name : String?
     public var square_logo : String?
     public var job_title : String?
-    public var matched_message : String?
+    public var matched_on : String?
     
     //recruiter objects
     public var candidate_id : String?
@@ -27,7 +27,7 @@ public class HunterChatDescriptionModel {
         company_name = dictionary["company_name"] as? String
         square_logo = dictionary["square_logo"] as? String
         job_title = dictionary["job_title"] as? String
-        matched_message = dictionary["matched_message"] as? String
+        matched_on = dictionary["matched_on"] as? String
         
         //recruiter
         candidate_id = dictionary["candidate_id"] as? String

@@ -206,7 +206,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                                 if let dataDict = responseDict.value(forKey: "data") as? NSDictionary{
                                     if let chatDict = dataDict.value(forKey: "chat") as? NSDictionary{
                                         self.dictRecruiterDetails = HunterChatDescriptionModel()
-                                        if let recruiterDict = chatDict.value(forKey: "recuiter_details") as? NSDictionary{
+                                        if let recruiterDict = chatDict.value(forKey: "recruiter_details") as? NSDictionary{
                                             self.dictRecruiterDetails = HunterChatDescriptionModel().initWithDict(dictionary: recruiterDict)
                                             DispatchQueue.main.async {
                                                 if let logo = self.dictRecruiterDetails.square_logo{
@@ -220,7 +220,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                                                 if let designation = self.dictRecruiterDetails.job_title{
                                                     self.labelDesignation.text = designation
                                                 }
-                                                if let matchedOn = self.dictRecruiterDetails.matched_message{
+                                                if let matchedOn = self.dictRecruiterDetails.matched_on{
                                                     self.labelMatchedOn.text = matchedOn
                                                 }
                                             }
@@ -236,7 +236,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                                                 if let name = self.dictRecruiterDetails.candidate_name{
                                                     self.labelName.text = name
                                                 }
-                                                if let matchedOn = self.dictRecruiterDetails.matched_message{
+                                                if let matchedOn = self.dictRecruiterDetails.matched_on{
                                                     self.labelMatchedOn.text = matchedOn
                                                 }
                                             }
@@ -314,14 +314,14 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             
             let headers = [ "Authorization" : "Bearer " + accessToken]
             var paramsDict = [String: Any]()
+
+             
+
             if loginType == "candidate" {
-                paramsDict = ["job_id": selectedJobId,
-                              "type": "0",
+                paramsDict = ["swipe_id": selectedJobId,
                               "message": textMessage.text ?? ""]
             }else{
-                paramsDict = ["job_id": selectedJobId,
-                              "candidate_id": selectedCandidateId,
-                              "type": "0",
+                paramsDict = ["swipe_id": selectedJobId,
                               "message": textMessage.text ?? ""]
             }
             

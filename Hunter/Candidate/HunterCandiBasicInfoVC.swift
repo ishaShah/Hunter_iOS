@@ -92,6 +92,9 @@ class HunterCandiBasicInfoVC: UIViewController {
         
         getBasicInformation()
     }
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     func updatePreferences(){
         jobFunctionArray = []
         locaionArray = []
@@ -125,11 +128,13 @@ class HunterCandiBasicInfoVC: UIViewController {
             txtWorkType.text = workTypeName as? String
         }
         
-        collViewJobFunction.reloadData()
-        collViewSerchingLoc.reloadData()
+        
         
         htJobFunction.constant = collViewJobFunction.contentSize.height
         htSearchingLoc.constant = collViewSerchingLoc.contentSize.height
+        
+        collViewJobFunction.reloadData()
+        collViewSerchingLoc.reloadData()
         
     }
     @IBAction func actionSwitchSalaryShow(_ sender: Any) {
@@ -312,10 +317,6 @@ class HunterCandiBasicInfoVC: UIViewController {
             HunterUtility.showProgressBar()
             
             let headers    = [ "Authorization" : "Bearer " + accessToken]
-
-        
-
-            
             let paramsDict = ["first_name": txtFirstName.text ?? "",
                               "last_name": txtLastName.text ?? "" ,
                               "preferred_work_type_id": "\(preferred_work_type_id)",

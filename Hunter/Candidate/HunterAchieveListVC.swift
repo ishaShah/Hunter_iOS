@@ -79,6 +79,9 @@ class HunterAchieveListVC: UIViewController {
         
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension HunterAchieveListVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
