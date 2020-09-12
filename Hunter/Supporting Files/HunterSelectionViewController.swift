@@ -78,11 +78,15 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
 //        }
     }
     @IBAction func dismissAction(_ sender: Any) {
-        let myDict:NSDictionary =
-        ["selectedData": selectedData]
         
-        self.dismiss(animated: true) {
-            self.delegate?.selectedData(selectedDict: myDict, isFrom: self.isFrom)
+        if self.selectedData.count != 0 {
+            let myDict:NSDictionary =
+            ["selectedData": selectedData]
+            dismiss(animated: true) {
+                self.delegate?.selectedData(selectedDict: myDict, isFrom: self.isFrom)
+            }
+        }else{
+            dismiss(animated: true, completion: nil)
         }
     }
     

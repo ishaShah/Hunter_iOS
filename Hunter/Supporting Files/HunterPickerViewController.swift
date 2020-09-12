@@ -87,9 +87,11 @@ class HunterPickerViewController: UIViewController{
     
     @IBAction func actionContinue(_ sender: Any) {
         if self.selectedDict.allKeys.count != 0 {
-        dismiss(animated: true) {
-            self.delegate?.selectedData(selectedDict: self.selectedDict, isFrom: self.isFrom)
-        }
+            dismiss(animated: true) {
+                self.delegate?.selectedData(selectedDict: self.selectedDict, isFrom: self.isFrom)
+            }
+        }else{
+            dismiss(animated: true, completion: nil)
         }
     }
     

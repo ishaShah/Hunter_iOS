@@ -447,6 +447,13 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_profile(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+        vc.isFrom = "Profile"
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+        
     }
     
     @IBAction func edit_About(_ sender: Any) {

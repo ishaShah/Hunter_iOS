@@ -30,12 +30,17 @@ class HunterLanguageListVC: UIViewController {
     }
     
     @IBAction func actionContinue(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep1VC") as! HunterEducationStep1VC
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguage1VC") as! HunterLanguage1VC
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
- 
+    @IBAction func actionSave(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     
     func getAllLang(){
         if HunterUtility.isConnectedToInternet(){
