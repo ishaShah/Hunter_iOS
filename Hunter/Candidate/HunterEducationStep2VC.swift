@@ -31,6 +31,7 @@ class HunterEducationStep2VC: UIViewController {
         var endDate = ""
         
     }
+    var isFrom = String()
     var selectedData = selectionData()
     
     override func viewDidLoad() {
@@ -169,6 +170,7 @@ class HunterEducationStep2VC: UIViewController {
     
     @objc func goToListEducationVC() {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterListAllEduVC") as! HunterListAllEduVC
+        vc.isFrom = isFrom
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

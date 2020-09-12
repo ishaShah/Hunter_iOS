@@ -15,7 +15,8 @@ class HunterWorkExpListVC: UIViewController {
     @IBOutlet weak var collViewJobs: UICollectionView!
     
     var jobsArray = NSArray()
-    
+    var isFrom = String()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,9 +32,14 @@ class HunterWorkExpListVC: UIViewController {
     }
     
     @IBAction func actionContinue(_ sender: Any) {
+        if isFrom == "Profile" {
+               let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+               self.navigationController?.pushViewController(vc, animated: true)
+               }
+               else {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep1VC") as! HunterEducationStep1VC
         self.navigationController?.pushViewController(vc, animated: true)
-        
+        }
     }
     
  
@@ -81,8 +87,14 @@ class HunterWorkExpListVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func postANewJob(_ sender: Any) {
+        if isFrom == "Profile" {
+        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
         self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 

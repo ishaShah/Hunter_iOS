@@ -199,9 +199,14 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     
      override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
-        connectToGetProfileData()
+//        connectToGetProfileData()
 
         setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        connectToGetProfileData()
+
     }
         
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -300,7 +305,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         }
     }
     func hidenAndShowBtns(_ edit: Bool){
-        btn_saveCan.isHidden = !edit
+        btn_saveCan.isHidden = true
+//        btn_saveCan.isHidden = !edit
         editView.isHidden = !edit
         editV1.isHidden = !edit
         editV2.isHidden = !edit
@@ -431,10 +437,23 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_edu(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep2VC") as! HunterEducationStep2VC
+        vc.isFrom = "Profile"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_WE(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
+        vc.isFrom = "Profile"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_profile(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+        vc.isFrom = "Profile"
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+        
     }
     
     @IBAction func edit_About(_ sender: Any) {
@@ -446,6 +465,9 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
     }
     @IBAction func edit_Skills(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterSkillSetVC") as! HunterSkillSetVC
+        vc.isFrom = "Profile"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func uploadCover(_ sender: Any) {
         // additional image/video
@@ -593,12 +615,13 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             
                 cell.selectionStyle = .none
                  
-                cell.lab_TitleTxt.text = (self.eduArrDict[indexPath.row]["school"] as! String).uppercased()
+                  cell.lab_TitleTxt.text = (self.eduArrDict[indexPath.row]["school"] as! String).uppercased()
                 
                 
                 
                 cell.lab_StartDateTxt.text = "\(self.eduArrDict[indexPath.row]["start_date"] as! Int) - \(self.eduArrDict[indexPath.row]["end_date"] as! Int)"
-                    cell.lab_MinorTxt.text = self.eduArrDict[indexPath.row]["field_of_study_minor"] as? String
+                    
+                cell.lab_MinorTxt.text = self.eduArrDict[indexPath.row]["level_of_study"] as? String
                     cell.lab_MajorTxt.text = self.eduArrDict[indexPath.row]["field_of_study"] as? String
                      
                 

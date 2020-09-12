@@ -13,7 +13,7 @@ import SVProgressHUD
 class HunterWorkExpVC: UIViewController {
     
     
-    
+    var isFrom = String()
     @IBOutlet weak var txtWorkExTitle: HunterTextField!
     @IBOutlet weak var txtWorkExCompany: HunterTextField!
     @IBOutlet weak var txtWorkExEmpType: HunterTextField!
@@ -205,6 +205,7 @@ class HunterWorkExpVC: UIViewController {
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
                                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpListVC") as! HunterWorkExpListVC
+                                vc.isFrom = self.isFrom
                                 self.navigationController?.pushViewController(vc, animated: true)
                             }else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)

@@ -27,7 +27,7 @@ class HunterEditBioVC: UIViewController {
     }
     
     @IBAction func btn_continue(_ sender: Any) {
-        if txt_view.text.count != 0 {
+        if txt_view.text.count == 0 {
             self.view.makeToast("Bio cannot be empty.")
         } else {
          connectToUpdateCompanyBio()

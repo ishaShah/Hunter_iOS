@@ -22,7 +22,8 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
     var selectedSkillsIDArr = [Int]()
     
     @IBOutlet weak var txt_skill: HunterTextField!
-    
+    var isFrom = String()
+
     @IBOutlet weak var collView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -211,8 +212,14 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
+                                if self.isFrom == "Profile" {
+                                let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+                                self.navigationController?.pushViewController(vc, animated: true)
+                                }
+                                else {
                                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterUAEExpVC") as! HunterUAEExpVC
                                 self.navigationController?.pushViewController(vc, animated: true)
+                                }
                             }
                             else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)

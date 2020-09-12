@@ -2537,7 +2537,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDL-jg-sS6">
-                                <rect key="frame" x="87.666666666666686" y="725" width="200" height="55"/>
+                                <rect key="frame" x="87.666666666666686" y="667" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.91372549020000005" green="0.89411764709999997" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="3pO-sY-KV2"/>
@@ -2570,7 +2570,7 @@
                             <constraint firstItem="rzl-yE-nNq" firstAttribute="centerX" secondItem="7G4-D7-QHg" secondAttribute="centerX" id="CUC-5H-lIt"/>
                             <constraint firstItem="rzl-yE-nNq" firstAttribute="top" secondItem="lZX-CY-ONl" secondAttribute="bottom" constant="30" id="IRO-de-tZk"/>
                             <constraint firstItem="nCN-zk-kUc" firstAttribute="leading" secondItem="lZX-CY-ONl" secondAttribute="leading" constant="8" id="Tqu-xp-j7p"/>
-                            <constraint firstAttribute="bottom" secondItem="kDL-jg-sS6" secondAttribute="bottom" constant="32" id="UtM-2v-VNl"/>
+                            <constraint firstAttribute="bottom" secondItem="kDL-jg-sS6" secondAttribute="bottom" constant="90" id="UtM-2v-VNl"/>
                             <constraint firstItem="kc3-E9-0wV" firstAttribute="trailing" secondItem="7G4-D7-QHg" secondAttribute="trailing" id="Vki-Yg-dke"/>
                             <constraint firstItem="lZX-CY-ONl" firstAttribute="centerX" secondItem="7G4-D7-QHg" secondAttribute="centerX" id="eug-Jx-slX"/>
                             <constraint firstAttribute="trailing" secondItem="czV-b9-i3g" secondAttribute="trailing" constant="30" id="g9T-vX-QYQ"/>
@@ -3132,17 +3132,17 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-u0-ios">
-                                        <rect key="frame" x="105.33333333333333" y="351.33333333333331" width="164.33333333333337" height="109.66666666666669"/>
+                                        <rect key="frame" x="92.000000000000014" y="350.66666666666669" width="191.33333333333337" height="110.66666666666669"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-bS-5wI">
-                                                <rect key="frame" x="52.333333333333329" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="65.666666666666657" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="gZU-0n-9Dh"/>
                                                     <constraint firstAttribute="height" constant="60" id="wb1-v0-1qv"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Created!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nt-Br-PIx">
-                                                <rect key="frame" x="0.0" y="85" width="164.33333333333334" height="24.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="85" width="191.33333333333334" height="25.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="21"/>
                                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -7975,28 +7975,8 @@ that we recommend for you.</string>
                                     <constraint firstAttribute="width" constant="48" id="cH7-bP-uB6"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-Te-dQV">
-                                <rect key="frame" x="87.666666666666686" y="725" width="200" height="55"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="BKD-9Z-yFd"/>
-                                    <constraint firstAttribute="height" constant="55" id="Z44-it-g17"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Add Education">
-                                    <color key="titleColor" red="0.18823529410000001" green="0.015686274510000001" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                        <real key="value" value="27.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="actionAddEducation:" destination="P2W-D0-I88" eventType="touchUpInside" id="PaX-Sx-Mcr"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OE9-fq-rB3">
-                                <rect key="frame" x="0.0" y="216.66666666666666" width="375" height="498.33333333333337"/>
+                                <rect key="frame" x="0.0" y="216.66666666666666" width="375" height="440.33333333333337"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yU-FU-dYS">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="498.33333333333331"/>
@@ -8170,6 +8150,26 @@ that we recommend for you.</string>
                                     <constraint firstItem="1yU-FU-dYS" firstAttribute="top" secondItem="OE9-fq-rB3" secondAttribute="top" id="uEl-ff-fYp"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-Te-dQV">
+                                <rect key="frame" x="87.666666666666686" y="667" width="200" height="55"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="BKD-9Z-yFd"/>
+                                    <constraint firstAttribute="height" constant="55" id="Z44-it-g17"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                <state key="normal" title="Add Education">
+                                    <color key="titleColor" red="0.18823529410000001" green="0.015686274510000001" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                        <real key="value" value="27.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionAddEducation:" destination="P2W-D0-I88" eventType="touchUpInside" id="PaX-Sx-Mcr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -8190,7 +8190,7 @@ that we recommend for you.</string>
                             <constraint firstAttribute="trailing" secondItem="OE9-fq-rB3" secondAttribute="trailing" id="sjX-lX-jGn"/>
                             <constraint firstItem="OE9-fq-rB3" firstAttribute="leading" secondItem="RGG-V6-697" secondAttribute="leading" id="slm-tS-YLl"/>
                             <constraint firstItem="0hY-9s-tkN" firstAttribute="centerX" secondItem="RGG-V6-697" secondAttribute="centerX" id="uM9-wd-Bfb"/>
-                            <constraint firstAttribute="bottom" secondItem="Zdq-Te-dQV" secondAttribute="bottom" constant="32" id="yaf-o9-0Le"/>
+                            <constraint firstAttribute="bottom" secondItem="Zdq-Te-dQV" secondAttribute="bottom" constant="90" id="yaf-o9-0Le"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -8271,7 +8271,7 @@ that we recommend for you.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-X4-NJQ">
-                                <rect key="frame" x="87.666666666666686" y="725" width="200" height="55"/>
+                                <rect key="frame" x="87.666666666666686" y="667" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="dbx-PV-V7c"/>
@@ -8375,6 +8375,20 @@ that we recommend for you.</string>
                                                         <constraint firstAttribute="trailing" secondItem="ZZk-nS-mLW" secondAttribute="trailing" constant="15" id="wGb-8a-68s"/>
                                                         <constraint firstItem="40C-Ua-apL" firstAttribute="leading" secondItem="UqN-y7-0VK" secondAttribute="leading" constant="35" id="yP2-k3-Qjg"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="0.0" height="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-nY-q6U">
                                                     <rect key="frame" x="287" y="40" width="30" height="30"/>
@@ -8454,7 +8468,7 @@ that we recommend for you.</string>
                             <constraint firstItem="rqW-yd-gQf" firstAttribute="top" secondItem="jie-Ev-hhi" secondAttribute="top" id="nkF-Eh-W4C"/>
                             <constraint firstItem="rqW-yd-gQf" firstAttribute="trailing" secondItem="jie-Ev-hhi" secondAttribute="trailing" id="pv3-rf-ouH"/>
                             <constraint firstAttribute="trailing" secondItem="yBN-OT-hZF" secondAttribute="trailing" constant="20" id="ruX-wC-8wj"/>
-                            <constraint firstAttribute="bottom" secondItem="j4h-X4-NJQ" secondAttribute="bottom" constant="32" id="uVC-KY-YU6"/>
+                            <constraint firstAttribute="bottom" secondItem="j4h-X4-NJQ" secondAttribute="bottom" constant="90" id="uVC-KY-YU6"/>
                             <constraint firstItem="Wt0-iS-hmR" firstAttribute="centerX" secondItem="jie-Ev-hhi" secondAttribute="centerX" id="zIR-lS-AAU"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
