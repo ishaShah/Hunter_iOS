@@ -12,7 +12,8 @@ import SVProgressHUD
 
 class HunterListAllEduVC: UIViewController {
 
-    
+    var isFrom = String()
+
     var educationArray = NSArray()
     @IBOutlet weak var collEducation: UICollectionView!
     
@@ -81,12 +82,18 @@ class HunterListAllEduVC: UIViewController {
     }
     @IBAction func actionAddEducation(_ sender: Any) {
         // additional image/video
+        if isFrom == "Profile" {
+        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditProPicVC") as! HunterEditProPicVC
         vc.isFrom = "candidateReg"
         self.navigationController?.pushViewController(vc, animated: true)
-        
+        }
     }
 }
+
 extension HunterListAllEduVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

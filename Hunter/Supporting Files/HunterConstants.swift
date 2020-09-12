@@ -145,7 +145,7 @@ enum API{
     static let candidateSuggestionsURL = "candidate-suggestions"
     static let updateCompanyBioURL = "profile/update-company-bio"
     
-     static let updateCandidateBioURL = "profile/update-candidate-Bio"
+     static let updateCandidateBioURL = "profile/update-candidate-bio"
  }
 enum FontName: String {
     case MontserratRegular            = "Montserrat-Regular"
