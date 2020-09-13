@@ -73,16 +73,6 @@ class HunterCandiBasicInfoVC: UIViewController {
         txtSalary.delegate = self
         txtWorkType.delegate = self
         txtCurrentLocation.delegate = self
-        
-        
-        collViewJobFunction.delegate = self
-        collViewJobFunction.dataSource = self
-        
-        collViewSerchingLoc.delegate = self
-        collViewSerchingLoc.dataSource = self
-        
-     
-        
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -137,9 +127,12 @@ class HunterCandiBasicInfoVC: UIViewController {
         self.collViewSerchingLoc.reloadData()
         
         
-        
-        self.htJobFunction.constant = self.collViewJobFunction.contentSize.height
-        self.htSearchingLoc.constant = self.collViewSerchingLoc.contentSize.height
+        DispatchQueue.main.async {
+            self.htJobFunction.constant = self.collViewJobFunction.contentSize.height
+            self.htSearchingLoc.constant = self.collViewSerchingLoc.contentSize.height
+            self.view.layoutIfNeeded()
+        }
+       
         
         
         
