@@ -89,10 +89,10 @@ class HunterReportAProblemVC: UIViewController {
                 loginType = type
             }
             if loginType == "candidate" {
-             url = API.candidateBaseURL + API.supportCategoriesURL
+                url = API.candidateBaseURL + API.supportCategoriesURL
             }
             else {
-//             url = API.recruiterBaseURL + API.reportErrorURL
+             url = API.recruiterBaseURL + API.reportErrorURL
             }
             
             print(url)

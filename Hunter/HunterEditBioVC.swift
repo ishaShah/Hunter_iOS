@@ -30,73 +30,66 @@ class HunterEditBioVC: UIViewController {
         if txt_view.text.count == 0 {
             self.view.makeToast("Bio cannot be empty.")
         } else {
-         connectToUpdateCompanyBio()
+            connectToUpdateCompanyBio()
         }
     }
     func connectToUpdateCompanyBio(){
-            if HunterUtility.isConnectedToInternet(){
-                var loginType = String()
-                var url = ""
-                var paramsDict = [String : Any]()
-
-                if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
-                    loginType = type
-                }
-                // Do any additional setup after loading the view.
-                if loginType == "candidate" {
-                 url = API.candidateBaseURL + API.updateCandidateBioURL
-                    paramsDict = ["bio": txt_view.text! ]
-
-                }
-                else {
-                 url = API.recruiterBaseURL + API.updateCompanyBioURL
-                     paramsDict = ["company_bio": txt_view.text! ]
-
-                }
-                print(url)
-                HunterUtility.showProgressBar()
+        if HunterUtility.isConnectedToInternet(){
+            var loginType = String()
+            var url = ""
+            var paramsDict = [String : Any]()
+            
+            if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                loginType = type
+            }
+            // Do any additional setup after loading the view.
+            if loginType == "candidate" {
+                url = API.candidateBaseURL + API.updateCandidateBioURL
+                paramsDict = ["bio": txt_view.text! ]
                 
+            }
+            else {
+                url = API.recruiterBaseURL + API.updateCompanyBioURL
+                paramsDict = ["company_bio": txt_view.text! ]
                 
+            }
+            print(url)
+            HunterUtility.showProgressBar()
+            
+            
+            
+            let headers    = [ "Authorization" : "Bearer " + accessToken]
+            
+            Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                 
-                let headers    = [ "Authorization" : "Bearer " + accessToken]
-                
-                Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-                    
-                    switch response.result {
-                    case .success:
-                        if let responseDict = response.result.value as? NSDictionary{
-                            print(responseDict)
-                            SVProgressHUD.dismiss()
-                            if let status = responseDict.value(forKey: "status"){
-                                if status as! Int == 1   {
-                                    self.dismiss(animated: true, completion: nil)
-
-                                }
-                                else if status as! Int == 2 {
-                                    let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
-                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                    }))
-                                    self.present(alert, animated: true, completion: nil)
-                                    
-                                    print("Logout api")
-                                    
-                                    UserDefaults.standard.removeObject(forKey: "accessToken")
-                                    UserDefaults.standard.removeObject(forKey: "loggedInStat")
-                                    accessToken = String()
-                                    
-                                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                                    let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
-                                    let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
-                                    navigationController.viewControllers = [mainRootController]
-                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                    appDelegate.window?.rootViewController = navigationController
-                                }
-                                else{
-                                    let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
-                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                    }))
-                                    self.present(alert, animated: true, completion: nil)
-                                }
+                switch response.result {
+                case .success:
+                    if let responseDict = response.result.value as? NSDictionary{
+                        print(responseDict)
+                        SVProgressHUD.dismiss()
+                        if let status = responseDict.value(forKey: "status"){
+                            if status as! Int == 1   {
+                                self.dismiss(animated: true, completion: nil)
+                                
+                            }
+                            else if status as! Int == 2 {
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                                
+                                print("Logout api")
+                                
+                                UserDefaults.standard.removeObject(forKey: "accessToken")
+                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                accessToken = String()
+                                
+                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                navigationController.viewControllers = [mainRootController]
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = navigationController
                             }
                             else{
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
@@ -104,25 +97,32 @@ class HunterEditBioVC: UIViewController {
                                 }))
                                 self.present(alert, animated: true, completion: nil)
                             }
-                        }else{
-                            SVProgressHUD.dismiss()
-                            //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
-                            //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
-                            //                        self.present(alert, animated: true, completion: nil)
                         }
-                        
-                    case .failure(let error):
+                        else{
+                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }else{
                         SVProgressHUD.dismiss()
-                        print(error)
-                        let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
+                        //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
+                        //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
+                        //                        self.present(alert, animated: true, completion: nil)
                     }
+                    
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error)
+                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
-            }else{
-                print("no internet")
             }
+        }else{
+            print("no internet")
         }
+    }
      
         
     

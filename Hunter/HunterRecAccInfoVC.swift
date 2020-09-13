@@ -13,7 +13,7 @@ import SVProgressHUD
 class HunterRecAccInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableAccInfo: UITableView!
-    @IBOutlet weak var heightTableAccInfo: NSLayoutConstraint!
+
     @IBOutlet weak var viewHeader: GradientView!
     @IBOutlet weak var sadView: UIView!
     @IBOutlet weak var disableAcc: UIView!
@@ -36,8 +36,6 @@ class HunterRecAccInfoVC: UIViewController, UITableViewDelegate, UITableViewData
         DispatchQueue.main.async {
             self.view.layoutIfNeeded()
             self.tableAccInfo.layoutIfNeeded()
-            let height = self.tableAccInfo.contentSize.height
-            self.heightTableAccInfo.constant = height
             self.tableAccInfo.needsUpdateConstraints()
         }
     }
@@ -211,8 +209,9 @@ class HunterRecAccInfoVC: UIViewController, UITableViewDelegate, UITableViewData
     }
     func connectToDisAbleAccounts(_ change : Int, _ account: Int){
         if HunterUtility.isConnectedToInternet(){
+            var url = ""
+            url = API.recruiterBaseURL + API.getDisAbleSubAccURL
             
-            let url = API.recruiterBaseURL + API.getDisAbleSubAccURL
             print(url)
             HunterUtility.showProgressBar()
             
