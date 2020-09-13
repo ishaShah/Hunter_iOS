@@ -130,11 +130,18 @@ class HunterCandiBasicInfoVC: UIViewController {
         
         
         
-        htJobFunction.constant = collViewJobFunction.contentSize.height
-        htSearchingLoc.constant = collViewSerchingLoc.contentSize.height
+        self.lblJobFunctionTitle.text = "Job Functions \(jobFunctionArray.count)/5:"
         
-        collViewJobFunction.reloadData()
-        collViewSerchingLoc.reloadData()
+        
+        self.collViewJobFunction.reloadData()
+        self.collViewSerchingLoc.reloadData()
+        
+        
+        
+        self.htJobFunction.constant = self.collViewJobFunction.contentSize.height
+        self.htSearchingLoc.constant = self.collViewSerchingLoc.contentSize.height
+        
+        
         
     }
     @IBAction func actionSwitchSalaryShow(_ sender: Any) {
@@ -185,8 +192,10 @@ class HunterCandiBasicInfoVC: UIViewController {
                                         self.salary_range_id = candidate_details["salary_range_id"] as! Int
                                         self.show_salary_on_profile = candidate_details["show_salary_on_profile"] as! Int
                                         self.show_salary_on_profile = candidate_details["show_salary_on_profile"] as! Int
-                                        self.updatePreferences()
                                         
+                                        DispatchQueue.main.async {
+                                            self.updatePreferences()
+                                        }
                                     }
                                     
                                 }
