@@ -444,7 +444,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     }
     @IBAction func edit_Achievement(_ sender: Any) {
         
-        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterAchieveVC") as! HunterAchieveVC
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterAchieveListVC") as! HunterAchieveListVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func upload_profile(_ sender: Any) {
@@ -454,16 +454,16 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func edit_lang(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguage1VC") as! HunterLanguage1VC
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguageListVC") as! HunterLanguageListVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_edu(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep2VC") as! HunterEducationStep2VC
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterListAllEduVC") as! HunterListAllEduVC
         vc.isFrom = "Profile"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_WE(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpListVC") as! HunterWorkExpListVC
         vc.isFrom = "Profile"
         self.navigationController?.pushViewController(vc, animated: true)
     }

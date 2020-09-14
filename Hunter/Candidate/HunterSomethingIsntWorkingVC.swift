@@ -78,12 +78,23 @@ class HunterSomethingIsntWorkingVC: UIViewController, UITextViewDelegate, Feebac
     func connectToSendFeedback(){
         if HunterUtility.isConnectedToInternet(){
             
-            var url = API.recruiterBaseURL + API.reportErrorURL
+            var loginType = String()
+            if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                loginType = type
+            }
+            var url = ""
+            if loginType == "candidate" {
+                url = API.candidateBaseURL + API.reportCandiErrorURL
+            }else{
+                url = API.recruiterBaseURL + API.reportErrorURL
+            }
+            
+            
             print(url)
             HunterUtility.showProgressBar()
             
             let headers = [ "Authorization" : "Bearer " + accessToken]
-
+            
             let paramsDict = ["message": textFeedback.text!] as [String : Any]
             print(paramsDict)
             Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
@@ -95,14 +106,12 @@ class HunterSomethingIsntWorkingVC: UIViewController, UITextViewDelegate, Feebac
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
-                                let vc = UIStoryboard(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterFeedbackThankYouPage") as! HunterFeedbackThankYouPage
-                                vc.delegate = self
-                                self.present(vc, animated: true, completion: nil)
-/*                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                    self.navigationController?.popViewController(animated: true)
-                                }))
-                                self.present(alert, animated: true, completion: nil)*/
+                                self.dismiss(animated: true, completion: nil)
+                                /*                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                 self.navigationController?.popViewController(animated: true)
+                                 }))
+                                 self.present(alert, animated: true, completion: nil)*/
                             }else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in

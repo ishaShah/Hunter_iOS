@@ -39,10 +39,10 @@ class HunterSendReviewVC: UIViewController, UITextViewDelegate {
             return .lightContent
         }
     @IBAction func buttonBack(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func buttonCancel(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+       dismiss(animated: true, completion: nil)
     }
     @IBAction func buttonSend(_ sender: UIButton) {
         if viewCosmos.rating == 0{
@@ -69,7 +69,17 @@ class HunterSendReviewVC: UIViewController, UITextViewDelegate {
     func connectToSendReview(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.candidateBaseURL + API.rateUsURL
+            
+            var loginType = String()
+            if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                loginType = type
+            }
+            var url = ""
+            if loginType == "candidate" {
+                url = API.candidateBaseURL + API.rateUsURL
+            }else{
+                url = API.recruiterBaseURL + API.rateUsURL
+            }
             print(url)
             HunterUtility.showProgressBar()
             
@@ -91,11 +101,7 @@ class HunterSendReviewVC: UIViewController, UITextViewDelegate {
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
-                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                    self.navigationController?.popViewController(animated: true)
-                                }))
-                                self.present(alert, animated: true, completion: nil)
+                                self.dismiss(animated: true, completion: nil)
                             }else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -105,7 +111,7 @@ class HunterSendReviewVC: UIViewController, UITextViewDelegate {
                                 print("Logout api")
                                 
                                 UserDefaults.standard.removeObject(forKey: "accessToken")
-    UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
                                 accessToken = String()
                                 
                                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)

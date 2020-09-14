@@ -474,6 +474,9 @@ class HunterCompanyProfileVC: UIViewController, UITextFieldDelegate, CropViewCon
                                         if let url = profile["square_logo"] as? String{
                                             self.imgv_proPic.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
                                         }
+                                        if let url = profile["rectangle_logo"] as? String{
+                                            self.imgv_proPic.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                        }
                                     }
                                 }
                             }else if status as! Int == 2 {

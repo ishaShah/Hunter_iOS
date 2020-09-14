@@ -75,10 +75,11 @@ enum API{
     static let enableCandidateAccURL = "enable-account"
     static let disableRecruiterAccURL = "settings/disable-account"
     static let enableRecruiterAccURL = "settings/enable-account"
-    static let rateUsURL = "support/rating"
+    static let rateUsURL = "settings/submit-review"
     static let elevatorPitchURL = "job/elevator-pitch"
     static let supportCategoriesURL = "support/report-category"
-    static let reportProblemURL = "support/report-problem"
+    static let reportProblemURL = "settings/submit-general-feedback"
+    static let reportCandiErrorURL = "settings/support/report-error"
     
     static let jobsSwipesURL = "job/swipe"
     static let profileUpdateURL = "profile/update"
@@ -125,7 +126,7 @@ enum API{
     static let getSettingsEnableAccURL = "settings/enable-account"
     static let getSaveSubAccURL =
     "settings/save-sub-accounts"
-    static let getDisAbleSubAccURL = "settings/disable-sub-accounts"
+    static let getDisAbleSubAccURL = "settings/enable-disable-sub-account"
     static let getDelSubAccURL = "settings/delete-sub-accounts"
     static let enableNotificationURL = "settings/enable-notification"
     static let getJobsForFilterURL = "candidate/get-jobs-for-filter"
@@ -140,6 +141,7 @@ enum API{
     static let forgotPasswordURL = "forgot-password"
     static let createNewPassURL = "create-new-password"
     static let reportErrorURL = "settings/report-error"
+    static let createSubAccURL = "settings/create-sub-accounts"
     
     static let updateCompanyBusinessTypeURL = "profile/update-company-business-type"
     static let updateCompanySizeURL = "profile/update-company-size"

@@ -132,7 +132,7 @@ extension RecCustomView: UICollectionViewDelegateFlowLayout {
         let skills = userModel.skills[indexPath.row] as! String
         label.text = skills.uppercased()
         label.sizeToFit()
-        return CGSize(width: label.frame.width, height: 25)
+        return CGSize(width: label.frame.width + 3, height: 25)
     }
 }
 extension RecCustomView : UICollectionViewDelegate {

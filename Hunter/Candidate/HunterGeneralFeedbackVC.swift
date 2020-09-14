@@ -71,7 +71,16 @@ class HunterGeneralFeedbackVC: UIViewController, UITextViewDelegate, FeebackSend
     func connectToSendFeedback(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.candidateBaseURL + API.reportProblemURL
+            var loginType = String()
+            if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                loginType = type
+            }
+            var url = ""
+            if loginType == "candidate" {
+                url = API.candidateBaseURL + API.reportProblemURL
+            }else{
+                 url = API.recruiterBaseURL + API.reportProblemURL
+            }
             print(url)
             HunterUtility.showProgressBar()
             
@@ -89,14 +98,12 @@ class HunterGeneralFeedbackVC: UIViewController, UITextViewDelegate, FeebackSend
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
-                                let vc = UIStoryboard(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterFeedbackThankYouPage") as! HunterFeedbackThankYouPage
-                                vc.delegate = self
-                                self.navigationController?.pushViewController(vc, animated: true)
-/*                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                    self.navigationController?.popViewController(animated: true)
-                                }))
-                                self.present(alert, animated: true, completion: nil)*/
+                                self.dismiss(animated: true, completion: nil)
+                                /*                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                 self.navigationController?.popViewController(animated: true)
+                                 }))
+                                 self.present(alert, animated: true, completion: nil)*/
                             }else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -106,7 +113,7 @@ class HunterGeneralFeedbackVC: UIViewController, UITextViewDelegate, FeebackSend
                                 print("Logout api")
                                 
                                 UserDefaults.standard.removeObject(forKey: "accessToken")
-    UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
                                 accessToken = String()
                                 
                                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -148,14 +155,14 @@ class HunterGeneralFeedbackVC: UIViewController, UITextViewDelegate, FeebackSend
             print("no internet")
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
 }

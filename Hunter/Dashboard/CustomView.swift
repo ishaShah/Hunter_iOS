@@ -32,11 +32,13 @@ class CustomView: UIView {
     
     var userModel : UserModel! {
         didSet{
-             self.profNameLab.text = userModel.name
+             self.desigNameLab.text = "@\(userModel.name!)"
             
-            self.desigNameLab.text = (userModel.job_details["title"] as! String)
+            self.profNameLab.text = "\(userModel.job_details["title"] as! String)"
             self.jobDesc.text = (userModel.job_details["job_summary"] as! String)
+            
             if let url = userModel.recruiter["rectangle_logo"] as? String{
+                print(url)
                 self.profImg.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "placeholder.png"))
 
             }
@@ -44,7 +46,10 @@ class CustomView: UIView {
 
             self.lab_loc.text = (userModel.job_details["location"] as! String)
             self.lab_designer.text = (userModel.job_details["work_type"] as! String)
-            self.lab_otherDetails.text = "\(userModel.job_details["work_type"] as! String)\nSalary: \(userModel.job_details["salary_range"] as! String)"
+            
+            let education = (userModel.job_details["education"] as! [String])
+            let edu_string = education.joined(separator: ", ")
+            self.lab_otherDetails.text = "\(userModel.job_details["experience"] as! String) Experience\nEducation: \(edu_string.capitalized)\nSalary: \(userModel.job_details["salary_range"] as! String)"
             self.recruiter_id = userModel.job_details["recruiter_id"] as! Int
 //            self.imageViewBackground.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
         }
@@ -86,11 +91,12 @@ class CustomView: UIView {
     }
     
     @IBAction func profileView(_ sender: Any) {
+        self.delegate?.instantiateNewSecondView(tagged: self.recruiter_id)
+
     }
     
     @IBAction func fullView(sender:UIButton) {
          
-        self.delegate?.instantiateNewSecondView(tagged: self.recruiter_id)
     }
     
     
@@ -147,7 +153,7 @@ extension CustomView: UICollectionViewDelegateFlowLayout {
         let skills = userModel.skills[indexPath.row] as! String
         label.text = skills.uppercased()
         label.sizeToFit()
-        return CGSize(width: label.frame.width, height: 20)
+        return CGSize(width: label.frame.width + 3, height: 20)
     }
 }
 extension CustomView : UICollectionViewDelegate {

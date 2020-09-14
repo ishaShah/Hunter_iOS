@@ -247,7 +247,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             
             
  
-            let parameters    = [ "job_id" : job_id , "candidate_id" : candidate_Id , "job_message" : txt_msg.text!] as [String : Any]
+            let parameters    = [ "job_id" : job_id , "candidate_id" : candidate_Id , "message" : txt_msg.text!] as [String : Any]
             print(parameters)
 
 //            job_id
@@ -519,6 +519,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     //MARK:- Webservice
     func connectToGetJobs(){
+        self.userModels = []
+
         if HunterUtility.isConnectedToInternet(){
              let url = API.candidateBaseURL + API.getJobSuggestionsURL
             print(url)
@@ -654,6 +656,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func connectToGetCandidates(){
+        self.userModels = []
+
         if HunterUtility.isConnectedToInternet(){
             
  
@@ -693,12 +697,19 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                 else {
                                     
                                     self.noCardLeft.isHidden = true
+
                                 for mainDic in candidates{
                                     print(mainDic)
                                     let recruiterDict = mainDic
                                     let companyName =  recruiterDict["first_name"] as! String
                                     let job_detailsDict = mainDic
-                                    let skillsArrDict = mainDic["skills"] as! [String]
+                                    
+                                    var skillArray = [String]()
+                                    let skills = mainDic["skills"] as! [NSDictionary]
+                                    for skil in skills {
+                                        skillArray.append(skil["skill"] as! String)
+                                    }
+                                    let skillsArrDict = skillArray
                                     let candidate_Id = recruiterDict["candidate_id"] as! Int
                                     
 
@@ -942,9 +953,18 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
                                         self.recruiter_idNew = candidate_ID
                                         
                                         self.job_id = Int(data["job_id"] as! String)!
+                                        
+                                        
+                                        let elevator_pitch = (data["elevator_pitch"] as! Int)
+                                        if elevator_pitch == 0 {
+                                             self.messageView.isHidden = true
+                                            self.backMsgView.isHidden = true
+                                        }
+                                        else {
                                         self.txt_msg.text = "Type your message here ..."
                                         self.messageView.isHidden = false
                                         self.backMsgView.isHidden = false
+                                        }
                                     }
                                     else {
                                         
@@ -952,9 +972,19 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
                                         
                                         
                                         self.candidate_Id = Int(data["candidate_id"] as! String)!
+                                         
+                                        
+                                        
+                                        let elevator_pitch = (data["elevator_pitch"] as! Int)
+                                        if elevator_pitch == 0 {
+                                             self.messageView.isHidden = true
+                                            self.backMsgView.isHidden = true
+                                        }
+                                        else {
                                         self.txt_msg.text = "Type your message here ..."
                                         self.messageView.isHidden = false
                                         self.backMsgView.isHidden = false
+                                        }
                                     }
                                 }
                                 

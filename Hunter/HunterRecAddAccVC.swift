@@ -33,7 +33,7 @@ class HunterRecAddAccVC: UIViewController {
        // connectToGetBasicInfo()
     }
     @IBAction func buttonBack(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func buttonSaveProfile(_ sender: UIButton) {
         guard let firstName = textFirstName.text, firstName.count > 0 else {
@@ -71,7 +71,7 @@ class HunterRecAddAccVC: UIViewController {
     func connectToUpdateBasicInfo(){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.recruiterBaseURL + API.getSaveSubAccURL
+            let url = API.recruiterBaseURL + API.createSubAccURL
             print(url)
             HunterUtility.showProgressBar()
             
@@ -113,9 +113,7 @@ class HunterRecAddAccVC: UIViewController {
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1{
                                 //   self.connectToGetSettingsData()
-                                if let sub_accounts = responseDict.value(forKey: "sub_accounts") as? [NSDictionary] {
-                                    
-                                }
+                                self.dismiss(animated: true, completion: nil)
                             }else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -136,7 +134,7 @@ class HunterRecAddAccVC: UIViewController {
                                 appDelegate.window?.rootViewController = navigationController
                             }
                             else{
-                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
                                 }))
                                 self.present(alert, animated: true, completion: nil)
