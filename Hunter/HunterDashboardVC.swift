@@ -56,15 +56,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 //        }
 //    }
     var dropDownStatus = false
-//    @IBOutlet weak var emojiView: EmojiRateView!
-    
-//    let userModels : [UserModel] =  {
-//        var model : [UserModel] = []
-//         for n in 0...names.count-1 {
-//            model.append(UserModel(name: names[n], num: "\(n)"))
-//        }
-//        return model
-//    }()
+ 
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -80,39 +72,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 
          self.present(vc, animated: true, completion: nil)
         
-//        if (tag == 0) {
-//
-//            swipe_top.constant = 0.0
-//            swipe_left.constant = 0.0
-//            swipe_bottom.constant = 0.0
-//            self.view.layoutIfNeeded()
 
-//            let screenCenter = CGPoint(x:UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
-//            let subviewCenter = self.view.convert(self.swipeView.center, to: self.view)
-//            let offset = UIOffset(horizontal: screenCenter.x-subviewCenter.x, vertical: screenCenter.y-subviewCenter.y)
-//
-//            let widthScale = UIScreen.main.bounds.size.width/self.swipeView.frame.size.width
-//            let heightScale = UIScreen.main.bounds.size.height/self.swipeView.frame.size.height
-//            UIView.animate(withDuration: 1.0, animations: {
-//                let scaleTransform = CGAffineTransform(scaleX: widthScale, y: heightScale)
-//                let translateTransform = CGAffineTransform(translationX: offset.horizontal, y: offset.vertical)
-//                self.swipeView.transform = scaleTransform.concatenating(translateTransform)
-//            }, completion: { (finished) in
-//
-//            })
-            
-//        } else {
-//            swipe_top.constant = 55.0
-//            swipe_left.constant = 10.0
-//            swipe_bottom.constant = 80.0
-//            self.view.layoutIfNeeded()
-//
-////            UIView.animate(withDuration: 1.0, animations: {
-////                self.swipeView.transform = CGAffineTransform.identity
-////            }, completion: { (finished) in
-////
-////            })
-//        }
     }
     @IBAction func dropDownList(_ sender: Any) {
         
@@ -372,7 +332,6 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.jobView.isHidden = true
         UserDefaults.standard.set("", forKey: "jobView")
 
         UserDefaults.standard.set("loggedIn", forKey: "loggedInStat")
@@ -380,6 +339,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
         
         if loginType == "candidate" {
+            self.jobView.isHidden = true
+
             self.connectToGetJobs()
             self.lab_intro.text = "ELEVATOR PITCH"
             self.lab_introSub.text = "Now's your chance. Tell them what makes you the perfect candidate!"

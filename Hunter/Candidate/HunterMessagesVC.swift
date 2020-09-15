@@ -146,6 +146,8 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         if loginType == "candidate"{
             connectToGetChats()
         }else{
+            connectToGetChats()
+
             if self.arrayChatList.count == 0 {
                 self.collectionMatches.isHidden = true
                 self.tableMessages.isHidden = true
