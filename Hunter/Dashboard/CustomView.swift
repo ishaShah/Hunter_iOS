@@ -22,14 +22,18 @@ class CustomView: UIView {
     @IBOutlet weak var jobDesc: UITextView!
     @IBOutlet weak var coll_industry: UICollectionView!
     @IBOutlet weak var lab_loc: UILabel!
+    @IBOutlet weak var view_expand: UIView!
+    @IBOutlet weak var btn_profile: UIButton!
     var recruiter_id = Int()
-//    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
+    //    @IBOutlet weak var labelText: UILabel!
 //    @IBOutlet weak var imageViewProfile: UIImageView!
 //    @IBOutlet weak var imageViewBackground: UIImageView!
 //    @IBOutlet weak var buttonAction: UIButton!
     
     
-    
+    var isFrom = String()
+
     var userModel : UserModel! {
         didSet{
              self.desigNameLab.text = "@\(userModel.name!)"
@@ -67,8 +71,20 @@ class CustomView: UIView {
     
     func commonInit() {
         Bundle.main.loadNibNamed(CustomView.className, owner: self, options: nil)
+         
+        let jobView = UserDefaults.standard.object(forKey: "jobView") as? String
         contentView.fixInView(self)
-        
+
+        if jobView == "jobView" {
+            self.view_expand.isHidden = true
+            self.btn_profile.isHidden = true
+            self.backBtn.isHidden = false
+
+        }
+        else {
+            self.backBtn.isHidden = true
+
+        }
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.25
         layer.shadowOffset = CGSize(width: 0, height: 1.5)
@@ -90,13 +106,16 @@ class CustomView: UIView {
  
     }
     
+    @IBAction func backBtnClick(_ sender: Any) {
+        self.delegate?.backBtnClick()
+    }
     @IBAction func profileView(_ sender: Any) {
         self.delegate?.instantiateNewSecondView(tagged: self.recruiter_id)
 
     }
     
     @IBAction func fullView(sender:UIButton) {
-         
+        self.delegate?.jobViewClick()
     }
     
     
@@ -108,11 +127,19 @@ extension UIView{
         
         self.translatesAutoresizingMaskIntoConstraints = false;
         self.frame = container.frame;
+        
+        
+        
         container.addSubview(self);
+        
+        let jobView = UserDefaults.standard.object(forKey: "jobView") as? String
+        if jobView != "jobView" {
+
         NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: container, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: container, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: container, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
+        }
     }
 }
 

@@ -33,6 +33,7 @@ class RecCustomView: UIView {
             if let desc = userModel.job_details["description"] as? String{
                 self.jobDesc.text = desc
             }
+
             self.profImg.sd_setImage(with: URL(string: userModel.recruiter["banner_image"] as! String), placeholderImage: UIImage(named: "placeholder.png"))
             self.logoImg.sd_setImage(with: URL(string: userModel.recruiter["profile_image"] as! String), placeholderImage: UIImage(named: "iman.png"))
             print(userModel.job_details)

@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomView" customModule="Hunter" customModuleProvider="target">
             <connections>
+                <outlet property="backBtn" destination="aWK-fu-cFU" id="zSI-hY-DRc"/>
+                <outlet property="btn_profile" destination="Vzz-Sj-uBK" id="KJn-mq-YHx"/>
                 <outlet property="coll_industry" destination="JuR-XR-dCS" id="fnf-2k-Wht"/>
                 <outlet property="contentView" destination="J9E-Yf-jIH" id="9lu-jd-lG8"/>
                 <outlet property="desigNameLab" destination="8BQ-eC-36u" id="zPm-dZ-W7K"/>
@@ -20,6 +22,7 @@
                 <outlet property="logoImg" destination="0Nj-i7-MYG" id="X2b-1y-9BT"/>
                 <outlet property="profImg" destination="K28-lD-CrL" id="hWD-Ts-KVz"/>
                 <outlet property="profNameLab" destination="fyL-ai-bOC" id="jCY-Ia-da1"/>
+                <outlet property="view_expand" destination="8fn-Up-TAe" id="2zX-r3-g0j"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,7 +36,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash-screen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="r21-Hr-xbA">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="h-profile-banner" translatesAutoresizingMaskIntoConstraints="NO" id="K28-lD-CrL">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="h-profile-banner" translatesAutoresizingMaskIntoConstraints="NO" id="K28-lD-CrL">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="165" id="I5q-8y-iR6"/>
@@ -403,6 +406,17 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWK-fu-cFU">
+                            <rect key="frame" x="20" y="52" width="46" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="ZBM-d2-GEr"/>
+                                <constraint firstAttribute="height" constant="46" id="dam-gK-VBO"/>
+                            </constraints>
+                            <state key="normal" image="arrow-left"/>
+                            <connections>
+                                <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="LMB-ji-c87"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.40443938969999998" green="0.18067890410000001" blue="0.60768622159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -415,7 +429,9 @@
                         <constraint firstItem="XW6-oq-fgh" firstAttribute="trailing" secondItem="8fn-Up-TAe" secondAttribute="trailing" constant="20" id="LYr-C2-v0u"/>
                         <constraint firstItem="K28-lD-CrL" firstAttribute="leading" secondItem="XW6-oq-fgh" secondAttribute="leading" id="QN4-PM-Ytc"/>
                         <constraint firstItem="lpE-OL-OOm" firstAttribute="leading" secondItem="0Nj-i7-MYG" secondAttribute="leading" id="SCU-1t-FIJ"/>
+                        <constraint firstItem="aWK-fu-cFU" firstAttribute="leading" secondItem="XW6-oq-fgh" secondAttribute="leading" constant="20" id="Uoc-d1-eFL"/>
                         <constraint firstItem="lpE-OL-OOm" firstAttribute="bottom" secondItem="0Nj-i7-MYG" secondAttribute="bottom" id="Yeq-NA-Qvw"/>
+                        <constraint firstItem="aWK-fu-cFU" firstAttribute="top" secondItem="XW6-oq-fgh" secondAttribute="top" constant="8" id="bP3-Ki-3OH"/>
                         <constraint firstItem="r21-Hr-xbA" firstAttribute="leading" secondItem="XW6-oq-fgh" secondAttribute="leading" id="bq2-Tn-Ede"/>
                         <constraint firstItem="lpE-OL-OOm" firstAttribute="top" secondItem="0Nj-i7-MYG" secondAttribute="top" id="cxj-db-3tE"/>
                         <constraint firstItem="r21-Hr-xbA" firstAttribute="top" secondItem="RmP-Rv-pq2" secondAttribute="top" id="dhC-kb-NkC"/>
@@ -443,6 +459,7 @@
     <resources>
         <image name="Splash-screen-bg" width="720" height="1280"/>
         <image name="USER" width="227" height="227"/>
+        <image name="arrow-left" width="22" height="41"/>
         <image name="expand" width="17" height="16"/>
         <image name="h-profile-banner" width="444" height="188"/>
         <image name="placeholder_map" width="16" height="16"/>

@@ -15,6 +15,8 @@ import SVProgressHUD
 var names = [String]()
 protocol MyProtocol: class {
     func instantiateNewSecondView(tagged tag : Int)
+    func jobViewClick()
+    func backBtnClick()
 }
 class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MyProtocol, UITextViewDelegate {
     @IBOutlet weak var swipe_left: NSLayoutConstraint!
@@ -29,10 +31,10 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var noCardLeft: CardView!
     @IBOutlet weak var img_arrow: UIImageView!
     var userModels : [UserModel] = []
+
     var candidate_Id = 0
     var job_id = 0
     var recruiter_idNew = Int()
-
     @IBOutlet weak var topSpace: NSLayoutConstraint!
     @IBOutlet weak var txt_msg: UITextView!
     @IBOutlet weak var backMsgView: UIView!
@@ -46,6 +48,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var lab_intro: UILabel!
     @IBOutlet weak var lab_introSub: UILabel!
 
+    @IBOutlet weak var jobView: UIView!
     @IBOutlet weak var viewContainer: UIView!
 //    @IBOutlet weak var viewNavigation: UIView!{
 //        didSet{
@@ -313,11 +316,32 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.expandClick(notification:)), name: Notification.Name("expandClick"), object: nil)
+         
 
     }
     
+    func backBtnClick(){
+        UserDefaults.standard.set("", forKey: "jobView")
+
+        self.jobView.isHidden = true
+
+    }
+    func jobViewClick() {
+        self.jobView.isHidden = false
+        UserDefaults.standard.set("jobView", forKey: "jobView")
+
+         let customView = CustomView(frame: self.jobView.frame)
+
+                    customView.delegate = self
+        customView.userModel = userModels[0]
+        customView.isFrom = "jobView"
+
+        let nib = UINib(nibName: "MyCollectionViewCell", bundle: nil)
+                   customView.coll_industry?.register(nib, forCellWithReuseIdentifier: "HunterRegisterDashBoardCollectionCell")
+        self.jobView.addSubview(customView)
+
+    }
     @objc func expandClick(notification: Notification) {
         
 //         self.tabBarController?.selectedIndex = 0
@@ -348,6 +372,9 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     override func viewWillAppear(_ animated: Bool) {
+        self.jobView.isHidden = true
+        UserDefaults.standard.set("", forKey: "jobView")
+
         UserDefaults.standard.set("loggedIn", forKey: "loggedInStat")
         
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
@@ -401,7 +428,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             //            }
             //            // loading contentview from nib
             //            else{
-            
+            UserDefaults.standard.set("", forKey: "jobView")
+
             
             let customView = CustomView(frame: frame)
             customView.delegate = self
@@ -854,6 +882,8 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
     func cardGoesLeft(model: Any) {
         //        emojiView.rateValue =  2.5
         let userModel = model as! UserModel
+
+        
         print("Watchout Left \(userModel.name!)")
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
 
@@ -874,6 +904,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
     func cardGoesRight(model : Any) {
         //        emojiView.rateValue =  2.5
         let userModel = model as! UserModel
+
         print("Watchout Right \(userModel.name!)")
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
         
