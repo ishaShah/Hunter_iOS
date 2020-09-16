@@ -5599,6 +5599,17 @@ that we recommend for you.</string>
                                                         <constraint firstAttribute="trailing" secondItem="IGG-9B-Vah" secondAttribute="trailing" constant="35" id="vdT-ub-NNX"/>
                                                         <constraint firstItem="IGG-9B-Vah" firstAttribute="centerX" secondItem="TQf-1c-pA5" secondAttribute="centerX" id="wvR-Pb-lob"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="0.0" height="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTb-9I-1Lo">
                                                     <rect key="frame" x="287" y="40" width="30" height="30"/>

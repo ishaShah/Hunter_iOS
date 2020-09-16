@@ -31,7 +31,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var noCardLeft: CardView!
     @IBOutlet weak var img_arrow: UIImageView!
     var userModels : [UserModel] = []
-
+    var currentIndex = 0
     var candidate_Id = 0
     var job_id = 0
     var recruiter_idNew = Int()
@@ -63,8 +63,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         return .lightContent
     }
     func instantiateNewSecondView(tagged tag : Int){
-        
-        
+ 
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterCompanyProfileNewViewController") as! HunterCompanyProfileNewViewController
         vc.isFrom = "cards"
         vc.candidate_Id = tag
@@ -294,7 +293,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
          let customView = CustomView(frame: self.jobView.frame)
 
                     customView.delegate = self
-        customView.userModel = userModels[0]
+        
+        customView.userModel = self.userModels[currentIndex]
         customView.isFrom = "jobView"
 
         let nib = UINib(nibName: "MyCollectionViewCell", bundle: nil)
@@ -578,7 +578,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     let job_detailsDict = recruiterDict
                                     let skillsArrDict = mainDic["skills"] as! [String]
                                     let candidate_Id = recruiterDict["job_id"] as! Int
-
+                                     
                                     self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
                                     n = n + 1
                                 }
@@ -896,8 +896,8 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         self.noCardLeft.isHidden = false
 
     }
-    
     func currentCardStatus(card object: Any, distance: CGFloat) {
+         
         if distance == 0 {
             //            emojiView.rateValue =  2.5
         }else{
@@ -909,16 +909,20 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
 
     func connectToSwipeCandidates(_ candidate_ID : Int , _ decision : Int, _ job_id : Int){
         if HunterUtility.isConnectedToInternet(){
-            
+            currentIndex += 1
             let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
             var parameters =  [String : Any]()
             if loginType == "candidate" {
                 baseURL = API.candidateBaseURL  + API.jobsSwipesURL
                 parameters = [ "decision" : decision , "job_id" : job_id, "recruiter_id" : candidate_ID] as [String : Any]
+                UserDefaults.standard.set(parameters, forKey: "expandValues")
+
 
             }else{
                 baseURL = API.recruiterBaseURL  + API.getCandidateSwipeURL
                 parameters = [ "decision" : decision , "candidate_id" : candidate_ID, "job_id" : job_id] as [String : Any]
+                UserDefaults.standard.set(parameters, forKey: "expandValues")
+
             }
             let url = baseURL
             

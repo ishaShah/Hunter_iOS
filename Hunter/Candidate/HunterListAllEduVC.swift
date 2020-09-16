@@ -134,10 +134,59 @@ extension HunterListAllEduVC : UICollectionViewDelegate,UICollectionViewDataSour
         
 
         
-        return cell
+        cell.btnDelete.tag = indexPath.row
+                 cell.btnDelete.addTarget(self, action: #selector(btnDeleteClick(sender:)), for: .touchUpInside)
+
+                
+        //        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
+        //        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
+        //        cell.viewInner.layer.shadowRadius = 3
+        //        cell.viewInner.layer.shadowOffset = CGSize(width: 0, height: 2)
+        //        cell.viewInner.layer.shadowOpacity = 0.3
+                
+
+                
+                return cell
+                
+            }
+            @objc func btnDeleteClick(sender: UIButton) {
+                let dataDic = educationArray[sender.tag] as? [String:Any]
+                self.delEducation(dataDic!["id"] as! Int)
+            }
+    func delEducation(_ education_id : Int){
+        if HunterUtility.isConnectedToInternet(){
+            let url = API.candidateBaseURL + API.delEducationQualification
+            print(url)
+            HunterUtility.showProgressBar()
+            
+            let headers    = [ "Authorization" : "Bearer " + accessToken]
+            let params = ["education_id" : education_id]
+            Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                
+                switch response.result {
+                case .success:
+                    self.educationArray = []
+                    if let responseDict = response.result.value as? NSDictionary{
+                        print(responseDict)
+                        SVProgressHUD.dismiss()
+                        if let status = responseDict.value(forKey: "status"){
+                            if status as! Int == 1{
+                                self.getAllEducation()
+
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error)
+                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
         
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 250, height: 250)
     }

@@ -130,7 +130,9 @@ extension HunterWorkExpListVC : UICollectionViewDelegate,UICollectionViewDataSou
         
         
 
-        
+        cell.btnDelete.tag = indexPath.row
+         cell.btnDelete.addTarget(self, action: #selector(btnDeleteClick(sender:)), for: .touchUpInside)
+
         
 //        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
 //        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
@@ -143,7 +145,47 @@ extension HunterWorkExpListVC : UICollectionViewDelegate,UICollectionViewDataSou
         return cell
         
     }
-    
+    @objc func btnDeleteClick(sender: UIButton) {
+
+        
+                           let dataDic = jobsArray[sender.tag] as? [String:Any]
+                           self.delAchivement(dataDic!["id"] as! Int)
+                       }
+           
+               func delAchivement(_ experience_id : Int){
+                   if HunterUtility.isConnectedToInternet(){
+                       let url = API.candidateBaseURL + API.delExperienceURL
+                       print(url)
+                       HunterUtility.showProgressBar()
+                       
+                       let headers    = [ "Authorization" : "Bearer " + accessToken]
+                       let params = ["experience_id" : experience_id ]
+                       Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                           
+                           switch response.result {
+                           case .success:
+                               self.jobsArray = []
+                               if let responseDict = response.result.value as? NSDictionary{
+                                   print(responseDict)
+                                   SVProgressHUD.dismiss()
+                                   if let status = responseDict.value(forKey: "status"){
+                                       if status as! Int == 1{
+                                           self.getAllJobs()
+
+                                       }
+                                   }
+                               }
+                           case .failure(let error):
+                               SVProgressHUD.dismiss()
+                               print(error)
+                               let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                               alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                               self.present(alert, animated: true, completion: nil)
+                           }
+                       }
+                   }
+                   
+               }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 250, height: 250)
     }

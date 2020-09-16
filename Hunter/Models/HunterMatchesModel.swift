@@ -26,7 +26,7 @@ public class HunterMatchesModel {
         job_title = dictionary["job_title"] as? String
         un_read_messages = dictionary["un_read_messages"] as? Int
         //recruiter
-        profile_img = dictionary["profile_img"] as? String
+        profile_img = dictionary["profile_image"] as? String
         candidate_name = dictionary["candidate_name"] as? String
         candidate_id = dictionary["candidate_id"] as? Int
         

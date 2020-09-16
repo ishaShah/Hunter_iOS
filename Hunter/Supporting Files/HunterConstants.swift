@@ -44,6 +44,10 @@ enum API{
     static let registerEduLookUpDataURL = "registration/get-lookup-data-educational-qualification"
     static let saveEduQualificationURL = "registration/save-candidate-educational-qualification"
     static let getEducationQualification = "registration/get-educational-qualification"
+    static let delEducationQualification = "registration/get-educational-qualification"
+    static let delLanguagesURL = "profile/delete-languages"
+    static let delAchievementsURL = "profile/delete-achievements"
+static let delExperienceURL = "registration/delete-experience"
     static let saveLangDataURL = "profile/save-languages"
     
     static let saveLangURL = "profile/add-language"
@@ -54,7 +58,7 @@ enum API{
     static let deleteSocialMediaURL = "profile/delete-social-media"
     static let addWorkExpURL = "profile/add-work-experience"
     static let deleteWorkExpURL = "profile/delete-work-experience"
-    static let addEduQualificationURL = "profile/add-education-qualification"
+     static let addEduQualificationURL = "profile/add-education-qualification"
     static let deleteEduQualificationURL = "profile/delete-education-qualification"
  static let getJobSuggestionsURL = "job/suggestions"
     static let getJobsURL = "jobs"
@@ -84,6 +88,7 @@ enum API{
     static let jobsSwipesURL = "job/swipe"
     static let profileUpdateURL = "profile/update"
     static let getJobExpURL = "registration/get-job-experiences"
+    
     static let getAllLangURL = "profile/get-languages"
     static let getAllAchievementsURL = "profile/get-achievements"
     static let getBasicInfoURL = "profile/get-candidate-details"

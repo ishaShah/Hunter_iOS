@@ -417,6 +417,12 @@
                                 <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="LMB-ji-c87"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wu-87-URA">
+                            <rect key="frame" x="20" y="101" width="120" height="120"/>
+                            <connections>
+                                <action selector="profileView:" destination="-1" eventType="touchUpInside" id="mrf-KQ-HV5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.40443938969999998" green="0.18067890410000001" blue="0.60768622159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -425,7 +431,9 @@
                         <constraint firstItem="K28-lD-CrL" firstAttribute="trailing" secondItem="XW6-oq-fgh" secondAttribute="trailing" id="8s0-Br-ThM"/>
                         <constraint firstItem="K28-lD-CrL" firstAttribute="top" secondItem="RmP-Rv-pq2" secondAttribute="top" id="CbM-Sb-Zff"/>
                         <constraint firstAttribute="bottom" secondItem="r21-Hr-xbA" secondAttribute="bottom" id="DMm-ZK-PHb"/>
+                        <constraint firstItem="3Wu-87-URA" firstAttribute="leading" secondItem="0Nj-i7-MYG" secondAttribute="leading" id="E6b-g6-Iuv"/>
                         <constraint firstAttribute="trailing" secondItem="F9r-cW-9IW" secondAttribute="trailing" id="G5s-aR-bt6"/>
+                        <constraint firstItem="3Wu-87-URA" firstAttribute="top" secondItem="0Nj-i7-MYG" secondAttribute="top" id="Gdc-GA-BwX"/>
                         <constraint firstItem="XW6-oq-fgh" firstAttribute="trailing" secondItem="8fn-Up-TAe" secondAttribute="trailing" constant="20" id="LYr-C2-v0u"/>
                         <constraint firstItem="K28-lD-CrL" firstAttribute="leading" secondItem="XW6-oq-fgh" secondAttribute="leading" id="QN4-PM-Ytc"/>
                         <constraint firstItem="lpE-OL-OOm" firstAttribute="leading" secondItem="0Nj-i7-MYG" secondAttribute="leading" id="SCU-1t-FIJ"/>
@@ -439,8 +447,10 @@
                         <constraint firstItem="0Nj-i7-MYG" firstAttribute="baseline" secondItem="s0W-CM-jnb" secondAttribute="firstBaseline" constant="60" id="hlG-5C-JWP"/>
                         <constraint firstItem="8fn-Up-TAe" firstAttribute="top" secondItem="RmP-Rv-pq2" secondAttribute="top" constant="20" id="j8M-c9-vXv"/>
                         <constraint firstItem="r21-Hr-xbA" firstAttribute="trailing" secondItem="XW6-oq-fgh" secondAttribute="trailing" id="kqn-vG-r1i"/>
+                        <constraint firstItem="3Wu-87-URA" firstAttribute="bottom" secondItem="0Nj-i7-MYG" secondAttribute="bottom" id="oam-V4-8YG"/>
                         <constraint firstItem="F9r-cW-9IW" firstAttribute="leading" secondItem="RmP-Rv-pq2" secondAttribute="leading" id="p3f-iy-vLo"/>
                         <constraint firstItem="F9r-cW-9IW" firstAttribute="top" secondItem="K28-lD-CrL" secondAttribute="bottom" constant="-4" id="qBn-le-rwt"/>
+                        <constraint firstItem="3Wu-87-URA" firstAttribute="trailing" secondItem="0Nj-i7-MYG" secondAttribute="trailing" id="sEH-lc-I7q"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="XW6-oq-fgh"/>
                 </view>

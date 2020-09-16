@@ -77,8 +77,7 @@ class CustomView: UIView {
 
         if jobView == "jobView" {
             self.view_expand.isHidden = true
-            self.btn_profile.isHidden = true
-            self.backBtn.isHidden = false
+             self.backBtn.isHidden = false
 
         }
         else {
@@ -110,8 +109,9 @@ class CustomView: UIView {
         self.delegate?.backBtnClick()
     }
     @IBAction func profileView(_ sender: Any) {
+        
         self.delegate?.instantiateNewSecondView(tagged: self.recruiter_id)
-
+        
     }
     
     @IBAction func fullView(sender:UIButton) {
