@@ -79,21 +79,12 @@ class RecCustomView: UIView {
     @IBAction func expandClick(_ sender: Any) {
  
         
-        if let expandValues = UserDefaults.standard.object(forKey: "expandValues") as? [String:Any]{
-            let job_id = expandValues["job_id"] as! Int
-            let candidate_id = expandValues["candidate_id"] as! Int
-
-            
-            let candidateDict:[String: Int] = ["candidate_id": candidate_id,"job_id" : job_id]
-            // Post a notification
-            NotificationCenter.default.post(name: Notification.Name("expandClick"), object: nil, userInfo: candidateDict)
-        }
-        else {
+         
 
         let candidateDict:[String: Int] = ["candidate_id": userModel.candidate_id!,"job_id" :userModel.job_details["job_id"] as! Int]
         // Post a notification
         NotificationCenter.default.post(name: Notification.Name("expandClick"), object: nil, userInfo: candidateDict)
-        }
+        
     }
     
     

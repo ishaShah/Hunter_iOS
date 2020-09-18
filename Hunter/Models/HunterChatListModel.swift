@@ -26,7 +26,7 @@ public class HunterChatListModel {
         title = dictionary["job_title"] as? String
         latest_message = dictionary["latest_message"] as? String
         //recruiter
-        profile_img = dictionary["'profile_image'"] as? String
+        profile_img = dictionary["profile_image"] as? String
         candidate_name = dictionary["candidate_name"] as? String
         candidate_id = dictionary["swipe_id"] as? Int
         un_read_messages = dictionary["un_read_messages"] as? Int

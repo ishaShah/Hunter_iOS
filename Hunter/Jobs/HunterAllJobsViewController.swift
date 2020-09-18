@@ -102,7 +102,14 @@ class HunterAllJobsViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-
+    @objc func editJob(sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterPostAJobNewViewController") as! HunterPostAJobNewViewController
+        vc.isEdit = "true"
+        let dataDic = jobsArray[sender.tag] as? [String:Any]
+        vc.jobId = dataDic!["id"] as! Int
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension HunterAllJobsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -142,25 +149,69 @@ extension HunterAllJobsViewController : UICollectionViewDelegate,UICollectionVie
         let publishedDateStr = publishedDate?.toString(withFormat: "MMMM d yyyy")
         cell.lblPostedDate.text =  "Posted: " + (publishedDateStr ?? "")
         
-        
-        
-
-        
-        
-//        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
-//        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
-//        cell.viewInner.layer.shadowRadius = 3
-//        cell.viewInner.layer.shadowOffset = CGSize(width: 0, height: 2)
-//        cell.viewInner.layer.shadowOpacity = 0.3
+        cell.editJob.tag = indexPath.row
+        cell.editJob.addTarget(self, action: #selector(editJob(sender:)), for: .touchUpInside)
         
 
         
-        return cell
+        
+                cell.btnDelete.tag = indexPath.row
+                 cell.btnDelete.addTarget(self, action: #selector(btnDeleteClick(sender:)), for: .touchUpInside)
+
+                
+        //        cell.viewInner.layer.shadowPath = UIBezierPath(rect: cell.viewInner.bounds).cgPath
+        //        cell.viewInner.layer.shadowColor = UIColor(hex: "21042E21")?.cgColor
+        //        cell.viewInner.layer.shadowRadius = 3
+        //        cell.viewInner.layer.shadowOffset = CGSize(width: 0, height: 2)
+        //        cell.viewInner.layer.shadowOpacity = 0.3
+                
+
+                
+                return cell
+                
+            }
+            @objc func btnDeleteClick(sender: UIButton) {
+                let dataDic = jobsArray[sender.tag] as? [String:Any]
+                self.delLang(dataDic!["id"] as! Int)
+            }
+
+    func delLang(_ job_id : Int){
+        if HunterUtility.isConnectedToInternet(){
+            let url = API.recruiterBaseURL + API.delJobListURL
+            print(url)
+            HunterUtility.showProgressBar()
+            
+            let headers    = [ "Authorization" : "Bearer " + accessToken]
+            let params = ["job_id" : job_id]
+            Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                
+                switch response.result {
+                case .success:
+                    self.jobsArray = []
+                    if let responseDict = response.result.value as? NSDictionary{
+                        print(responseDict)
+                        SVProgressHUD.dismiss()
+                        if let status = responseDict.value(forKey: "status"){
+                            if status as! Int == 1{
+                                self.getAllJobs()
+
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error)
+                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 308, height: 480)
+        CGSize(width: 308, height: 580)
     }
     
     

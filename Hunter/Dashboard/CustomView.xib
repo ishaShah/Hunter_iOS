@@ -22,6 +22,7 @@
                 <outlet property="logoImg" destination="0Nj-i7-MYG" id="X2b-1y-9BT"/>
                 <outlet property="profImg" destination="K28-lD-CrL" id="hWD-Ts-KVz"/>
                 <outlet property="profNameLab" destination="fyL-ai-bOC" id="jCY-Ia-da1"/>
+                <outlet property="stack_share" destination="WgK-GI-HR7" id="Bbe-af-HUA"/>
                 <outlet property="view_expand" destination="8fn-Up-TAe" id="2zX-r3-g0j"/>
             </connections>
         </placeholder>
@@ -245,6 +246,73 @@
                                                         <action selector="profileView:" destination="-1" eventType="touchUpInside" id="Uiz-t5-JDY"/>
                                                     </connections>
                                                 </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-GI-HR7">
+                                                    <rect key="frame" x="326" y="48" width="68" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-x8-Z6r">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="Ova-BX-dbA"/>
+                                                                <constraint firstAttribute="width" constant="30" id="fIK-Cq-Zzm"/>
+                                                            </constraints>
+                                                            <state key="normal" image="clear-24px"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                    <real key="value" value="22"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                    <size key="value" width="0.0" height="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                    <color key="value" red="0.40780189630000002" green="0.24317812920000001" blue="0.66946464780000003" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="btn_dislike:" destination="-1" eventType="touchUpInside" id="niE-Ng-Z5x"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGn-Gh-mh1">
+                                                            <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="2he-gz-HNI"/>
+                                                                <constraint firstAttribute="width" constant="30" id="y9s-eB-aWh"/>
+                                                            </constraints>
+                                                            <state key="normal" image="favorite-24px"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                    <real key="value" value="22"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                    <size key="value" width="0.0" height="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                    <color key="value" red="0.40780189630000002" green="0.24317812920000001" blue="0.66946464780000003" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="btn_like:" destination="-1" eventType="touchUpInside" id="etw-aM-xm9"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="CGn-Gh-mh1" firstAttribute="height" secondItem="l2Q-x8-Z6r" secondAttribute="height" id="98b-Wv-B1m"/>
+                                                        <constraint firstItem="CGn-Gh-mh1" firstAttribute="width" secondItem="l2Q-x8-Z6r" secondAttribute="width" id="ada-w6-gZx"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
@@ -253,6 +321,7 @@
                                                 <constraint firstItem="fyL-ai-bOC" firstAttribute="top" secondItem="zd0-Nx-6WL" secondAttribute="top" constant="64" id="2c0-C5-qqJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Vzz-Sj-uBK" secondAttribute="trailing" constant="20" id="6Pv-9u-8RD"/>
                                                 <constraint firstAttribute="trailing" secondItem="WxL-SN-fpG" secondAttribute="trailing" constant="20" id="7pv-Gj-D8Z"/>
+                                                <constraint firstItem="fbC-2Z-qVc" firstAttribute="trailing" secondItem="WgK-GI-HR7" secondAttribute="trailing" id="AZi-TW-1x3"/>
                                                 <constraint firstItem="fyL-ai-bOC" firstAttribute="leading" secondItem="zd0-Nx-6WL" secondAttribute="leading" constant="20" id="AwJ-ro-AAH"/>
                                                 <constraint firstItem="ELJ-p0-Upj" firstAttribute="top" secondItem="WxL-SN-fpG" secondAttribute="bottom" constant="4" id="FlU-F9-1nO"/>
                                                 <constraint firstItem="WxL-SN-fpG" firstAttribute="leading" secondItem="fyL-ai-bOC" secondAttribute="leading" id="JpY-gi-Lij"/>
@@ -264,6 +333,7 @@
                                                 <constraint firstItem="ELJ-p0-Upj" firstAttribute="leading" secondItem="WxL-SN-fpG" secondAttribute="leading" id="X5B-WP-9V7"/>
                                                 <constraint firstItem="8BQ-eC-36u" firstAttribute="leading" secondItem="WxL-SN-fpG" secondAttribute="leading" id="dOe-xf-vPC"/>
                                                 <constraint firstItem="Vzz-Sj-uBK" firstAttribute="bottom" secondItem="8BQ-eC-36u" secondAttribute="bottom" id="em6-hH-RzW"/>
+                                                <constraint firstItem="WgK-GI-HR7" firstAttribute="top" secondItem="fbC-2Z-qVc" secondAttribute="bottom" constant="10" id="ged-1H-TEi"/>
                                                 <constraint firstItem="fbC-2Z-qVc" firstAttribute="top" secondItem="zd0-Nx-6WL" secondAttribute="top" constant="10" id="tRR-Ch-zHo"/>
                                                 <constraint firstAttribute="trailing" secondItem="fbC-2Z-qVc" secondAttribute="trailing" constant="20" id="xYo-aU-3cL"/>
                                             </constraints>
@@ -470,7 +540,9 @@
         <image name="Splash-screen-bg" width="720" height="1280"/>
         <image name="USER" width="227" height="227"/>
         <image name="arrow-left" width="22" height="41"/>
+        <image name="clear-24px" width="28.5" height="28.5"/>
         <image name="expand" width="17" height="16"/>
+        <image name="favorite-24px" width="24" height="24"/>
         <image name="h-profile-banner" width="444" height="188"/>
         <image name="placeholder_map" width="16" height="16"/>
         <image name="upload" width="128" height="128"/>

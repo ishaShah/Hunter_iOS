@@ -284,7 +284,9 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         UserDefaults.standard.set("", forKey: "jobView")
 
         self.jobView.isHidden = true
+        let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
 
+         
     }
     func jobViewClick() {
         self.jobView.isHidden = false
@@ -340,17 +342,19 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if loginType == "candidate" {
             self.jobView.isHidden = true
-
+            if (userModels.count == 0){
             self.connectToGetJobs()
+            }
             self.lab_intro.text = "ELEVATOR PITCH"
             self.lab_introSub.text = "Now's your chance. Tell them what makes you the perfect candidate!"
             
             
         }else {
-            
+            if (userModels.count == 0){
+
              self.connectToGetCandidates()
             
-            
+            }
         }
         txt_msg.text = "Type your message here ..."
         messageView.isHidden = true
@@ -584,8 +588,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                 }
                                 self.createCards()
                                 }
-  //                                self.jobsDict = data
-//                                self.createCards()
+ 
                                 
                                 
                                 }
@@ -646,8 +649,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func connectToGetCandidates(){
         self.userModels = []
-
-        if HunterUtility.isConnectedToInternet(){
+         if HunterUtility.isConnectedToInternet(){
             
  
 //            let url = API.recruiterBaseURL + API.getCandidateSuggsURL
@@ -915,14 +917,12 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
             if loginType == "candidate" {
                 baseURL = API.candidateBaseURL  + API.jobsSwipesURL
                 parameters = [ "decision" : decision , "job_id" : job_id, "recruiter_id" : candidate_ID] as [String : Any]
-                UserDefaults.standard.set(parameters, forKey: "expandValues")
-
+ 
 
             }else{
                 baseURL = API.recruiterBaseURL  + API.getCandidateSwipeURL
                 parameters = [ "decision" : decision , "candidate_id" : candidate_ID, "job_id" : job_id] as [String : Any]
-                UserDefaults.standard.set(parameters, forKey: "expandValues")
-
+ 
             }
             let url = baseURL
             

@@ -5199,7 +5199,7 @@ that we recommend for you.</string>
                                 <rect key="frame" x="0.0" y="90" width="375" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUc-Zg-vKJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="677"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="777"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDh-7N-tME">
                                                 <rect key="frame" x="83.666666666666671" y="29.999999999999996" width="207.66666666666663" height="61.666666666666657"/>
@@ -5223,10 +5223,10 @@ that we recommend for you.</string>
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TbL-f7-dn6">
-                                                <rect key="frame" x="20" y="107" width="335" height="480"/>
+                                                <rect key="frame" x="20" y="107" width="335" height="580"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="480" id="2NB-PZ-7NR"/>
+                                                    <constraint firstAttribute="height" constant="580" id="2NB-PZ-7NR"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uHK-m2-7O2">
                                                     <size key="itemSize" width="308" height="448"/>
@@ -5236,14 +5236,14 @@ that we recommend for you.</string>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HunterAllJobsCollectionViewCell" id="egQ-Jv-1rI" customClass="HunterAllJobsCollectionViewCell" customModule="Hunter" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="308" height="480"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="308" height="580"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sOa-85-HKL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="308" height="480"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="308" height="580"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-6V-baJ">
-                                                                    <rect key="frame" x="12" y="12" width="284" height="456"/>
+                                                                    <rect key="frame" x="12" y="12" width="284" height="556"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Graphic Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4R-nq-WOV">
                                                                             <rect key="frame" x="35" y="65" width="214" height="60"/>
@@ -5314,7 +5314,7 @@ that we recommend for you.</string>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s2v-8A-lQu">
-                                                                            <rect key="frame" x="69.333333333333329" y="407.33333333333331" width="145.66666666666669" height="38.666666666666686"/>
+                                                                            <rect key="frame" x="69.333333333333329" y="507.33333333333343" width="145.66666666666669" height="38.666666666666686"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="102 Matches" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7b-Yy-cqL">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="19.333333333333332"/>
@@ -5323,7 +5323,7 @@ that we recommend for you.</string>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posted: June 12 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYl-w5-WbS">
-                                                                                    <rect key="frame" x="0.0" y="19.333333333333371" width="145.66666666666666" height="19.333333333333329"/>
+                                                                                    <rect key="frame" x="0.0" y="19.333333333333258" width="145.66666666666666" height="19.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="16"/>
                                                                                     <color key="textColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -5363,9 +5363,27 @@ that we recommend for you.</string>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cl-jz-2jT">
+                                                                            <rect key="frame" x="92" y="430.33333333333331" width="100" height="57"/>
+                                                                            <color key="backgroundColor" red="0.32549019610000002" green="0.058823529409999999" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="100" id="Qg9-LZ-j32"/>
+                                                                                <constraint firstAttribute="height" constant="57" id="wSM-ma-sjn"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
+                                                                            <state key="normal" title="Edit Job">
+                                                                                <color key="titleColor" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </state>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                                    <real key="value" value="28.5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.9882352941176471" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
+                                                                        <constraint firstItem="3cl-jz-2jT" firstAttribute="centerX" secondItem="xW4-6V-baJ" secondAttribute="centerX" id="12A-0d-w1M"/>
                                                                         <constraint firstItem="r4R-nq-WOV" firstAttribute="centerX" secondItem="xW4-6V-baJ" secondAttribute="centerX" id="1sv-hs-eZb"/>
                                                                         <constraint firstAttribute="bottom" secondItem="s2v-8A-lQu" secondAttribute="bottom" constant="10" id="2Mk-KS-kBQ"/>
                                                                         <constraint firstItem="esc-Mi-bD7" firstAttribute="leading" secondItem="xW4-6V-baJ" secondAttribute="leading" constant="15" id="2r6-ek-w8V"/>
@@ -5375,6 +5393,7 @@ that we recommend for you.</string>
                                                                         <constraint firstAttribute="width" constant="284" id="Pyx-Qt-KTb"/>
                                                                         <constraint firstAttribute="height" constant="456" id="Rqy-NW-x2B"/>
                                                                         <constraint firstItem="r4R-nq-WOV" firstAttribute="leading" secondItem="xW4-6V-baJ" secondAttribute="leading" constant="35" id="THP-nd-ggh"/>
+                                                                        <constraint firstItem="s2v-8A-lQu" firstAttribute="top" secondItem="3cl-jz-2jT" secondAttribute="bottom" constant="20" id="VX5-Yj-yO5"/>
                                                                         <constraint firstItem="0Cq-eY-QBc" firstAttribute="centerX" secondItem="xW4-6V-baJ" secondAttribute="centerX" id="W9e-CF-mrb"/>
                                                                         <constraint firstItem="v9e-Fj-QgQ" firstAttribute="centerX" secondItem="r4R-nq-WOV" secondAttribute="centerX" id="YPl-od-WGq"/>
                                                                         <constraint firstItem="0Cq-eY-QBc" firstAttribute="leading" secondItem="xW4-6V-baJ" secondAttribute="leading" constant="12" id="chi-sf-5Hj"/>
@@ -5384,6 +5403,17 @@ that we recommend for you.</string>
                                                                         <constraint firstAttribute="trailing" secondItem="esc-Mi-bD7" secondAttribute="trailing" constant="15" id="uOW-lo-zRM"/>
                                                                         <constraint firstItem="r4R-nq-WOV" firstAttribute="top" secondItem="xW4-6V-baJ" secondAttribute="top" constant="65" id="whi-Si-2m9"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="6"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                            <size key="value" width="1" height="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKm-Qq-xeS">
                                                                     <rect key="frame" x="276" y="2" width="30" height="30"/>
@@ -5420,10 +5450,11 @@ that we recommend for you.</string>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <size key="customSize" width="308" height="480"/>
+                                                        <size key="customSize" width="308" height="580"/>
                                                         <connections>
                                                             <outlet property="btnDelete" destination="A3k-cX-k41" id="NEu-6x-qOh"/>
                                                             <outlet property="constrTopToView" destination="whi-Si-2m9" id="keg-ZR-zF1"/>
+                                                            <outlet property="editJob" destination="3cl-jz-2jT" id="wnC-qj-eJr"/>
                                                             <outlet property="lblDescription" destination="0Cq-eY-QBc" id="gYM-wn-bJl"/>
                                                             <outlet property="lblExperience" destination="2x3-gB-63R" id="SLh-G7-vK4"/>
                                                             <outlet property="lblJobFunction" destination="cJJ-cb-5XM" id="3Z8-DC-qjb"/>
@@ -5446,14 +5477,15 @@ that we recommend for you.</string>
                                             <constraint firstItem="NDh-7N-tME" firstAttribute="top" secondItem="DUc-Zg-vKJ" secondAttribute="top" constant="30" id="9GF-vh-ue1"/>
                                             <constraint firstAttribute="trailing" secondItem="TbL-f7-dn6" secondAttribute="trailing" constant="20" id="INr-ZD-1f0"/>
                                             <constraint firstItem="TbL-f7-dn6" firstAttribute="leading" secondItem="DUc-Zg-vKJ" secondAttribute="leading" constant="20" id="MgG-3m-efL"/>
+                                            <constraint firstAttribute="height" constant="777" id="UA5-PJ-dlA"/>
                                             <constraint firstItem="NDh-7N-tME" firstAttribute="centerX" secondItem="DUc-Zg-vKJ" secondAttribute="centerX" id="UtZ-9U-cWb"/>
                                             <constraint firstItem="TbL-f7-dn6" firstAttribute="firstBaseline" secondItem="NDh-7N-tME" secondAttribute="baseline" constant="40" id="Z1B-ex-ZWy"/>
-                                            <constraint firstAttribute="bottom" secondItem="TbL-f7-dn6" secondAttribute="bottom" constant="90" id="xH1-n2-R7G"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="DUc-Zg-vKJ" firstAttribute="centerX" secondItem="Dqt-om-77l" secondAttribute="centerX" id="7lO-5k-wrZ"/>
+                                    <constraint firstAttribute="width" constant="375" id="8Ab-o2-hGt"/>
                                     <constraint firstAttribute="trailing" secondItem="DUc-Zg-vKJ" secondAttribute="trailing" id="Jps-uc-7Lz"/>
                                     <constraint firstItem="DUc-Zg-vKJ" firstAttribute="leading" secondItem="Dqt-om-77l" secondAttribute="leading" id="V6v-oU-byd"/>
                                     <constraint firstItem="DUc-Zg-vKJ" firstAttribute="top" secondItem="Dqt-om-77l" secondAttribute="top" id="Wpd-NX-USQ"/>
@@ -5464,6 +5496,7 @@ that we recommend for you.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Dqt-om-77l" firstAttribute="leading" secondItem="fmP-1p-BFU" secondAttribute="leading" id="5hn-Td-jts"/>
+                            <constraint firstItem="Dqt-om-77l" firstAttribute="centerX" secondItem="fmP-1p-BFU" secondAttribute="centerX" id="HxB-ux-2DQ"/>
                             <constraint firstItem="7C5-5l-2kK" firstAttribute="leading" secondItem="fmP-1p-BFU" secondAttribute="leading" id="VkG-QH-oaV"/>
                             <constraint firstItem="Dqt-om-77l" firstAttribute="trailing" secondItem="fmP-1p-BFU" secondAttribute="trailing" id="evC-rb-5lz"/>
                             <constraint firstItem="7C5-5l-2kK" firstAttribute="trailing" secondItem="fmP-1p-BFU" secondAttribute="trailing" id="g9X-1Q-BTQ"/>
@@ -7191,7 +7224,10 @@ that we recommend for you.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lab_title" destination="YNT-b2-mQy" id="9DV-Mo-o49"/>
                         <outlet property="lblNumbOfChars" destination="trS-Z8-DVk" id="CGq-8h-aos"/>
+                        <outlet property="postBtn" destination="1vw-iD-vlM" id="FDt-WO-ZEu"/>
+                        <outlet property="saveBtn" destination="WwG-12-TWh" id="gdC-5N-EA6"/>
                         <outlet property="txtFieldOfEdu" destination="9LV-IF-fv3" id="Sj8-8s-Wdf"/>
                         <outlet property="txtJobFunction" destination="cxi-w6-zcy" id="boN-4d-3da"/>
                         <outlet property="txtJobTitle" destination="kny-JJ-APg" id="OKt-ht-Yux"/>

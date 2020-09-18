@@ -16,7 +16,9 @@ import CropViewController
 
 
 class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate , CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource{
+    @IBOutlet weak var btn_threeline: UIButton!
     
+    @IBOutlet weak var btn_back: UIButton!
     @IBOutlet weak var tv_achievement: UITextView!
     @IBOutlet weak var tv_lang : UITextView!
     @IBOutlet weak var stack_share: UIStackView!
@@ -203,6 +205,9 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func btn_dislike(_ sender: Any) {
         connectToLikeDislike(1)
     }
@@ -303,7 +308,21 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
 //        connectToGetProfileData()
+        var loginType = String()
+        if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+            loginType = type
+        }
+        // Do any additional setup after loading the view.
+        if loginType == "recruiter" {
+            self.btn_threeline.isHidden = true
+            self.btn_back.isHidden = false
 
+        }
+        else {
+            self.btn_threeline.isHidden = false
+            self.btn_back.isHidden = true
+
+        }
         setNeedsStatusBarAppearanceUpdate()
     }
     

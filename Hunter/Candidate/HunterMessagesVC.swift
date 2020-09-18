@@ -270,24 +270,32 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
                 cell.labelChatMessage.text = lastMessage
             }
             let gradient = CAGradientLayer()
-            gradient.frame =  CGRect(origin: CGPoint.zero, size: cell.proImgView.frame.size)
+            gradient.frame =  CGRect(origin: CGPoint.zero, size: cell.imageChat.frame.size)
             gradient.colors = [UIColor.init(red: 220.0/255.0, green: 82.0/255.0, blue: 245.0/255.0, alpha: 1).cgColor, UIColor.init(red: 48.0/255.0, green: 4.0/255.0, blue: 113.0/255.0, alpha: 1).cgColor]
             
             let shape = CAShapeLayer()
             shape.lineWidth = 2
             //            shape.path = UIBezierPath(rect: cell.viewBG.bounds).cgPath
-            shape.path = UIBezierPath(roundedRect: (cell.proImgView.bounds), cornerRadius: 40).cgPath
+            shape.path = UIBezierPath(roundedRect: (cell.imageChat.bounds), cornerRadius: 40).cgPath
             
             shape.strokeColor = UIColor.black.cgColor
             shape.fillColor = UIColor.clear.cgColor
             gradient.mask = shape
-            cell.proImgView.layer.addSublayer(gradient)
+            cell.imageChat.layer.addSublayer(gradient)
             
-            
+            if loginType == "candidate" {
             if let logo = arrayChatList[indexPath.row].logo{
                 cell.imageChat.contentMode = .scaleToFill
                 let url = URL(string: logo)
                 cell.imageChat.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+            }
+            }
+            else {
+            if let logo = arrayChatList[indexPath.row].profile_img{
+                cell.imageChat.contentMode = .scaleToFill
+                let url = URL(string: logo)
+                cell.imageChat.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+            }
             }
             return cell
         }else{

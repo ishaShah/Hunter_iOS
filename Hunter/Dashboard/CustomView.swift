@@ -8,7 +8,8 @@
 
 import UIKit
 import SDWebImage
-
+import Alamofire
+import SVProgressHUD
 class CustomView: UIView {
     var delegate: MyProtocol!
  
@@ -24,6 +25,7 @@ class CustomView: UIView {
     @IBOutlet weak var lab_loc: UILabel!
     @IBOutlet weak var view_expand: UIView!
     @IBOutlet weak var btn_profile: UIButton!
+    @IBOutlet weak var stack_share: UIStackView!
     var recruiter_id = Int()
     @IBOutlet weak var backBtn: UIButton!
     //    @IBOutlet weak var labelText: UILabel!
@@ -78,10 +80,13 @@ class CustomView: UIView {
         if jobView == "jobView" {
             self.view_expand.isHidden = true
              self.backBtn.isHidden = false
+            self.stack_share.isHidden = false
 
         }
         else {
             self.backBtn.isHidden = true
+            self.stack_share.isHidden = true
+
 
         }
         layer.shadowColor = UIColor.black.cgColor
@@ -118,7 +123,103 @@ class CustomView: UIView {
         self.delegate?.jobViewClick()
     }
     
-    
+    @IBAction func btn_dislike(_ sender: Any) {
+            connectToLikeDislike(1)
+        }
+        @IBAction func btn_like(_ sender: Any) {
+            connectToLikeDislike(0)
+
+        }
+        
+        func connectToLikeDislike(_ decision : Int){
+             
+            
+                    if HunterUtility.isConnectedToInternet(){
+                        
+                        var url = ""
+     
+                             url = API.candidateBaseURL + API.jobViewMatchOrDeclineURL
+                            print(url)
+                                        HunterUtility.showProgressBar()
+                                        
+                                        let headers = [ "Authorization" : "Bearer " + accessToken]
+                        var parameters = [String : Any]()
+
+                         
+
+    //                    decision (0 for match and 1 declined)
+                       
+                         
+                        parameters = ["decision" : decision , "recruiter_id" : self.recruiter_id , "job_id" : userModel.job_details["job_id"] as! Int]
+
+                                        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                                            
+                                            switch response.result {
+                                            case .success:
+                                                if let responseDict = response.result.value as? NSDictionary{
+                                                    print(responseDict)
+                                                    SVProgressHUD.dismiss()
+                                                    if let status = responseDict.value(forKey: "status"){
+                                                        if status as! Int == 1{
+                                                            if (decision == 0) {
+                                                                self.makeToast("Matched")
+                                                            }
+                                                            else if (decision == 1) {
+                                                                self.makeToast("Declined")
+                                                            }
+                                                            self.delegate?.backBtnClick()
+                                                        } else if status as! Int == 2 {
+//                                                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+//                                                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+//                                                            }))
+//                                                            self.present(alert, animated: true, completion: nil)
+                                                            
+                                                            print("Logout api")
+                                                            
+                                                            UserDefaults.standard.removeObject(forKey: "accessToken")
+                                                            UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                                            accessToken = String()
+                                                            
+                                                            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                            let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                                            let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                                            navigationController.viewControllers = [mainRootController]
+                                                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                                            appDelegate.window?.rootViewController = navigationController
+                                                        }
+                                                        else{
+//                                                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+//                                                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+//                                                            }))
+//                                                            self.present(alert, animated: true, completion: nil)
+                                                        }
+                                                    }
+                                                    else{
+//                                                        let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+//                                                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+//                                                        }))
+//                                                        self.present(alert, animated: true, completion: nil)
+                                                    }
+                                                }else{
+                                                    SVProgressHUD.dismiss()
+                                                    
+                                                    
+                                                }
+                                                
+                                            case .failure(let error):
+                                                SVProgressHUD.dismiss()
+//                                                print(error)
+//                                                let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+//                                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+//                                                self.present(alert, animated: true, completion: nil)
+                                            }
+                                        }
+     
+                        
+                    
+                
+        }
+        }
 }
 
 extension UIView{
@@ -133,13 +234,17 @@ extension UIView{
         container.addSubview(self);
         
         let jobView = UserDefaults.standard.object(forKey: "jobView") as? String
+        
+        NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: container, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
+
+        NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: container, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
         if jobView != "jobView" {
 
-        NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: container, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: container, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: container, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
         }
+        
+
     }
 }
 
