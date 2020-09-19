@@ -19,17 +19,10 @@ class HunterLoginVC: UIViewController, UITextFieldDelegate {
     var isSaveCredential = false{
         didSet{
             if isSaveCredential{
-                if #available(iOS 13.0, *) {
-                    btnIsSaveCredential.setImage(UIImage(systemName: "smallcircle.fill.circle.fill"), for: .normal)
-                } else {
-                    // Fallback on earlier versions
-                }
+                btnIsSaveCredential.setImage(UIImage(named: "CircleFill"), for: .normal)
+                
             }else{
-                if #available(iOS 13.0, *) {
-                    btnIsSaveCredential.setImage(UIImage(systemName: "circle"), for: .normal)
-                } else {
-                    // Fallback on earlier versions
-                }
+                btnIsSaveCredential.setImage(UIImage(named: "Circle"), for: .normal)
             }
         }
     }
