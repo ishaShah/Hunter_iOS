@@ -814,16 +814,16 @@ extension HunterImagesVC : UICollectionViewDataSource {
 extension HunterImagesVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      if collectionView == coll_squarePics {
-
-        return CGSize(width: 40, height: 40)
+        if collectionView == coll_squarePics {
+            
+            return CGSize(width: 290, height: 180)
         }
-      else {
-        return CGSize(width: 220, height: 150)
-
+        else {
+            return CGSize(width: 220, height: 150)
+            
         }
- }
     }
+}
 
 extension HunterImagesVC : UICollectionViewDelegate {
     
