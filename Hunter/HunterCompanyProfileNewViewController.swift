@@ -412,6 +412,15 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
     
     @IBAction func closeEditView(_ sender: Any) {
         editView.isHidden = true;
+        isEdit = false
+        edit_abt.isHidden = true
+        edit_companyS.isHidden = true
+        edit_basic.isHidden = true
+        edit_businessT.isHidden = true
+        edit_ImageV.isHidden = true
+        btn_editCover.isHidden = true
+        btn_editProPic.isHidden = true
+        
     }
     
     @IBAction func editClick(_ sender: Any) {
