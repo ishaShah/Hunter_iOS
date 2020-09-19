@@ -129,7 +129,12 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
         self.present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func backBtn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if isFrom == "candidateReg" {
+            self.navigationController?.popViewController(animated: true)
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     @IBAction func saveBtn(_ sender: Any) {
         connectToRegisterSaveCompanyDetails(img_proPic.image!)
