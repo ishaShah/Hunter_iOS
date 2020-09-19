@@ -286,7 +286,35 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         self.jobView.isHidden = true
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
 
+                let swiped = UserDefaults.standard.object(forKey: "swiped") as? String
+
+                if loginType == "candidate" {
+                    self.jobView.isHidden = true
+
          
+                    if (userModels.count == 0){
+                    self.connectToGetJobs()
+                    }
+                    else if swiped == "swiped" {
+                        self.connectToGetJobs()
+
+                    }
+                    self.lab_intro.text = "ELEVATOR PITCH"
+                    self.lab_introSub.text = "Now's your chance. Tell them what makes you the perfect candidate!"
+                    
+                    
+                }else {
+                    if (userModels.count == 0){
+
+                     self.connectToGetCandidates()
+                    
+                    }
+                    else if swiped == "swiped" {
+                        self.connectToGetCandidates()
+
+                    }
+                }
+
     }
     func jobViewClick() {
         self.jobView.isHidden = false
@@ -339,11 +367,18 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         UserDefaults.standard.set("loggedIn", forKey: "loggedInStat")
         
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
-        
+        let swiped = UserDefaults.standard.object(forKey: "swiped") as? String
+
         if loginType == "candidate" {
             self.jobView.isHidden = true
+
+ 
             if (userModels.count == 0){
             self.connectToGetJobs()
+            }
+            else if swiped == "swiped" {
+                self.connectToGetJobs()
+
             }
             self.lab_intro.text = "ELEVATOR PITCH"
             self.lab_introSub.text = "Now's your chance. Tell them what makes you the perfect candidate!"
@@ -354,6 +389,10 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 
              self.connectToGetCandidates()
             
+            }
+            else if swiped == "swiped" {
+                self.connectToGetCandidates()
+
             }
         }
         txt_msg.text = "Type your message here ..."
@@ -408,7 +447,13 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             //            }
         }
         
+            
         swipeView = TinderSwipeView<UserModel>(frame: viewContainer.bounds, contentView: contentView)
+            
+            
+            for view in viewContainer.subviews {
+                view.removeFromSuperview()
+            }
         viewContainer.addSubview(swipeView)
         swipeView.showTinderCards(with: userModels ,isDummyShow: true)
         }else {
@@ -435,6 +480,9 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             
             swipeView = TinderSwipeView<UserModel>(frame: viewContainer.bounds, contentView: contentView)
+            for view in viewContainer.subviews {
+                view.removeFromSuperview()
+            }
             viewContainer.addSubview(swipeView)
             swipeView.showTinderCards(with: userModels ,isDummyShow: true)
         }
@@ -534,6 +582,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                             
                                 if status as! Int == 1 {
                                 if let data = responseDict.value(forKey: "data") as? NSDictionary {
+                                    UserDefaults.standard.set("", forKey: "swiped")
+
                                 print (data)
 //                                var n = 0
 //
@@ -565,36 +615,33 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 
                                     if job_cards.count == 0 {
                                       self.noCardLeft.isHidden = false
-                                        
-                                    
-                                    
-                                        
-                                    
-                                }
-                                else {
-                                    
-                                    self.noCardLeft.isHidden = true
-                                for mainDic in job_cards{
-                                    print(mainDic)
-                                    let recruiterDict = mainDic
-
-                                    let companyName =  recruiterDict["company_name"] as! String
-                                    let job_detailsDict = recruiterDict
-                                    let skillsArrDict = mainDic["skills"] as! [String]
-                                    let candidate_Id = recruiterDict["job_id"] as! Int
                                      
-                                    self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
-                                    n = n + 1
-                                }
-                                self.createCards()
-                                }
+                                    }
+                                    else {
+                                        
+                                        self.noCardLeft.isHidden = true
+                                            for mainDic in job_cards{
+                                            print(mainDic)
+                                            let recruiterDict = mainDic
+
+                                            let companyName =  recruiterDict["company_name"] as! String
+                                            let job_detailsDict = recruiterDict
+                                            let skillsArrDict = mainDic["skills"] as! [String]
+                                            let candidate_Id = recruiterDict["job_id"] as! Int
+                                             
+                                            self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
+                                            n = n + 1
+                                        }
+                                    self.createCards()
+                                    }
  
                                 
                                 
                                 }
                                 else {
                                         self.noCardLeft.isHidden = false
-                                        
+                                        UserDefaults.standard.set("", forKey: "swiped")
+
                                     
                                     }
                             }
@@ -672,6 +719,9 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1{
+                                
+                                UserDefaults.standard.set("", forKey: "swiped")
+
                                 let data = responseDict.value(forKey: "data") as! NSDictionary
                                 print (data)
                                 var n = 0
