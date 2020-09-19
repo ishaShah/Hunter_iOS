@@ -20,8 +20,8 @@ target 'Hunter' do
   pod 'TinderSwipeView'
   pod 'SDWebImage'
 #  pod 'CircleBar'
- pod 'VBRRollingPit'
-pod "Player"
+  pod 'VBRRollingPit'
+  pod "Player"
   # Pods for Hunter
 
 end
