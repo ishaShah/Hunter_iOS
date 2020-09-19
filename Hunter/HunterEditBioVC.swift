@@ -14,7 +14,7 @@ class HunterEditBioVC: UIViewController {
 
     @IBOutlet weak var contBtn: UIButton!
     @IBOutlet weak var txt_view: UITextView!
-    
+    var profileDelegate : refreshProfileDelegate!
     var txt = String()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,9 @@ class HunterEditBioVC: UIViewController {
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
-                                self.dismiss(animated: true, completion: nil)
+                                self.dismiss(animated: true) {
+                                    self.profileDelegate.refetchFromCloud()
+                                }
                                 
                             }
                             else if status as! Int == 2 {

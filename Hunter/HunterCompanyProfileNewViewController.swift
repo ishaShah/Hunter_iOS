@@ -10,7 +10,13 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
+protocol refreshProfileDelegate {
+    func refetchFromCloud()
+}
+
+class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,refreshProfileDelegate {
+    
+    
 
     @IBOutlet weak var btn_editCover: UIButton!
     
@@ -72,7 +78,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
     var selectedCompanySizeID = String()
     @IBOutlet weak var btn_back: UIButton!
     @IBOutlet weak var btn_threeLines: UIButton!
-
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +140,9 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         }
         
     }
-    
+    func refetchFromCloud() {
+        connectToGetProfileData()
+    }
     @IBAction func uploadProPic(_ sender: Any) {
         // additional image/video
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditCoverImVC") as! HunterEditCoverImVC
@@ -444,18 +452,20 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         if sender.tag == 1 {
             // basic
             
-                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompVC") as! HunterRegisterCompVC
-                vc.isEdit = true
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true, completion: nil)
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompVC") as! HunterRegisterCompVC
+            vc.isEdit = true
+            vc.modalPresentationStyle = .overFullScreen
+            vc.profileDelegate = self
+            self.present(vc, animated: true, completion: nil)
         }
         else if sender.tag == 2 {
             // about
             let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditBioVC") as! HunterEditBioVC
             vc.modalPresentationStyle = .overFullScreen
             vc.txt = txtViewAbout.text!
+            vc.profileDelegate = self
             self.present(vc, animated: true, completion: nil)
-
+            
         }
         else if sender.tag == 3 {
             // company size
