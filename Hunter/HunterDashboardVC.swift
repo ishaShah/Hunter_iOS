@@ -15,6 +15,8 @@ import SVProgressHUD
 var names = [String]()
 protocol MyProtocol: class {
     func instantiateNewSecondView(tagged tag : Int)
+    func jobViewClick()
+    func backBtnClick()
 }
 class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MyProtocol, UITextViewDelegate {
     @IBOutlet weak var swipe_left: NSLayoutConstraint!
@@ -29,10 +31,10 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var noCardLeft: CardView!
     @IBOutlet weak var img_arrow: UIImageView!
     var userModels : [UserModel] = []
+    var currentIndex = 0
     var candidate_Id = 0
     var job_id = 0
     var recruiter_idNew = Int()
-
     @IBOutlet weak var topSpace: NSLayoutConstraint!
     @IBOutlet weak var txt_msg: UITextView!
     @IBOutlet weak var backMsgView: UIView!
@@ -46,6 +48,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var lab_intro: UILabel!
     @IBOutlet weak var lab_introSub: UILabel!
 
+    @IBOutlet weak var jobView: UIView!
     @IBOutlet weak var viewContainer: UIView!
 //    @IBOutlet weak var viewNavigation: UIView!{
 //        didSet{
@@ -53,23 +56,14 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 //        }
 //    }
     var dropDownStatus = false
-//    @IBOutlet weak var emojiView: EmojiRateView!
-    
-//    let userModels : [UserModel] =  {
-//        var model : [UserModel] = []
-//         for n in 0...names.count-1 {
-//            model.append(UserModel(name: names[n], num: "\(n)"))
-//        }
-//        return model
-//    }()
+ 
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     func instantiateNewSecondView(tagged tag : Int){
-        
-        
+ 
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterCompanyProfileNewViewController") as! HunterCompanyProfileNewViewController
         vc.isFrom = "cards"
         vc.candidate_Id = tag
@@ -77,39 +71,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 
          self.present(vc, animated: true, completion: nil)
         
-//        if (tag == 0) {
-//
-//            swipe_top.constant = 0.0
-//            swipe_left.constant = 0.0
-//            swipe_bottom.constant = 0.0
-//            self.view.layoutIfNeeded()
 
-//            let screenCenter = CGPoint(x:UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
-//            let subviewCenter = self.view.convert(self.swipeView.center, to: self.view)
-//            let offset = UIOffset(horizontal: screenCenter.x-subviewCenter.x, vertical: screenCenter.y-subviewCenter.y)
-//
-//            let widthScale = UIScreen.main.bounds.size.width/self.swipeView.frame.size.width
-//            let heightScale = UIScreen.main.bounds.size.height/self.swipeView.frame.size.height
-//            UIView.animate(withDuration: 1.0, animations: {
-//                let scaleTransform = CGAffineTransform(scaleX: widthScale, y: heightScale)
-//                let translateTransform = CGAffineTransform(translationX: offset.horizontal, y: offset.vertical)
-//                self.swipeView.transform = scaleTransform.concatenating(translateTransform)
-//            }, completion: { (finished) in
-//
-//            })
-            
-//        } else {
-//            swipe_top.constant = 55.0
-//            swipe_left.constant = 10.0
-//            swipe_bottom.constant = 80.0
-//            self.view.layoutIfNeeded()
-//
-////            UIView.animate(withDuration: 1.0, animations: {
-////                self.swipeView.transform = CGAffineTransform.identity
-////            }, completion: { (finished) in
-////
-////            })
-//        }
     }
     @IBAction func dropDownList(_ sender: Any) {
         
@@ -247,7 +209,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             
             
  
-            let parameters    = [ "job_id" : job_id , "candidate_id" : candidate_Id , "job_message" : txt_msg.text!] as [String : Any]
+            let parameters    = [ "job_id" : job_id , "candidate_id" : candidate_Id , "message" : txt_msg.text!] as [String : Any]
             print(parameters)
 
 //            job_id
@@ -313,11 +275,35 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.expandClick(notification:)), name: Notification.Name("expandClick"), object: nil)
+         
 
     }
     
+    func backBtnClick(){
+        UserDefaults.standard.set("", forKey: "jobView")
+
+        self.jobView.isHidden = true
+        let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
+
+         
+    }
+    func jobViewClick() {
+        self.jobView.isHidden = false
+        UserDefaults.standard.set("jobView", forKey: "jobView")
+
+         let customView = CustomView(frame: self.jobView.frame)
+
+                    customView.delegate = self
+        
+        customView.userModel = self.userModels[currentIndex]
+        customView.isFrom = "jobView"
+
+        let nib = UINib(nibName: "MyCollectionViewCell", bundle: nil)
+                   customView.coll_industry?.register(nib, forCellWithReuseIdentifier: "HunterRegisterDashBoardCollectionCell")
+        self.jobView.addSubview(customView)
+
+    }
     @objc func expandClick(notification: Notification) {
         
 //         self.tabBarController?.selectedIndex = 0
@@ -348,21 +334,27 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     override func viewWillAppear(_ animated: Bool) {
+        UserDefaults.standard.set("", forKey: "jobView")
+
         UserDefaults.standard.set("loggedIn", forKey: "loggedInStat")
         
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
         
         if loginType == "candidate" {
+            self.jobView.isHidden = true
+            if (userModels.count == 0){
             self.connectToGetJobs()
+            }
             self.lab_intro.text = "ELEVATOR PITCH"
             self.lab_introSub.text = "Now's your chance. Tell them what makes you the perfect candidate!"
             
             
         }else {
-            
+            if (userModels.count == 0){
+
              self.connectToGetCandidates()
             
-            
+            }
         }
         txt_msg.text = "Type your message here ..."
         messageView.isHidden = true
@@ -401,7 +393,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             //            }
             //            // loading contentview from nib
             //            else{
-            
+            UserDefaults.standard.set("", forKey: "jobView")
+
             
             let customView = CustomView(frame: frame)
             customView.delegate = self
@@ -519,6 +512,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     //MARK:- Webservice
     func connectToGetJobs(){
+        self.userModels = []
+
         if HunterUtility.isConnectedToInternet(){
              let url = API.candidateBaseURL + API.getJobSuggestionsURL
             print(url)
@@ -587,14 +582,13 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     let job_detailsDict = recruiterDict
                                     let skillsArrDict = mainDic["skills"] as! [String]
                                     let candidate_Id = recruiterDict["job_id"] as! Int
-
+                                     
                                     self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
                                     n = n + 1
                                 }
                                 self.createCards()
                                 }
-  //                                self.jobsDict = data
-//                                self.createCards()
+ 
                                 
                                 
                                 }
@@ -654,7 +648,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func connectToGetCandidates(){
-        if HunterUtility.isConnectedToInternet(){
+        self.userModels = []
+         if HunterUtility.isConnectedToInternet(){
             
  
 //            let url = API.recruiterBaseURL + API.getCandidateSuggsURL
@@ -693,12 +688,19 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                 else {
                                     
                                     self.noCardLeft.isHidden = true
+
                                 for mainDic in candidates{
                                     print(mainDic)
                                     let recruiterDict = mainDic
                                     let companyName =  recruiterDict["first_name"] as! String
                                     let job_detailsDict = mainDic
-                                    let skillsArrDict = mainDic["skills"] as! [String]
+                                    
+                                    var skillArray = [String]()
+                                    let skills = mainDic["skills"] as! [NSDictionary]
+                                    for skil in skills {
+                                        skillArray.append(skil["skill"] as! String)
+                                    }
+                                    let skillsArrDict = skillArray
                                     let candidate_Id = recruiterDict["candidate_id"] as! Int
                                     
 
@@ -843,6 +845,8 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
     func cardGoesLeft(model: Any) {
         //        emojiView.rateValue =  2.5
         let userModel = model as! UserModel
+
+        
         print("Watchout Left \(userModel.name!)")
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
 
@@ -863,6 +867,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
     func cardGoesRight(model : Any) {
         //        emojiView.rateValue =  2.5
         let userModel = model as! UserModel
+
         print("Watchout Right \(userModel.name!)")
         let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
         
@@ -893,8 +898,8 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         self.noCardLeft.isHidden = false
 
     }
-    
     func currentCardStatus(card object: Any, distance: CGFloat) {
+         
         if distance == 0 {
             //            emojiView.rateValue =  2.5
         }else{
@@ -906,16 +911,18 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
 
     func connectToSwipeCandidates(_ candidate_ID : Int , _ decision : Int, _ job_id : Int){
         if HunterUtility.isConnectedToInternet(){
-            
+            currentIndex += 1
             let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
             var parameters =  [String : Any]()
             if loginType == "candidate" {
                 baseURL = API.candidateBaseURL  + API.jobsSwipesURL
                 parameters = [ "decision" : decision , "job_id" : job_id, "recruiter_id" : candidate_ID] as [String : Any]
+ 
 
             }else{
                 baseURL = API.recruiterBaseURL  + API.getCandidateSwipeURL
                 parameters = [ "decision" : decision , "candidate_id" : candidate_ID, "job_id" : job_id] as [String : Any]
+ 
             }
             let url = baseURL
             
@@ -942,9 +949,18 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
                                         self.recruiter_idNew = candidate_ID
                                         
                                         self.job_id = Int(data["job_id"] as! String)!
+                                        
+                                        
+                                        let elevator_pitch = (data["elevator_pitch"] as! Int)
+                                        if elevator_pitch == 0 {
+                                             self.messageView.isHidden = true
+                                            self.backMsgView.isHidden = true
+                                        }
+                                        else {
                                         self.txt_msg.text = "Type your message here ..."
                                         self.messageView.isHidden = false
                                         self.backMsgView.isHidden = false
+                                        }
                                     }
                                     else {
                                         
@@ -952,9 +968,19 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
                                         
                                         
                                         self.candidate_Id = Int(data["candidate_id"] as! String)!
+                                         
+                                        
+                                        
+                                        let elevator_pitch = (data["elevator_pitch"] as! Int)
+                                        if elevator_pitch == 0 {
+                                             self.messageView.isHidden = true
+                                            self.backMsgView.isHidden = true
+                                        }
+                                        else {
                                         self.txt_msg.text = "Type your message here ..."
                                         self.messageView.isHidden = false
                                         self.backMsgView.isHidden = false
+                                        }
                                     }
                                 }
                                 

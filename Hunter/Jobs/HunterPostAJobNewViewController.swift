@@ -13,6 +13,9 @@ import SVProgressHUD
 class HunterPostAJobNewViewController: UIViewController {
     
     
+    @IBOutlet weak var lab_title: UILabel!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var postBtn: UIButton!
     
     @IBOutlet weak var txtJobTitle: HunterTextField!
     @IBOutlet weak var txtJobFunction: HunterTextField!
@@ -33,7 +36,9 @@ class HunterPostAJobNewViewController: UIViewController {
     var dict_year_of_experience = NSDictionary()
     var dict_job_function = NSDictionary()
     
-    
+    var isEdit = String()
+    var jobId = Int()
+
     struct selectionData{
         var field_of_education_IDs = [String]()
         var salary_range_ID = ""
@@ -41,6 +46,10 @@ class HunterPostAJobNewViewController: UIViewController {
         var work_type_ID = ""
         var year_of_experience_ID = ""
         var job_function_IDs = [String]()
+        var job_function_Dict = [NSDictionary]()
+        var skill_IDs_Dict = [NSDictionary]()
+        var field_of_education_IDs_Dict = [NSDictionary]()
+
         
     }
     var selectedData = selectionData()
@@ -61,13 +70,133 @@ class HunterPostAJobNewViewController: UIViewController {
         
         getLookUpData()
         
-        
+        if isEdit == "true" {
+            getEditData()
+            postBtn.setTitle("Edit Job", for: UIControl.State.normal)
+            saveBtn.isHidden = true
+            lab_title.text = "Edit a Job"
+        }
     }
     func applyUIChanges(){
         txtViewSummary.text = " Add a Job Summary "
         txtViewSummary.textColor = UIColor.officialApplePlaceholderGray
         txtViewSummary.font = UIFont(name:"GillSans-Italic", size:18)
         
+    }
+    func getEditData(){
+        if HunterUtility.isConnectedToInternet(){
+            let url = API.recruiterBaseURL + API.getJobDetailsURL
+            print(url)
+            HunterUtility.showProgressBar()
+            
+            let headers    = [ "Authorization" : "Bearer " + accessToken]
+            
+            let params    = [ "job_id" :  jobId]
+
+            Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                
+                switch response.result {
+                case .success:
+                    if let responseDict = response.result.value as? NSDictionary{
+                        print(responseDict)
+                        SVProgressHUD.dismiss()
+                        if let status = responseDict.value(forKey: "status"){
+                            if status as! Int == 1{
+                                if let jobdata = responseDict.value(forKey: "data") as? NSDictionary{
+                                    let data = jobdata.value(forKey: "job_details") as! NSDictionary
+                                    self.txtJobTitle.text = data["title"] as! String
+                                    let work_type = data["work_type"] as! NSDictionary
+                                         let work_typeKey = work_type.allKeys
+                                        self.selectedData.work_type_ID = "\(work_typeKey[0])"
+                                        self.txtWorkType.text = work_type.allValues[0] as! String
+                                        
+                                    
+                                    let salary_range = data["salary_range"] as! NSDictionary
+                                         let salary_rangeKey = salary_range.allKeys
+                                        self.selectedData.salary_range_ID = "\(salary_rangeKey[0])"
+                                        self.txtSalaryRange.text = salary_range.allValues[0] as! String
+                                        
+                                    
+                                    let experience = data["experience"] as! NSDictionary
+
+                                    let experienceKey = experience.allKeys
+                                        self.selectedData.year_of_experience_ID = "\(experienceKey[0])"
+                                        self.txtYearsOfExp.text = experience.allValues[0] as! String
+                                        
+                                    
+                                    let job_education = data["job_education"] as! NSDictionary
+                                         let educationKey = job_education.allKeys
+                                        let educationVal = job_education.allValues as! [String]
+                                    
+                                    self.selectedData.field_of_education_IDs_Dict = []
+                                    for jobs in job_education {
+                                        var dict = [String:Any]()
+                                        dict["name"] = jobs.value
+                                        dict["id"] = jobs.key
+                                        self.selectedData.field_of_education_IDs_Dict.append(dict as NSDictionary)
+
+                                    }
+                                         
+                                        self.selectedData.field_of_education_IDs = educationKey as! [String]
+                                        self.txtFieldOfEdu.text = educationVal.joined(separator:",")
+                                        
+                                    
+                                    let job_skill = data["job_skill"] as! NSDictionary
+
+                                    let job_skillKey = job_skill.allKeys
+                                        let job_skillVal = job_skill.allValues  as! [String]
+
+                                    
+                                    self.selectedData.skill_IDs_Dict = []
+                                    for jobs in job_skill {
+                                        var dict = [String:Any]()
+                                        dict["name"] = jobs.value
+                                        dict["id"] = jobs.key
+                                        self.selectedData.skill_IDs_Dict.append(dict as NSDictionary)
+
+                                    }
+                                    
+                                    
+                                    
+                                        self.selectedData.skill_IDs = job_skillKey as! [String]
+                                        self.txtSkills.text = job_skillVal.joined(separator:",")
+                                        
+                                    
+                                    let job_function = data["job_function"] as! NSDictionary
+
+                                    let job_functionKey = job_function.allKeys
+                                        let job_functionVal = job_function.allValues as! [String]
+                                    
+                                    self.selectedData.job_function_Dict = []
+                                    for jobs in job_function {
+                                        var dict = [String:Any]()
+                                        dict["name"] = jobs.value
+                                        dict["id"] = jobs.key
+                                        self.selectedData.job_function_Dict.append(dict as NSDictionary)
+
+                                    }
+                                    
+
+                                        self.selectedData.job_function_IDs = job_functionKey as! [String]
+                                        self.txtJobFunction.text = job_functionVal.joined(separator:",")
+                                        
+                                    
+                                    self.txtViewSummary.text  = (data["job_summary"] as! String)
+
+                                }
+                            }
+                        }
+                    }
+                    
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error)
+                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     func getLookUpData(){
         if HunterUtility.isConnectedToInternet(){
@@ -164,6 +293,88 @@ class HunterPostAJobNewViewController: UIViewController {
     }
 
     func postOrSaveAsDraft(isPost : Bool){
+        if isEdit == "true" {
+            if HunterUtility.isConnectedToInternet(){
+                let url = API.recruiterBaseURL + API.updateJobURL
+                                
+                print(url)
+                HunterUtility.showProgressBar()
+                
+                let headers    = [ "Authorization" : "Bearer " + accessToken]
+                
+
+                let paramsDict = ["job_id" : jobId,
+                                  "title": txtJobTitle.text ?? "",
+                                  "work_type_id": selectedData.work_type_ID ,
+                                  "salary_range_id": selectedData.salary_range_ID ,
+                                  "experience_id": selectedData.work_type_ID ,
+                                  "job_summary": txtViewSummary.text ?? "",
+                                  "job_function_ids": selectedData.job_function_IDs ,
+                                  "skill_ids": selectedData.skill_IDs ,
+                                  "education_id": selectedData.field_of_education_IDs
+                    ] as [String : Any]
+                
+                Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                    
+                    switch response.result {
+                    case .success:
+                        if let responseDict = response.result.value as? NSDictionary{
+                            print(responseDict)
+                            SVProgressHUD.dismiss()
+                            if let status = responseDict.value(forKey: "status"){
+                                if status as! Int == 1   {
+                                 
+                                    self.navigationController?.popViewController(animated: true)
+                                    
+                                }else if status as! Int == 2 {
+                                    let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                    }))
+                                    self.present(alert, animated: true, completion: nil)
+                                    
+                                    print("Logout api")
+                                    
+                                    UserDefaults.standard.removeObject(forKey: "accessToken")
+                                    UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                    accessToken = String()
+                                    
+                                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                    let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                    let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                    navigationController.viewControllers = [mainRootController]
+                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                    appDelegate.window?.rootViewController = navigationController
+                                }else{
+                                    let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                    }))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            }else{
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }else{
+                            SVProgressHUD.dismiss()
+                            //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
+                            //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
+                            //                        self.present(alert, animated: true, completion: nil)
+                        }
+                        
+                    case .failure(let error):
+                        SVProgressHUD.dismiss()
+                        print(error)
+                        let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+                
+            }
+        }
+        else {
         if HunterUtility.isConnectedToInternet(){
             var url = ""
             if(isPost){
@@ -179,7 +390,8 @@ class HunterPostAJobNewViewController: UIViewController {
             let headers    = [ "Authorization" : "Bearer " + accessToken]
             
 
-            let paramsDict = ["title": txtJobTitle.text ?? "",
+            let paramsDict = [
+                "title": txtJobTitle.text ?? "",
                               "work_type_id": selectedData.work_type_ID ,
                               "salary_range_id": selectedData.salary_range_ID ,
                               "experience_id": selectedData.work_type_ID ,
@@ -249,6 +461,7 @@ class HunterPostAJobNewViewController: UIViewController {
             
         }
     }
+    }
 
     @IBAction func actionSaveAsDraft(_ sender: Any) {
         if txtJobTitle.text == ""{
@@ -307,16 +520,30 @@ class HunterPostAJobNewViewController: UIViewController {
             HunterSelectionViewController.passedDict = self.dict_job_function
             HunterSelectionViewController.isMultiSelect = true
             HunterSelectionViewController.headerText = "Select Job Function"
+            if isEdit == "true" {
+                HunterSelectionViewController.selectedIDArray = selectedData.job_function_IDs
+                HunterSelectionViewController.selectedData = selectedData.job_function_Dict
+            }
 
         case "Skills":
             HunterSelectionViewController.passedDict = self.dict_skill
             HunterSelectionViewController.isMultiSelect = true
             HunterSelectionViewController.headerText = "Select Skills"
+            if isEdit == "true" {
+                HunterSelectionViewController.selectedIDArray = selectedData.skill_IDs
+                HunterSelectionViewController.selectedData = selectedData.skill_IDs_Dict
+
+            }
 
         case "FieldOfEdu":
             HunterSelectionViewController.passedDict = self.dict_field_of_education
             HunterSelectionViewController.isMultiSelect = true
             HunterSelectionViewController.headerText = "Select Field Of Education"
+            if isEdit == "true" {
+                HunterSelectionViewController.selectedIDArray = selectedData.field_of_education_IDs
+                HunterSelectionViewController.selectedData = selectedData.field_of_education_IDs_Dict
+
+            }
 
         default:
             break

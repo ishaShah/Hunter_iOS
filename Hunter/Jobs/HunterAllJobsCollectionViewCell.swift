@@ -12,6 +12,7 @@ class HunterAllJobsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var btnDelete: UIButton!
     
+    @IBOutlet weak var editJob: UIButton!
     @IBOutlet weak var lblJobHeader: UILabel!
     @IBOutlet weak var lblJobType: UILabel!
     

@@ -189,7 +189,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             if loginType == "candidate" {
                 paramsDict = ["swipe_id": selectedJobId]
             }else{
-                paramsDict = ["swipe_id": selectedJobId]
+                paramsDict = ["swipe_id": selectedCandidateId]
 
             }
             print(paramsDict)
@@ -321,7 +321,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 paramsDict = ["swipe_id": selectedJobId,
                               "message": textMessage.text ?? ""]
             }else{
-                paramsDict = ["swipe_id": selectedJobId,
+                paramsDict = ["swipe_id": selectedCandidateId,
                               "message": textMessage.text ?? ""]
             }
             

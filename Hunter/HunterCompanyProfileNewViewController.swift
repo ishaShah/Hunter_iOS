@@ -15,6 +15,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
     @IBOutlet weak var btn_editCover: UIButton!
     
     @IBOutlet weak var btn_editProPic: UIButton!
+    @IBOutlet weak var img_bannerImg: UIImageView!
     
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
     if isFrom == "businessType" {
@@ -172,6 +173,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
                                             self.lblFounded.text = "\(profile["founded_on"] as! String)"
                                             self.lblWebsite.text = "\(profile["website"] as! String)"
                                             self.txtViewAbout.text = "\(profile["about"] as! String)"
+                                            self.txtViewAbout.sizeToFit()
                                             DispatchQueue.main.async {
                                                 self.cTxtViewHeight.constant = self.txtViewAbout.contentSize.height
                                             }
@@ -180,6 +182,10 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
                                             if let url = profile["square_logo"] as? String{
                                                 self.imgProfile.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
                                             }
+                                            if let url = profile["rectangle_logo"] as? String{
+                                                self.img_bannerImg.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                            }
+                                            
                                             self.arrayImages = profile["additional_images"] as! [String]
                                             self.collImages.delegate = self
                                             self.collImages.dataSource = self
@@ -273,6 +279,9 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
                                             self.lblBusinessType.text = "\(profile["business_type"] as! String)"
                                             if let url = profile["square_logo"] as? String{
                                                 self.imgProfile.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                            }
+                                            if let url = profile["rectangle_logo"] as? String{
+                                                self.img_bannerImg.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
                                             }
                                             self.arrayImages = profile["additional_images"] as! [String]
                                             self.collImages.delegate = self

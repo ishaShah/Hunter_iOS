@@ -16,7 +16,9 @@ import CropViewController
 
 
 class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate , CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource{
+    @IBOutlet weak var btn_threeline: UIButton!
     
+    @IBOutlet weak var btn_back: UIButton!
     @IBOutlet weak var tv_achievement: UITextView!
     @IBOutlet weak var tv_lang : UITextView!
     @IBOutlet weak var stack_share: UIStackView!
@@ -167,13 +169,19 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
         self.hideKeyboardWhenTappedAround()
  
-  
-        if isFrom == "recruiter" {
-            stack_share.isHidden = false
+  var loginType = String()
+  if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+      loginType = type
+  }
+  // Do any additional setup after loading the view.
+  if loginType == "candidate" {
+    stack_share.isHidden = true
         }
-        else {
-            stack_share.isHidden = true
+  else {
+    stack_share.isHidden = false
+
         }
+         
         
         hidenAndShowBtns(false)
         scrlCV.roundCorners([.topLeft, .topRight], radius: 20.0)
@@ -197,10 +205,124 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
     }
     
-     override func viewWillAppear(_ animated: Bool) {
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func btn_dislike(_ sender: Any) {
+        connectToLikeDislike(1)
+    }
+    @IBAction func btn_like(_ sender: Any) {
+        connectToLikeDislike(0)
+
+    }
+    
+    func connectToLikeDislike(_ decision : Int){
+         
+        
+                if HunterUtility.isConnectedToInternet(){
+                    
+                    var url = ""
+ 
+                         url = API.recruiterBaseURL + API.getCandidateMatchOrDeclineURL
+                        print(url)
+                                    HunterUtility.showProgressBar()
+                                    
+                                    let headers = [ "Authorization" : "Bearer " + accessToken]
+                    var parameters = [String : Any]()
+
+                     
+
+//                    decision (0 for match and 1 declined)
+                   
+                     
+                    parameters = ["decision" : decision , "candidate_id" : candidate_idPassed , "job_id" : job_id]
+
+                                    Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                                        
+                                        switch response.result {
+                                        case .success:
+                                            if let responseDict = response.result.value as? NSDictionary{
+                                                print(responseDict)
+                                                SVProgressHUD.dismiss()
+                                                if let status = responseDict.value(forKey: "status"){
+                                                    if status as! Int == 1{
+                                                        if (decision == 0) {
+                                                            self.view.makeToast("Matched")
+                                                        }
+                                                        else if (decision == 1) {
+                                                            self.view.makeToast("Declined")
+                                                        }
+                                                        self.navigationController?.popViewController(animated: true)
+                                                    } else if status as! Int == 2 {
+                                                        let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                        }))
+                                                        self.present(alert, animated: true, completion: nil)
+                                                        
+                                                        print("Logout api")
+                                                        
+                                                        UserDefaults.standard.removeObject(forKey: "accessToken")
+                                                        UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                                        accessToken = String()
+                                                        
+                                                        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                        let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                                        let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                                        navigationController.viewControllers = [mainRootController]
+                                                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                                        appDelegate.window?.rootViewController = navigationController
+                                                    }
+                                                    else{
+                                                        let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                        }))
+                                                        self.present(alert, animated: true, completion: nil)
+                                                    }
+                                                }
+                                                else{
+                                                    let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                    }))
+                                                    self.present(alert, animated: true, completion: nil)
+                                                }
+                                            }else{
+                                                SVProgressHUD.dismiss()
+                                                
+                                                
+                                            }
+                                            
+                                        case .failure(let error):
+                                            SVProgressHUD.dismiss()
+                                            print(error)
+                                            let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                                            self.present(alert, animated: true, completion: nil)
+                                        }
+                                    }
+ 
+                    
+                
+            
+    }
+    }
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
 //        connectToGetProfileData()
+        var loginType = String()
+        if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+            loginType = type
+        }
+        // Do any additional setup after loading the view.
+        if loginType == "recruiter" {
+            self.btn_threeline.isHidden = true
+            self.btn_back.isHidden = false
 
+        }
+        else {
+            self.btn_threeline.isHidden = false
+            self.btn_back.isHidden = true
+
+        }
         setNeedsStatusBarAppearanceUpdate()
     }
     
@@ -444,7 +566,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     }
     @IBAction func edit_Achievement(_ sender: Any) {
         
-        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterAchieveVC") as! HunterAchieveVC
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterAchieveListVC") as! HunterAchieveListVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func upload_profile(_ sender: Any) {
@@ -454,16 +576,16 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func edit_lang(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguage1VC") as! HunterLanguage1VC
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguageListVC") as! HunterLanguageListVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_edu(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep2VC") as! HunterEducationStep2VC
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterListAllEduVC") as! HunterListAllEduVC
         vc.isFrom = "Profile"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func edit_WE(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpListVC") as! HunterWorkExpListVC
         vc.isFrom = "Profile"
         self.navigationController?.pushViewController(vc, animated: true)
     }

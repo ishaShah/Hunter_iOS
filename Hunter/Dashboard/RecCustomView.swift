@@ -33,6 +33,7 @@ class RecCustomView: UIView {
             if let desc = userModel.job_details["description"] as? String{
                 self.jobDesc.text = desc
             }
+
             self.profImg.sd_setImage(with: URL(string: userModel.recruiter["banner_image"] as! String), placeholderImage: UIImage(named: "placeholder.png"))
             self.logoImg.sd_setImage(with: URL(string: userModel.recruiter["profile_image"] as! String), placeholderImage: UIImage(named: "iman.png"))
             print(userModel.job_details)
@@ -76,11 +77,14 @@ class RecCustomView: UIView {
     }
     
     @IBAction func expandClick(_ sender: Any) {
+ 
         
+         
+
         let candidateDict:[String: Int] = ["candidate_id": userModel.candidate_id!,"job_id" :userModel.job_details["job_id"] as! Int]
         // Post a notification
         NotificationCenter.default.post(name: Notification.Name("expandClick"), object: nil, userInfo: candidateDict)
-
+        
     }
     
     
@@ -132,7 +136,7 @@ extension RecCustomView: UICollectionViewDelegateFlowLayout {
         let skills = userModel.skills[indexPath.row] as! String
         label.text = skills.uppercased()
         label.sizeToFit()
-        return CGSize(width: label.frame.width, height: 25)
+        return CGSize(width: label.frame.width + 3, height: 25)
     }
 }
 extension RecCustomView : UICollectionViewDelegate {

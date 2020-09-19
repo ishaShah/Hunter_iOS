@@ -25,8 +25,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
     @IBOutlet weak var lab_selectedJob: UILabel!
     @IBOutlet weak var img_arrow: UIImageView!
     @IBOutlet weak var topSpace: NSLayoutConstraint!
-    @IBOutlet weak var tbl_jobs: UITableView!
-    @IBOutlet weak var tbl_jobs_ht: NSLayoutConstraint!
+     
 
     var arrayChatList = [HunterChatListModel]()
     var arrayMatchesList = [HunterMatchesModel]()
@@ -65,16 +64,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
             loginType = type
         }
-        if loginType == "recruiter" {
-        self.tbl_jobs.tableFooterView = UIView()
-        tbl_jobs.round(corners: [.bottomLeft, .bottomRight], radius: 30)
-
-        tbl_jobs.layer.masksToBounds = false
-        tbl_jobs.layer.shadowRadius = 4
-        tbl_jobs.layer.shadowOpacity = 1
-        tbl_jobs.layer.shadowColor = UIColor.gray.cgColor
-        tbl_jobs.layer.shadowOffset = CGSize(width: 0 , height:2)
-        }
+         
 
     }
     override func viewDidLayoutSubviews() {
@@ -156,6 +146,8 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         if loginType == "candidate"{
             connectToGetChats()
         }else{
+            connectToGetChats()
+
             if self.arrayChatList.count == 0 {
                 self.collectionMatches.isHidden = true
                 self.tableMessages.isHidden = true
@@ -230,6 +222,28 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         }
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterChatVC") as! HunterChatVC
+            if loginType == "candidate" {
+                if let jobId = arrayMatchesList[indexPath.row].swipe_id{
+                    vc.selectedJobId = jobId
+                }
+                if let title = arrayMatchesList[indexPath.row].job_title{
+                    vc.selectedChatName = title
+                }
+            }else{
+                vc.selectedJobId = job_id
+                if let candidateId = arrayMatchesList[indexPath.row].swipe_id{
+                    vc.selectedCandidateId = String(candidateId)
+                }
+                if let title = arrayMatchesList[indexPath.row].candidate_name{
+                    vc.selectedChatName = title
+                }
+            }
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     //MARK:- Tableview Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == tableMessages{
@@ -256,24 +270,32 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
                 cell.labelChatMessage.text = lastMessage
             }
             let gradient = CAGradientLayer()
-            gradient.frame =  CGRect(origin: CGPoint.zero, size: cell.proImgView.frame.size)
+            gradient.frame =  CGRect(origin: CGPoint.zero, size: cell.imageChat.frame.size)
             gradient.colors = [UIColor.init(red: 220.0/255.0, green: 82.0/255.0, blue: 245.0/255.0, alpha: 1).cgColor, UIColor.init(red: 48.0/255.0, green: 4.0/255.0, blue: 113.0/255.0, alpha: 1).cgColor]
             
             let shape = CAShapeLayer()
             shape.lineWidth = 2
             //            shape.path = UIBezierPath(rect: cell.viewBG.bounds).cgPath
-            shape.path = UIBezierPath(roundedRect: (cell.proImgView.bounds), cornerRadius: 40).cgPath
+            shape.path = UIBezierPath(roundedRect: (cell.imageChat.bounds), cornerRadius: 40).cgPath
             
             shape.strokeColor = UIColor.black.cgColor
             shape.fillColor = UIColor.clear.cgColor
             gradient.mask = shape
-            cell.proImgView.layer.addSublayer(gradient)
+            cell.imageChat.layer.addSublayer(gradient)
             
-            
+            if loginType == "candidate" {
+            if let logo = arrayChatList[indexPath.row].logo{
+                cell.imageChat.contentMode = .scaleToFill
+                let url = URL(string: logo)
+                cell.imageChat.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+            }
+            }
+            else {
             if let logo = arrayChatList[indexPath.row].profile_img{
                 cell.imageChat.contentMode = .scaleToFill
                 let url = URL(string: logo)
                 cell.imageChat.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+            }
             }
             return cell
         }else{
@@ -286,8 +308,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == tableMessages{
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterChatVC") as! HunterChatVC
+             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterChatVC") as! HunterChatVC
             if loginType == "candidate" {
                 if let jobId = arrayChatList[indexPath.row].job_id{
                     vc.selectedJobId = jobId
@@ -306,18 +327,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
             }
             
             self.navigationController?.pushViewController(vc, animated: true)
-        }else{
-            isDropDownSelected = true
-            self.lab_selectedJob.text = jobList[indexPath.row]
-            self.job_id = jobIDList[indexPath.row]
-            self.connectToGetRecruiterData()
-            self.img_arrow.transform = CGAffineTransform(scaleX: -1, y: 1)
-            topSpace.constant = -210
-            UIView.animate(withDuration: 0.3) {
-                self.view.layoutIfNeeded()
-            }
-            dropDownStatus = false
-        }
+        
     }
     //MARK:- Webservice
     func connectToGetChats(){
@@ -441,10 +451,9 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
             HunterUtility.showProgressBar()
             
             let headers = [ "Authorization" : "Bearer " + accessToken]
-            let params = ["job_id": job_id]
-            print(headers)
-            print(params)
-            Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+
+            
+            Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
                 
                 switch response.result {
                 case .success:
@@ -468,16 +477,10 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
                                                 self.lab_selectedJob.text = self.jobList[0]
                                                 self.job_id = self.jobIDList[0]
                                             }
-                                            self.tbl_jobs.reloadData()
-                                        }
+                                         }
                                         
                                         
-                                        if self.jobList.count < 4 {
-                                            self.tbl_jobs_ht.constant = CGFloat(self.jobList.count) * 50.0
-                                        }
-                                        else {
-                                            self.tbl_jobs_ht.constant = 200.0
-                                        }
+                                         
                                         
                                         
                                     }
@@ -486,7 +489,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
                                             self.arrayChatList.append(HunterChatListModel().initWithDict(dictionary: data))
                                         }
                                     }
-                                    if let matchesDict = dataDict.value(forKey: "matched_candidates") as? [NSDictionary]{
+                                    if let matchesDict = dataDict.value(forKey: "matched") as? [NSDictionary]{
                                         for data in matchesDict{
                                             self.arrayMatchesList.append(HunterMatchesModel().initWithDict(dictionary: data))
                                         }
@@ -700,91 +703,8 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
             print("no internet")
         }
     }
-/*    func connectToGetJobsForFilter(){
-        if HunterUtility.isConnectedToInternet(){
-            
-            
-            
-            let url = API.recruiterBaseURL  + API.getJobsForFilterURL
-            
-            
-            print(url)
-            HunterUtility.showProgressBar()
-            
-            
-            let headers    = [ "Authorization" : "Bearer " + accessToken]
-            print(headers)
-            
-            
-            Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-                
-                switch response.result {
-                case .success:
-                    if let responseDict = response.result.value as? NSDictionary{
-                        print(responseDict)
-                        SVProgressHUD.dismiss()
-                        if let status = responseDict.value(forKey: "status"){
-                            if status as! Int == 1{
-                                let data = responseDict.value(forKey: "data") as! [NSDictionary]
-                                for dic in data {
-                                    self.jobList.append(dic["title"] as! String)
-                                    self.jobIDList.append(dic["id"] as! Int)
-                                    self.total_suggestions.append(dic["total_suggestions"] as! Int)
-                                    
-                                    self.lab_selectedJob.text = self.jobList[0]
-                                    self.job_id = self.jobIDList[0]
-                                    self.tbl_jobs.reloadData()
-                                }
-                            }
-                            else if status as! Int == 2 {
-                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                }))
-                                self.present(alert, animated: true, completion: nil)
-                                
-                                print("Logout api")
-                                
-                                UserDefaults.standard.removeObject(forKey: "accessToken")
-    UserDefaults.standard.removeObject(forKey: "loggedInStat")
-                                accessToken = String()
-                                
-                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                                let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
-                                let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
-                                navigationController.viewControllers = [mainRootController]
-                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                appDelegate.window?.rootViewController = navigationController
-                            }
-                            else{
-                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                }))
-                                self.present(alert, animated: true, completion: nil)
-                            }
-                        }else{
-                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                            }))
-                            self.present(alert, animated: true, completion: nil)
-                        }
-                    }
-                    
-                    
-                    
-                    
-                case .failure(let error):
-                    SVProgressHUD.dismiss()
-                    print(error)
-                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
-        }else{
-            print("no internet")
-        }
-    }*/
-/*    // MARK: - Navigation
+
+    /*    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
