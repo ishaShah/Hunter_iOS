@@ -161,12 +161,15 @@ class CustomView: UIView {
                                                     SVProgressHUD.dismiss()
                                                     if let status = responseDict.value(forKey: "status"){
                                                         if status as! Int == 1{
+                                                            UserDefaults.standard.set("swiped", forKey: "swiped")
+
                                                             if (decision == 0) {
                                                                 self.makeToast("Matched")
                                                             }
                                                             else if (decision == 1) {
                                                                 self.makeToast("Declined")
                                                             }
+                                                            
                                                             self.delegate?.backBtnClick()
                                                         } else if status as! Int == 2 {
 //                                                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)

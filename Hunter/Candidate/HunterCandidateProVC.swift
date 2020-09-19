@@ -246,6 +246,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                 SVProgressHUD.dismiss()
                                                 if let status = responseDict.value(forKey: "status"){
                                                     if status as! Int == 1{
+                                                        UserDefaults.standard.set("swiped", forKey: "swiped")
+
                                                         if (decision == 0) {
                                                             self.view.makeToast("Matched")
                                                         }
