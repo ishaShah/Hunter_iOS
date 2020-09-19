@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SVProgressHUD
+import Player
 
 class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
 
@@ -39,6 +40,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBOutlet weak var view_video: UIView!
     @IBOutlet weak var viewContent: UIView!
     @IBOutlet weak var viewImageOutter: UIView!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -66,12 +68,14 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
     var isFrom = String()
     var candidate_Id = 0
     var arrayImages = [String]()
+    var arrayVideos = [String]()
 
 
     var selectedBusinessTypeID = String()
     var selectedCompanySizeID = String()
     @IBOutlet weak var btn_back: UIButton!
     @IBOutlet weak var btn_threeLines: UIButton!
+    fileprivate var player = Player()
 
 
     override func viewDidLoad() {
@@ -102,6 +106,16 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         btn_editCover.isHidden = !isEdit
         btn_editProPic.isHidden = !isEdit
 
+        self.player = Player()
+        self.player.playerDelegate = self
+        self.player.playbackDelegate = self
+        self.player.view.frame = self.view_video.bounds
+        
+        self.addChild(self.player)
+        self.view_video.addSubview(self.player.view)
+     //   self.player.didMove(toParent: self)
+        
+        
         collImages.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
         connectToGetProfileData()
         NotificationCenter.default.addObserver(self, selector: #selector(self.GetProfileData(notification:)), name: NSNotification.Name(rawValue: "candidate_Id"), object: nil)
@@ -142,6 +156,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBOutlet weak var view_viewHt: NSLayoutConstraint!
     var profileDict = NSDictionary()
     func connectToGetProfileData(){
         
@@ -187,8 +202,23 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
                                             }
                                             
                                             self.arrayImages = profile["additional_images"] as! [String]
+                                            self.arrayVideos = profile["additional_videos"] as! [String]
                                             self.collImages.delegate = self
                                             self.collImages.dataSource = self
+                                            if self.arrayVideos.count != 0 {
+                                            self.player.url = URL(string:self.arrayVideos[0])
+                                            self.player.playFromBeginning()
+//                                                self.player.fillMode = .resizeAspectFill
+
+ 
+                                                let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
+                                            tapGestureRecognizer.numberOfTapsRequired = 1
+                                            self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                            }
+                                            else {
+                                                self.view_viewHt.constant = 0.0
+                                            }
+                                            
                                         }
                                     }
                                 }else if status as! Int == 2 {
@@ -284,8 +314,23 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
                                                 self.img_bannerImg.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
                                             }
                                             self.arrayImages = profile["additional_images"] as! [String]
+                                            self.arrayVideos = profile["additional_videos"] as! [String]
+
                                             self.collImages.delegate = self
                                             self.collImages.dataSource = self
+                                            
+                                            if self.arrayVideos.count != 0 {
+                                                self.player.url = URL(string:self.arrayVideos[0] )
+                                                self.player.playFromBeginning()
+//                                                self.player.fillMode = .res
+    
+                                                let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
+                                               tapGestureRecognizer.numberOfTapsRequired = 1
+                                               self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                           }
+                                            else {
+                                                self.view_viewHt.constant = 0.0
+                                            }
                                         }
                                     }
                                 }else if status as! Int == 2 {
@@ -509,3 +554,67 @@ extension HunterCompanyProfileNewViewController : UICollectionViewDelegate,UICol
     }
 }
 
+extension HunterCompanyProfileNewViewController {
+    
+    @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
+        switch self.player.playbackState {
+        case .stopped:
+            self.player.playFromBeginning()
+            break
+        case .paused:
+            self.player.playFromCurrentTime()
+            break
+        case .playing:
+            self.player.pause()
+            break
+        case .failed:
+            self.player.pause()
+            break
+        }
+    }
+    
+}
+
+// MARK: - PlayerDelegate
+
+extension HunterCompanyProfileNewViewController: PlayerDelegate {
+    
+    func playerReady(_ player: Player) {
+        print("\(#function) ready")
+    }
+    
+    func playerPlaybackStateDidChange(_ player: Player) {
+        print("\(#function) \(player.playbackState.description)")
+    }
+    
+    func playerBufferingStateDidChange(_ player: Player) {
+    }
+    
+    func playerBufferTimeDidChange(_ bufferTime: Double) {
+    }
+    
+    func player(_ player: Player, didFailWithError error: Error?) {
+        print("\(#function) error.description")
+    }
+    
+}
+
+// MARK: - PlayerPlaybackDelegate
+
+extension HunterCompanyProfileNewViewController: PlayerPlaybackDelegate {
+    
+    func playerCurrentTimeDidChange(_ player: Player) {
+    }
+    
+    func playerPlaybackWillStartFromBeginning(_ player: Player) {
+    }
+    
+    func playerPlaybackDidEnd(_ player: Player) {
+    }
+    
+    func playerPlaybackWillLoop(_ player: Player) {
+    }
+
+    func playerPlaybackDidLoop(_ player: Player) {
+    }
+}

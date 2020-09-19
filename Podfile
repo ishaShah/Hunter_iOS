@@ -21,7 +21,7 @@ target 'Hunter' do
   pod 'SDWebImage'
 #  pod 'CircleBar'
  pod 'VBRRollingPit'
-
+pod "Player"
   # Pods for Hunter
 
 end
