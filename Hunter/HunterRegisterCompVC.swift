@@ -21,6 +21,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
     var profileDelegate: refreshProfileDelegate!
     @IBOutlet weak var contButton: UIButton!
 
+ 
 
     var isEdit = false
     var arr_industry = [String]()
