@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QTj-Ba-NeV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QTj-Ba-NeV">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +42,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dx-R7-QGM" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="521"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrH-Xb-0qD">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrH-Xb-0qD">
                                                 <rect key="frame" x="20" y="15" width="34" height="29"/>
                                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                                 <state key="normal" title="SAVE">
@@ -51,7 +52,7 @@
                                                     <action selector="saveBtn:" destination="cBK-Jp-Zkz" eventType="touchUpInside" id="NeF-kA-O8a"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-Ri-BfC">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-Ri-BfC">
                                                 <rect key="frame" x="66" y="15" width="55" height="29"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                 <state key="normal" title="CANCEL">
@@ -105,7 +106,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="lO8-f5-EsH"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwB-Rj-Jts">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwB-Rj-Jts">
                                                         <rect key="frame" x="0.0" y="0.0" width="146" height="146"/>
                                                         <connections>
                                                             <action selector="squarePicsBtnClick:" destination="cBK-Jp-Zkz" eventType="touchUpInside" id="iXJ-Tk-Aq7"/>
@@ -178,7 +179,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uey-eH-pcI">
                                                 <rect key="frame" x="176" y="130" width="71" height="18"/>
-                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -190,7 +191,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fgdfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-nM-Ec9" customClass="DropDown" customModule="iOSDropDown">
                                                 <rect key="frame" x="20" y="265.5" width="146" height="18"/>
-                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -216,7 +217,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fgdfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z7b-Ec-LxE" customClass="DropDown" customModule="iOSDropDown">
                                                 <rect key="frame" x="20" y="338" width="146" height="18"/>
-                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -242,7 +243,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fgdfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLL-mP-10G" customClass="DropDown" customModule="iOSDropDown">
                                                 <rect key="frame" x="20" y="410.5" width="146" height="18"/>
-                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -268,7 +269,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fgdfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aaG-Mq-Ind" customClass="DropDown" customModule="iOSDropDown">
                                                 <rect key="frame" x="20" y="483" width="146" height="18"/>
-                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -412,6 +413,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xlu-Y5-liZ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Smy-hl-cOn" firstAttribute="top" secondItem="sTI-9k-CDA" secondAttribute="top" constant="30" id="4u4-Mq-otq"/>
@@ -429,7 +431,6 @@
                             <constraint firstItem="nMl-d2-d7T" firstAttribute="trailing" secondItem="Xlu-Y5-liZ" secondAttribute="trailing" id="l4W-Od-Nrv"/>
                             <constraint firstItem="6FK-O7-eg0" firstAttribute="leading" secondItem="Xlu-Y5-liZ" secondAttribute="leading" id="wDK-LU-Iau"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xlu-Y5-liZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="iTu-4a-m75"/>
                     <connections>
@@ -498,7 +499,7 @@
                                                     <color key="textColor" red="0.1764705882352941" green="0.015686274509803921" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbD-Hz-K7q">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbD-Hz-K7q">
                                                     <rect key="frame" x="290" y="10" width="20" height="20"/>
                                                     <color key="backgroundColor" red="0.21649187803268433" green="0.12132283300161362" blue="0.46504807472229004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -550,7 +551,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzM-A6-g6f">
                                 <rect key="frame" x="25" y="508" width="152" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaS-Cy-zp6">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaS-Cy-zp6">
                                         <rect key="frame" x="20" y="5" width="20" height="20"/>
                                         <color key="backgroundColor" red="0.216491878" green="0.121322833" blue="0.46504807469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -573,7 +574,7 @@
                                         <color key="textColor" red="0.6549019814" green="0.65490204100000005" blue="0.65490192169999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-va-bmO">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-va-bmO">
                                         <rect key="frame" x="0.0" y="0.0" width="152" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
@@ -687,7 +688,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pJO-kp-nYt">
                                                 <rect key="frame" x="47" y="306.5" width="200" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW7-go-Biq">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW7-go-Biq">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
                                                         <color key="backgroundColor" red="0.21649187803268433" green="0.12132283300161362" blue="0.46504807472229004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
@@ -703,7 +704,7 @@
                                                             <action selector="disableAccYes:" destination="d7a-aN-vu5" eventType="touchUpInside" id="ZHP-aU-rwK"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y31-s0-cXn">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y31-s0-cXn">
                                                         <rect key="frame" x="104" y="0.0" width="96" height="30"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                         <state key="normal" title="NO">
@@ -826,7 +827,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tsE-4w-XYD">
                                                 <rect key="frame" x="47" y="418" width="200" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V5-Mf-j0n">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V5-Mf-j0n">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
@@ -848,7 +849,7 @@
                                                             <action selector="skipSadView:" destination="d7a-aN-vu5" eventType="touchUpInside" id="4wS-nd-uQH"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-gt-mxM">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-gt-mxM">
                                                         <rect key="frame" x="104" y="0.0" width="96" height="30"/>
                                                         <color key="backgroundColor" red="0.216491878" green="0.121322833" blue="0.46504807469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
@@ -944,6 +945,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="SlR-zX-M5g"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="llH-60-Kow" secondAttribute="bottom" id="1Qr-gc-euA"/>
@@ -967,7 +969,6 @@
                             <constraint firstItem="gf8-yi-0nE" firstAttribute="top" secondItem="A2b-rt-RNi" secondAttribute="top" id="vZR-ha-GLD"/>
                             <constraint firstItem="8gM-aL-5dn" firstAttribute="centerY" secondItem="A2b-rt-RNi" secondAttribute="centerY" id="yOK-Bm-cXd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="SlR-zX-M5g"/>
                     </view>
                     <connections>
                         <outlet property="disableAcc" destination="8gM-aL-5dn" id="zOw-Zu-d7k"/>
@@ -991,7 +992,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addAccount" translatesAutoresizingMaskIntoConstraints="NO" id="DS5-OT-RXX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5t-Y7-RPR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5t-Y7-RPR">
                                 <rect key="frame" x="60" y="453" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1355,6 +1356,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="rWI-GC-nZT"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TKS-yA-Gfn" firstAttribute="leading" secondItem="rWI-GC-nZT" secondAttribute="leading" id="1mP-X4-iJA"/>
@@ -1371,7 +1373,6 @@
                             <constraint firstAttribute="trailing" secondItem="DS5-OT-RXX" secondAttribute="trailing" id="nN0-bK-EtG"/>
                             <constraint firstItem="m5t-Y7-RPR" firstAttribute="top" secondItem="Die-xr-HbO" secondAttribute="bottom" constant="20" id="vez-Nw-Uyp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rWI-GC-nZT"/>
                     </view>
                     <connections>
                         <outlet property="textEmail" destination="KKq-T5-Vo6" id="iEx-sc-gdO"/>
@@ -1450,7 +1451,7 @@
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCz-iw-k01">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCz-iw-k01">
                                                                     <rect key="frame" x="208" y="13" width="10" height="10"/>
                                                                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -1472,21 +1473,21 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5hO-zr-BTs">
                                                                     <rect key="frame" x="85" y="85" width="133" height="29"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXH-Ty-KAr">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXH-Ty-KAr">
                                                                             <rect key="frame" x="0.0" y="0.0" width="39" height="29"/>
                                                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                                             <state key="normal" title="Delete">
                                                                                 <color key="titleColor" red="0.216491878" green="0.121322833" blue="0.46504807469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </state>
                                                                         </button>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RI-Co-Gwm">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RI-Co-Gwm">
                                                                             <rect key="frame" x="49" y="0.0" width="44" height="29"/>
                                                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                                             <state key="normal" title="Applied">
                                                                                 <color key="titleColor" red="0.216491878" green="0.121322833" blue="0.46504807469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </state>
                                                                         </button>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-g1-1An">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-g1-1An">
                                                                             <rect key="frame" x="103" y="0.0" width="30" height="29"/>
                                                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                                                             <state key="normal" title="Edit">
@@ -1655,7 +1656,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Sev-ch-OtU">
                                                 <rect key="frame" x="47" y="288" width="200" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io1-G4-qKX">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io1-G4-qKX">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
                                                         <color key="backgroundColor" red="0.216491878" green="0.121322833" blue="0.46504807469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
@@ -1668,7 +1669,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-nf-24g">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-nf-24g">
                                                         <rect key="frame" x="104" y="0.0" width="96" height="30"/>
                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                                         <state key="normal" title="NO">
@@ -1793,7 +1794,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PCv-ez-4fg">
                                                 <rect key="frame" x="47" y="288" width="200" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3r-tP-yPk">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3r-tP-yPk">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
                                                         <color key="backgroundColor" red="0.216491878" green="0.121322833" blue="0.46504807469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
@@ -1806,7 +1807,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hH6-ZQ-erR">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hH6-ZQ-erR">
                                                         <rect key="frame" x="104" y="0.0" width="96" height="30"/>
                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                                         <state key="normal" title="NO">
@@ -1879,6 +1880,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EZt-DC-WAa"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QNE-9N-Wmw" firstAttribute="trailing" secondItem="EZt-DC-WAa" secondAttribute="trailing" id="1l7-5v-rcN"/>
@@ -1899,7 +1901,6 @@
                             <constraint firstItem="cZV-DX-hyu" firstAttribute="top" secondItem="EZt-DC-WAa" secondAttribute="top" constant="36" id="vPO-TS-16C"/>
                             <constraint firstItem="EZt-DC-WAa" firstAttribute="bottom" secondItem="Yqc-Wf-W0Y" secondAttribute="bottom" constant="50" id="zup-rH-Ac0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EZt-DC-WAa"/>
                     </view>
                     <connections>
                         <outlet property="tbl_jobs" destination="go0-py-oc7" id="kSt-kl-oih"/>
@@ -1919,8 +1920,8 @@
                     <view key="view" contentMode="scaleToFill" id="Jtb-el-Rpq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZGG-Q5-z44"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xhf-Go-Y3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1987,7 +1988,7 @@
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-DM-tMc">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-DM-tMc">
                                                                     <rect key="frame" x="218" y="9.5" width="10" height="10"/>
                                                                     <color key="backgroundColor" red="0.26735368370000001" green="0.5846602917" blue="0.20501706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -2112,6 +2113,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lwp-he-e7q"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eOu-tT-Q78" firstAttribute="top" secondItem="lwp-he-e7q" secondAttribute="top" constant="36" id="5Bo-aR-YVP"/>
@@ -2132,7 +2134,6 @@
                             <constraint firstItem="gW7-Be-PZg" firstAttribute="top" secondItem="3t9-ZR-iVT" secondAttribute="top" id="uz4-tv-Gyv"/>
                             <constraint firstItem="lwp-he-e7q" firstAttribute="trailing" secondItem="kdq-ZY-veb" secondAttribute="trailing" constant="25" id="wko-XT-7zh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lwp-he-e7q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="message-icon" selectedImage="message-icon" id="coC-Ef-Y4q"/>
                     <connections>
@@ -2244,7 +2245,7 @@
                                     <constraint firstAttribute="height" constant="70" id="tez-IR-xjG"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSq-D7-5Yo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSq-D7-5Yo">
                                 <rect key="frame" x="48" y="343" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.34026992321014404" green="0.14393490552902222" blue="0.50129216909408569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2309,6 +2310,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <viewLayoutGuide key="safeArea" id="2JU-b3-9bf"/>
                                         <color key="backgroundColor" red="0.38676419854164124" green="0.1692197322845459" blue="0.57355660200119019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="FZT-5O-cPo" firstAttribute="centerY" secondItem="sBG-P9-nTO" secondAttribute="centerY" id="BLM-bi-kqL"/>
@@ -2316,7 +2318,6 @@
                                             <constraint firstItem="FZT-5O-cPo" firstAttribute="centerX" secondItem="sBG-P9-nTO" secondAttribute="centerX" id="Zl0-dJ-i7t"/>
                                             <constraint firstAttribute="trailing" secondItem="FZT-5O-cPo" secondAttribute="trailing" constant="5" id="kHj-nx-nec"/>
                                         </constraints>
-                                        <viewLayoutGuide key="safeArea" id="2JU-b3-9bf"/>
                                         <size key="customSize" width="100" height="40"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadiusV">
@@ -2334,7 +2335,7 @@
                                     <outlet property="delegate" destination="CFP-ab-dNw" id="uHg-1I-oIR"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GB-x6-dJp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GB-x6-dJp">
                                 <rect key="frame" x="86" y="345" width="58" height="26"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
                                 <state key="normal" title="ADD SKILL">
@@ -2342,6 +2343,7 @@
                                 </state>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="id6-KM-Bbj"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="id6-KM-Bbj" firstAttribute="bottom" secondItem="su7-Nf-i13" secondAttribute="bottom" constant="30" id="4qv-xK-WQl"/>
@@ -2378,7 +2380,6 @@
                             <constraint firstItem="v5y-J9-ENT" firstAttribute="top" secondItem="fNg-aF-K3s" secondAttribute="top" id="yZV-Ut-BLX"/>
                             <constraint firstItem="ZsW-Ut-JCu" firstAttribute="centerX" secondItem="fNg-aF-K3s" secondAttribute="centerX" id="yfs-Ra-bi9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="id6-KM-Bbj"/>
                     </view>
                     <connections>
                         <outlet property="coll_jobs" destination="s7D-ii-9yF" id="80V-HR-67Y"/>
@@ -2471,6 +2472,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="JgC-Ax-F2d"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ZWI-jf-Nba" firstAttribute="centerY" secondItem="4pF-3n-bQl" secondAttribute="centerY" constant="20" id="6gz-qR-Ufz"/>
@@ -2484,7 +2486,6 @@
                                     <constraint firstItem="ZWI-jf-Nba" firstAttribute="centerX" secondItem="4pF-3n-bQl" secondAttribute="centerX" id="sbJ-y5-png"/>
                                     <constraint firstAttribute="trailing" secondItem="bBy-wf-smr" secondAttribute="trailing" id="xcL-pb-wvt"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="JgC-Ax-F2d"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWP-3V-7Eh" userLabel="SwipeView">
                                 <rect key="frame" x="10" y="55" width="300" height="413"/>
@@ -2599,7 +2600,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RA9-SE-MsV">
                                                 <rect key="frame" x="46" y="588" width="220" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAN-0G-Fsr">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAN-0G-Fsr">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
@@ -2621,7 +2622,7 @@
                                                             <action selector="cancelMsg:" destination="KbX-38-woO" eventType="touchUpInside" id="RBW-6y-Lqh"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-b8-plc">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-b8-plc">
                                                         <rect key="frame" x="120" y="0.0" width="100" height="30"/>
                                                         <color key="backgroundColor" red="0.17651039360000001" green="0.0144051183" blue="0.41571259500000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
@@ -2783,7 +2784,7 @@ makes them perfect fit!</string>
                                             <constraint firstAttribute="height" constant="20" id="GRu-Nj-fLK"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlY-o1-N0o">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlY-o1-N0o">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                         <connections>
                                             <action selector="dropDownList:" destination="KbX-38-woO" eventType="touchUpInside" id="orG-8T-vHm"/>
@@ -2824,6 +2825,7 @@ makes them perfect fit!</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="xJo-62-QDb"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xJo-62-QDb" firstAttribute="trailing" secondItem="vWP-3V-7Eh" secondAttribute="trailing" constant="10" id="1Lh-NS-UcU"/>
@@ -2853,7 +2855,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="xVB-mW-zOT" firstAttribute="top" secondItem="Ocq-wI-CTd" secondAttribute="top" id="rnf-49-HJR"/>
                             <constraint firstItem="xJo-62-QDb" firstAttribute="bottom" secondItem="Q8s-EU-kDs" secondAttribute="bottom" id="woP-AR-Vav"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xJo-62-QDb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="card-flip-icon" selectedImage="card-flip-icon" id="vsu-tz-CxC"/>
                     <connections>
@@ -3337,7 +3338,7 @@ makes them perfect fit!</string>
                                             <constraint firstAttribute="width" constant="20" id="m5Q-Zg-W0m"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-cI-iuD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-cI-iuD">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                         <connections>
                                             <action selector="dropDownList:" destination="L83-Ee-MZy" eventType="touchUpInside" id="gq4-zU-Y0C"/>
@@ -3391,6 +3392,7 @@ makes them perfect fit!</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="MLx-ko-8wy"/>
                         <color key="backgroundColor" red="0.99215692280000001" green="0.99215692280000001" blue="0.99215680360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="XS2-HG-bfi" secondAttribute="bottom" constant="35" id="3pv-yk-3er"/>
@@ -3421,7 +3423,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="tb7-YX-VIO" firstAttribute="top" secondItem="ik2-rc-7zJ" secondAttribute="bottom" id="vbj-36-LRn"/>
                             <constraint firstItem="nXb-X4-njK" firstAttribute="leading" secondItem="MLx-ko-8wy" secondAttribute="leading" constant="30" id="yqg-CV-567"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MLx-ko-8wy"/>
                     </view>
                     <navigationItem key="navigationItem" id="EjS-SN-rac"/>
                     <connections>
@@ -3482,7 +3483,7 @@ makes them perfect fit!</string>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by8-ay-Rbh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by8-ay-Rbh">
                                                 <rect key="frame" x="40" y="269" width="200" height="55"/>
                                                 <color key="backgroundColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -3499,7 +3500,7 @@ makes them perfect fit!</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWY-FC-nlb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWY-FC-nlb">
                                                 <rect key="frame" x="40" y="344" width="200" height="55"/>
                                                 <color key="backgroundColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -3612,7 +3613,7 @@ makes them perfect fit!</string>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="71Q-OA-fy4">
                                                 <rect key="frame" x="30" y="257" width="220" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKP-ud-ANu">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKP-ud-ANu">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
@@ -3634,7 +3635,7 @@ makes them perfect fit!</string>
                                                             <action selector="cancelMsg:" destination="TbW-6C-RMV" eventType="touchUpInside" id="x4D-v3-MR2"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEt-qd-qbx">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEt-qd-qbx">
                                                         <rect key="frame" x="120" y="0.0" width="100" height="30"/>
                                                         <color key="backgroundColor" red="0.17651039360000001" green="0.0144051183" blue="0.41571259500000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
@@ -3800,7 +3801,7 @@ makes them perfect fit!</string>
                                             <constraint firstAttribute="width" constant="20" id="to8-gn-n25"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUa-s4-DJg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUa-s4-DJg">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                         <connections>
                                             <action selector="dropDownList:" destination="TbW-6C-RMV" eventType="touchUpInside" id="71z-M7-F4L"/>
@@ -3841,6 +3842,7 @@ makes them perfect fit!</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ibP-Zl-TQk"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hbz-rT-xYm" firstAttribute="leading" secondItem="ibP-Zl-TQk" secondAttribute="leading" id="0PF-1l-vcc"/>
@@ -3866,7 +3868,6 @@ makes them perfect fit!</string>
                             <constraint firstAttribute="bottom" secondItem="96j-3s-MQf" secondAttribute="bottom" id="tnP-1p-53Q"/>
                             <constraint firstItem="seI-1q-Eu6" firstAttribute="bottom" secondItem="kRA-Qy-evX" secondAttribute="bottom" id="uZv-6O-TD0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ibP-Zl-TQk"/>
                     </view>
                     <navigationItem key="navigationItem" id="uMh-9p-L0s"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -3960,14 +3961,14 @@ makes them perfect fit!</string>
                                                                     <constraint firstAttribute="height" constant="20.5" id="aTO-5Z-Mn9"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faq-FA-PqI">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faq-FA-PqI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
                                                                 <connections>
                                                                     <action selector="edit_individual:" destination="MSW-dV-Ivl" eventType="touchUpInside" id="9ft-eh-frN"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="e7f-qb-QJm" firstAttribute="top" secondItem="vyv-r7-pHr" secondAttribute="top" id="2fT-U3-zhK"/>
                                                             <constraint firstAttribute="height" constant="20" id="5z5-um-nmF"/>
@@ -3987,7 +3988,7 @@ makes them perfect fit!</string>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y3p-S1-rua">
                                                         <rect key="frame" x="35" y="39.5" width="250" height="220"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="220" id="GPY-Il-dk7"/>
                                                         </constraints>
@@ -4056,14 +4057,14 @@ makes them perfect fit!</string>
                                                                     <constraint firstAttribute="height" constant="20.5" id="Wxd-Wx-WdG"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6j-XN-hIl">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6j-XN-hIl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
                                                                 <connections>
                                                                     <action selector="edit_individual:" destination="MSW-dV-Ivl" eventType="touchUpInside" id="QEX-8e-OWs"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="QYC-FQ-FnV" firstAttribute="top" secondItem="kiQ-eK-7CF" secondAttribute="top" id="EEQ-YP-MYV"/>
                                                             <constraint firstItem="x6j-XN-hIl" firstAttribute="leading" secondItem="QYC-FQ-FnV" secondAttribute="leading" id="I2F-pg-puj"/>
@@ -4183,14 +4184,14 @@ makes them perfect fit!</string>
                                                                     <constraint firstAttribute="height" constant="20.5" id="Gpc-mD-Nib"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-oc-cLm">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-oc-cLm">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
                                                                 <connections>
                                                                     <action selector="edit_individual:" destination="MSW-dV-Ivl" eventType="touchUpInside" id="Ept-Qf-Lmi"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="9o1-Ui-GMd"/>
                                                             <constraint firstItem="JfM-fF-luO" firstAttribute="leading" secondItem="NGR-FV-Ti5" secondAttribute="leading" id="SsE-DZ-Zo0"/>
@@ -4269,14 +4270,14 @@ makes them perfect fit!</string>
                                                                     <constraint firstAttribute="height" constant="20.5" id="89P-Sk-QKc"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-u1-YKJ">
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-u1-YKJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
                                                                 <connections>
                                                                     <action selector="edit_individual:" destination="MSW-dV-Ivl" eventType="touchUpInside" id="8Lm-bQ-Dhi"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="ROA-u1-YKJ" firstAttribute="leading" secondItem="P6q-Kc-8a0" secondAttribute="leading" id="2z8-zV-KAp"/>
                                                             <constraint firstItem="ROA-u1-YKJ" firstAttribute="trailing" secondItem="P6q-Kc-8a0" secondAttribute="trailing" id="83b-hn-aEz"/>
@@ -4359,14 +4360,14 @@ makes them perfect fit!</string>
                                                                     <constraint firstAttribute="height" constant="20.5" id="Kdl-kK-Gum"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlV-NL-Krx">
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlV-NL-Krx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
                                                                 <connections>
                                                                     <action selector="edit_individual:" destination="MSW-dV-Ivl" eventType="touchUpInside" id="Ntq-F2-kAI"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="iBt-yr-p0s" firstAttribute="leading" secondItem="npZ-Ce-uk1" secondAttribute="leading" id="9Oz-E4-qey"/>
                                                             <constraint firstItem="QlV-NL-Krx" firstAttribute="bottom" secondItem="iBt-yr-p0s" secondAttribute="bottom" id="Cn4-0V-rdR"/>
@@ -4436,7 +4437,7 @@ makes them perfect fit!</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="Um6-Y8-0he" firstAttribute="top" secondItem="gJx-g7-e8b" secondAttribute="bottom" constant="15" id="3Yx-UB-1eS"/>
                                                     <constraint firstAttribute="trailing" secondItem="vXr-YS-x1U" secondAttribute="trailing" id="8tk-Gm-UNE"/>
@@ -4517,7 +4518,7 @@ makes them perfect fit!</string>
                                                         <real key="value" value="72"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="value" systemColor="darkTextColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                         <real key="value" value="1"/>
@@ -4536,7 +4537,7 @@ makes them perfect fit!</string>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="DFN-Rt-6zi" firstAttribute="centerX" secondItem="363-Hy-kJk" secondAttribute="centerX" id="5aQ-i6-C3b"/>
                                             <constraint firstAttribute="width" constant="144" id="Dhc-Oa-5ht"/>
@@ -4660,6 +4661,7 @@ makes them perfect fit!</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="zQG-6H-LdS"/>
                         <color key="backgroundColor" red="0.95077723260000002" green="0.94263273479999998" blue="0.95583254100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PBd-uj-t1V" firstAttribute="top" secondItem="zQG-6H-LdS" secondAttribute="top" constant="60" id="24o-Eg-Ivu"/>
@@ -4678,7 +4680,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="PBd-uj-t1V" firstAttribute="centerX" secondItem="vcJ-wE-UpU" secondAttribute="centerX" id="rnL-xA-hdh"/>
                             <constraint firstItem="GpR-kX-g2r" firstAttribute="trailing" secondItem="zQG-6H-LdS" secondAttribute="trailing" id="ubj-Hx-4XE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zQG-6H-LdS"/>
                     </view>
                     <navigationItem key="navigationItem" id="D62-13-uaM"/>
                     <connections>
@@ -4834,6 +4835,7 @@ makes them perfect fit!</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EwS-yv-4XX"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4WR-mo-ywe" firstAttribute="leading" secondItem="EwS-yv-4XX" secondAttribute="leading" id="4cZ-pN-H5S"/>
@@ -4848,7 +4850,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="EwS-yv-4XX" firstAttribute="bottom" secondItem="rYD-Xm-fWQ" secondAttribute="bottom" id="o4e-j8-o0N"/>
                             <constraint firstItem="I1b-fE-nlJ" firstAttribute="trailing" secondItem="EwS-yv-4XX" secondAttribute="trailing" id="oeC-8e-rzH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EwS-yv-4XX"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ftd-ay-Zi4"/>
                     <connections>
@@ -4959,7 +4960,7 @@ makes them perfect fit!</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zH3-cF-vQH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zH3-cF-vQH">
                                 <rect key="frame" x="60" y="453" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.043137254901960784" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -4980,6 +4981,7 @@ makes them perfect fit!</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uff-P9-oHc"/>
                         <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zz3-IA-zzJ" firstAttribute="top" secondItem="BcK-No-ypX" secondAttribute="bottom" constant="20" id="0Kz-Op-Kmt"/>
@@ -4997,7 +4999,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="LDP-Cf-69n" firstAttribute="top" secondItem="Uff-P9-oHc" secondAttribute="top" constant="50" id="szy-bI-IVa"/>
                             <constraint firstItem="zz3-IA-zzJ" firstAttribute="centerX" secondItem="ZJb-1s-QBz" secondAttribute="centerX" id="vD4-dp-PjO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Uff-P9-oHc"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="1"/>
@@ -5036,7 +5037,7 @@ makes them perfect fit!</string>
                                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aib-z2-lNs">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aib-z2-lNs">
                                                 <rect key="frame" x="20" y="127.5" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -5095,7 +5096,7 @@ makes them perfect fit!</string>
                                                     <outlet property="delegate" destination="62C-CN-Ehb" id="RrZ-iq-PcY"/>
                                                 </connections>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFh-Ce-UrR">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFh-Ce-UrR">
                                                 <rect key="frame" x="20" y="127.5" width="30" height="50"/>
                                                 <connections>
                                                     <action selector="squarePicsBtnClick:" destination="62C-CN-Ehb" eventType="touchUpInside" id="1ix-ij-NnY"/>
@@ -5149,7 +5150,7 @@ makes them perfect fit!</string>
                                                     <outlet property="delegate" destination="62C-CN-Ehb" id="iuL-pf-UQs"/>
                                                 </connections>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mk-Nc-qE7">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mk-Nc-qE7">
                                                 <rect key="frame" x="20" y="273" width="220" height="150"/>
                                                 <connections>
                                                     <action selector="videoBtnClick:" destination="62C-CN-Ehb" eventType="touchUpInside" id="PAP-8M-LvW"/>
@@ -5191,7 +5192,7 @@ makes them perfect fit!</string>
                                     <constraint firstAttribute="bottom" secondItem="kdj-Yc-dCx" secondAttribute="bottom" constant="35" id="mMi-vt-tTf"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMF-up-DRi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMF-up-DRi">
                                 <rect key="frame" x="60" y="453" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -5224,6 +5225,7 @@ makes them perfect fit!</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="U0f-BP-WcR"/>
                         <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oJT-Dt-T1o" firstAttribute="top" secondItem="U0f-BP-WcR" secondAttribute="top" constant="40" id="47i-jx-Ni0"/>
@@ -5239,7 +5241,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="Edk-Ns-Qeu" firstAttribute="leading" secondItem="U0f-BP-WcR" secondAttribute="leading" constant="30" id="n2v-PC-klT"/>
                             <constraint firstItem="rlV-Eq-zyX" firstAttribute="leading" secondItem="U0f-BP-WcR" secondAttribute="leading" id="yU0-ZT-oUi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="U0f-BP-WcR"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="1"/>
@@ -5284,7 +5285,7 @@ makes them perfect fit!</string>
                                                 <real key="value" value="60"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="value" systemColor="darkTextColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                 <real key="value" value="1"/>
@@ -5292,7 +5293,7 @@ makes them perfect fit!</string>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="mkM-HK-sz5" firstAttribute="centerY" secondItem="dIO-A5-CoM" secondAttribute="centerY" id="E9j-y2-l4a"/>
                                     <constraint firstAttribute="height" constant="120" id="Ygv-AG-fYC"/>
@@ -5300,7 +5301,7 @@ makes them perfect fit!</string>
                                     <constraint firstItem="mkM-HK-sz5" firstAttribute="centerX" secondItem="dIO-A5-CoM" secondAttribute="centerX" id="iqr-w5-kNM"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lX4-7b-KXG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lX4-7b-KXG">
                                 <rect key="frame" x="60" y="453" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -5324,7 +5325,7 @@ makes them perfect fit!</string>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fUv-iU-bsR">
                                 <rect key="frame" x="60" y="318" width="200" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca0-oj-IfM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca0-oj-IfM">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="55"/>
                                         <color key="backgroundColor" red="0.96470588235294119" green="0.95686274509803915" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -5345,7 +5346,7 @@ makes them perfect fit!</string>
                                             <action selector="uploadAPhoto:" destination="p5d-JM-sGq" eventType="touchUpInside" id="8fB-TB-2v5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tid-GV-W9Z">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tid-GV-W9Z">
                                         <rect key="frame" x="0.0" y="65" width="200" height="55"/>
                                         <color key="backgroundColor" red="0.96470588235294119" green="0.95686274509803915" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -5397,7 +5398,8 @@ makes them perfect fit!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="f1I-Mm-OG1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="GCN-eW-lJb" secondAttribute="trailing" id="0je-yd-U6U"/>
                             <constraint firstItem="f1I-Mm-OG1" firstAttribute="bottom" secondItem="lX4-7b-KXG" secondAttribute="bottom" constant="60" id="1uf-Sm-FDF"/>
@@ -5416,7 +5418,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="hdT-xv-uh8" firstAttribute="centerY" secondItem="ejF-2l-KYE" secondAttribute="centerY" constant="20" id="xeZ-oF-rSq"/>
                             <constraint firstItem="lX4-7b-KXG" firstAttribute="centerX" secondItem="asr-xg-1iH" secondAttribute="centerX" id="yvW-GO-rGH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="f1I-Mm-OG1"/>
                     </view>
                     <connections>
                         <outlet property="img_proPic" destination="mkM-HK-sz5" id="mB8-fx-oxw"/>
@@ -5436,7 +5437,7 @@ makes them perfect fit!</string>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q54-dB-bec">
                                 <rect key="frame" x="0.0" y="153" width="320" height="415"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
                                         <real key="value" value="20"/>
@@ -5464,7 +5465,7 @@ makes them perfect fit!</string>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b0h-pN-ihz">
                                 <rect key="frame" x="60" y="408" width="200" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6g-um-tPB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6g-um-tPB">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="55"/>
                                         <color key="backgroundColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -5484,7 +5485,7 @@ makes them perfect fit!</string>
                                             <action selector="uploadAPhoto:" destination="IoB-R6-Pj8" eventType="touchUpInside" id="GvG-7e-UwO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-h3-Uhd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-h3-Uhd">
                                         <rect key="frame" x="0.0" y="65" width="200" height="55"/>
                                         <color key="backgroundColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -5541,7 +5542,8 @@ makes them perfect fit!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xWG-3p-X7u"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Wp-an-ybp" firstAttribute="leading" secondItem="xWG-3p-X7u" secondAttribute="leading" constant="50" id="0NU-K4-g7x"/>
                             <constraint firstItem="q54-dB-bec" firstAttribute="top" secondItem="uiQ-rU-4K9" secondAttribute="bottom" constant="-20" id="1Dr-dF-U3J"/>
@@ -5567,7 +5569,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="xWG-3p-X7u" firstAttribute="bottom" secondItem="b0h-pN-ihz" secondAttribute="bottom" constant="40" id="qal-Ki-wxh"/>
                             <constraint firstItem="0Xe-So-IGI" firstAttribute="centerX" secondItem="Bip-YS-sRG" secondAttribute="centerX" id="qpU-XO-efo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xWG-3p-X7u"/>
                     </view>
                     <connections>
                         <outlet property="img_proPic" destination="uiQ-rU-4K9" id="fGQ-dU-4ae"/>
@@ -5592,7 +5593,7 @@ makes them perfect fit!</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rec_1_screen18-24" translatesAutoresizingMaskIntoConstraints="NO" id="73F-as-E9d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAg-DL-6pP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAg-DL-6pP">
                                 <rect key="frame" x="56.5" y="164.5" width="207" height="61.5"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -5636,7 +5637,7 @@ makes them perfect fit!</string>
                                     <constraint firstAttribute="height" constant="48" id="yQf-Nv-I6A"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6Q-V7-sJF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6Q-V7-sJF">
                                 <rect key="frame" x="60" y="433" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.1019607843" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -5779,6 +5780,7 @@ makes them perfect fit!</string>
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ELs-gz-HrS"/>
                         <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="73F-as-E9d" firstAttribute="top" secondItem="KNH-c5-YKh" secondAttribute="top" id="0LA-rI-H1N"/>
@@ -5802,7 +5804,6 @@ makes them perfect fit!</string>
                             <constraint firstAttribute="trailing" secondItem="Qdt-Of-tUS" secondAttribute="trailing" constant="20" id="pxE-bY-vYI"/>
                             <constraint firstAttribute="bottom" secondItem="73F-as-E9d" secondAttribute="bottom" id="uB8-7Y-iVo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ELs-gz-HrS"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="1"/>
@@ -5856,7 +5857,7 @@ makes them perfect fit!</string>
                                     <constraint firstAttribute="width" constant="48" id="d5C-U3-ybC"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh1-Nh-m1p">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh1-Nh-m1p">
                                 <rect key="frame" x="60" y="433" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -5958,6 +5959,7 @@ makes them perfect fit!</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="MOA-YR-AZs"/>
                         <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vR3-rK-rRc" firstAttribute="centerX" secondItem="Pdi-Vu-SNC" secondAttribute="centerX" id="3Z8-TL-hWw"/>
@@ -5979,7 +5981,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="gdp-9q-Y2m" firstAttribute="leading" secondItem="Pdi-Vu-SNC" secondAttribute="leading" id="xvc-15-xjG"/>
                             <constraint firstAttribute="trailing" secondItem="Px0-xs-EYw" secondAttribute="trailing" id="z1u-Zy-Cn3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MOA-YR-AZs"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="1"/>
@@ -6011,7 +6012,7 @@ makes them perfect fit!</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rec_1_screen18-24" translatesAutoresizingMaskIntoConstraints="NO" id="t99-OI-8Zt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjX-wu-2xl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjX-wu-2xl">
                                 <rect key="frame" x="56.5" y="164.5" width="207" height="61.5"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -6200,7 +6201,7 @@ makes them perfect fit!</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-rs-vTL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-rs-vTL">
                                 <rect key="frame" x="60" y="433" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.1019607843" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -6221,6 +6222,7 @@ makes them perfect fit!</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jop-vI-GZZ"/>
                         <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="x5Q-3p-KCW" firstAttribute="top" secondItem="cuy-UM-dov" secondAttribute="top" constant="50" id="0el-ZT-09s"/>
@@ -6244,7 +6246,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="HhI-xz-aKc" firstAttribute="top" secondItem="CjX-wu-2xl" secondAttribute="bottom" constant="35" id="swJ-dg-TiK"/>
                             <constraint firstItem="CjX-wu-2xl" firstAttribute="centerX" secondItem="t99-OI-8Zt" secondAttribute="centerX" id="viS-n2-tzW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Jop-vI-GZZ"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="1"/>
@@ -6564,7 +6565,7 @@ makes them perfect fit!</string>
                                                     <outlet property="delegate" destination="CE6-Nh-i8P" id="QjE-nG-bpz"/>
                                                 </connections>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-Jf-YYl">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-Jf-YYl">
                                                 <rect key="frame" x="32.5" y="698" width="110" height="35"/>
                                                 <color key="backgroundColor" red="0.36470588235294116" green="0.10196078431372549" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -6703,7 +6704,7 @@ makes them perfect fit!</string>
                                                     <outlet property="delegate" destination="CE6-Nh-i8P" id="DE6-R2-kSy"/>
                                                 </connections>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmT-J2-f7i">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmT-J2-f7i">
                                                 <rect key="frame" x="32.5" y="1170" width="110" height="35"/>
                                                 <color key="backgroundColor" red="0.36470588235294116" green="0.10196078431372549" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -6773,7 +6774,7 @@ makes them perfect fit!</string>
                                     <constraint firstItem="GvD-TX-7Uf" firstAttribute="centerX" secondItem="5Zd-sl-Aju" secondAttribute="centerX" id="rCz-Gw-Pbj"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkz-lP-YHV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkz-lP-YHV">
                                 <rect key="frame" x="60" y="999" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -6794,7 +6795,8 @@ makes them perfect fit!</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ZEh-vS-BJq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dkz-lP-YHV" firstAttribute="top" secondItem="5Zd-sl-Aju" secondAttribute="bottom" constant="20" id="2pG-be-YHc"/>
                             <constraint firstItem="zei-k0-ahJ" firstAttribute="top" secondItem="TCF-YT-lCP" secondAttribute="top" id="7Ya-el-j3J"/>
@@ -6813,7 +6815,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="66s-dD-GYO" firstAttribute="centerX" secondItem="zei-k0-ahJ" secondAttribute="centerX" id="pFn-cx-vvK"/>
                             <constraint firstItem="bVV-7q-X7G" firstAttribute="centerX" secondItem="zei-k0-ahJ" secondAttribute="centerX" id="tB5-Lf-Xhs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZEh-vS-BJq"/>
                     </view>
                     <size key="freeformSize" width="320" height="1064"/>
                     <connections>
@@ -6873,7 +6874,7 @@ makes them perfect fit!</string>
                                     <constraint firstAttribute="height" constant="48" id="XQs-rK-U1v"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dy-Wx-gyv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dy-Wx-gyv">
                                 <rect key="frame" x="60" y="433" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -7048,6 +7049,7 @@ makes them perfect fit!</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="m1r-47-xpS"/>
                         <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Xp2-gZ-uOK" firstAttribute="trailing" secondItem="WMM-o9-VPN" secondAttribute="trailing" id="1va-DQ-i01"/>
@@ -7069,7 +7071,6 @@ makes them perfect fit!</string>
                             <constraint firstItem="NUC-Ic-o1L" firstAttribute="centerX" secondItem="WMM-o9-VPN" secondAttribute="centerX" id="vkn-gV-j5X"/>
                             <constraint firstItem="HiE-Ia-Efb" firstAttribute="centerX" secondItem="WMM-o9-VPN" secondAttribute="centerX" id="wnI-LQ-DOH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="m1r-47-xpS"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="1"/>
@@ -7089,6 +7090,59 @@ makes them perfect fit!</string>
             <point key="canvasLocation" x="7785" y="131"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="29x-in-0gE">
+            <size key="intrinsicContentSize" width="142" height="20"/>
+        </designable>
+        <designable name="60A-AR-4k6">
+            <size key="intrinsicContentSize" width="51" height="20"/>
+        </designable>
+        <designable name="85w-Un-1co">
+            <size key="intrinsicContentSize" width="-1" height="49"/>
+        </designable>
+        <designable name="9vs-Og-5Bh">
+            <size key="intrinsicContentSize" width="51" height="20"/>
+        </designable>
+        <designable name="AQp-0h-Xvv">
+            <size key="intrinsicContentSize" width="54" height="20"/>
+        </designable>
+        <designable name="Gp0-Y3-xg0">
+            <size key="intrinsicContentSize" width="173" height="20"/>
+        </designable>
+        <designable name="ImJ-Yr-Nni">
+            <size key="intrinsicContentSize" width="180.5" height="20"/>
+        </designable>
+        <designable name="KKq-T5-Vo6">
+            <size key="intrinsicContentSize" width="119" height="20"/>
+        </designable>
+        <designable name="LTs-uq-wUu">
+            <size key="intrinsicContentSize" width="79" height="20"/>
+        </designable>
+        <designable name="NJb-KI-aXv">
+            <size key="intrinsicContentSize" width="78" height="19"/>
+        </designable>
+        <designable name="OPG-ya-zkc">
+            <size key="intrinsicContentSize" width="54" height="20"/>
+        </designable>
+        <designable name="S2m-Og-Qzo">
+            <size key="intrinsicContentSize" width="78" height="19"/>
+        </designable>
+        <designable name="Sbx-5X-5iv">
+            <size key="intrinsicContentSize" width="121" height="20"/>
+        </designable>
+        <designable name="brJ-TG-T7b">
+            <size key="intrinsicContentSize" width="171" height="20"/>
+        </designable>
+        <designable name="hsV-gM-V69">
+            <size key="intrinsicContentSize" width="95" height="20"/>
+        </designable>
+        <designable name="jTs-2q-551">
+            <size key="intrinsicContentSize" width="238" height="20"/>
+        </designable>
+        <designable name="sg7-Mh-FC9">
+            <size key="intrinsicContentSize" width="100" height="20"/>
+        </designable>
+    </designables>
     <resources>
         <image name="SettingsBG" width="375" height="812"/>
         <image name="Splash-screen-bg" width="720" height="1280"/>
@@ -7141,5 +7195,17 @@ makes them perfect fit!</string>
         <image name="user-icon-w" width="30" height="30"/>
         <image name="yesButton" width="16" height="16"/>
         <image name="yesButtonSelected" width="16" height="16"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
