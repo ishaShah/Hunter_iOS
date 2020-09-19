@@ -9,7 +9,6 @@ PODS:
   - Kingfisher (4.10.1)
   - Koloda (5.0):
     - pop (~> 1.0)
-  - Player (0.13.2)
   - pop (1.0.12)
   - SDWebImage (5.3.1):
     - SDWebImage/Core (= 5.3.1)
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - IQKeyboardManager
   - Kingfisher (~> 4.0)
   - Koloda
-  - Player
   - SDWebImage
   - SVProgressHUD
   - TagListView (~> 1.0)
@@ -59,7 +57,6 @@ SPEC REPOS:
     - Toast-Swift
     - "UIColor+FlatColors"
   trunk:
-    - Player
     - VBRRollingPit
 
 SPEC CHECKSUMS:
@@ -72,7 +69,6 @@ SPEC CHECKSUMS:
   IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Koloda: 75302d21882cc3e274c1561b1155805ea5919dab
-  Player: 7a2bcad3631034fa47d4b6fdedf7c4075fc236fe
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SDWebImage: 7137d57385fb632129838c1e6ab9528a22c666cc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -82,6 +78,6 @@ SPEC CHECKSUMS:
   "UIColor+FlatColors": 6c699df7a575281794c688c64cee6c44fd1f93b4
   VBRRollingPit: 62a79cc663aeea6a196878b3a907056617f96b6a
 
-PODFILE CHECKSUM: 7e7ecd3ab90ea89a43d9ab3d5cf45536e8bed6b3
+PODFILE CHECKSUM: 818322119ce48f4843baf3cbb3c6d69f333cbeea
 
 COCOAPODS: 1.9.1

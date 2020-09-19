@@ -49,11 +49,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Player.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Hunter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
