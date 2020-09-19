@@ -59,4 +59,4 @@ Pods
 build
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
-!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/contents.xcworkspacedata.DS_Store

@@ -17,9 +17,8 @@ protocol hunterDelegate: class {
 }
 
 class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate{
-    
-    
-    
+   
+    var profileDelegate: refreshProfileDelegate!
     @IBOutlet weak var contButton: UIButton!
 
 
@@ -200,26 +199,12 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
                                 let company_registration = data.value(forKey:"company_registration") as! NSDictionary
                                 self.dict_industry = company_registration.value(forKey: "industry") as! NSDictionary
                                 self.dict_headquarters = company_registration.value(forKey: "headquarters") as! NSDictionary
- 
-                                 
- 
-                                 
+  
                                 self.arr_industry = self.dict_industry.allValues as! [String]
-                                    self.arr_industryID = self.dict_industry.allKeys as! [String]
-                                
-                                
- 
-                                
-                                 
+                                self.arr_industryID = self.dict_industry.allKeys as! [String]
                                 self.arr_headquarters  = self.dict_headquarters.allValues as! [String]
                                 self.arr_headquartersID  = self.dict_headquarters.allKeys as! [String]
-                                
-                                
- 
- 
-                                 
-                                
-                                 
+
                             }
                             else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
@@ -230,7 +215,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
                                 print("Logout api")
                                 
                                 UserDefaults.standard.removeObject(forKey: "accessToken")
-    UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
                                 accessToken = String()
                                 
                                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -288,8 +273,9 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
                         SVProgressHUD.dismiss()
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
-                                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompOneVC") as! HunterRegisterCompOneVC
-                                self.navigationController?.pushViewController(vc, animated: true)
+                                self.dismiss(animated: true) {
+                                    self.profileDelegate.refetchFromCloud()
+                                }
                             }
                             else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)

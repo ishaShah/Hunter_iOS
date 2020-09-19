@@ -11,7 +11,13 @@ import Alamofire
 import SVProgressHUD
 import Player
 
-class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
+protocol refreshProfileDelegate {
+    func refetchFromCloud()
+}
+
+class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,refreshProfileDelegate {
+    
+    
 
     @IBOutlet weak var btn_editCover: UIButton!
     
@@ -77,6 +83,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
     @IBOutlet weak var btn_threeLines: UIButton!
     fileprivate var player = Player()
 
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,7 +155,9 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         }
         
     }
-    
+    func refetchFromCloud() {
+        connectToGetProfileData()
+    }
     @IBAction func uploadProPic(_ sender: Any) {
         // additional image/video
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditCoverImVC") as! HunterEditCoverImVC
@@ -457,6 +466,15 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
     
     @IBAction func closeEditView(_ sender: Any) {
         editView.isHidden = true;
+        isEdit = false
+        edit_abt.isHidden = true
+        edit_companyS.isHidden = true
+        edit_basic.isHidden = true
+        edit_businessT.isHidden = true
+        edit_ImageV.isHidden = true
+        btn_editCover.isHidden = true
+        btn_editProPic.isHidden = true
+        
     }
     
     @IBAction func editClick(_ sender: Any) {
@@ -480,18 +498,20 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate {
         if sender.tag == 1 {
             // basic
             
-                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompVC") as! HunterRegisterCompVC
-                vc.isEdit = true
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true, completion: nil)
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompVC") as! HunterRegisterCompVC
+            vc.isEdit = true
+            vc.modalPresentationStyle = .overFullScreen
+            vc.profileDelegate = self
+            self.present(vc, animated: true, completion: nil)
         }
         else if sender.tag == 2 {
             // about
             let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditBioVC") as! HunterEditBioVC
             vc.modalPresentationStyle = .overFullScreen
             vc.txt = txtViewAbout.text!
+            vc.profileDelegate = self
             self.present(vc, animated: true, completion: nil)
-
+            
         }
         else if sender.tag == 3 {
             // company size

@@ -72,7 +72,7 @@ class HunterPostAJobNewViewController: UIViewController {
         
         if isEdit == "true" {
             getEditData()
-            postBtn.setTitle("Edit Job", for: UIControl.State.normal)
+            postBtn.setTitle("Update", for: UIControl.State.normal)
             saveBtn.isHidden = true
             lab_title.text = "Edit a Job"
         }
