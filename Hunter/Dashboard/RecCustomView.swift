@@ -33,6 +33,20 @@ class RecCustomView: UIView {
             if let desc = userModel.job_details["description"] as? String{
                 self.jobDesc.text = desc
             }
+            
+            
+            self.labelOnTheMarket.text = (userModel.job_details["experience"] as! String)
+
+            let preferred_salary = (userModel.job_details["preferred_salary"] as! String)
+            if preferred_salary == "" {
+                self.desigNameLab.text = "\(userModel.job_details["work_type"] as! String)\n\(userModel.job_details["job_functions_as_string"] as! String)"
+
+            }
+            else {
+                self.desigNameLab.text = "\(userModel.job_details["work_type"] as! String) | \(userModel.job_details["preferred_salary"] as! String)\n\(userModel.job_details["job_functions_as_string"] as! String)"
+
+            }
+            
 
             self.profImg.sd_setImage(with: URL(string: userModel.recruiter["banner_image"] as! String), placeholderImage: UIImage(named: "placeholder.png"))
             self.logoImg.sd_setImage(with: URL(string: userModel.recruiter["profile_image"] as! String), placeholderImage: UIImage(named: "iman.png"))
@@ -41,6 +55,9 @@ class RecCustomView: UIView {
             //            self.imageViewBackground.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
         }
     }
+    
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,12 +96,20 @@ class RecCustomView: UIView {
     @IBAction func expandClick(_ sender: Any) {
  
         print(userModel.candidate_id!)
-         print(userModel.job_details["job_id"])
+ 
+        if let job_id = userModel.job_details["job_id"] as? Int {
+            let candidateDict:[String: Int] = ["candidate_id": userModel.candidate_id!,"job_id" :job_id]
+            // Post a notification
+            NotificationCenter.default.post(name: Notification.Name("expandClick"), object: nil, userInfo: candidateDict)
+        }
+        else if let job_id = userModel.job_details["job_id"] as? String {
+            let myInt2 = Int(job_id) ?? 0
 
-
-        let candidateDict:[String: Int] = ["candidate_id": userModel.candidate_id!,"job_id" :userModel.job_details["job_id"] as! Int]
-        // Post a notification
-        NotificationCenter.default.post(name: Notification.Name("expandClick"), object: nil, userInfo: candidateDict)
+            let candidateDict:[String: Int] = ["candidate_id": userModel.candidate_id!,"job_id" : myInt2]
+            // Post a notification
+            NotificationCenter.default.post(name: Notification.Name("expandClick"), object: nil, userInfo: candidateDict)
+        }
+        
         
     }
     

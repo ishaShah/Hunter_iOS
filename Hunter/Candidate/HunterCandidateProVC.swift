@@ -259,13 +259,16 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
                                                         let elevator_pitch = (data["elevator_pitch"] as! Int)
                                                         if elevator_pitch == 0 {
-                                                             self.feedbackV.isHidden = true
-                                                            self.navigationController?.popViewController(animated: true)
                                                             UserDefaults.standard.set("swiped", forKey: "swiped")
+
+                                                            
+                                                            self.feedbackV.isHidden = true
+
+                                                            self.navigationController?.popViewController(animated: true)
 
                                                          }
                                                         else {
-                                                        self.txt_msg.text = "Type your message here ..."
+                                                        self.txt_msg.text = ""
                                                         self.feedbackV.isHidden = false
                                                         }
                                                         
@@ -369,8 +372,9 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                             SVProgressHUD.dismiss()
                             if let status = responseDict.value(forKey: "status"){
                                 if status as! Int == 1{
-                                    self.feedbackV.isHidden = true
                                     UserDefaults.standard.set("swiped", forKey: "swiped")
+
+                                    self.feedbackV.isHidden = true
                                     self.navigationController?.popViewController(animated: true)
                                  }
                             else if status as! Int == 2 {
@@ -1083,76 +1087,79 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                         SVProgressHUD.dismiss()
                                         if let status = responseDict.value(forKey: "status"){
                                             if status as! Int == 1{
-                                                if let dataDictionary = responseDict.value(forKey: "data") as? NSDictionary{
-                                                    
-                                                    let dataDict = dataDictionary["candidate_details"] as! NSDictionary
-                                                    print(dataDict)
+                                                                            if let dataDictionary = responseDict.value(forKey: "data") as? NSDictionary{
+                                                                                
+                                                                                let dataDict = dataDictionary["candidate_details"] as! NSDictionary
+                                                                                print(dataDict)
 
-                                                    self.lab_profileName.text = "\(dataDict["first_name"] as! String) ".uppercased() + "\(dataDict["last_name"] as! String)".uppercased()
-                                                    self.firstName = dataDict["first_name"] as! String
-                                                    self.lastName = dataDict["last_name"] as! String
-                //                                    self.textSalary.text = (dataDict["preferred_salary"] as! String)
-                //                                    self.txt_workType.text = (dataDict["work_type"] as! String)
+                                                                                self.lab_profileName.text = "\(dataDict["first_name"] as! String) ".uppercased() + "\(dataDict["last_name"] as! String)".uppercased()
+                                                                                self.firstName = dataDict["first_name"] as! String
+                                                                                self.lastName = dataDict["last_name"] as! String
+                                            
+                                                                                
+                                                                                let preferred_salary = (dataDict["preferred_salary"] as! String)
+                                                                                if preferred_salary == "" {
+                                                                                    self.labelJobFunc.text = "\(dataDict["work_type"] as! String)\n\(dataDict["job_functions_as_string"] as! String)"
 
-                //                                    self.lastName = dataDict["last_name"] as! String
-                                                    
-                                                    self.skillsArrDict = dataDict["skills"] as! [NSDictionary]
-                                                    self.jobArrDict = dataDict["job_functions"] as! [NSDictionary]
-                                                    self.expArrDict = dataDict["work_experience"] as! [NSDictionary]
-                                                    self.locArrDict = dataDict["preferred_location"] as! [NSDictionary]
-                //                                    self.socArrDict = dataDict["social_media"] as! [NSDictionary]
-                                                    self.langArrDict = dataDict["languages"] as! [NSDictionary]
-                                                    self.eduArrDict = dataDict["education"] as! [NSDictionary]
-                                                    self.achieveArrDict = dataDict["achievements"] as! [NSDictionary]
-                //                                    self.socPNGArr = dataDict["social_media_png"] as! [NSDictionary]
+                                                                                }
+                                                                                else {
+                                                                                    self.labelJobFunc.text = "\(dataDict["work_type"] as! String) | \(dataDict["preferred_salary"] as! String)\n\(dataDict["job_functions_as_string"] as! String)"
 
-                //                                    self.worked_in_uae = (dataDict["worked_in_uae"] as? String)!
-                                                    
-                                                    
-                                                    
-                                                    self.txt_desc.text = dataDict["about"] as? String
-                                                    self.profileDesc = dataDict["about"] as? String ?? ""
-                                                    
-                                                    if self.txt_desc.text == "" {
-                                                        self.txt_desc.text = "Type description here"
-                                                    }
-                                                    
-                                                    if let url = dataDict["profile_image"] as? String{
-                                                        self.imgv_proPic.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
-                                                    }
-                                                    if let url = dataDict["banner_image"] as? String{
-                                                        self.img_thumb.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
-                                                    }
-                                                    //reload all tableviews and manage height dynamically
-                                                    self.tblWorkExp.reloadData()
-                                                    self.tblEduation.reloadData()
-                                                    self.tbl_lang.reloadData()
-                                                    self.tblAchievement.reloadData()
-                                                    self.autosizeTableView()
+                                                                                }
+                                                                                
+                                                                                self.skillsArrDict = dataDict["skills"] as! [NSDictionary]
+                                                                                self.jobArrDict = dataDict["job_functions"] as! [NSDictionary]
+                                                                                self.expArrDict = dataDict["work_experience"] as! [NSDictionary]
+                                                                                self.locArrDict = dataDict["preferred_location"] as! [NSDictionary]
 
-                //                                    let profile_completion = dataDict["profile_completion"] as! Int
-                //                                    self.lab_perc.text = "\(profile_completion)%"
-                //
-                //                                    self.progV.progress = Float(profile_completion)/100.0
-                //
-                                                    
-                                                    self.selectedSkillsArr = [String]()
-                                                    self.selectedIDSkillsArr = [Int]()
-                                                    for skilldict in self.skillsArrDict {
-                                                        self.selectedSkillsArr.append(skilldict["skill"] as! String)
-                                                        let skillId =  skilldict["id"] as! Int
-                                                        self.selectedIDSkillsArr.append(skillId)
-                                                    }
-                                                    //reload all collectionviews and manage height dynamically
-                //                                    self.collSocialM.reloadData()
-//                                                    self.collectionLanguages.reloadData()
-                //                                    self.collLoc.reloadData()
-                //                                    self.coll_jobType.reloadData()
-                                                    self.collectionSkills.reloadData()
-                                                    self.autosizeCollectionView()
+                                                                                self.langArrDict = dataDict["languages"] as! [NSDictionary]
+                                                                                self.eduArrDict = dataDict["education"] as! [NSDictionary]
+                                                                                self.achieveArrDict = dataDict["achievements"] as! [NSDictionary]
+                                            
+                                                                                
+                                                                                self.textFirstName.text = (dataDict["experience"] as! String)
+                                                                                
+                                                                                
+                                                                                self.txt_desc.text = dataDict["about"] as? String
+                                                                                self.profileDesc = dataDict["about"] as? String ?? ""
+                                                                                
+                                                                                if self.txt_desc.text == "" {
+                                                                                    self.txt_desc.text = "Type description here"
+                                                                                }
+                                                                                
+                                                                                if let url = dataDict["profile_image"] as? String{
+                                                                                    self.imgv_proPic.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                                                                }
+                                                                                if let url = dataDict["banner_image"] as? String{
+                                                                                    self.img_thumb.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+                                                                                }
+                                                                                //reload all tableviews and manage height dynamically
+                                                                                self.tblWorkExp.reloadData()
+                                                                                self.tblEduation.reloadData()
+                                                                                self.tbl_lang.reloadData()
+                                                                                self.tblAchievement.reloadData()
 
-                                                }
-                                            }else if status as! Int == 2 {
+                                                                                
+                                                                                self.autosizeTableView()
+
+                                            
+                                                                                
+                                            //
+                                                                                
+                                                                                self.selectedSkillsArr = [String]()
+                                                                                self.selectedIDSkillsArr = [Int]()
+                                                                                for skilldict in self.skillsArrDict {
+                                                                                    self.selectedSkillsArr.append(skilldict["skill"] as! String)
+                                                                                    let skillId =  skilldict["id"] as! Int
+                                                                                    self.selectedIDSkillsArr.append(skillId)
+                                                                                }
+                                                                                
+                                                                                
+                                                                                self.collectionSkills.reloadData()
+                                                                                self.autosizeCollectionView()
+
+                                                                            }
+                                                                        }else if status as! Int == 2 {
                                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
                                                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
                                                 }))
