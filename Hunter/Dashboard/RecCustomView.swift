@@ -78,8 +78,9 @@ class RecCustomView: UIView {
     
     @IBAction func expandClick(_ sender: Any) {
  
-        
-         
+        print(userModel.candidate_id!)
+         print(userModel.job_details["job_id"])
+
 
         let candidateDict:[String: Int] = ["candidate_id": userModel.candidate_id!,"job_id" :userModel.job_details["job_id"] as! Int]
         // Post a notification

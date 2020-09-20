@@ -98,6 +98,7 @@ static let delExperienceURL = "registration/delete-experience"
     static let getWorkExpURL = "registration/get-lookup-data-experiences"
     static let getMatchOrDeclineURL = "job-view/match-or-decline"
     static let getCandidateMatchOrDeclineURL = "candidate-profile/match-or-decline"
+    
       //Recruiter
     static let recruiterViewURL = "job/recruiter-view"
     static let candidate_profileURL = "candidate-profile"
@@ -165,6 +166,8 @@ static let delExperienceURL = "registration/delete-experience"
     static let updateCompanyBioURL = "profile/update-company-bio"
     
      static let updateCandidateBioURL = "profile/update-candidate-bio"
+    
+    static let sendAttachmentToRecruiterURL = "chat/send-attachment-to-recruiter"
  }
 enum FontName: String {
     case MontserratRegular            = "Montserrat-Regular"

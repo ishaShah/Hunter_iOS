@@ -13,6 +13,8 @@ import SVProgressHUD
 class CustomView: UIView {
     var delegate: MyProtocol!
  
+    @IBOutlet weak var txt_view: UITextView!
+    @IBOutlet weak var view_txt: CardViewNew!
     @IBOutlet weak var lab_otherDetails: UILabel!
     @IBOutlet weak var lab_designer: UILabel!
     @IBOutlet var contentView: UIView!
@@ -69,6 +71,7 @@ class CustomView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+        
     }
     
     func commonInit() {
@@ -76,6 +79,7 @@ class CustomView: UIView {
          
         let jobView = UserDefaults.standard.object(forKey: "jobView") as? String
         contentView.fixInView(self)
+        self.view_txt.isHidden = true
 
         if jobView == "jobView" {
             self.view_expand.isHidden = true
@@ -164,13 +168,31 @@ class CustomView: UIView {
                                                             UserDefaults.standard.set("swiped", forKey: "swiped")
 
                                                             if (decision == 0) {
-                                                                self.makeToast("Matched")
+//                                                                self.makeToast("Matched")
                                                             }
                                                             else if (decision == 1) {
-                                                                self.makeToast("Declined")
+//                                                                self.makeToast("Declined")
                                                             }
                                                             
-                                                            self.delegate?.backBtnClick()
+                                                            let data = responseDict.value(forKey: "data") as! NSDictionary
+
+                                                            let elevator_pitch = (data["elevator_pitch"] as! Int)
+                                                            if elevator_pitch == 0 {
+                                                                UserDefaults.standard.set("swiped", forKey: "swiped")
+
+                                                                 self.view_txt.isHidden = true
+                                                                self.delegate?.backBtnClick()
+
+                                                             }
+                                                            else {
+                                                            self.txt_view.text = "Type your message here ..."
+                                                            self.view_txt.isHidden = false
+                                                            }
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
                                                         } else if status as! Int == 2 {
 //                                                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
 //                                                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -223,6 +245,104 @@ class CustomView: UIView {
                 
         }
         }
+    
+    
+    @IBAction func cancelMsg(_ sender: Any) {
+               
+               view_txt.isHidden = true
+    
+           }
+           @IBAction func sendMsg(_ sender: Any) {
+               connectToSendIntroMsgs()
+           }
+           
+            
+           func connectToSendIntroMsgs(){
+               let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
+               
+                
+               if HunterUtility.isConnectedToInternet(){
+                   
+                   let url = API.candidateBaseURL + API.elevatorPitchURL
+
+                   
+ 
+                   print(url)
+                   HunterUtility.showProgressBar()
+                   
+                   
+                   let headers    = [ "Authorization" : "Bearer " + accessToken]
+                   print(headers)
+                   
+                   
+        
+                let parameters    = [ "recruiter_id" : self.recruiter_id , "job_id" : userModel.job_details["job_id"]! , "message" : txt_view.text!] as [String : Any]
+                   print(parameters)
+
+       //            job_id
+       //            candidate_id
+       //            job_message
+                   
+                   
+                   
+                   Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                       
+                       switch response.result {
+                       case .success:
+                           if let responseDict = response.result.value as? NSDictionary{
+                               print(responseDict)
+                               SVProgressHUD.dismiss()
+                               if let status = responseDict.value(forKey: "status"){
+                                   if status as! Int == 1{
+                                      UserDefaults.standard.set("swiped", forKey: "swiped")
+
+                                       self.view_txt.isHidden = true
+                                      self.delegate?.backBtnClick()
+
+                                   }
+                               else if status as! Int == 2 {
+//                                   let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+//                                   alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+//                                   }))
+//                                   self.present(alert, animated: true, completion: nil)
+//
+//                                   print("Logout api")
+                                   
+                                   UserDefaults.standard.removeObject(forKey: "accessToken")
+           UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                   accessToken = String()
+                                   
+                                   let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                   let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                   let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                   navigationController.viewControllers = [mainRootController]
+                                   let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                   appDelegate.window?.rootViewController = navigationController
+                               }
+                               else{
+                                   let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                   alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                   }))
+//                                   self.present(alert, animated: true, completion: nil)
+                                   }}
+                           }
+                           
+                           
+                           
+                           
+                       case .failure(let error):
+                           SVProgressHUD.dismiss()
+                           print(error)
+                           let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                           alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+//                           self.present(alert, animated: true, completion: nil)
+                       }
+                   }
+               }else{
+                   print("no internet")
+               }
+               
+           }
 }
 
 extension UIView{

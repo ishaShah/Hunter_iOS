@@ -223,7 +223,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterChatVC") as! HunterChatVC
+             let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterChatVC") as! HunterChatVC
             if loginType == "candidate" {
                 if let jobId = arrayMatchesList[indexPath.row].swipe_id{
                     vc.selectedJobId = jobId
@@ -308,7 +308,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterChatVC") as! HunterChatVC
+             let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterChatVC") as! HunterChatVC
             if loginType == "candidate" {
                 if let jobId = arrayChatList[indexPath.row].job_id{
                     vc.selectedJobId = jobId
