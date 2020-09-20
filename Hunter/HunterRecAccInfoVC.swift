@@ -95,7 +95,7 @@ class HunterRecAccInfoVC: UIViewController, UITableViewDelegate, UITableViewData
         case 3:
             print("Turn show me on hunter On/Off here")
         case 4:
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
+            let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
             self.present(vc, animated: true, completion: nil)
         case 5: break
             //            imageBGPopup.isHidden = false

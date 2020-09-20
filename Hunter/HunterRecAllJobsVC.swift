@@ -62,7 +62,7 @@ class HunterRecAllJobsVC: UIViewController, UITableViewDelegate,UITableViewDataS
         case 3:
             print("Turn show me on hunter On/Off here")
         case 4:
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
+            let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
             self.navigationController?.pushViewController(vc, animated: true)
         case 5: break
             //            imageBGPopup.isHidden = false

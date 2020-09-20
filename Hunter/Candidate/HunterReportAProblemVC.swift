@@ -60,17 +60,17 @@ class HunterReportAProblemVC: UIViewController {
     }
     @IBAction func buttonAction(_ sender: UIButton) {
         if sender.tag == 1{
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterSomethingIsntWorkingVC") as! HunterSomethingIsntWorkingVC
+            let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterSomethingIsntWorkingVC") as! HunterSomethingIsntWorkingVC
             vc.categoryType = "0"
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
         }else if sender.tag == 2{
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterSomethingIsntWorkingVC") as! HunterSomethingIsntWorkingVC
+            let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterSomethingIsntWorkingVC") as! HunterSomethingIsntWorkingVC
             vc.categoryType = "1"
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
         }else if sender.tag == 3{
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterGeneralFeedbackVC") as! HunterGeneralFeedbackVC
+            let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterGeneralFeedbackVC") as! HunterGeneralFeedbackVC
             vc.categoryType = "2"
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)

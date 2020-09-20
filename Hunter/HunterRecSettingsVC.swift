@@ -125,7 +125,7 @@ class HunterRecSettingsVC: UIViewController, UITableViewDelegate, UITableViewDat
         case 2:
             print("Turn Notification On/Off here")
         case 3:
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
+            let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
         case 4 :

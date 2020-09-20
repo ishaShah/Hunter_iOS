@@ -23,6 +23,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     @IBOutlet weak var tv_lang : UITextView!
     @IBOutlet weak var stack_share: UIStackView!
  
+    @IBOutlet weak var txt_msg: UITextView!
     @IBOutlet weak var tbl_lang: UITableView!
     @IBOutlet weak var tblEduation: UITableView!
     @IBOutlet weak var tblWorkExp: UITableView!
@@ -84,6 +85,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     var UAEExpIDArr = [Int]()
     
 
+    @IBOutlet weak var feedbackV: CardViewNew!
     
     @IBOutlet weak var tblAchievementHt: NSLayoutConstraint!
     
@@ -246,7 +248,6 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                 SVProgressHUD.dismiss()
                                                 if let status = responseDict.value(forKey: "status"){
                                                     if status as! Int == 1{
-                                                        UserDefaults.standard.set("swiped", forKey: "swiped")
 
                                                         if (decision == 0) {
                                                             self.view.makeToast("Matched")
@@ -254,7 +255,21 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                         else if (decision == 1) {
                                                             self.view.makeToast("Declined")
                                                         }
-                                                        self.navigationController?.popViewController(animated: true)
+                                                        let data = responseDict.value(forKey: "data") as! NSDictionary
+
+                                                        let elevator_pitch = (data["elevator_pitch"] as! Int)
+                                                        if elevator_pitch == 0 {
+                                                             self.feedbackV.isHidden = true
+                                                            self.navigationController?.popViewController(animated: true)
+                                                            UserDefaults.standard.set("swiped", forKey: "swiped")
+
+                                                         }
+                                                        else {
+                                                        self.txt_msg.text = "Type your message here ..."
+                                                        self.feedbackV.isHidden = false
+                                                        }
+                                                        
+                                                        
                                                     } else if status as! Int == 2 {
                                                         let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
                                                         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -307,7 +322,102 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             
     }
     }
+    @IBAction func cancelMsg(_ sender: Any) {
+            
+            feedbackV.isHidden = true
+ 
+        }
+        @IBAction func sendMsg(_ sender: Any) {
+            connectToSendIntroMsgs()
+        }
+        
+         
+        func connectToSendIntroMsgs(){
+            let loginType = UserDefaults.standard.object(forKey: "loginType") as? String
+            
+             
+            if HunterUtility.isConnectedToInternet(){
+                
+                
+                
+                let url = API.recruiterBaseURL + API.getSendIntroMsgsURL
+                
+                print(url)
+                HunterUtility.showProgressBar()
+                
+                
+                let headers    = [ "Authorization" : "Bearer " + accessToken]
+                print(headers)
+                
+                
+     
+                let parameters    = [ "job_id" : job_id , "candidate_id" : candidate_idPassed , "message" : txt_msg.text!] as [String : Any]
+                print(parameters)
+
+    //            job_id
+    //            candidate_id
+    //            job_message
+                
+                
+                
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                    
+                    switch response.result {
+                    case .success:
+                        if let responseDict = response.result.value as? NSDictionary{
+                            print(responseDict)
+                            SVProgressHUD.dismiss()
+                            if let status = responseDict.value(forKey: "status"){
+                                if status as! Int == 1{
+                                    self.feedbackV.isHidden = true
+                                    UserDefaults.standard.set("swiped", forKey: "swiped")
+                                    self.navigationController?.popViewController(animated: true)
+                                 }
+                            else if status as! Int == 2 {
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                                
+                                print("Logout api")
+                                
+                                UserDefaults.standard.removeObject(forKey: "accessToken")
+        UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                accessToken = String()
+                                
+                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                navigationController.viewControllers = [mainRootController]
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = navigationController
+                            }
+                            else{
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                                }}
+                        }
+                        
+                        
+                        
+                        
+                    case .failure(let error):
+                        SVProgressHUD.dismiss()
+                        print(error)
+                        let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }else{
+                print("no internet")
+            }
+            
+        }
     override func viewWillAppear(_ animated: Bool) {
+        self.feedbackV.isHidden = true
         self.navigationController?.navigationBar.isHidden = true
 //        connectToGetProfileData()
         var loginType = String()

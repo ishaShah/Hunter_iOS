@@ -69,7 +69,7 @@ class HunterProfileVC: UIViewController, UITextFieldDelegate {
         return true
     }
     @IBAction func actionResetPopUp(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Candidate", bundle: nil)
+        let storyboard = UIStoryboard(name: "Jobs", bundle: nil)
         let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterResetPasswordVC") as! HunterResetPasswordVC
         
         HunterPickerViewController.modalPresentationStyle = .overFullScreen

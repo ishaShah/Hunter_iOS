@@ -168,7 +168,7 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         case 2:
             print("Turn Notification On/Off here")
         case 3:
-            let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
+            let vc = UIStoryboard.init(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterHelpAndSupportVC") as! HunterHelpAndSupportVC
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
            print("logout")
