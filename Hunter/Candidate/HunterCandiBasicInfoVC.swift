@@ -51,19 +51,12 @@ class HunterCandiBasicInfoVC: UIViewController {
     
     var show_salary_on_profile = 0{
          didSet{
-             if show_salary_on_profile == 1{
-                 if #available(iOS 13.0, *) {
-                     btnShowSalary.setImage(UIImage(systemName: "smallcircle.fill.circle.fill"), for: .normal)
-                 } else {
-                     // Fallback on earlier versions
-                 }
-             }else{
-                 if #available(iOS 13.0, *) {
-                     btnShowSalary.setImage(UIImage(systemName: "circle"), for: .normal)
-                 } else {
-                     // Fallback on earlier versions
-                 }
-             }
+            if show_salary_on_profile == 1{
+                btnShowSalary.setImage(UIImage(named: "CircleFill"), for: .normal)
+                
+            }else{
+                btnShowSalary.setImage(UIImage(named: "Circle"), for: .normal)
+            }
          }
      }
     
