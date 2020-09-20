@@ -15,7 +15,9 @@ import iOSDropDown
 import CropViewController
 
 
-class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate , CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource{
+class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate , CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource,refreshProfileDelegate{
+   
+    
     @IBOutlet weak var btn_threeline: UIButton!
     
     @IBOutlet weak var btn_back: UIButton!
@@ -218,6 +220,9 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
     }
     
+    func refetchFromCloud() {
+        connectToGetProfileData()
+    }
     func connectToLikeDislike(_ decision : Int){
          
         
@@ -719,6 +724,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditBioVC") as! HunterEditBioVC
         vc.modalPresentationStyle = .overFullScreen
         vc.txt = txt_desc.text!
+        vc.profileDelegate = self
         self.present(vc, animated: true, completion: nil)
 
     }
