@@ -44,6 +44,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             self.swipeView.delegate = self
         }
     }
+    @IBOutlet weak var jobListHt: NSLayoutConstraint!
     @IBOutlet weak var lab_selectedJob: UILabel!
     @IBOutlet weak var lab_intro: UILabel!
     @IBOutlet weak var lab_introSub: UILabel!
@@ -311,11 +312,11 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 }else {
                     if (userModels.count == 0){
 
-                     self.connectToGetCandidates()
+                     self.connectToGetCandidates(0)
                     
                     }
                     else if swiped == "swiped" {
-                        self.connectToGetCandidates()
+                        self.connectToGetCandidates(0)
 
                     }
                 }
@@ -392,11 +393,11 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         }else {
             if (userModels.count == 0){
 
-             self.connectToGetCandidates()
+             self.connectToGetCandidates(0)
             
             }
             else if swiped == "swiped" {
-                self.connectToGetCandidates()
+                self.connectToGetCandidates(0)
 
             }
         }
@@ -699,7 +700,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
-    func connectToGetCandidates(){
+    func connectToGetCandidates(_ index: Int){
         self.userModels = []
          if HunterUtility.isConnectedToInternet(){
             
@@ -776,13 +777,24 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     self.jobIDList.append(dic["id"] as! Int)
                                     self.total_suggestions.append(dic["total_matched_candidate"] as! Int)
 
-                                    self.lab_selectedJob.text = self.jobList[0]
-                                    self.job_id = self.jobIDList[0]
-                                    self.tbl_jobs.reloadData()
+                                        
                                     }
                                 if (self.jobList.count == 0){
                                     self.lab_selectedJob.text = "Edit/Post a Job"
 
+                                }
+                                else {
+                                    
+                                    self.lab_selectedJob.text = self.jobList[index]
+                                    self.job_id = self.jobIDList[index]
+                                    self.tbl_jobs.reloadData()
+                                }
+                                let height = CGFloat((self.jobList.count + 1) * 70)
+                                if height < 210 {
+                                    self.jobListHt.constant = CGFloat((self.jobList.count + 1) * 70)
+                                }
+                                else {
+                                    self.jobListHt.constant = 210
                                 }
                                 
                             }
@@ -867,7 +879,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         else {
         self.lab_selectedJob.text = jobList[indexPath.row-1]
         self.job_id = jobIDList[indexPath.row-1]
-        self.connectToGetCandidates()
+        self.connectToGetCandidates(indexPath.row-1)
         self.img_arrow.transform = CGAffineTransform(scaleX: -1, y: 1)
         topSpace.constant = -210
         UIView.animate(withDuration: 0.3) {
@@ -1017,6 +1029,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
                                         self.messageView.isHidden = false
                                         self.backMsgView.isHidden = false
                                         }
+                                        self.connectToGetJobs()
                                     }
                                     else {
                                         

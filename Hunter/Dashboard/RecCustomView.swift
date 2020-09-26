@@ -30,7 +30,7 @@ class RecCustomView: UIView {
             self.profNameLab.text = userModel.name
             
 //            self.desigNameLab.text = (userModel.job_details["title"] as! String)
-            if let desc = userModel.job_details["description"] as? String{
+            if let desc = userModel.job_details["about"] as? String{
                 self.jobDesc.text = desc
             }
             

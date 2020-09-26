@@ -254,7 +254,7 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == tableMessages{
-            return UITableView.automaticDimension
+            return 110
         }else{
             return 50
         }
@@ -263,8 +263,9 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
         if tableView == tableMessages{
             let cell = tableView.dequeueReusableCell(withIdentifier: "HunterMessagesCell", for: indexPath) as! HunterMessagesCell
             cell.selectionStyle = .none
-            if let chatName = arrayChatList[indexPath.row].candidate_name{
-                cell.labelChatName.text = chatName
+            
+            if let title = arrayChatList[indexPath.row].title{
+                cell.jobTitle.text = title
             }
             if let lastMessage = arrayChatList[indexPath.row].latest_message{
                 cell.labelChatMessage.text = lastMessage
@@ -284,6 +285,9 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
             cell.imageChat.layer.addSublayer(gradient)
             
             if loginType == "candidate" {
+                if let chatName = arrayChatList[indexPath.row].company_name{
+                    cell.labelChatName.text = chatName
+                }
             if let logo = arrayChatList[indexPath.row].logo{
                 cell.imageChat.contentMode = .scaleToFill
                 let url = URL(string: logo)
@@ -291,6 +295,9 @@ class HunterMessagesVC: UIViewController, UICollectionViewDelegate, UICollection
             }
             }
             else {
+                if let chatName = arrayChatList[indexPath.row].candidate_name{
+                    cell.labelChatName.text = chatName
+                }
             if let logo = arrayChatList[indexPath.row].profile_img{
                 cell.imageChat.contentMode = .scaleToFill
                 let url = URL(string: logo)

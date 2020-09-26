@@ -233,11 +233,62 @@ class HunterCandiBasicInfoVC: UIViewController {
         
         switch type {
         case "WorkType":
+            var anyDict = [String: String?]()
+
+            for (key, value) in lookup_work_type {
+                anyDict[key as! String] = value as! String
+            }
+             
+             
+            
+             let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+             print(sortedYourArray)
+            
+            var jsonError : NSError?
+            let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+            // Verifying it worked:
+            lookup_work_type = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
+            
+ 
             HunterPickerViewController.passedDict = self.lookup_work_type
         case "SalaryRange":
+            var anyDict = [String: String?]()
+
+            for (key, value) in lookup_salary_range {
+                anyDict[key as! String] = value as! String
+            }
+             
+             
+            
+             let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+             print(sortedYourArray)
+            
+            var jsonError : NSError?
+            let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+            // Verifying it worked:
+            lookup_salary_range = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
             HunterPickerViewController.passedDict = self.lookup_salary_range
             
         case "CurrentLoc":
+            
+            var anyDict = [String: String?]()
+
+            for (key, value) in lookup_locations {
+                anyDict[key as! String] = value as! String
+            }
+             
+             
+            
+             let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+             print(sortedYourArray)
+            
+            var jsonError : NSError?
+            let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+            // Verifying it worked:
+            lookup_locations = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
             HunterPickerViewController.passedDict = self.lookup_locations
             
         default:

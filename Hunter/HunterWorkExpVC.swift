@@ -12,7 +12,8 @@ import SVProgressHUD
 
 class HunterWorkExpVC: UIViewController {
     
-    
+    var isFromProfile = String()
+
     var isFrom = String()
     @IBOutlet weak var txtWorkExTitle: HunterTextField!
     @IBOutlet weak var txtWorkExCompany: HunterTextField!
@@ -205,7 +206,7 @@ class HunterWorkExpVC: UIViewController {
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
                                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpListVC") as! HunterWorkExpListVC
-                                vc.isFrom = self.isFrom
+                                vc.isFrom = self.isFromProfile
                                 self.navigationController?.pushViewController(vc, animated: true)
                             }else if status as! Int == 2 {
                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
@@ -268,10 +269,7 @@ class HunterWorkExpVC: UIViewController {
             HunterSelectionViewController.isMultiSelect = false
             HunterSelectionViewController.headerText = "Select Location"
 
-        case "EmpType":
-            HunterSelectionViewController.passedDict = self.dict_EmpType
-            HunterSelectionViewController.isMultiSelect = false
-            HunterSelectionViewController.headerText = "Select Employee Type"
+        
 
         default:
             break
@@ -288,6 +286,10 @@ class HunterWorkExpVC: UIViewController {
         let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
         HunterPickerViewController.delegate = self
         HunterPickerViewController.isFrom = type
+ 
+        if type == "EmpType"{
+        HunterPickerViewController.passedDict = self.dict_EmpType
+        }
         HunterPickerViewController.modalPresentationStyle = .overFullScreen
         self.present(HunterPickerViewController, animated: true, completion: nil)
     }
@@ -350,7 +352,7 @@ extension HunterWorkExpVC : UITextFieldDelegate{
         case txtWorkExLoc:
             showSelectionViewController(type: "Location")
         case txtWorkExEmpType:
-            showSelectionViewController(type: "EmpType")
+            showPickerViewController(type: "EmpType")
         case txtWorkStartDate:
             showPickerViewController(type: "StartDate")
         case txtWorkEndDate:

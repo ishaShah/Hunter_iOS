@@ -995,12 +995,12 @@ extension HunterRegisterCompTwoVC : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterRegisterCompTwoCollectionCell", for: indexPath) as! HunterRegisterCompTwoCollectionCell
         if collectionView == coll_squarePics {
             cell.cropImageView.image = self.arr_squarePics[indexPath.row]
-            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:20)
+//            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:20)
         }else if collectionView == coll_rectPics {
             cell.cropImageView.image = self.arr_rectPics[indexPath.row]
-            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:10)
+//            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:10)
         }else if collectionView == coll_picMin {
-            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:20)
+//            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:20)
 
             if arr_picMin.count > 4{
                 if indexPath.row == 4{
@@ -1018,7 +1018,7 @@ extension HunterRegisterCompTwoVC : UICollectionViewDataSource {
                 cell.cropImageView.image = self.arr_picMin[indexPath.row]
             }
         }else if collectionView == coll_video {
-            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:10)
+//            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:10)
             cell.cropImageView.image = self.arr_video[indexPath.row]
         }
 

@@ -10,11 +10,11 @@ import UIKit
 
 enum API{
      //Base url
- //    static let candidateBaseURL = "https://huntrapp.chkdemo.com/api/candidate/"
-//    static let recruiterBaseURL = "https://huntrapp.chkdemo.com/api/recruiter/"
+     static let candidateBaseURL = "https://huntrapp.chkdemo.com/api/candidate/"
+    static let recruiterBaseURL = "https://huntrapp.chkdemo.com/api/recruiter/"
     
-    static let candidateBaseURL = "https://huntrappst.chkdemo.com/api/candidate/"
-    static let recruiterBaseURL = "https://huntrappst.chkdemo.com/api/recruiter/"
+//    static let candidateBaseURL = "https://huntrappst.chkdemo.com/api/candidate/"
+//    static let recruiterBaseURL = "https://huntrappst.chkdemo.com/api/recruiter/"
  
     //Candidate
     static let loginURl = "login"
@@ -166,9 +166,10 @@ static let delExperienceURL = "registration/delete-experience"
     static let updateCompanyBioURL = "profile/update-company-bio"
     
      static let updateCandidateBioURL = "profile/update-candidate-bio"
-    
+    static let sendAttachmentToCandidateURL = "chat/send-attachment-to-candidate"
+
     static let sendAttachmentToRecruiterURL = "chat/send-attachment-to-recruiter"
- }
+  }
 enum FontName: String {
     case MontserratRegular            = "Montserrat-Regular"
     case MontserratBold               = "Gill Sans SemiBold"

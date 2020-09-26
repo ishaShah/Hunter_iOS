@@ -84,17 +84,20 @@ class HunterWorkExpListVC: UIViewController {
         
     }
     @IBAction func back(_ sender: Any) {
+        if isFrom == "Profile" {
+               let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
+               self.navigationController?.pushViewController(vc, animated: true)
+               }
+        else {
         self.navigationController?.popViewController(animated: true)
+        }
     }
     @IBAction func postANewJob(_ sender: Any) {
-        if isFrom == "Profile" {
-        let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
-        self.navigationController?.pushViewController(vc, animated: true)
-        }
-        else {
+         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
+        vc.isFromProfile = "Profile"
         self.navigationController?.pushViewController(vc, animated: true)
-        }
+        
     }
     
 

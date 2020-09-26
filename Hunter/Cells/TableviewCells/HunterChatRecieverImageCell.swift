@@ -12,7 +12,9 @@ class HunterChatRecieverImageCell: UITableViewCell {
 
     @IBOutlet weak var imgRecievedImage: UIImageView!
     
+    @IBOutlet weak var viewChatCV: UIView!
     
+    @IBOutlet weak var imgClick: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

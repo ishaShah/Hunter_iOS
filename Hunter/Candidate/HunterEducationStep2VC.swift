@@ -226,9 +226,6 @@ class HunterEducationStep2VC: UIViewController {
         case "field_of_study":
             HunterSelectionViewController.passedDict = self.field_of_study
             HunterSelectionViewController.headerText = "Select Field Of Study"
-        case "level_of_study":
-            HunterSelectionViewController.passedDict = self.level_of_study
-            HunterSelectionViewController.headerText = "Select Level Of Study"
         case "school":
             HunterSelectionViewController.passedDict = self.school
             HunterSelectionViewController.headerText = "Select School"
@@ -278,6 +275,11 @@ extension HunterEducationStep2VC : hunterDelegate{
          let storyboard = UIStoryboard(name: "Main", bundle: nil)
          let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
          HunterPickerViewController.isFrom = type
+        if type == "level_of_study" {
+            HunterPickerViewController.isFrom = type
+            HunterPickerViewController.passedDict = self.level_of_study
+
+        }
          HunterPickerViewController.delegate = self
          HunterPickerViewController.modalPresentationStyle = .overFullScreen
          self.present(HunterPickerViewController, animated: true, completion: nil)
@@ -290,7 +292,7 @@ extension HunterEducationStep2VC : UITextFieldDelegate{
         case txtSchool:
             showSelectionViewController(type: "school")
         case txtLevelOfStudy:
-            showSelectionViewController(type: "level_of_study")
+            showPickerViewController(type: "level_of_study")
         case txtFieldOfStudy:
             showSelectionViewController(type: "field_of_study")
         case txtStartDate:

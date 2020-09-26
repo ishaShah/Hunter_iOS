@@ -73,6 +73,27 @@ class HunterPrefWorkTypeVC: UIViewController {
         let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
         HunterPickerViewController.isFrom =  "PrefWorkType"
         HunterPickerViewController.index =  index
+        
+        
+        var anyDict = [String: String?]()
+
+          for (key, value) in self.salary_rangeDict {
+              anyDict[key as! String] = value as! String
+          }
+           
+           
+          
+           let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+           print(sortedYourArray)
+          
+          var jsonError : NSError?
+          let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+          // Verifying it worked:
+        self.salary_rangeDict = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+        
+        
+        
+        
         HunterPickerViewController.passedDict = self.salary_rangeDict
         HunterPickerViewController.delegate = self
         HunterPickerViewController.modalPresentationStyle = .overFullScreen
@@ -292,19 +313,19 @@ extension HunterPrefWorkTypeVC : hunterDelegate{
             let salary_range_ID = Int(selectedDict["id"] as! String)
             let index = selectedDict["index"] as! Int
         if index == 1 {
-        self.labelPreferredSalary.text = "AED \(txtSalaryRange)/MONTH TARGET SALARY"
+        self.labelPreferredSalary.text = "\(txtSalaryRange)"
             self.preferredSalary = salary_range_ID!
         }
         else if index == 2 {
-            self.labelPreferedSalary1.text = "AED \(txtSalaryRange)/MONTH TARGET SALARY"
+            self.labelPreferedSalary1.text = "\(txtSalaryRange)"
             self.preferredSalary = salary_range_ID!
         }
         else if index == 3 {
-            self.labelPreferedSalary2.text = "AED \(txtSalaryRange)/MONTH TARGET SALARY"
+            self.labelPreferedSalary2.text = "\(txtSalaryRange)"
             self.preferredSalary = salary_range_ID!
         }
         else if index == 4 {
-            self.labelPreferedSalary3.text = "AED \(txtSalaryRange)/MONTH TARGET SALARY"
+            self.labelPreferedSalary3.text = "\(txtSalaryRange)"
             self.preferredSalary = salary_range_ID!
         }
         

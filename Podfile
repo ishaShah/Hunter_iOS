@@ -22,7 +22,7 @@ target 'Hunter' do
 #  pod 'CircleBar'
  pod 'VBRRollingPit'
  pod 'Player'
-
+ pod 'FileBrowser'
   # Pods for Hunter
 
 end

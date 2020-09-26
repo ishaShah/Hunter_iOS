@@ -100,7 +100,7 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
        HunterSelectionViewController.delegate = self
         HunterSelectionViewController.passedDict = dict_loc
         HunterSelectionViewController.isFrom = "location"
-        HunterSelectionViewController.headerText = "Select Native Location"
+        HunterSelectionViewController.headerText = "Select Current Location"
 
        HunterSelectionViewController.modalPresentationStyle = .overFullScreen
        self.present(HunterSelectionViewController, animated: true, completion: nil)

@@ -694,6 +694,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         // additional image/video
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditProPicVC") as! HunterEditProPicVC
         vc.modalPresentationStyle = .overFullScreen
+        vc.profileDelegate = self
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func edit_lang(_ sender: Any) {
@@ -736,6 +737,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     @IBAction func uploadCover(_ sender: Any) {
         // additional image/video
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditCoverImVC") as! HunterEditCoverImVC
+        vc.profileDelegate = self
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
