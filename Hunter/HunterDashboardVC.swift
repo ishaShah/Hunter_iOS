@@ -273,6 +273,11 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         }
     }
+    @IBAction func editJob(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterAllJobsViewController") as! HunterAllJobsViewController
+       
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.expandClick(notification:)), name: Notification.Name("expandClick"), object: nil)
@@ -632,10 +637,10 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                             self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)",candidate_id:candidate_Id))
                                             n = n + 1
                                         }
-                                    self.createCards()
                                     }
  
-                                
+                                self.createCards()
+
                                 
                                 }
                                 else {
@@ -757,8 +762,9 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     self.userModels.append(UserModel(name: companyName, recruiter: recruiterDict, job_details: job_detailsDict, skills: skillsArrDict, num: "\(n)", candidate_id:candidate_Id ))
                                     n = n + 1
                                 }
-                                self.createCards()
                                 }
+                                self.createCards()
+
                                 self.jobList = []
                                 self.jobIDList = []
                                 self.total_suggestions = []
