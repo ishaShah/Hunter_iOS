@@ -30,7 +30,7 @@ extension UIView {
 //        self.setContentOffset(bottomOffset, animated: animated)
 //    }
 //}
-class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate, CropViewControllerDelegate, UIImagePickerControllerDelegate,UIDocumentPickerDelegate, UINavigationControllerDelegate{
     @IBOutlet weak var tableChat: UITableView!
 //    @IBOutlet weak var heightTableChat: NSLayoutConstraint!
     
@@ -363,55 +363,83 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             self.view.makeToast("Please check your internet connection.", duration: 1.0, point: CGPoint(x: screenWidth/2, y: screenHeight-130), title: nil, image: nil) { didTap in}
         }
     }
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        var documentData = [Data]()
+        do {
+            for url in urls {
+                documentData.append(try Data(contentsOf: url))
+            }
+            
+            
+        } catch {
+            print("no data")
+        }
+        let theFileName = (urls[0].absoluteString as NSString).lastPathComponent
+        self.connecToSendFileAttachmentsToRecruiter(documentData[0], filename: theFileName)
+        
+        
+
+      
+    }
+    
+    
     @IBAction func addAttachments(_ sender: Any) {
         
         
         
-            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            let defaultAction = UIAlertAction(title: "Camera", style: .default) { (action) in
-                self.ratioPreset =  "square"
-                
-                self.croppingStyle = .default
-                
-                let imagePicker = UIImagePickerController()
-                imagePicker.sourceType = .camera
-                imagePicker.allowsEditing = false
-                imagePicker.delegate = self
-                self.present(imagePicker, animated: true, completion: nil)
-            }
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let defaultAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+            self.ratioPreset =  "square"
             
-            let profileAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
-                self.ratioPreset =  "square"
-                
-                self.croppingStyle = .default
-                
-                let imagePicker = UIImagePickerController()
-                imagePicker.sourceType = .photoLibrary
-                imagePicker.allowsEditing = false
-                imagePicker.delegate = self
-                self.present(imagePicker, animated: true, completion: nil)
-            }
-            let FilesAction = UIAlertAction(title: "Files", style: .default) { (action) in
-                 let fileBrowser = FileBrowser()
-                fileBrowser.didSelectFile = { (file: FBFile) -> Void in
-                    print(file.displayName)
-                    let data = try? Data(contentsOf: file.filePath as URL)
-                    self.connecToSendFileAttachmentsToRecruiter(data!, filename: file.displayName)
-                }
-                self.present(fileBrowser, animated: true, completion: nil)
-                
-                
-            }
-            alertController.addAction(defaultAction)
-            alertController.addAction(profileAction)
-            alertController.addAction(FilesAction)
-
-            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-            alertController.modalPresentationStyle = .popover
+            self.croppingStyle = .default
             
-            let presentationController = alertController.popoverPresentationController
-            presentationController?.barButtonItem = (sender as! UIBarButtonItem)
-            present(alertController, animated: true, completion: nil)
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+        let profileAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+            self.ratioPreset =  "square"
+            
+            self.croppingStyle = .default
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        let FilesAction = UIAlertAction(title: "Files", style: .default) { (action) in
+            
+            let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text", "com.apple.iwork.pages.pages", "public.data"], in: .import)
+            
+            documentPicker.delegate = self
+            self.present(documentPicker, animated: true, completion: nil)
+            
+            
+            
+            //                 let fileBrowser = FileBrowser()
+            //                fileBrowser.didSelectFile = { (file: FBFile) -> Void in
+            //                    print(file.displayName)
+            //                    let data = try? Data(contentsOf: file.filePath as URL)
+            //                    self.connecToSendFileAttachmentsToRecruiter(data!, filename: file.displayName)
+            //                }
+            //                self.present(fileBrowser, animated: true, completion: nil)
+            
+            
+        }
+        alertController.addAction(defaultAction)
+        alertController.addAction(profileAction)
+        alertController.addAction(FilesAction)
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alertController.modalPresentationStyle = .popover
+        
+        let presentationController = alertController.popoverPresentationController
+        presentationController?.barButtonItem = (sender as! UIBarButtonItem)
+        present(alertController, animated: true, completion: nil)
         
         
     }
