@@ -560,13 +560,65 @@ class HunterPostAJobNewViewController: UIViewController {
         let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
         HunterPickerViewController.isFrom = type
         
+        
+        
+        
         switch type {
         case "WorkType":
+            var anyDict = [String: String?]()
+
+            for (key, value) in dict_work_type {
+                anyDict[key as! String] = value as! String
+            }
+             
+             
+            
+             let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+             print(sortedYourArray)
+            
+            var jsonError : NSError?
+            let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+            // Verifying it worked:
+            dict_work_type = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
             HunterPickerViewController.passedDict = self.dict_work_type
         case "SalaryRange":
+            var anyDict = [String: String?]()
+
+            for (key, value) in dict_salary_range {
+                anyDict[key as! String] = value as! String
+            }
+             
+             
+            
+             let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+             print(sortedYourArray)
+            
+            var jsonError : NSError?
+            let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+            // Verifying it worked:
+            dict_salary_range = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
             HunterPickerViewController.passedDict = self.dict_salary_range
             
         case "YearsOfExp":
+            
+            var anyDict = [String: String?]()
+
+            for (key, value) in dict_year_of_experience {
+                anyDict[key as! String] = value as! String
+            }
+             
+             
+            
+             let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+             print(sortedYourArray)
+            
+            var jsonError : NSError?
+            let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+            // Verifying it worked:
+            dict_year_of_experience = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
             HunterPickerViewController.passedDict = self.dict_year_of_experience
             
         default:

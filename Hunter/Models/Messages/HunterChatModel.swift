@@ -11,11 +11,11 @@ import Foundation
 public class HunterChatModel {
     public var message : String?
     public var posted_by : String?
-    
+    public var type : String?
     func initWithDict(dictionary: NSDictionary) -> HunterChatModel{
         message = dictionary["message"] as? String
         posted_by = dictionary["posted_by"] as? String
-        
+        type = dictionary["type"] as? String
         return self
     }
 }

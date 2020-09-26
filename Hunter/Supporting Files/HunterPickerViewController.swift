@@ -44,13 +44,13 @@ class HunterPickerViewController: UIViewController{
         super.viewDidLoad()
         
         
-        
         hunterPicker.delegate = self
         hunterPicker.dataSource = self
         
 //         viewBG.roundCorners(corners: [.topLeft, .topRight], radius: 50)
+// let sortedDict = passedDict.sorted(by: <)
+
  
-        
  
         // set the shadow of the view's layer
         viewBG.layer.masksToBounds =  true
@@ -62,7 +62,7 @@ class HunterPickerViewController: UIViewController{
             AllCount = passedDict.allValues.count
 
         }
-        else if isFrom == "businessType" {
+        else if isFrom == "businessType" || isFrom == "EmpType" || isFrom == "level_of_study" {
             AllCount = passedDict.allValues.count
 
         }else if isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "PrefWorkType" || isFrom == "CurrentLoc" {
@@ -78,8 +78,8 @@ class HunterPickerViewController: UIViewController{
         }
         
          
-    }
-    
+      }
+ 
  
     @IBAction func dismiss(_ sender: Any) {
         
@@ -109,13 +109,30 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
     }
     
      func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+      var allVals = [String]()
+      
+      var anyDict = [String: String?]()
+
+             for (key, value) in passedDict {
+                 anyDict[key as! String] = value as! String
+              }
+              
+              let sortedKeysAndValues = anyDict.sorted( by: { $0.0 < $1.0 })
+
+             for (key, value) in sortedKeysAndValues {
+               allVals.append(value as! String)
+             }
+              
+        
         if isFrom == "companySize" {
-            return NSAttributedString(string: passedDict.allValues[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
+            
+            return NSAttributedString(string: allVals[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
         }
-        else if isFrom == "businessType" {
-            return NSAttributedString(string: passedDict.allValues[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
+        else if isFrom == "businessType" || isFrom == "EmpType"  || isFrom == "level_of_study"{
+            return NSAttributedString(string: allVals[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
         }else if isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "PrefWorkType" || isFrom == "CurrentLoc" {
-            return NSAttributedString(string: passedDict.allValues[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
+            return NSAttributedString(string: allVals[row] as! String, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
         }
         else {
             return NSAttributedString(string: years[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 90.0/255.0, green: 40.0/255.0, blue: 140.0/255.0, alpha: 1.0)])
@@ -123,35 +140,54 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        if isFrom == "companySize" || isFrom == "businessType"  || isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "CurrentLoc" {
-            let selectedValue = passedDict.allValues[row] as! String
+        var allVals = [String]()
+        var allKys = [String]()
+
+        var anyDict = [String: String?]()
+
+               for (key, value) in passedDict {
+                   anyDict[key as! String] = value as! String
+                }
+                
+                let sortedKeysAndValues = anyDict.sorted( by: { $0.0 < $1.0 })
+
+               for (key, value) in sortedKeysAndValues {
+                 allVals.append(value as! String)
+                allKys.append(key as! String)
+               }
+                
+               
+                 
+        
+        if isFrom == "companySize" || isFrom == "businessType"  || isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "CurrentLoc"  || isFrom == "EmpType"   || isFrom == "level_of_study" {
+            let selectedValue = allVals[row] as! String
  
-            let allVal = passedDict.allValues as! [String]
+            let allVal = allVals
             let indexOfA = allVal.firstIndex(of: selectedValue) // 0
 
             
              let dict = NSMutableDictionary()
             dict["name"] = selectedValue
-            dict["id"] = passedDict.allKeys[indexOfA!] as! String
+            dict["id"] = allKys[indexOfA!] as! String
 
             selectedDict =
-                ["name": selectedValue, "id": passedDict.allKeys[indexOfA!] as! String]
+                ["name": selectedValue, "id": allKys[indexOfA!] as! String]
             
             
         }
         else if isFrom == "PrefWorkType" {
-            let selectedValue = passedDict.allValues[row] as! String
+            let selectedValue = allVals[row] as! String
             
-            let allVal = passedDict.allValues as! [String]
+            let allVal = allVals
             let indexOfA = allVal.firstIndex(of: selectedValue) // 0
             
             
             let dict = NSMutableDictionary()
             dict["name"] = selectedValue
-            dict["id"] = passedDict.allKeys[indexOfA!] as! String
+            dict["id"] = allKys[indexOfA!] as! String
             
             selectedDict =
-                ["name": selectedValue, "id": passedDict.allKeys[indexOfA!] as! String, "index" : index]
+                ["name": selectedValue, "id": allKys[indexOfA!] as! String, "index" : index]
             
             
         }

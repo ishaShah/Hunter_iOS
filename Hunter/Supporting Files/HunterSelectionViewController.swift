@@ -20,7 +20,9 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
     @IBOutlet weak var tbl_view: UITableView!
     var passedDict = NSDictionary()
     var selectedIDArray = [String]()
-     
+     var imgName = String()
+    var imgNameUnselect = String()
+
     struct Section {
         let letter : String
         let names : [String]
@@ -62,6 +64,33 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
     func setHeadertTitle(){
         self.lblHeader.text = headerText
 
+        
+        
+        if isFrom == "JobFunction" || isFrom ==  "Headquaters" || isFrom ==  "Industry" {
+            self.imgNameUnselect = "headquaters_unselect.png"
+            self.imgName = "headquaters.png"
+
+        }
+        else if isFrom == "Skills" {
+            self.imgNameUnselect = "education_unselect.png"
+            self.imgName = "education.png"
+
+        }
+        else if isFrom == "FieldOfEdu" {
+            self.imgNameUnselect = "education_unselect.png"
+            self.imgName = "education.png"
+
+        }
+        else if isFrom == "Founded" {
+            self.imgNameUnselect = "founded_unselect.png"
+            self.imgName = "founded.png"
+        }
+        else {
+            self.imgNameUnselect = "headquaters_unselect.png"
+            self.imgName = "headquaters.png"
+
+        }
+        
 //        switch  isFrom{
 //        case "JobFunction":
 //            self.lblHeader.text = "Select your job function"
@@ -216,7 +245,8 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         let username = section.names[indexPath.row]
         cell.titleLabel?.text = username
         
-        
+        cell.imgSelection?.image = UIImage.init(named: self.imgNameUnselect)
+
         if(isMultiSelect){
             
             let usernames : [String] = passedDict.map { ($0.value as? String ?? "Null") }
@@ -230,9 +260,9 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
                 ["name": username, "id": passedDict.allKeys[indexOfA!] as! String]
             
             if selectedIDArray.contains(myDict["id"] as! String){
-                cell.imgSelection?.backgroundColor = UIColor.init(hexString: "5D1A93")
+                cell.imgSelection?.image = UIImage.init(named: self.imgName)
             }else{
-                cell.imgSelection?.backgroundColor = UIColor.init(hexString: "E9E4F2")
+                cell.imgSelection?.image = UIImage.init(named: self.imgNameUnselect)
             }
             
             

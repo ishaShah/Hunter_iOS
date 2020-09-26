@@ -26,8 +26,7 @@ class HunterAllJobsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         setNeedsStatusBarAppearanceUpdate()
-        collViewJobs.delegate = nil
-        collViewJobs.dataSource = nil
+         
         getAllJobs()
         
     }
@@ -76,8 +75,7 @@ class HunterAllJobsViewController: UIViewController {
                                 if let data = responseDict.value(forKey: "data") as? NSDictionary{
                                     if let jobs = data.value(forKey: "jobs") as? NSArray{
                                         self.jobsArray = jobs
-                                        self.collViewJobs.delegate = self
-                                        self.collViewJobs.dataSource = self
+                                        self.collViewJobs.reloadData()
                                     }
                                 }
                             }

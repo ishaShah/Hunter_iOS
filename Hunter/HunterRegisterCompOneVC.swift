@@ -84,6 +84,23 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
             HunterPickerViewController.isFrom = "companySize"
+        
+        
+        var anyDict = [String: String?]()
+
+        for (key, value) in company_sizeDict {
+            anyDict[key as! String] = value as! String
+        }
+         
+         
+        
+         let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+         print(sortedYourArray)
+        
+        var jsonError : NSError?
+        let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+        // Verifying it worked:
+        company_sizeDict = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
         HunterPickerViewController.passedDict = company_sizeDict
 
             HunterPickerViewController.delegate = self
@@ -97,6 +114,23 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let HunterPickerViewController = storyboard.instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
             HunterPickerViewController.isFrom = "businessType"
+        
+        var anyDict = [String: String?]()
+
+        for (key, value) in businessTypeDict {
+            anyDict[key as! String] = value as! String
+        }
+         
+         
+        
+         let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+         print(sortedYourArray)
+        
+        var jsonError : NSError?
+        let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+        // Verifying it worked:
+        businessTypeDict = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+ 
         HunterPickerViewController.passedDict = businessTypeDict
             HunterPickerViewController.delegate = self
             HunterPickerViewController.modalPresentationStyle = .overFullScreen

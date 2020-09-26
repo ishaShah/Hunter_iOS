@@ -21,8 +21,8 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
     var profileDelegate: refreshProfileDelegate!
     @IBOutlet weak var contButton: UIButton!
 
- 
-
+    var profileDict = NSDictionary()
+    var isFromReg = false
     var isEdit = false
     var arr_industry = [String]()
     var dict_industry = NSDictionary()
@@ -54,6 +54,10 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
     @IBOutlet weak var img_Top: UIImageView!
     @IBOutlet weak var lab_top: UILabel!
     
+    
+    var industry_id = Int()
+    var location_id = Int()
+    
     @IBOutlet weak var stakc_threeDot: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +86,18 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
             self.contButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
             self.contButton.backgroundColor = UIColor.init(hexString:"350B76" )
             
+            self.txt_companyName.text = "\(profileDict["company_name"] as! String)".uppercased()
+            self.txt_industry.text = "\(profileDict["industry"] as! String)"
+            self.txt_headquaters.text  = "\(profileDict["location"] as! String)"
+            self.txt_founded.text = "\(profileDict["founded"] as! Int)"
+            self.txt_website.text = "\(profileDict["website"] as! String)"
+            self.selectedFoundedYear = "\(profileDict["founded"] as! Int)"
+            self.selectedIndustry = "\(profileDict["industry"] as! String)"
+            self.selectedIndustryID =  "\(profileDict["industry_id"] as! Int)"
+            self.selectedHeadquarters = "\(profileDict["location"] as! String)"
+            self.selectedHeadquartersID = "\(profileDict["location_id"] as! Int)"
+            // updateBasicInformationURL
+            print(profileDict)
         }
         else {
             lab_NameOfCompany.text = ""
@@ -179,6 +195,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
     
     //MARK:- Webservice
     func connectToRegisterCompanyIndustry(){
+        
         if HunterUtility.isConnectedToInternet(){
             
             let url = API.recruiterBaseURL + API.registerCompanyDataURL
@@ -256,8 +273,104 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
         }
     }
      func connectToRegisterSaveCompanyDetails(){
+        if isEdit == true {
+            if HunterUtility.isConnectedToInternet(){
+ 
+
+//              company_name
+//              industry_id
+//              headquarters_id
+//              founded_on
+//              website
+//
+                
+                let url = API.recruiterBaseURL + API.updateBasicInformationURL
+                print(url)
+                HunterUtility.showProgressBar()
+                let paramsDict = ["company_name": self.txt_companyName.text!, "industry_id" : self.selectedIndustryID,  "headquarters_id" : self.selectedHeadquartersID , "founded_on" : self.selectedFoundedYear , "website" : self.txt_website.text! ] as [String : Any]
+                
+                let headers    = [ "Authorization" : "Bearer " + accessToken]
+                
+                Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                    
+                    switch response.result {
+                    case .success:
+                        if let responseDict = response.result.value as? NSDictionary{
+                            print(responseDict)
+                            SVProgressHUD.dismiss()
+                            if let status = responseDict.value(forKey: "status"){
+                                if status as! Int == 1   {
+                                    self.dismiss(animated: true) {
+                                        var loginType = String()
+                                               if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                                                   loginType = type
+                                               }
+                                               // Do any additional setup after loading the view.
+                                        if self.isFromReg == false {
+                                                
+                                                self.profileDelegate.refetchFromCloud()
+                                        }
+                                               else {
+                                                   let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompOneVC") as! HunterRegisterCompOneVC
+                                                   self.navigationController?.pushViewController(vc, animated: true)
+                                               }
+                                    }
+                                }
+                                else if status as! Int == 2 {
+                                    let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                    }))
+                                    self.present(alert, animated: true, completion: nil)
+                                    
+                                    print("Logout api")
+                                    
+                                    UserDefaults.standard.removeObject(forKey: "accessToken")
+        UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                    accessToken = String()
+                                    
+                                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                    let mainRootController = storyBoard.instantiateViewController(withIdentifier: "HunterCreateAccountVC") as! HunterCreateAccountVC
+                                    let navigationController:UINavigationController = storyBoard.instantiateInitialViewController() as! UINavigationController
+                                    navigationController.viewControllers = [mainRootController]
+                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                    appDelegate.window?.rootViewController = navigationController
+                                }
+                                else{
+                                    let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                    }))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            }
+                            else{
+                                let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }else{
+                            SVProgressHUD.dismiss()
+                            //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
+                            //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
+                            //                        self.present(alert, animated: true, completion: nil)
+                        }
+                        
+                    case .failure(let error):
+                        SVProgressHUD.dismiss()
+                        print(error)
+                        let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }else{
+                print("no internet")
+            }
+        }
+        else {
         if HunterUtility.isConnectedToInternet(){
           
+            
             let url = API.recruiterBaseURL + API.registerSaveCompanyDetailsURL
             print(url)
             HunterUtility.showProgressBar()
@@ -275,7 +388,19 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
                         if let status = responseDict.value(forKey: "status"){
                             if status as! Int == 1   {
                                 self.dismiss(animated: true) {
-                                    self.profileDelegate.refetchFromCloud()
+                                    var loginType = String()
+                                           if let type = UserDefaults.standard.object(forKey: "loginType") as? String{
+                                               loginType = type
+                                           }
+                                           // Do any additional setup after loading the view.
+                                    if self.isFromReg == false {
+                                            
+                                            self.profileDelegate.refetchFromCloud()
+                                    }
+                                           else {
+                                               let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompOneVC") as! HunterRegisterCompOneVC
+                                               self.navigationController?.pushViewController(vc, animated: true)
+                                           }
                                 }
                             }
                             else if status as! Int == 2 {
@@ -329,6 +454,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
             print("no internet")
         }
     }
+    }
     @IBAction func btn_continue(_ sender: Any) {
         if txt_companyName.text == ""{
             let alert = UIAlertController(title: "", message:
@@ -344,7 +470,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
             self.present(alert, animated: true, completion: nil)
         }else if selectedHeadquarters == ""{
             let alert = UIAlertController(title: "", message:
-                "Please select company size", preferredStyle: .alert)
+                "Please select headquaters", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
             }))
             self.present(alert, animated: true, completion: nil)

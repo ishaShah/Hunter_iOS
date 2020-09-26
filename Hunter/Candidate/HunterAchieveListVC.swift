@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterAchieveListVC: UIViewController {
+class HunterAchieveListVC: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var collVAchievements: UICollectionView!
     
@@ -49,8 +49,7 @@ class HunterAchieveListVC: UIViewController {
                                 if let data = responseDict.value(forKey: "data") as? NSDictionary{
                                     if let jobs = data.value(forKey: "achievements") as? NSArray{
                                         self.achievementArray = jobs
-                                        self.collVAchievements.delegate = self
-                                        self.collVAchievements.dataSource = self
+                                         
                                         self.collVAchievements.reloadData()
                                     }
                                 }
@@ -125,16 +124,14 @@ class HunterAchieveListVC: UIViewController {
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-}
-
-extension HunterAchieveListVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+ 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return achievementArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : HunterAchievementsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterAchievementsCollectionViewCell", for: indexPath) as! HunterAchievementsCollectionViewCell
-        if let dict : NSDictionary = achievementArray[indexPath.row] as? NSDictionary{
+        let dict : NSDictionary = (achievementArray[indexPath.row] as? NSDictionary)!
             cell.lblHeader.text = dict["title"] as? String ?? ""
             cell.lblSubHead1.text = "Issued by " + "\(dict["issued_by"] ?? "")"
             cell.lblSubHead2.text = "\(dict["issued_date"] as? Int ?? 1990)"
@@ -143,13 +140,13 @@ extension HunterAchieveListVC : UICollectionViewDelegate,UICollectionViewDataSou
         cell.btnDelete.tag = indexPath.row
            cell.btnDelete.addTarget(self, action: #selector(btnDeleteClick(sender:)), for: .touchUpInside)
 
-        }
+        
  
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 480, height: 308)
+        CGSize(width: 280, height: 200)
     }
     
   

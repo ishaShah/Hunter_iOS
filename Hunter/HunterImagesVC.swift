@@ -21,7 +21,6 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
     @IBOutlet weak var coll_video: UICollectionView!
      @IBOutlet weak var contButton: UIButton!
     
-    var isSquarePics = false
     
     var isVideo = false
  
@@ -33,7 +32,8 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
     let videoFileName = "/video.mp4"
 
     private var croppingStyle = CropViewCroppingStyle.default
-    
+    var isSquarePics = false
+
     private var croppedRect = CGRect.zero
     private var croppedAngle = 0
     var arrayImages = [String]()
@@ -816,7 +816,7 @@ extension HunterImagesVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == coll_squarePics {
             
-            return CGSize(width: 290, height: 180)
+            return CGSize(width: 180, height: 180)
         }
         else {
             return CGSize(width: 220, height: 150)

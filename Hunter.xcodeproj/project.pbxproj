@@ -62,6 +62,9 @@
 		4BA4BF53234616C800272EFA /* HunterRegisterCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4BF52234616C800272EFA /* HunterRegisterCodeVC.swift */; };
 		4BA4BF552347069800272EFA /* HunterDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4BF542347069700272EFA /* HunterDashboardVC.swift */; };
 		4BA5B2A425160E45003468B1 /* Recruiter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA5B2A325160E45003468B1 /* Recruiter.storyboard */; };
+		4BAD143325189AD400BA05CA /* HunterChatRecieverFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD143225189AD400BA05CA /* HunterChatRecieverFileCell.swift */; };
+		4BAD143525189AF600BA05CA /* HunterChatSenderFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD143425189AF600BA05CA /* HunterChatSenderFileCell.swift */; };
+		4BAD14372518E39200BA05CA /* HunterChatHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD14362518E39100BA05CA /* HunterChatHeaderTableViewCell.swift */; };
 		4BB0B5CD23AB86C6007393EB /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0B5C923AB86C6007393EB /* ViewManager.swift */; };
 		4BB0B5CE23AB86C6007393EB /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0B5CA23AB86C6007393EB /* ZLSwipeableView.swift */; };
 		4BB0B5CF23AB86C6007393EB /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0B5CB23AB86C6007393EB /* Direction.swift */; };
@@ -88,6 +91,7 @@
 		4BE1182E23349B9D00FE866E /* HunterExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1182D23349B9D00FE866E /* HunterExtentions.swift */; };
 		4BE1183023349C1600FE866E /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1182F23349C1600FE866E /* DesignableUITextField.swift */; };
 		4BE4618623E88F18003D1D52 /* CandidateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4618523E88F18003D1D52 /* CandidateModel.swift */; };
+		4BEAE682251B04F90057EBCD /* HunterImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEAE681251B04F90057EBCD /* HunterImageVC.swift */; };
 		4BEE75F623795DB1002AF97F /* HunterWorkLocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE75F523795DB1002AF97F /* HunterWorkLocVC.swift */; };
 		4BF3346323F556CF00BC7EC2 /* CardViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3346223F556CF00BC7EC2 /* CardViewNew.swift */; };
 		4BF84F0A23C59B9500CAEDFD /* HunterRecAddAccVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF84F0923C59B9500CAEDFD /* HunterRecAddAccVC.swift */; };
@@ -202,6 +206,9 @@
 		4BA4BF52234616C800272EFA /* HunterRegisterCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterRegisterCodeVC.swift; sourceTree = "<group>"; };
 		4BA4BF542347069700272EFA /* HunterDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HunterDashboardVC.swift; path = ../HunterDashboardVC.swift; sourceTree = "<group>"; };
 		4BA5B2A325160E45003468B1 /* Recruiter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recruiter.storyboard; sourceTree = "<group>"; };
+		4BAD143225189AD400BA05CA /* HunterChatRecieverFileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterChatRecieverFileCell.swift; sourceTree = "<group>"; };
+		4BAD143425189AF600BA05CA /* HunterChatSenderFileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterChatSenderFileCell.swift; sourceTree = "<group>"; };
+		4BAD14362518E39100BA05CA /* HunterChatHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterChatHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		4BB0B5C923AB86C6007393EB /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		4BB0B5CA23AB86C6007393EB /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
 		4BB0B5CB23AB86C6007393EB /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
@@ -228,6 +235,7 @@
 		4BE1182D23349B9D00FE866E /* HunterExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterExtentions.swift; sourceTree = "<group>"; };
 		4BE1182F23349C1600FE866E /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		4BE4618523E88F18003D1D52 /* CandidateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateModel.swift; sourceTree = "<group>"; };
+		4BEAE681251B04F90057EBCD /* HunterImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterImageVC.swift; sourceTree = "<group>"; };
 		4BEE75F523795DB1002AF97F /* HunterWorkLocVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterWorkLocVC.swift; sourceTree = "<group>"; };
 		4BF3346223F556CF00BC7EC2 /* CardViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNew.swift; sourceTree = "<group>"; };
 		4BF84F0923C59B9500CAEDFD /* HunterRecAddAccVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterRecAddAccVC.swift; sourceTree = "<group>"; };
@@ -353,6 +361,7 @@
 				4BF84F0D23C62FA600CAEDFD /* HunterRecAllJobsVC.swift */,
 				4B6E303423C82770005EED04 /* HunterRecEditJobVC.swift */,
 				4B6E303623C829ED005EED04 /* HunterRecViewAppVC.swift */,
+				4BEAE681251B04F90057EBCD /* HunterImageVC.swift */,
 				4B417AEA23C9E38C002DEBC7 /* Tabbar */,
 				4BC558612351A8D900296E49 /* Dashboard */,
 				4BC558522350FF7600296E49 /* HunterAccountVerVC.swift */,
@@ -508,6 +517,9 @@
 				D7D8FB26235F0AA4000D596E /* HunterChatCell.swift */,
 				75A5B0172517C86300D13C63 /* HunterChatSenderImageCell.swift */,
 				75A5B01A2517C88400D13C63 /* HunterChatRecieverImageCell.swift */,
+				4BAD143225189AD400BA05CA /* HunterChatRecieverFileCell.swift */,
+				4BAD143425189AF600BA05CA /* HunterChatSenderFileCell.swift */,
+				4BAD14362518E39100BA05CA /* HunterChatHeaderTableViewCell.swift */,
 			);
 			path = TableviewCells;
 			sourceTree = "<group>";
@@ -726,6 +738,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAD14372518E39200BA05CA /* HunterChatHeaderTableViewCell.swift in Sources */,
 				4B5E898E2506A5EF004B11BC /* HunterAchieveListVC.swift in Sources */,
 				4B8AA6D623C4A3A20068223D /* HunterRecSettingsVC.swift in Sources */,
 				4BC558632351A96800296E49 /* CarouselCollectionViewCell.swift in Sources */,
@@ -750,6 +763,7 @@
 				4B5E09E22506A559005CDD91 /* HunterAchieveVC.swift in Sources */,
 				D7486F4723372C2A00ADC5B3 /* HunterJobsCell.swift in Sources */,
 				756292BF25066FDB00F4DD5E /* HunterListAllEduVC.swift in Sources */,
+				4BAD143525189AF600BA05CA /* HunterChatSenderFileCell.swift in Sources */,
 				4BF3346323F556CF00BC7EC2 /* CardViewNew.swift in Sources */,
 				4B9CC9372504BF050052292D /* HunterWorkExpVC.swift in Sources */,
 				D725C81B233BCC210004FD36 /* HunterJobDetailVC.swift in Sources */,
@@ -774,6 +788,7 @@
 				75A5B01B2517C88400D13C63 /* HunterChatRecieverImageCell.swift in Sources */,
 				D725C81D233BCE110004FD36 /* HunterSkillsCell.swift in Sources */,
 				4B5E09E025068CD7005CDD91 /* HunterLanguageListVC.swift in Sources */,
+				4BEAE682251B04F90057EBCD /* HunterImageVC.swift in Sources */,
 				757FE66E24ED97E60014C8BF /* HunterAllJobsViewController.swift in Sources */,
 				D7E4FB90242696CB0074CF48 /* HunterCandidateProVC.swift in Sources */,
 				D7486F4123372BBE00ADC5B3 /* HunterPendingJobsVC.swift in Sources */,
@@ -790,6 +805,7 @@
 				4BE1182C23349B8200FE866E /* HunterUtility.swift in Sources */,
 				7550B16D250CD84A008D74BB /* HunterCandiBasicInfoVC.swift in Sources */,
 				D7630FB923F44E8E006E94E6 /* HunterChatVC.swift in Sources */,
+				4BAD143325189AD400BA05CA /* HunterChatRecieverFileCell.swift in Sources */,
 				4B7770F42339EE8600DA37B7 /* HunterRegisterCompOneVC.swift in Sources */,
 				D7B5F43423C9F9B70028AC9B /* HunterElevatorPitchVC.swift in Sources */,
 				754136F624D57D2800F7E1DD /* HunterPickerViewController.swift in Sources */,
@@ -983,7 +999,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 70;
 				DEVELOPMENT_TEAM = XV33X3979V;
 				INFOPLIST_FILE = Hunter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1006,7 +1022,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 70;
 				DEVELOPMENT_TEAM = XV33X3979V;
 				INFOPLIST_FILE = Hunter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

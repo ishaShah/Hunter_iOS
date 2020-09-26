@@ -19,6 +19,7 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
     private var croppedAngle = 0
     
     var ratioPreset = ""
+    var profileDelegate : refreshProfileDelegate!
 
     var isFrom = ""
     @IBOutlet weak var img_proPic: UIImageView!
@@ -210,7 +211,10 @@ class HunterEditProPicVC : UIViewController, CropViewControllerDelegate, UIImage
 
                                     }
                                 else {
-                                self.dismiss(animated: true, completion: nil)
+                                self.dismiss(animated: true) {
+                                    self.profileDelegate.refetchFromCloud()
+                                }
+                                    
                                 }
                             }
                             

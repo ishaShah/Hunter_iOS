@@ -14,6 +14,7 @@ class HunterMessagesCell: UITableViewCell {
     @IBOutlet weak var labelChatMessage: UILabel!
     @IBOutlet weak var imageChat: UIImageView!
 
+    @IBOutlet weak var jobTitle: UILabel!
     @IBOutlet weak var proImgView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

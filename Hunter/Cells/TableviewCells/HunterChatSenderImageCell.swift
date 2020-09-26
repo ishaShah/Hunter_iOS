@@ -11,7 +11,9 @@ import UIKit
 class HunterChatSenderImageCell: UITableViewCell {
 
     @IBOutlet weak var imgSentImage: UIImageView!
-    
+    @IBOutlet weak var viewChatCV: UIView!
+
+    @IBOutlet weak var imgClick: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -21,7 +21,8 @@ class HunterEditCoverImVC : UIViewController, CropViewControllerDelegate, UIImag
     
     var ratioPreset = ""
 
-    
+    var profileDelegate : refreshProfileDelegate!
+
     @IBOutlet weak var img_proPic: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,7 +151,7 @@ class HunterEditCoverImVC : UIViewController, CropViewControllerDelegate, UIImag
             var rectangle_logo = ""
             if loginType == "candidate" {
              url = API.candidateBaseURL + API.registerUpdateBannerImageURL
-rectangle_logo = "rectangle_logo"
+                rectangle_logo = "rectangle_logo"
             }
             else {
              url = API.recruiterBaseURL + API.registerUpdateCompanyBannerImageURL
@@ -183,9 +184,8 @@ rectangle_logo = "rectangle_logo"
                     })
                     
                     upload.responseJSON { response in
-                        print(response.result.value!)
-                        SVProgressHUD.dismiss()
-                        let dict = (response.result.value!) as! NSDictionary
+                         SVProgressHUD.dismiss()
+                        if let dict = (response.result.value!) as? NSDictionary {
                         
                         if dict.value(forKey: "status") as! Bool == true{
                             
@@ -193,8 +193,9 @@ rectangle_logo = "rectangle_logo"
 
                              
                             self.view.makeToast(dict["message"] as? String, duration: 1.0, point: CGPoint(x: screenWidth/2, y: screenHeight-130), title: nil, image: nil) { didTap in
-                                self.dismiss(animated: true, completion: nil)
-                            }
+                                self.dismiss(animated: true) {
+                                    self.profileDelegate.refetchFromCloud()
+                                }                            }
                         }
                         else if dict.value(forKey: "status") as! Int == 2 {
                             let alert = UIAlertController(title: "", message: dict.value(forKey: "message") as? String, preferredStyle: .alert)
@@ -215,11 +216,13 @@ rectangle_logo = "rectangle_logo"
                             let appDelegate = UIApplication.shared.delegate as! AppDelegate
                             appDelegate.window?.rootViewController = navigationController
                         }
+                        
                         else{
                             let alert = UIAlertController(title: "", message: dict.value(forKey: "error") as? String, preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
                             }))
                             self.present(alert, animated: true, completion: nil)
+                        }
                         }
                     }
                 case .failure(let error):

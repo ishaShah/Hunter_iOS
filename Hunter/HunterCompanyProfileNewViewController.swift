@@ -43,6 +43,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
         // additional image/video
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditProPicVC") as! HunterEditProPicVC
         vc.modalPresentationStyle = .overFullScreen
+        vc.profileDelegate = self
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -161,6 +162,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
     @IBAction func uploadProPic(_ sender: Any) {
         // additional image/video
         let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterEditCoverImVC") as! HunterEditCoverImVC
+        vc.profileDelegate = self
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
@@ -216,7 +218,8 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
                                             self.collImages.dataSource = self
                                             if self.arrayVideos.count != 0 {
                                             self.player.url = URL(string:self.arrayVideos[0])
-                                            self.player.playFromBeginning()
+//                                            self.player.playFromBeginning()
+                                                
 //                                                self.player.fillMode = .resizeAspectFill
 
  
@@ -501,6 +504,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
             let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompVC") as! HunterRegisterCompVC
             vc.isEdit = true
             vc.modalPresentationStyle = .overFullScreen
+            vc.profileDict = self.profileDict
             vc.profileDelegate = self
             self.present(vc, animated: true, completion: nil)
         }
@@ -518,7 +522,28 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
             let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
             vc.isFrom = "companySize"
             vc.delegate = self
-            vc.passedDict = profileDict["company_size_data"] as! NSDictionary
+            
+            var anyDict = [String: String?]()
+
+                   for (key, value) in profileDict["company_size_data"] as! NSDictionary {
+                       anyDict[key as! String] = value as! String
+                   }
+                    
+                    
+                   
+                    let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+                    print(sortedYourArray)
+                   
+                   var jsonError : NSError?
+                   let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+                   // Verifying it worked:
+                 let  company_size_data = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
+            
+            
+            
+            
+            vc.passedDict = company_size_data
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
 
@@ -528,7 +553,26 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
             let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterPickerViewController") as! HunterPickerViewController
             vc.isFrom = "businessType"
             vc.delegate = self
-            vc.passedDict = profileDict["business_type_data"] as! NSDictionary
+            
+            
+            var anyDict = [String: String?]()
+
+              for (key, value) in profileDict["business_type_data"] as! NSDictionary {
+                  anyDict[key as! String] = value as! String
+              }
+               
+               
+              
+               let sortedYourArray = anyDict.sorted( by: { $0.0 < $1.0 })
+               print(sortedYourArray)
+              
+              var jsonError : NSError?
+              let jsonData = try? JSONSerialization.data(withJSONObject: anyDict, options: .prettyPrinted)
+              // Verifying it worked:
+            let  business_type_data = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSDictionary
+            
+            
+            vc.passedDict = business_type_data
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
 
@@ -560,7 +604,7 @@ extension HunterCompanyProfileNewViewController : UICollectionViewDelegate,UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 290, height: 180))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 180, height: 180))
         
         if let url = arrayImages[indexPath.row] as? String{
             imageView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
@@ -570,7 +614,7 @@ extension HunterCompanyProfileNewViewController : UICollectionViewDelegate,UICol
   
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 290, height: 180)
+        CGSize(width: 180, height: 180)
     }
 }
 

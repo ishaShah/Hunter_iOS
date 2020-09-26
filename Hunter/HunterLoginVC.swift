@@ -172,12 +172,13 @@ class HunterLoginVC: UIViewController, UITextFieldDelegate {
                                                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterUAETwoExpVC") as! HunterUAETwoExpVC
                                                 self.navigationController?.pushViewController(vc, animated: true)
                                             }else if registration_step == 7 {
-                                                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterCurrentWorkStatusVC") as! HunterCurrentWorkStatusVC
+                                                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep1VC") as! HunterEducationStep1VC
                                                 self.navigationController?.pushViewController(vc, animated: true)
                                             }
                                         }else {
                                             if registration_step ==  1 {
                                                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompVC") as! HunterRegisterCompVC
+                                                vc.isFromReg = true
                                                 self.navigationController?.pushViewController(vc, animated: true)
                                             }else if registration_step == 2 {
                                                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterRegisterCompOneVC") as! HunterRegisterCompOneVC
