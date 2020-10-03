@@ -112,18 +112,35 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
         
       var allVals = [String]()
       
-      var anyDict = [String: String?]()
+      var anyDict = [Int: String?]()
 
              for (key, value) in passedDict {
-                 anyDict[key as! String] = value as! String
+                let newKey = Int(key as! String)
+                
+                anyDict[newKey!] = value as! String
               }
               
-              let sortedKeysAndValues = anyDict.sorted( by: { $0.0 < $1.0 })
+              let sortedKeysAndValues = anyDict.sorted( by: { $0.key < $1.key })
 
              for (key, value) in sortedKeysAndValues {
                allVals.append(value as! String)
              }
               
+        
+        
+//        let result = anyDict.map { (key: $0.0, value: $0.1) }
+//                         .sorted(by:
+//                            if $0.value != $1.value {
+//                                return $0.value > $1.value
+//                            }
+//                            return $0.key < $1.key
+//                          )}
+//
+//        for r in result {
+//            print("\(r.key) \(r.value)")
+//        }
+//
+        
         
         if isFrom == "companySize" {
             
@@ -141,19 +158,21 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         var allVals = [String]()
-        var allKys = [String]()
+        var allKys = [Int]()
 
-        var anyDict = [String: String?]()
+        var anyDict = [Int: String?]()
 
                for (key, value) in passedDict {
-                   anyDict[key as! String] = value as! String
-                }
+                 let newKey = Int(key as! String)
+                 
+                 anyDict[newKey!] = value as! String
+               }
                 
-                let sortedKeysAndValues = anyDict.sorted( by: { $0.0 < $1.0 })
+                let sortedKeysAndValues = anyDict.sorted( by: { $0.key < $1.key })
 
                for (key, value) in sortedKeysAndValues {
                  allVals.append(value as! String)
-                allKys.append(key as! String)
+                allKys.append(key as! Int)
                }
                 
                
@@ -168,10 +187,10 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
             
              let dict = NSMutableDictionary()
             dict["name"] = selectedValue
-            dict["id"] = allKys[indexOfA!] as! String
+            dict["id"] = "\(allKys[indexOfA!])"
 
             selectedDict =
-                ["name": selectedValue, "id": allKys[indexOfA!] as! String]
+                ["name": selectedValue, "id": "\(allKys[indexOfA!])"]
             
             
         }
@@ -184,10 +203,10 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
             
             let dict = NSMutableDictionary()
             dict["name"] = selectedValue
-            dict["id"] = allKys[indexOfA!] as! String
-            
+            dict["id"] = "\(allKys[indexOfA!])"
+
             selectedDict =
-                ["name": selectedValue, "id": allKys[indexOfA!] as! String, "index" : index]
+                ["name": selectedValue, "id": "\(allKys[indexOfA!])", "index" : index]
             
             
         }

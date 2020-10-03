@@ -329,8 +329,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
          let customView = CustomView(frame: self.jobView.frame)
 
                     customView.delegate = self
-        
-        customView.userModel = self.userModels[currentIndex]
+        let count = self.userModels.count
+        customView.userModel = self.userModels[0]
         customView.isFrom = "jobView"
 
         let nib = UINib(nibName: "MyCollectionViewCell", bundle: nil)
@@ -894,9 +894,18 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 extension HunterDashboardVC : TinderSwipeViewDelegate{
     
     func dummyAnimationDone() {
+        
+        let animated = UserDefaults.standard.object(forKey: "animated") as? String
+
+        if animated != "true" {
+        
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveLinear, animations: {
 //            self.viewNavigation.alpha = 1.0
         }, completion: nil)
+            UserDefaults.standard.set("true", forKey: "animated")
+
+        }
+        
         print("Watch out shake action")
     }
     
@@ -1050,6 +1059,7 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
                                         self.messageView.isHidden = false
                                         self.backMsgView.isHidden = false
                                         }
+                                        self.connectToGetCandidates(0)
                                     }
                                 }
                                 

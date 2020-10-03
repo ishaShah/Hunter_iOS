@@ -42,6 +42,7 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
     }
     
 
+    @IBOutlet weak var lblNumbOfChars: UILabel!
     @IBOutlet weak var txt_desc: UITextView!
  
     @IBOutlet weak var txt_companySize: HunterTextField!
@@ -75,7 +76,7 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
         connectToGetCompanyDataStep3()
         // Do any additional setup after loading the view.
         self.txt_desc.delegate = self
-        txt_desc.text = "Description..."
+        txt_desc.text = "Add a bio to your profile"
         txt_desc.textColor = UIColor.officialApplePlaceholderGray
 
     }
@@ -157,20 +158,21 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
     }
     //MARK:- Textview delegates
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Description..."{
+        if textView.text == "Add a bio to your profile"{
             textView.text = ""
             textView.textColor = Color.darkVioletColor
         }
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == ""{
-            textView.text = "Description..."
+            lblNumbOfChars.text = "0/100"
+            textView.text = "Add a bio to your profile"
             textView.textColor = UIColor.officialApplePlaceholderGray
             
             self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
             self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
         }else{
-            if self.txt_companySize.text != "" && self.txt_businessType.text != "" && self.txt_desc.text != "" && self.txt_desc.text != "Description..."{
+            if self.txt_companySize.text != "" && self.txt_businessType.text != "" && self.txt_desc.text != "" && self.txt_desc.text != "Add a bio to your profile"{
                 self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
                 self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
             }else{
@@ -178,6 +180,20 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
                 self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
             }
         }
+    }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.textColor == UIColor.officialApplePlaceholderGray {
+            textView.text = nil
+            textView.font = UIFont(name:"GillSans-SemiBold", size:16)
+            textView.textColor = UIColor.init(hexString: "530F8B")
+            
+        }
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let isUnRestrict = newText.count <= 100
+        if(isUnRestrict){
+            lblNumbOfChars.text = "\(newText.count)/100"
+        }
+        return isUnRestrict
     }
     //MARK:- Webservice
     func connectToGetCompanyDataStep3(){

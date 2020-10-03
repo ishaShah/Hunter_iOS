@@ -10,11 +10,11 @@ import UIKit
 
 enum API{
      //Base url
-     static let candidateBaseURL = "https://huntrapp.chkdemo.com/api/candidate/"
-    static let recruiterBaseURL = "https://huntrapp.chkdemo.com/api/recruiter/"
+//     static let candidateBaseURL = "https://huntrapp.chkdemo.com/api/candidate/"
+//    static let recruiterBaseURL = "https://huntrapp.chkdemo.com/api/recruiter/"
     
-//    static let candidateBaseURL = "https://huntrappst.chkdemo.com/api/candidate/"
-//    static let recruiterBaseURL = "https://huntrappst.chkdemo.com/api/recruiter/"
+    static let candidateBaseURL = "https://huntrappst.chkdemo.com/api/candidate/"
+    static let recruiterBaseURL = "https://huntrappst.chkdemo.com/api/recruiter/"
  
     //Candidate
     static let loginURl = "login"
@@ -161,7 +161,9 @@ static let delExperienceURL = "registration/delete-experience"
     
     static let getAdditionalMediaURL = "profile/get-additional-media"
     static let addAdditionalImagesURL = "profile/add-additional-images"
-    
+    static let delAdditionalImagesURL = "profile/delete-additional-image"
+    static let updateVideoURL = "profile/update-video"
+
     static let candidateSuggestionsURL = "candidate-suggestions"
     static let updateCompanyBioURL = "profile/update-company-bio"
     
