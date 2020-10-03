@@ -161,7 +161,9 @@ static let delExperienceURL = "registration/delete-experience"
     
     static let getAdditionalMediaURL = "profile/get-additional-media"
     static let addAdditionalImagesURL = "profile/add-additional-images"
-    
+    static let delAdditionalImagesURL = "profile/delete-additional-image"
+    static let updateVideoURL = "profile/update-video"
+
     static let candidateSuggestionsURL = "candidate-suggestions"
     static let updateCompanyBioURL = "profile/update-company-bio"
     

@@ -13,6 +13,7 @@ import Alamofire
 import SDWebImage
 import iOSDropDown
 import CropViewController
+import Player
 
 
 class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate , CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource,refreshProfileDelegate{
@@ -165,6 +166,17 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     
     var isFrom = String()
     @IBOutlet weak var tblAchievement : UITableView!
+    
+    
+    @IBOutlet weak var edit_ImageV: UIView!
+    var arrayImages = [String]()
+    var arrayVideos = [String]()
+    
+    fileprivate var player = Player()
+    @IBOutlet weak var view_video: UIView!
+    @IBOutlet weak var view_viewHt: NSLayoutConstraint!
+    @IBOutlet weak var collImages: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -445,6 +457,18 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 
         }
         setNeedsStatusBarAppearanceUpdate()
+        
+           self.player = Player()
+           self.player.playerDelegate = self
+           self.player.playbackDelegate = self
+           self.player.view.frame = self.view_video.bounds
+           
+           self.addChild(self.player)
+           self.view_video.addSubview(self.player.view)
+        //   self.player.didMove(toParent: self)
+           
+           
+           collImages.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -566,6 +590,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         editV3.isHidden = !edit
         editV4.isHidden = !edit
         editV5.isHidden = !edit
+        edit_ImageV.isHidden = !edit
+
         btn_editAdd.isHidden = !edit
         btn_editAdd1.isHidden = !edit
 
@@ -580,6 +606,20 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             addAchHt.constant = 46.0
 
         }
+        
+        if self.arrayImages.count == 0 && self.arrayVideos.count == 0 {
+            if edit == true {
+                self.view_imageV.isHidden = false
+
+            }
+            else {
+            self.view_imageV.isHidden = true
+            }
+        }
+         
+        
+        
+        
         imgEditView.isHidden = !edit
         btn_uploadImg.isHidden = !edit
  
@@ -684,6 +724,15 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
 //        self.scrlV.contentSize = contentRect.size
         
         
+    }
+    @IBAction func edit_individual(_ sender: UIButton) {
+        // additional image/video
+        let vc = UIStoryboard.init(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "HunterImagesVC") as! HunterImagesVC
+        vc.isFromCandidate = true
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+        
+
     }
     @IBAction func edit_Achievement(_ sender: Any) {
         
@@ -797,12 +846,32 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return selectedSkillsArr.count
+        if collectionView == collImages {
+           return arrayImages.count
+
+        }
+        else {
+           return selectedSkillsArr.count
+        }
+        
 
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        if (collectionView == collectionSkills) {
+        if collectionView == collImages {
+              
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
+              let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 180, height: 180))
+              
+              if let url = arrayImages[indexPath.row] as? String{
+                  imageView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+              }
+              cell.contentView.addSubview(imageView)
+              return cell
+        
+          }
+        else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterProCollectionCell", for: indexPath) as! HunterProCollectionCell
             cell.titleLabel.text = selectedSkillsArr[indexPath.row].uppercased()
             cell.buttonDelete.tag = indexPath.item
@@ -810,15 +879,19 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             cell.buttonDelete.isHidden = editMode
             
             return cell
- 
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
- 
+ if collectionView == collImages {
+    return CGSize(width: 180, height: 180)
+
+        }
+ else {
                 let label = UILabel(frame: CGRect.zero)
                 label.text = selectedSkillsArr[indexPath.row].uppercased()
                 label.sizeToFit()
                 return CGSize(width: label.frame.width + 18, height: 25)
- 
+        }
         
     }
         //MARK:- Tableview Delegates
@@ -924,6 +997,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }
         }
     
+    @IBOutlet weak var view_imageV: UIView!
     @IBAction func goToSettings(_ sender: Any) {
         
         let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterSettingsVC") as! HunterSettingsVC
@@ -1029,6 +1103,42 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                     self.collectionSkills.reloadData()
                                                     self.autosizeCollectionView()
 
+                                                    
+                                                    
+                                                    self.arrayImages = dataDict["additional_images"] as! [String]
+                                                                                                
+                                                    self.arrayVideos = dataDict["additional_videos"] as! [String]
+                                                                                                self.collImages.reloadData()
+                                                                                                
+                                                    if self.arrayVideos.count != 0 {
+                                                                                                
+                                                        self.player.url = URL(string:self.arrayVideos[0])
+                                                    //                                            self.player.playFromBeginning()
+                                                                                                    
+                                                    //                                                self.player.fillMode = .resizeAspectFill
+
+                                                     
+                                                                                                  
+                                                        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
+                                                                                              
+                                                        tapGestureRecognizer.numberOfTapsRequired = 1
+                                                                                         
+                                                        self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                                                                                }
+                                                                                            
+                                                    else {
+                                                                                           
+                                                        self.view_viewHt.constant = 0.0
+                                                                                       
+                                                    }
+                                                    
+                                                    
+                                                    if self.arrayImages.count == 0 && self.arrayVideos.count == 0 {
+                                                        self.view_imageV.isHidden = true
+                                                    }
+                                                    else {
+                                                        self.view_imageV.isHidden = false
+                                                    }
                                                 }
                                             }else if status as! Int == 2 {
                                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
@@ -1166,6 +1276,40 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                                                                 self.collectionSkills.reloadData()
                                                                                 self.autosizeCollectionView()
 
+                                                                                self.arrayImages = dataDict["additional_images"] as! [String]
+                                                                                                                            
+                                                                                self.arrayVideos = dataDict["additional_videos"] as! [String]
+                                                                                                                            self.collImages.reloadData()
+                                                                                                                            
+                                                                                if self.arrayVideos.count != 0 {
+                                                                                                                            
+                                                                                    self.player.url = URL(string:self.arrayVideos[0])
+                                                                                //                                            self.player.playFromBeginning()
+                                                                                                                                
+                                                                                //                                                self.player.fillMode = .resizeAspectFill
+
+                                                                                 
+                                                                                                                              
+                                                                                    let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
+                                                                                                                          
+                                                                                    tapGestureRecognizer.numberOfTapsRequired = 1
+                                                                                                                     
+                                                                                    self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                                                                                                            }
+                                                                                                                        
+                                                                                else {
+                                                                                                                       
+                                                                                    self.view_viewHt.constant = 0.0
+                                                                                                                   
+                                                                                }
+                                                                                
+                                                                                
+                                                                                if self.arrayImages.count == 0 && self.arrayVideos.count == 0 {
+                                                                                    self.view_imageV.isHidden = true
+                                                                                }
+                                                                                else {
+                                                                                    self.view_imageV.isHidden = false
+                                                                                }
                                                                             }
                                                                         }else if status as! Int == 2 {
                                                 let alert = UIAlertController(title: "", message: responseDict.value(forKey: "message") as? String, preferredStyle: .alert)
@@ -1354,3 +1498,69 @@ class HunterProCollectionCell: UICollectionViewCell {
 //        self.present(alert, animated: true, completion: nil)
 //    }
 //}
+ 
+
+extension HunterCandidateProVC {
+    
+    @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
+        switch self.player.playbackState {
+        case .stopped:
+            self.player.playFromBeginning()
+            break
+        case .paused:
+            self.player.playFromCurrentTime()
+            break
+        case .playing:
+            self.player.pause()
+            break
+        case .failed:
+            self.player.pause()
+            break
+        }
+    }
+    
+}
+
+// MARK: - PlayerDelegate
+
+extension HunterCandidateProVC: PlayerDelegate {
+    
+    func playerReady(_ player: Player) {
+        print("\(#function) ready")
+    }
+    
+    func playerPlaybackStateDidChange(_ player: Player) {
+        print("\(#function) \(player.playbackState.description)")
+    }
+    
+    func playerBufferingStateDidChange(_ player: Player) {
+    }
+    
+    func playerBufferTimeDidChange(_ bufferTime: Double) {
+    }
+    
+    func player(_ player: Player, didFailWithError error: Error?) {
+        print("\(#function) error.description")
+    }
+    
+}
+
+// MARK: - PlayerPlaybackDelegate
+
+extension HunterCandidateProVC: PlayerPlaybackDelegate {
+    
+    func playerCurrentTimeDidChange(_ player: Player) {
+    }
+    
+    func playerPlaybackWillStartFromBeginning(_ player: Player) {
+    }
+    
+    func playerPlaybackDidEnd(_ player: Player) {
+    }
+    
+    func playerPlaybackWillLoop(_ player: Player) {
+    }
+
+    func playerPlaybackDidLoop(_ player: Player) {
+    }
+}

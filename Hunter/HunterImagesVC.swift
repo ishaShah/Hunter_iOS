@@ -21,7 +21,7 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
     @IBOutlet weak var coll_video: UICollectionView!
      @IBOutlet weak var contButton: UIButton!
     
-    
+    var isFromCandidate = false
     var isVideo = false
  
     var arr_squarePics = [UIImage]()
@@ -208,7 +208,14 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
     func connectToGetAdditionalMedia(){
         if HunterUtility.isConnectedToInternet(){
             self.arrayImages = []
-            let url = API.recruiterBaseURL + API.getAdditionalMediaURL
+            var url = ""
+            if isFromCandidate == true {
+                 url = API.candidateBaseURL + API.getAdditionalMediaURL
+
+            }
+            else {
+             url = API.recruiterBaseURL + API.getAdditionalMediaURL
+            }
             print(url)
             HunterUtility.showProgressBar()
             
@@ -353,7 +360,14 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
     func connectToRegisterSaveCompanyDetails(_ selectedImg: UIImage){
         if HunterUtility.isConnectedToInternet(){
             
-            let url = API.recruiterBaseURL + API.addAdditionalImagesURL
+            var url = ""
+            if isFromCandidate == true {
+                 url = API.candidateBaseURL + API.addAdditionalImagesURL
+
+            }
+            else {
+                 url = API.recruiterBaseURL + API.addAdditionalImagesURL
+            }
             print(url)
             HunterUtility.showProgressBar()
             
@@ -386,7 +400,7 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
                         SVProgressHUD.dismiss()
                         let dict = (response.result.value!) as! NSDictionary
                         
-                        if dict.value(forKey: "status") as! Bool == true{
+                        if dict.value(forKey: "status") as! Int == 1{
                             
                             
 
@@ -512,14 +526,19 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
     }
     func connectToRegisterSaveAdditionalMediaVideoURL(_ videoData: Data){
         if HunterUtility.isConnectedToInternet(){
-            
-            let url = API.recruiterBaseURL + API.registerSaveAdditionalMediaURL
+            var url = ""
+            if isFromCandidate == true {
+                url = API.candidateBaseURL + API.updateVideoURL
+            }
+            else  {
+             url = API.recruiterBaseURL + API.updateVideoURL
+            }
             print(url)
             HunterUtility.showProgressBar()
             
             
             
-            let parameters = ["media_type": 1 ] as [String : Any]
+            let parameters = ["media_id": 1 ] as [String : Any]
             print(parameters)
             
             let headers    = [ "Authorization" : "Bearer " + accessToken, "Content-type": "multipart/form-data"]
@@ -599,14 +618,19 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
         else if isPicMin == false {
             self.view.makeToast("Please upload Additional Pics.")
         }*/
-        if arr_squarePics.count == 0{
+        if arrayImages.count == 0{
             self.view.makeToast("Please upload square logo")
         }
 /*        else if isSocialMedia == false {
             self.view.makeToast("Please upload Social Media link")
         }*/
         else {
+            if isFromCandidate == true {
+                pushToTabBar()
+            }
+            else {
             connectToRegisterSaveCompanyFinal()
+            }
         }
     }
     func connectToRegisterSaveCompanyFinal(){
@@ -685,9 +709,18 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
         }
     }
     @objc func pushToTabBar() {
+        if isFromCandidate == true {
+
+        let vc = UIStoryboard(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "VBRRollingPit")
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+        }
+        else {
+
         let vc = UIStoryboard(name: "Recruiter", bundle: nil).instantiateViewController(withIdentifier: "VBRRollingPit")
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
+        }
     }
     func connectToRegisterSocialMediaFinal(_ social_media_id : Int , _ link : String){
         if HunterUtility.isConnectedToInternet(){
@@ -772,7 +805,15 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
         }
     }
     @IBAction func back(_ sender: Any) {
+        if isFromCandidate == true {
+
+        let vc = UIStoryboard(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "VBRRollingPit")
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+        }
+        else {
         self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 extension HunterImagesVC : UICollectionViewDataSource {
