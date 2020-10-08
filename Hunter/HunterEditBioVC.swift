@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterEditBioVC: UIViewController {
+class HunterEditBioVC: UIViewController,UITextViewDelegate {
 
+    @IBOutlet weak var lblCharacterCount: UILabel!
     @IBOutlet weak var contBtn: UIButton!
     @IBOutlet weak var txt_view: UITextView!
     var profileDelegate : refreshProfileDelegate!
@@ -19,7 +20,7 @@ class HunterEditBioVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         txt_view.text = txt
-        
+        self.txt_view.delegate = self
         // Do any additional setup after loading the view.
     }
     @IBAction func back(_ sender: Any) {
@@ -126,16 +127,46 @@ class HunterEditBioVC: UIViewController {
         }
     }
      
-        
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK:- Textview delegates
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Add a bio to your profile"{
+            textView.text = ""
+            textView.textColor = Color.darkVioletColor
+        }
     }
-    */
+        
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == ""{
+            lblCharacterCount.text = "0/100"
+            textView.text = "Add a bio to your profile"
+            textView.textColor = UIColor.officialApplePlaceholderGray
+            
+            self.contBtn.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+            self.contBtn.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }else{
+            if self.txt_view.text != "" && self.txt_view.text != "Add a bio to your profile"{
+                self.contBtn.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+                self.contBtn.backgroundColor = UIColor.init(hexString:"6B3E99" )
+            }else{
+                self.contBtn.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+                self.contBtn.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+            }
+        }
+    }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.textColor == UIColor.officialApplePlaceholderGray {
+            textView.text = nil
+            textView.font = UIFont(name:"GillSans-SemiBold", size:16)
+            textView.textColor = UIColor.init(hexString: "530F8B")
+            
+        }
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let isUnRestrict = newText.count <= 100
+        if(isUnRestrict){
+            lblCharacterCount.text = "\(newText.count)/100"
+        }
+        return isUnRestrict
+    }
+ 
 
 }
