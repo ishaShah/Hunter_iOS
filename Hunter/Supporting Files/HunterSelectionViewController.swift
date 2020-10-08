@@ -42,7 +42,10 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         let textField = searchBar.value(forKey: "searchField") as? UITextField
         textField?.backgroundColor = UIColor.clear
         textField?.textColor = UIColor.white
-
+        textField?.font = UIFont(name:"GillSans-Italic", size:18)
+        
+        
+        
         searchBar.setImage(UIImage(), for: .search, state: .normal)
 
         setHeadertTitle()
@@ -58,6 +61,8 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         print(sections)
         
         self.lblHeader.text = headerText
+        
+        
         self.tbl_view.reloadData()
     }
 
@@ -227,9 +232,18 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
      func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
          return sections[section].letter
      }
+       
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        (view as! UITableViewHeaderFooterView).contentView.backgroundColor = UIColor.clear
-        (view as! UITableViewHeaderFooterView).textLabel?.textColor = UIColor.init(red: 93.0/255.0, green: 26.0/255.0, blue: 147.0/255.0, alpha: 1.0)
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+
+        view.backgroundColor = UIColor.clear
+        view.tintColor = .white
+          let view1 = UIView(frame: CGRect(x: 40, y: 5,width: tableView.frame.size.width, height: 18))
+         view1.backgroundColor = UIColor(hex: "#E9E4F2")
+         header.addSubview(view1)
+        
+        header.contentView.backgroundColor = UIColor.clear
+        header.textLabel?.textColor = UIColor.init(red: 93.0/255.0, green: 26.0/255.0, blue: 147.0/255.0, alpha: 1.0)
     }
     // MARK: - Table view data source
     

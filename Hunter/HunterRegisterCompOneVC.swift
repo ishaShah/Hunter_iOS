@@ -146,7 +146,7 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
     func textFieldDidEndEditing(_ textField: UITextField) {
          
             if textField.text == ""{
-                self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+                self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
                 self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
             }else{
                 if self.txt_companySize.text != "" && self.txt_businessType.text != "" && self.txt_desc.text != "" && self.txt_desc.text != "Description..."{
@@ -169,14 +169,14 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
             textView.text = "Add a bio to your profile"
             textView.textColor = UIColor.officialApplePlaceholderGray
             
-            self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
             self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
         }else{
             if self.txt_companySize.text != "" && self.txt_businessType.text != "" && self.txt_desc.text != "" && self.txt_desc.text != "Add a bio to your profile"{
                 self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
                 self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
             }else{
-                self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+                self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
                 self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
             }
         }

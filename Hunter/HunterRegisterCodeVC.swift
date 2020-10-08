@@ -77,7 +77,7 @@ class HunterRegisterCodeVC: UIViewController, UITextFieldDelegate  {
             self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
             self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
         }else{
-            self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
             self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
         }
     }
