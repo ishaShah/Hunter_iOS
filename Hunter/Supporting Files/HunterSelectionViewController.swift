@@ -62,7 +62,8 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         
         self.lblHeader.text = headerText
         
-        
+        let nib = UINib(nibName: "TableSectionHeader", bundle: nil)
+        tbl_view.register(nib, forHeaderFooterViewReuseIdentifier: "TableSectionHeader")
         self.tbl_view.reloadData()
     }
 
@@ -232,17 +233,26 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
      func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
          return sections[section].letter
      }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // Here, we use NSFetchedResultsController
+        // And we simply use the section name as title
+         
+
+        // Dequeue with the reuse identifier
+        
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableSectionHeader") as? TableSectionHeader
+        header?.backgroundColor = UIColor.white
+         return header
+    }
        
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
 
-        view.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.white
         view.tintColor = .white
-          let view1 = UIView(frame: CGRect(x: 40, y: 5,width: tableView.frame.size.width, height: 18))
-         view1.backgroundColor = UIColor(hex: "#E9E4F2")
-         header.addSubview(view1)
+           
         
-        header.contentView.backgroundColor = UIColor.clear
+        header.contentView.backgroundColor = UIColor.white
         header.textLabel?.textColor = UIColor.init(red: 93.0/255.0, green: 26.0/255.0, blue: 147.0/255.0, alpha: 1.0)
     }
     // MARK: - Table view data source

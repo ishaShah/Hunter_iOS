@@ -94,6 +94,8 @@
 		4BEAE682251B04F90057EBCD /* HunterImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEAE681251B04F90057EBCD /* HunterImageVC.swift */; };
 		4BEE75F623795DB1002AF97F /* HunterWorkLocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE75F523795DB1002AF97F /* HunterWorkLocVC.swift */; };
 		4BF3346323F556CF00BC7EC2 /* CardViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3346223F556CF00BC7EC2 /* CardViewNew.swift */; };
+		4BF4A63225301D140074267D /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4A63125301D140074267D /* TableSectionHeader.swift */; };
+		4BF4A63425301D2E0074267D /* TableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BF4A63325301D2E0074267D /* TableSectionHeader.xib */; };
 		4BF84F0A23C59B9500CAEDFD /* HunterRecAddAccVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF84F0923C59B9500CAEDFD /* HunterRecAddAccVC.swift */; };
 		4BF84F0E23C62FA600CAEDFD /* HunterRecAllJobsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF84F0D23C62FA600CAEDFD /* HunterRecAllJobsVC.swift */; };
 		7298D6276D97F8B2097CA124 /* Pods_Hunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929685EA77C4375CED5842BF /* Pods_Hunter.framework */; };
@@ -238,6 +240,8 @@
 		4BEAE681251B04F90057EBCD /* HunterImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterImageVC.swift; sourceTree = "<group>"; };
 		4BEE75F523795DB1002AF97F /* HunterWorkLocVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterWorkLocVC.swift; sourceTree = "<group>"; };
 		4BF3346223F556CF00BC7EC2 /* CardViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNew.swift; sourceTree = "<group>"; };
+		4BF4A63125301D140074267D /* TableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
+		4BF4A63325301D2E0074267D /* TableSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeader.xib; sourceTree = "<group>"; };
 		4BF84F0923C59B9500CAEDFD /* HunterRecAddAccVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterRecAddAccVC.swift; sourceTree = "<group>"; };
 		4BF84F0D23C62FA600CAEDFD /* HunterRecAllJobsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterRecAllJobsVC.swift; sourceTree = "<group>"; };
 		753DEC2824E7B854007B8B0D /* HunterPostAJobNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterPostAJobNewViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +346,8 @@
 				4BC5585F2351A8C700296E49 /* Dashboard.storyboard */,
 				D755913E234747DD00EF8932 /* Candidate.storyboard */,
 				4BA5B2A325160E45003468B1 /* Recruiter.storyboard */,
+				4BF4A63125301D140074267D /* TableSectionHeader.swift */,
+				4BF4A63325301D2E0074267D /* TableSectionHeader.xib */,
 				4B1D7B2A2334E9A60041288A /* HunterSecrectCodeVC.swift */,
 				4B7EDFC52335CF3D008E4464 /* HunterRegisterCompVC.swift */,
 				4B7770F32339EE8600DA37B7 /* HunterRegisterCompOneVC.swift */,
@@ -684,6 +690,7 @@
 				4B00DE7F231E937F00FF71A1 /* Assets.xcassets in Resources */,
 				4B6E303A23C8797B005EED04 /* CustomView.xib in Resources */,
 				4B7770FD233A7B4700DA37B7 /* Montserrat-Medium.ttf in Resources */,
+				4BF4A63425301D2E0074267D /* TableSectionHeader.xib in Resources */,
 				4BA5B2A425160E45003468B1 /* Recruiter.storyboard in Resources */,
 				4B00DE7D231E937B00FF71A1 /* Main.storyboard in Resources */,
 			);
@@ -793,6 +800,7 @@
 				D7E4FB90242696CB0074CF48 /* HunterCandidateProVC.swift in Sources */,
 				D7486F4123372BBE00ADC5B3 /* HunterPendingJobsVC.swift in Sources */,
 				D7F71DB7235040F40043F604 /* HunterReportAProblemVC.swift in Sources */,
+				4BF4A63225301D140074267D /* TableSectionHeader.swift in Sources */,
 				4BB0B5CF23AB86C6007393EB /* Direction.swift in Sources */,
 				D7C1C64023C1C52A0008BE9E /* HunterBasicInfoModel.swift in Sources */,
 				4BB0B5D223AB8702007393EB /* HunterCandidateDashboardVC.swift in Sources */,

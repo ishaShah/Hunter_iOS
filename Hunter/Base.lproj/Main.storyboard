@@ -1496,6 +1496,10 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                                         <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="bRg-fj-STi" id="gFH-GC-vFU"/>
@@ -1535,6 +1539,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                                         <color key="value" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                        <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -2063,7 +2071,7 @@
                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-aM-9EK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="founded" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-aM-9EK">
                                 <rect key="frame" x="183" y="84" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="H4Y-rO-Skl"/>
@@ -5377,32 +5385,32 @@ that we recommend for you.</string>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="18.670000000000002" id="7j2-pw-5X7"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
-                                                                                    <color key="textColor" red="0.32549019607843138" green="0.058823529411764705" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
+                                                                                    <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJJ-cb-5XM">
                                                                                     <rect key="frame" x="0.0" y="26.5" width="254" height="19"/>
-                                                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
-                                                                                    <color key="textColor" red="0.32549019610000002" green="0.058823529409999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
+                                                                                    <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLU-GE-rDo">
                                                                                     <rect key="frame" x="0.0" y="53.5" width="254" height="18.5"/>
-                                                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
-                                                                                    <color key="textColor" red="0.32549019610000002" green="0.058823529409999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
+                                                                                    <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9a-6a-PeO">
                                                                                     <rect key="frame" x="0.0" y="80" width="254" height="18.5"/>
-                                                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
-                                                                                    <color key="textColor" red="0.32549019610000002" green="0.058823529409999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
+                                                                                    <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x3-gB-63R">
                                                                                     <rect key="frame" x="0.0" y="106.5" width="254" height="19"/>
-                                                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
-                                                                                    <color key="textColor" red="0.32549019610000002" green="0.058823529409999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
+                                                                                    <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
@@ -5424,7 +5432,7 @@ that we recommend for you.</string>
                                                                                 <constraint firstAttribute="height" constant="95.670000000000002" id="FPk-qn-tVs"/>
                                                                             </constraints>
                                                                             <string key="text">Develops policy and directs and coordinates human resources activities, such as employment, compensation, labor  hh fdw e fewg ew hrgb jwegnewgojweng wegk wegewgjnewg ewg</string>
-                                                                            <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="16"/>
+                                                                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
                                                                             <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -6627,6 +6635,10 @@ that we recommend for you.</string>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                                                         <color key="value" red="0.89411764705882346" green="0.87058823529411766" blue="0.93725490196078431" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="M7I-GK-Pmh" id="eFb-hh-bSO"/>
@@ -6689,6 +6701,10 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                                                 <color key="value" red="0.89411764705882346" green="0.87058823529411766" blue="0.93725490196078431" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="headquatersClick:" destination="M7I-GK-Pmh" eventType="editingDidEnd" id="HmI-q0-NOg"/>
@@ -6733,6 +6749,10 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                                                 <color key="value" red="0.89411764705882346" green="0.87058823529411766" blue="0.93725490196078431" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="foundedClick:" destination="M7I-GK-Pmh" eventType="editingDidEnd" id="pbA-XU-eyD"/>
@@ -7055,12 +7075,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                                <real key="value" value="25"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7082,12 +7099,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                                <real key="value" value="25"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7109,12 +7123,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                                <real key="value" value="25"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7136,12 +7147,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                                <real key="value" value="25"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7163,12 +7171,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                                <real key="value" value="25"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7190,12 +7195,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                                <real key="value" value="25"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -8668,6 +8670,7 @@ that we recommend for you.</string>
         <image name="codeHeader" width="454" height="61"/>
         <image name="current-experience" width="86" height="88"/>
         <image name="dummy-reload" width="70" height="60"/>
+        <image name="founded" width="216" height="216"/>
         <image name="globe-icon" width="88" height="88"/>
         <image name="lock-icon" width="74" height="88"/>
         <image name="login-icon" width="65" height="79"/>
