@@ -29,7 +29,7 @@ class HunterRecSettingsVC: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
         
         arrayMenuNames = ["Account Infomation", "Privacy", "Notifications", "Help and Support", "Sign Out"]
-        arrayMenuImages = ["email-icon-color", "password-icon", "notifications", "support", "logoutnew"]
+        arrayMenuImages = ["user-icon", "lock-icon", "notifications", "support", "logoutnew"]
         
          
         // Do any additional setup after loading the view.
@@ -54,7 +54,7 @@ class HunterRecSettingsVC: UIViewController, UITableViewDelegate, UITableViewDat
         return arrayMenuNames.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 80
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HunterRecSettingsCollectionCell", for: indexPath) as! HunterRecSettingsCollectionCell
@@ -95,6 +95,11 @@ class HunterRecSettingsVC: UIViewController, UITableViewDelegate, UITableViewDat
             cell.imageArrow.isHidden = false
         }
 
+        if arrayMenuNames[indexPath.row] == "Sign Out"{
+            cell.viewSeperator.isHidden = true
+        }else{
+            cell.viewSeperator.isHidden = false
+        }
         return cell
     }
      
@@ -496,4 +501,5 @@ class HunterRecSettingsCollectionCell: UITableViewCell {
     @IBOutlet weak var switchChange: UISwitch!
     @IBOutlet weak var imageArrow: UIImageView!
 
+    @IBOutlet weak var viewSeperator: UIView!
 }
