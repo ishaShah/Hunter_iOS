@@ -22,6 +22,8 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
     @IBOutlet weak var btn_editCover: UIButton!
     
     @IBOutlet weak var btn_editProPic: UIButton!
+    @IBOutlet weak var viewWhiteProOverLap: UIView!
+    @IBOutlet weak var viewWhiteBannOverLap: UIView!
     @IBOutlet weak var img_bannerImg: UIImageView!
     
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
@@ -113,7 +115,9 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
         edit_ImageV.isHidden = !isEdit
         btn_editCover.isHidden = !isEdit
         btn_editProPic.isHidden = !isEdit
-
+        viewWhiteProOverLap.isHidden = !isEdit
+        viewWhiteBannOverLap.isHidden = !isEdit
+        
         self.player = Player()
         self.player.playerDelegate = self
         self.player.playbackDelegate = self
@@ -477,7 +481,8 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
         edit_ImageV.isHidden = true
         btn_editCover.isHidden = true
         btn_editProPic.isHidden = true
-        
+        viewWhiteProOverLap.isHidden = true
+        viewWhiteBannOverLap.isHidden = true
     }
     
     @IBAction func editClick(_ sender: Any) {
@@ -496,6 +501,8 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
         edit_ImageV.isHidden = !isEdit
         btn_editCover.isHidden = !isEdit
         btn_editProPic.isHidden = !isEdit
+        viewWhiteProOverLap.isHidden = !isEdit
+        viewWhiteBannOverLap.isHidden = !isEdit
     }
     @IBAction func edit_individual(_ sender: UIButton) {
         if sender.tag == 1 {
