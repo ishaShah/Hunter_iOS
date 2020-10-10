@@ -66,7 +66,7 @@
                                         <subviews>
                                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-EQ-IIH">
                                                 <rect key="frame" x="0.0" y="0.0" width="267" height="68"/>
-                                                <color key="backgroundColor" white="1" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="1" alpha="0.22174657534246575" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="68" id="yPd-H2-QEc"/>
                                                 </constraints>
@@ -85,7 +85,7 @@
                                             </button>
                                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDY-85-KPG">
                                                 <rect key="frame" x="0.0" y="88" width="267" height="68"/>
-                                                <color key="backgroundColor" white="1" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="1" alpha="0.22174657534246575" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="68" id="e7h-67-iOa"/>
                                                 </constraints>
@@ -754,7 +754,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="V6j-Bo-fn9">
                                                                 <rect key="frame" x="0.0" y="30" width="255" height="57"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ishita.s@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-KC-Cpi" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-KC-Cpi" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="255" height="57"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="57" id="Ful-za-zWQ"/>
@@ -803,7 +803,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="hBx-io-LAP">
                                                                 <rect key="frame" x="0.0" y="30" width="255" height="57"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9020672901" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRJ-Aq-wpr" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRJ-Aq-wpr" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="255" height="57"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="57" id="0ia-Cj-4c5"/>
@@ -852,7 +852,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NYc-3G-Kqq">
                                                                 <rect key="frame" x="0.0" y="30" width="255" height="57"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ishita123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYk-Lb-v5J" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYk-Lb-v5J" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="255" height="57"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="57" id="2Hv-Lv-TF3"/>
@@ -901,7 +901,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="CNC-9x-Dgf">
                                                                 <rect key="frame" x="0.0" y="30" width="255" height="57"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ishita123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-jA-KFw" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-jA-KFw" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="255" height="57"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="57" id="Jfj-gY-gSp"/>
@@ -952,7 +952,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ishita" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-p1-e4k" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-p1-e4k" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="27" width="121" height="57"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="57" id="PrO-Q1-5B0"/>
@@ -991,7 +991,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="s" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-M1-S3l" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-M1-S3l" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="27" width="121" height="57"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="121" id="df8-T5-78q"/>
@@ -1498,7 +1498,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -1542,7 +1542,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -2173,7 +2173,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                 <real key="value" value="6"/>
@@ -2397,7 +2397,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                 <real key="value" value="6"/>
@@ -2537,7 +2537,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
                                                 <real key="value" value="10"/>
@@ -3364,7 +3364,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
                                                 <real key="value" value="10"/>
@@ -6637,7 +6637,7 @@ that we recommend for you.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                        <real key="value" value="10"/>
+                                                                        <real key="value" value="25"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
@@ -6703,7 +6703,7 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -6750,7 +6750,7 @@ that we recommend for you.</string>
                                                                 <color key="value" red="0.89411764705882346" green="0.87058823529411766" blue="0.93725490196078431" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                         </userDefinedRuntimeAttributes>
@@ -7077,7 +7077,7 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7101,7 +7101,7 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7125,7 +7125,7 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7149,7 +7149,7 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7173,7 +7173,7 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -7197,7 +7197,7 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -8166,7 +8166,7 @@ that we recommend for you.</string>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                         <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
@@ -8194,7 +8194,7 @@ that we recommend for you.</string>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                         <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
@@ -8222,7 +8222,7 @@ that we recommend for you.</string>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                         <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
@@ -8687,7 +8687,7 @@ that we recommend for you.</string>
         <image name="row-two-1-1" width="414" height="736"/>
         <image name="row-two-9" width="414" height="736"/>
         <image name="row-two-9-1" width="414" height="735.66668701171875"/>
-        <image name="search-icon" width="43" height="43"/>
+        <image name="search-icon" width="22" height="22"/>
         <image name="skill-icon" width="82" height="91"/>
         <image name="smallcircle.fill.circle.fill" catalog="system" width="128" height="121"/>
         <image name="smily" width="91" height="84"/>
