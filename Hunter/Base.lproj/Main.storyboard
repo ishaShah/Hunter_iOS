@@ -3240,17 +3240,17 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-u0-ios">
-                                        <rect key="frame" x="111.5" y="392.5" width="191.5" height="111"/>
+                                        <rect key="frame" x="125" y="393.5" width="164.5" height="109.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-bS-5wI">
-                                                <rect key="frame" x="65.5" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="52" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="gZU-0n-9Dh"/>
                                                     <constraint firstAttribute="height" constant="60" id="wb1-v0-1qv"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Created!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nt-Br-PIx">
-                                                <rect key="frame" x="0.0" y="85" width="191.5" height="26"/>
+                                                <rect key="frame" x="0.0" y="85" width="164.5" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="21"/>
                                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -5880,12 +5880,12 @@ that we recommend for you.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your work experience?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9L-gn-VOq">
-                                <rect key="frame" x="82" y="127" width="250" height="59.5"/>
+                                <rect key="frame" x="57" y="127" width="300" height="59.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="4nT-CC-Rm3"/>
+                                    <constraint firstAttribute="width" constant="300" id="4nT-CC-Rm3"/>
                                     <constraint firstAttribute="height" constant="59.670000000000002" id="9ee-h8-WOI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="22"/>
                                 <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -7400,13 +7400,13 @@ that we recommend for you.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="413"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-UC-Ocf">
-                                                <rect key="frame" x="73.5" y="5" width="267" height="403"/>
+                                                <rect key="frame" x="62" y="5" width="290" height="403"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UX-YL-cJq" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="57"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="57" id="mGM-aT-GpT"/>
-                                                            <constraint firstAttribute="width" constant="267" id="xD9-EH-2HY"/>
+                                                            <constraint firstAttribute="width" constant="290" id="xD9-EH-2HY"/>
                                                         </constraints>
                                                         <color key="textColor" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
@@ -7421,7 +7421,7 @@ that we recommend for you.</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Company Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdp-BV-GYw" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="267" height="57"/>
+                                                        <rect key="frame" x="0.0" y="70" width="290" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="57" id="J9M-Bi-03v"/>
                                                         </constraints>
@@ -7447,7 +7447,7 @@ that we recommend for you.</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Employment Type" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7t-gD-s2u" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="140" width="267" height="57"/>
+                                                        <rect key="frame" x="0.0" y="140" width="290" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="57" id="QJc-dZ-FuB"/>
                                                         </constraints>
@@ -7474,7 +7474,7 @@ that we recommend for you.</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHR-b8-FOS" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="210" width="267" height="57"/>
+                                                        <rect key="frame" x="0.0" y="210" width="290" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="57" id="3v0-tE-j8z"/>
                                                         </constraints>
@@ -7501,10 +7501,10 @@ that we recommend for you.</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-jk-L9T">
-                                                        <rect key="frame" x="0.0" y="280" width="267" height="57"/>
+                                                        <rect key="frame" x="0.0" y="280" width="290" height="57"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghS-NG-PSK" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="127" height="57"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="138.5" height="57"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="57" id="Qwa-7D-oD0"/>
                                                                 </constraints>
@@ -7531,7 +7531,7 @@ that we recommend for you.</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-VZ-cG6" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
-                                                                <rect key="frame" x="140" y="0.0" width="127" height="57"/>
+                                                                <rect key="frame" x="151.5" y="0.0" width="138.5" height="57"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="57" id="3YB-7z-u3o"/>
                                                                 </constraints>
@@ -7667,7 +7667,7 @@ that we recommend for you.</string>
                                     <constraint firstAttribute="width" constant="250" id="PAN-Sw-2n8"/>
                                     <constraint firstAttribute="height" constant="59.670000000000002" id="pNU-0R-D66"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="22"/>
                                 <color key="textColor" red="0.20784313725490194" green="0.043137254901960784" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
