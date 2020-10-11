@@ -873,7 +873,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
           }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterProCollectionCell", for: indexPath) as! HunterProCollectionCell
-            cell.titleLabel.text = selectedSkillsArr[indexPath.row].uppercased()
+            cell.titleLabel.text = selectedSkillsArr[indexPath.row].capitalized
             cell.buttonDelete.tag = indexPath.item
             
             cell.buttonDelete.isHidden = editMode

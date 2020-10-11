@@ -239,10 +239,11 @@ class HunterRegisterCompTwoVC: UIViewController, CropViewControllerDelegate, UII
 
 //        layoutImageView()
         if arr_squarePics.count != 0 && arr_rectPics.count != 0 && arr_picMin.count >= 4{
+            
             self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
             self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
         }else{
-            self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
             self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
         }
         
@@ -901,7 +902,7 @@ class HunterRegisterCompTwoVC: UIViewController, CropViewControllerDelegate, UII
                                     self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
                                     self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
                                 }else{
-                                    self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+                                    self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
                                     self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
                                 }
                             }
@@ -1030,10 +1031,10 @@ extension HunterRegisterCompTwoVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView == coll_rectPics {
-            return CGSize(width: 80, height: 40)
+        if collectionView == coll_rectPics || collectionView == coll_video {
+            return CGSize(width: 191, height: 57)
         }
-        else { return CGSize(width: 40, height: 40) }
+        else { return CGSize(width: 57, height: 57) }
  }
     }
 

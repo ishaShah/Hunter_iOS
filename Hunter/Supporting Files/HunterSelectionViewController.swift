@@ -42,7 +42,10 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         let textField = searchBar.value(forKey: "searchField") as? UITextField
         textField?.backgroundColor = UIColor.clear
         textField?.textColor = UIColor.white
-
+        textField?.font = UIFont(name:"GillSans-Italic", size:18)
+        
+        
+        textField?.becomeFirstResponder()
         searchBar.setImage(UIImage(), for: .search, state: .normal)
 
         setHeadertTitle()
@@ -58,6 +61,9 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         print(sections)
         
         self.lblHeader.text = headerText
+        
+        let nib = UINib(nibName: "TableSectionHeader", bundle: nil)
+        tbl_view.register(nib, forHeaderFooterViewReuseIdentifier: "TableSectionHeader")
         self.tbl_view.reloadData()
     }
 
@@ -227,9 +233,27 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
      func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
          return sections[section].letter
      }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // Here, we use NSFetchedResultsController
+        // And we simply use the section name as title
+         
+
+        // Dequeue with the reuse identifier
+        
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableSectionHeader") as? TableSectionHeader
+        header?.backgroundColor = UIColor.white
+         return header
+    }
+       
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        (view as! UITableViewHeaderFooterView).contentView.backgroundColor = UIColor.clear
-        (view as! UITableViewHeaderFooterView).textLabel?.textColor = UIColor.init(red: 93.0/255.0, green: 26.0/255.0, blue: 147.0/255.0, alpha: 1.0)
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+
+        view.backgroundColor = UIColor.white
+        view.tintColor = .white
+           
+        
+        header.contentView.backgroundColor = UIColor.white
+        header.textLabel?.textColor = UIColor.init(red: 93.0/255.0, green: 26.0/255.0, blue: 147.0/255.0, alpha: 1.0)
     }
     // MARK: - Table view data source
     

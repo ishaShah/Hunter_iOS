@@ -390,7 +390,7 @@ extension CustomView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterRegisterDashBoardCollectionCell", for: indexPath) as! HunterRegisterDashBoardCollectionCell
         let skills = userModel.skills[indexPath.row] as! String
-        cell.titleLabel.text = skills.uppercased()
+        cell.titleLabel.text = skills.capitalized
         return cell
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

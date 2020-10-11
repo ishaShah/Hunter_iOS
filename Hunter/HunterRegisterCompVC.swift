@@ -133,7 +133,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
             textField.resignFirstResponder()
         }else{
             if textField.text == ""{
-                self.contButton.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
+                self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
                 self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
             }else{
                 if selectedIndustry.count != 0 && selectedHeadquarters.count != 0 {

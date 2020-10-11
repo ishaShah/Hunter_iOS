@@ -545,8 +545,10 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 cell.selectionStyle = .none
                 tableView.separatorStyle = .none
                 
-                cell.viewChatCV.layer.cornerRadius = 5.0
-                cell.viewChatCV.layer.masksToBounds = true
+                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 5.0)
+
+//                cell.viewChatCV.layer.cornerRadius = 5.0
+//                cell.viewChatCV.layer.masksToBounds = true
                     
                     cell.imgClick.tag = indexPath.row-1
                     
@@ -565,9 +567,10 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                     let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatSenderFileCell", for: indexPath) as! HunterChatSenderFileCell
                     cell.selectionStyle = .none
                     tableView.separatorStyle = .none
-                    
-                    cell.viewChatCV.layer.cornerRadius = 5.0
-                    cell.viewChatCV.layer.masksToBounds = true
+                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 5.0)
+
+//                    cell.viewChatCV.layer.cornerRadius = 5.0
+//                    cell.viewChatCV.layer.masksToBounds = true
                     if let postedBy = arrayChatList[indexPath.row-1].posted_by{
                         if postedBy == loginType{
                             if let message = arrayChatList[indexPath.row-1].message{
@@ -583,8 +586,11 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HunterSenderCell", for: indexPath) as! HunterChatCell
                 cell.selectionStyle = .none
                 tableView.separatorStyle = .none
-                cell.viewChatCV.layer.cornerRadius = 5.0
-                cell.viewChatCV.layer.masksToBounds = true
+                        
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 5.0)
+
+//                cell.viewChatCV.layer.cornerRadius = 5.0
+//                cell.viewChatCV.layer.masksToBounds = true
                 
                 if let message = arrayChatList[indexPath.row-1].message{
                     cell.textChat.text = message
@@ -598,9 +604,10 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                cell.selectionStyle = .none
                tableView.separatorStyle = .none
                
-               cell.viewChatCV.layer.cornerRadius = 5.0
-               cell.viewChatCV.layer.masksToBounds = true
-                
+//               cell.viewChatCV.layer.cornerRadius = 5.0
+//               cell.viewChatCV.layer.masksToBounds = true
+                cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 5.0)
+
                 cell.imgClick.tag = indexPath.row-1
 
                if let postedBy = arrayChatList[indexPath.row-1].posted_by{
@@ -616,9 +623,10 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                                    let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatRecieverFileCell", for: indexPath) as! HunterChatRecieverFileCell
                                    cell.selectionStyle = .none
                                    tableView.separatorStyle = .none
-                                   
-                                   cell.viewChatCV.layer.cornerRadius = 5.0
-                                   cell.viewChatCV.layer.masksToBounds = true
+                                   cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 5.0)
+
+//                                   cell.viewChatCV.layer.cornerRadius = 5.0
+//                                   cell.viewChatCV.layer.masksToBounds = true
                                    if let postedBy = arrayChatList[indexPath.row-1].posted_by{
                                        if postedBy == loginType{
                                            if let message = arrayChatList[indexPath.row-1].message{
@@ -636,8 +644,13 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 cell.selectionStyle = .none
                 tableView.separatorStyle = .none
                 
-                cell.viewChatCV.layer.cornerRadius = 5.0
-                cell.viewChatCV.layer.masksToBounds = true
+                    
+                    cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 5.0)
+
+                    
+                    
+//                cell.viewChatCV.layer.cornerRadius = 5.0
+//                cell.viewChatCV.layer.masksToBounds = true
                 if let postedBy = arrayChatList[indexPath.row-1].posted_by{
                     if postedBy != loginType{
                         if let message = arrayChatList[indexPath.row-1].message{

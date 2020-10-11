@@ -10,6 +10,7 @@ import UIKit
 
 enum API{
      //Base url
+
     static let candidateBaseURL = "https://huntrapp.chkdemo.com/api/candidate/"
     static let recruiterBaseURL = "https://huntrapp.chkdemo.com/api/recruiter/"
     

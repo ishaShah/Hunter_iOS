@@ -31,7 +31,7 @@ class HunterRecEditJobVC: UIViewController, UICollectionViewDelegate, UICollecti
     
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterRecEditJobCollectionCell", for: indexPath) as! HunterRecEditJobCollectionCell
-            cell.titleLabel.text = selectedJobsArr[indexPath.row].uppercased()
+            cell.titleLabel.text = selectedJobsArr[indexPath.row].capitalized
             return cell
         }
     

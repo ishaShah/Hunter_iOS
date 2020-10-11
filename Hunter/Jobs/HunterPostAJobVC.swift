@@ -450,7 +450,7 @@ class HunterPostAJobVC: UIViewController , UITextViewDelegate {
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HunterPostAJobCollectionCell", for: indexPath) as! HunterPostAJobCollectionCell
             if collectionView == coll_jobType {
-                cell.titleLabel.text = selectedjobType.uppercased()
+                cell.titleLabel.text = selectedjobType.capitalized
                 cell.buttonRemove.isHidden = false
                 cell.buttonRemove.tag = indexPath.item
                 
@@ -471,7 +471,7 @@ class HunterPostAJobVC: UIViewController , UITextViewDelegate {
                     cell.userImageView.image = UIImage.init(named: "close-icon-white")
                 }*/
             }else if collectionView == coll_loc {
-                cell.titleLabel.text = selectedLoc.uppercased()
+                cell.titleLabel.text = selectedLoc.capitalized
                 cell.buttonRemove.isHidden = false
                 cell.buttonRemove.tag = indexPath.item
                 

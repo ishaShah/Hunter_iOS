@@ -322,7 +322,7 @@ extension HunterUAETwoExpVC : UICollectionViewDataSource {
 //        else {
             cell.buttonRemove.isHidden = false
             
-            cell.titleLabel.text = selectedUAEExpArr[indexPath.item].uppercased()
+            cell.titleLabel.text = selectedUAEExpArr[indexPath.item].capitalized
             cell.buttonRemove.tag = indexPath.item
             
             cell.backgroundColor = UIColor.init(red: 107.0/255.0, green: 62.0/255.0, blue: 153.0/255.0, alpha: 1.0)
