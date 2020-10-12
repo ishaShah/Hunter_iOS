@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 import Player
+import AVFoundation
+import AVKit
 
 protocol refreshProfileDelegate {
     func refetchFromCloud()
@@ -25,7 +27,9 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
     @IBOutlet weak var viewWhiteProOverLap: UIView!
     @IBOutlet weak var viewWhiteBannOverLap: UIView!
     @IBOutlet weak var img_bannerImg: UIImageView!
+    @IBOutlet weak var imgVideoPreview: UIImageView!
     
+    @IBOutlet weak var btnPlayVideo: UIButton!
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
     if isFrom == "businessType" {
         print(selectedDict["name"] as! String)
@@ -118,20 +122,30 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
         viewWhiteProOverLap.isHidden = !isEdit
         viewWhiteBannOverLap.isHidden = !isEdit
         
-        self.player = Player()
-        self.player.playerDelegate = self
-        self.player.playbackDelegate = self
-        self.player.view.frame = self.view_video.bounds
-        
-        self.addChild(self.player)
-        self.view_video.addSubview(self.player.view)
+//        self.player = Player()
+//        self.player.playerDelegate = self
+//        self.player.playbackDelegate = self
+//        self.player.view.frame = self.view_video.bounds
+//
+//        self.addChild(self.player)
+//        self.view_video.addSubview(self.player.view)
      //   self.player.didMove(toParent: self)
-        
+       
         
         collImages.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
         connectToGetProfileData()
         NotificationCenter.default.addObserver(self, selector: #selector(self.GetProfileData(notification:)), name: NSNotification.Name(rawValue: "candidate_Id"), object: nil)
         // Do any additional setup after loading the view.
+    }
+    @IBAction func playVideo(_ sender: Any) {
+        let videoURL = URL(string: self.arrayVideos[0])!
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
+        
     }
     
     @IBAction func dismiss(_ sender: Any) {
@@ -221,18 +235,22 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
                                             self.collImages.delegate = self
                                             self.collImages.dataSource = self
                                             if self.arrayVideos.count != 0 {
-                                            self.player.url = URL(string:self.arrayVideos[0])
-//                                            self.player.playFromBeginning()
+//                                                self.player.url = URL(string:self.arrayVideos[0])
+                                                //                                            self.player.playFromBeginning()
                                                 
 //                                                self.player.fillMode = .resizeAspectFill
-
- 
-                                                let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
-                                            tapGestureRecognizer.numberOfTapsRequired = 1
-                                            self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                                self.getThumbnailImageFromVideoUrl(url: URL(string:self.arrayVideos[0])!) { (thumbNailImage) in
+                                                    self.imgVideoPreview.image = thumbNailImage
+                                                }
+                                                //
+                                                //                                                let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
+                                                //                                                tapGestureRecognizer.numberOfTapsRequired = 1
+                                                //                                                self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                                self.btnPlayVideo.isHidden = false
                                             }
                                             else {
                                                 self.view_viewHt.constant = 0.0
+                                                self.btnPlayVideo.isHidden = true
                                             }
                                             
                                         }
@@ -336,16 +354,22 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
                                             self.collImages.dataSource = self
                                             
                                             if self.arrayVideos.count != 0 {
-                                                self.player.url = URL(string:self.arrayVideos[0] )
-                                                self.player.playFromBeginning()
-//                                                self.player.fillMode = .res
-    
-                                                let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
-                                               tapGestureRecognizer.numberOfTapsRequired = 1
-                                               self.player.view.addGestureRecognizer(tapGestureRecognizer)
-                                           }
+                                                self.getThumbnailImageFromVideoUrl(url: URL(string:self.arrayVideos[0])!) { (thumbNailImage) in
+                                                    self.imgVideoPreview.image = thumbNailImage
+                                                }
+                                                
+//                                                self.player.url = URL(string:self.arrayVideos[0] )
+//                                                self.player.playFromBeginning()
+////                                                self.player.fillMode = .res
+//
+//                                                let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
+//                                               tapGestureRecognizer.numberOfTapsRequired = 1
+//                                               self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                                self.btnPlayVideo.isHidden = false
+                                            }
                                             else {
                                                 self.view_viewHt.constant = 0.0
+                                                self.btnPlayVideo.isHidden = true
                                             }
                                         }
                                     }
@@ -601,6 +625,54 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
         
 
     }
+    func imageTapped(imageName : String) {
+//        let previewImage =
+        let newImageView = UIImageView()
+        newImageView.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage(named: "app-icon"))
+        newImageView.frame = UIScreen.main.bounds
+        newImageView.backgroundColor = .black
+        newImageView.contentMode = .scaleAspectFit
+        newImageView.isUserInteractionEnabled = true
+ 
+
+        let closeButton = UIButton(frame: CGRect(x: 5, y:40, width: 35, height: 35))
+        closeButton.setImage(#imageLiteral(resourceName: "close-icon-white.png"), for: .normal)
+        closeButton.tintColor = UIColor.white
+        closeButton.addTarget(self, action: #selector(dismissFullscreenImage), for: .touchUpInside)
+        
+        newImageView.addSubview(closeButton)
+        self.tabBarController?.tabBar.isHidden = true
+        self.view.addSubview(newImageView)
+        
+     
+        
+    }
+    @objc func dismissFullscreenImage(sender: UIButton) {
+//        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        sender.superview?.removeFromSuperview()
+    }
+    
+    func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
+        DispatchQueue.global().async { //1
+            let asset = AVAsset(url: url) //2
+            let avAssetImageGenerator = AVAssetImageGenerator(asset: asset) //3
+            avAssetImageGenerator.appliesPreferredTrackTransform = true //4
+            let thumnailTime = CMTimeMake(value: 2, timescale: 1) //5
+            do {
+                let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil) //6
+                let thumbNailImage = UIImage(cgImage: cgThumbImage) //7
+                DispatchQueue.main.async { //8
+                    completion(thumbNailImage) //9
+                }
+            } catch {
+                print(error.localizedDescription) //10
+                DispatchQueue.main.async {
+                    completion(nil) //11
+                }
+            }
+        }
+    }
 }
 
 extension HunterCompanyProfileNewViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -623,6 +695,13 @@ extension HunterCompanyProfileNewViewController : UICollectionViewDelegate,UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 180, height: 180)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let url = arrayImages[indexPath.row] as? String{
+            imageTapped(imageName: url)
+        }
+    }
+    
+    
 }
 
 extension HunterCompanyProfileNewViewController {

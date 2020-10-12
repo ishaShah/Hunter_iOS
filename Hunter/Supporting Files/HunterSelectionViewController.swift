@@ -45,7 +45,7 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
         textField?.font = UIFont(name:"GillSans-Italic", size:18)
         
         
-        
+        textField?.becomeFirstResponder()
         searchBar.setImage(UIImage(), for: .search, state: .normal)
 
         setHeadertTitle()
