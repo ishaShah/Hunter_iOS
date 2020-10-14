@@ -148,6 +148,16 @@ extension HunterWorkExpListVC : UICollectionViewDelegate,UICollectionViewDataSou
         return cell
         
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let collectionViewWidth = self.collViewJobs.frame.width
+        let totalCellWidth = 250 * jobsArray.count
+        let totalSpacingWidth = 10 * (jobsArray.count - 1)
+
+        let leftInset = (collectionViewWidth - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        let rightInset = leftInset
+
+        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+    }
     @objc func btnDeleteClick(sender: UIButton) {
 
         

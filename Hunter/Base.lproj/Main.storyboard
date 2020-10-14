@@ -1501,6 +1501,9 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="bRg-fj-STi" id="gFH-GC-vFU"/>
@@ -1543,6 +1546,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
@@ -2188,6 +2194,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                 <color key="value" red="0.40780189630000002" green="0.24317812920000001" blue="0.66946464780000003" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -2412,6 +2421,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                 <color key="value" red="0.40780189630000002" green="0.24317812920000001" blue="0.66946464780000003" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -2548,6 +2560,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
                                                 <color key="value" red="0.20784313730000001" green="0.0" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -3390,6 +3405,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -4711,13 +4729,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfL-3P-xWD">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bbd-VP-G4C">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nk4-pA-eHs">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4726,7 +4744,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-hO-0fb">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="GRI-fJ-P5z"/>
@@ -4743,7 +4761,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GE6-cd-9iE">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4768,13 +4786,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTe-hk-hf3">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-hY-Lgb">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAu-bW-2cT">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4783,7 +4801,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppf-op-ly2">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="6Lf-nm-3FL"/>
@@ -4800,7 +4818,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="do8-Qh-R8r">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4879,7 +4897,7 @@ that we recommend for you.</string>
                                         <rect key="frame" x="132" y="160" width="70" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account is being verified. Our team will be in touch with you soon." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26G-Qb-M9A">
-                                        <rect key="frame" x="23" y="270" width="288" height="66"/>
+                                        <rect key="frame" x="23" y="270" width="288" height="63"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -4908,13 +4926,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjA-YU-Q2d">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0Kh-WF-Pcf">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sax-yD-tym">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4923,7 +4941,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-xv-HoE">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="72k-EA-aEE"/>
@@ -4940,7 +4958,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-bs-puJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4965,13 +4983,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-R6-Rqh">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ij8-Kk-ay5">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9p-Ud-akN">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4980,7 +4998,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-jw-leh">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="Ntf-yM-Cuf"/>
@@ -4997,7 +5015,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-ZD-gLQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5076,13 +5094,13 @@ that we recommend for you.</string>
                                         <rect key="frame" x="121.5" y="160" width="91" height="84"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account could not be verified at this point of time. Please check our support page to know more." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksx-3j-zgR">
-                                        <rect key="frame" x="23" y="295" width="288" height="88"/>
+                                        <rect key="frame" x="23" y="294" width="288" height="63"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are sorry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxa-o4-nAs">
-                                        <rect key="frame" x="109.5" y="264" width="115.5" height="21"/>
+                                        <rect key="frame" x="117.5" y="264" width="99.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -5132,13 +5150,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riL-me-cAH">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gMx-ei-sdI">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAg-ja-Dc9">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5147,7 +5165,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-Nh-VYf">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="D84-I8-79O"/>
@@ -5164,7 +5182,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tQj-h4-9uJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5189,13 +5207,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7Y-Ta-H1t">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rgC-r9-Za4">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-Ow-wZW">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5204,7 +5222,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xao-2c-Xft">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="2nD-uz-Fkc"/>
@@ -5221,7 +5239,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ABD-M2-1NT">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6640,6 +6658,9 @@ that we recommend for you.</string>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                         <real key="value" value="25"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="M7I-GK-Pmh" id="eFb-hh-bSO"/>
@@ -6706,6 +6727,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="headquatersClick:" destination="M7I-GK-Pmh" eventType="editingDidEnd" id="HmI-q0-NOg"/>
@@ -6754,6 +6778,9 @@ that we recommend for you.</string>
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="foundedClick:" destination="M7I-GK-Pmh" eventType="editingDidEnd" id="pbA-XU-eyD"/>
@@ -7080,6 +7107,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Work Type" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwb-t6-3p2" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
@@ -7102,6 +7132,9 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
@@ -7128,6 +7161,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Salary Range" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ug5-rd-c8t" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
@@ -7150,6 +7186,9 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
@@ -7176,6 +7215,9 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Field of Education" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-IF-fv3" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
@@ -7198,6 +7240,9 @@ that we recommend for you.</string>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
@@ -7464,7 +7509,7 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
@@ -7491,7 +7536,7 @@ that we recommend for you.</string>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                 <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                 <real key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
@@ -7521,7 +7566,7 @@ that we recommend for you.</string>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                         <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
@@ -7548,7 +7593,7 @@ that we recommend for you.</string>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                                         <color key="value" red="0.20784313730000001" green="0.043137254899999998" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="txtSearchImage"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="search-icon"/>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
@@ -8655,124 +8700,124 @@ that we recommend for you.</string>
     </scenes>
     <designables>
         <designable name="0yo-Mg-K9f">
-            <size key="intrinsicContentSize" width="211" height="20"/>
+            <size key="intrinsicContentSize" width="87" height="20"/>
         </designable>
         <designable name="1PT-p1-e4k">
-            <size key="intrinsicContentSize" width="25" height="20"/>
+            <size key="intrinsicContentSize" width="5" height="20"/>
         </designable>
         <designable name="1pN-Yy-RTa">
-            <size key="intrinsicContentSize" width="135.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="115.5" height="18.5"/>
         </designable>
         <designable name="5Eb-zp-Isq">
-            <size key="intrinsicContentSize" width="215" height="20"/>
+            <size key="intrinsicContentSize" width="91" height="20"/>
         </designable>
         <designable name="7Zi-8o-9KQ">
-            <size key="intrinsicContentSize" width="131" height="20"/>
+            <size key="intrinsicContentSize" width="32" height="20"/>
         </designable>
         <designable name="8UX-YL-cJq">
             <size key="intrinsicContentSize" width="30" height="20"/>
         </designable>
         <designable name="9K5-qb-VEF">
-            <size key="intrinsicContentSize" width="175" height="19"/>
+            <size key="intrinsicContentSize" width="86" height="19"/>
         </designable>
         <designable name="9LV-IF-fv3">
-            <size key="intrinsicContentSize" width="215" height="20"/>
+            <size key="intrinsicContentSize" width="116" height="20"/>
         </designable>
         <designable name="9dM-sQ-YrA">
-            <size key="intrinsicContentSize" width="167.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="78.5" height="18.5"/>
         </designable>
         <designable name="BRK-yA-5SY">
-            <size key="intrinsicContentSize" width="167.5" height="20"/>
+            <size key="intrinsicContentSize" width="43.5" height="20"/>
         </designable>
         <designable name="BsG-5M-bqg">
-            <size key="intrinsicContentSize" width="227.5" height="20"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="GFe-iT-bRm">
-            <size key="intrinsicContentSize" width="86" height="22"/>
+            <size key="intrinsicContentSize" width="66" height="22"/>
         </designable>
         <designable name="HWl-b6-lCz">
-            <size key="intrinsicContentSize" width="28" height="31"/>
+            <size key="intrinsicContentSize" width="8" height="31"/>
         </designable>
         <designable name="IDL-tA-C7q">
-            <size key="intrinsicContentSize" width="139.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="50.5" height="18.5"/>
         </designable>
         <designable name="J7t-gD-s2u">
-            <size key="intrinsicContentSize" width="225.5" height="20"/>
+            <size key="intrinsicContentSize" width="113.5" height="20"/>
         </designable>
         <designable name="T7G-tY-gtP">
-            <size key="intrinsicContentSize" width="166.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="77.5" height="16.5"/>
         </designable>
         <designable name="TCe-VZ-cG6">
-            <size key="intrinsicContentSize" width="131" height="18"/>
+            <size key="intrinsicContentSize" width="53" height="18"/>
         </designable>
         <designable name="U9d-M1-S3l">
-            <size key="intrinsicContentSize" width="25" height="20"/>
+            <size key="intrinsicContentSize" width="5" height="20"/>
         </designable>
         <designable name="WuD-KC-Cpi">
-            <size key="intrinsicContentSize" width="25" height="20"/>
+            <size key="intrinsicContentSize" width="5" height="20"/>
         </designable>
         <designable name="XBy-Vm-MVK">
-            <size key="intrinsicContentSize" width="130" height="23.5"/>
+            <size key="intrinsicContentSize" width="110" height="23.5"/>
         </designable>
         <designable name="XR2-qv-W4O">
-            <size key="intrinsicContentSize" width="28" height="31"/>
+            <size key="intrinsicContentSize" width="8" height="31"/>
         </designable>
         <designable name="ciV-Zr-bms">
-            <size key="intrinsicContentSize" width="88" height="20"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="cxi-w6-zcy">
-            <size key="intrinsicContentSize" width="180.5" height="20"/>
+            <size key="intrinsicContentSize" width="81.5" height="20"/>
         </designable>
         <designable name="gY8-xH-QJQ">
-            <size key="intrinsicContentSize" width="26" height="23.5"/>
+            <size key="intrinsicContentSize" width="6" height="23.5"/>
         </designable>
         <designable name="gdg-gD-evV">
-            <size key="intrinsicContentSize" width="80.5" height="20"/>
+            <size key="intrinsicContentSize" width="60.5" height="20"/>
         </designable>
         <designable name="ghS-NG-PSK">
-            <size key="intrinsicContentSize" width="137.5" height="18"/>
+            <size key="intrinsicContentSize" width="59.5" height="18"/>
         </designable>
         <designable name="hSf-0C-bBp">
-            <size key="intrinsicContentSize" width="71" height="18.5"/>
+            <size key="intrinsicContentSize" width="51" height="18.5"/>
         </designable>
         <designable name="j9I-Js-ORa">
-            <size key="intrinsicContentSize" width="171" height="19"/>
+            <size key="intrinsicContentSize" width="82" height="19"/>
         </designable>
         <designable name="kny-JJ-APg">
             <size key="intrinsicContentSize" width="53" height="20"/>
         </designable>
         <designable name="mYk-Lb-v5J">
-            <size key="intrinsicContentSize" width="25" height="19"/>
+            <size key="intrinsicContentSize" width="5" height="19"/>
         </designable>
         <designable name="nua-qb-ZzQ">
-            <size key="intrinsicContentSize" width="240" height="16.5"/>
+            <size key="intrinsicContentSize" width="151" height="16.5"/>
         </designable>
         <designable name="pmI-IH-yqe">
-            <size key="intrinsicContentSize" width="142.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="53.5" height="18.5"/>
         </designable>
         <designable name="qwb-t6-3p2">
-            <size key="intrinsicContentSize" width="170" height="20"/>
+            <size key="intrinsicContentSize" width="71" height="20"/>
         </designable>
         <designable name="r4z-0k-Ucv">
-            <size key="intrinsicContentSize" width="213.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="124.5" height="16.5"/>
         </designable>
         <designable name="rHR-b8-FOS">
-            <size key="intrinsicContentSize" width="168.5" height="20"/>
+            <size key="intrinsicContentSize" width="56.5" height="20"/>
         </designable>
         <designable name="rRJ-Aq-wpr">
-            <size key="intrinsicContentSize" width="25" height="20"/>
+            <size key="intrinsicContentSize" width="5" height="20"/>
         </designable>
         <designable name="ug5-rd-c8t">
-            <size key="intrinsicContentSize" width="181" height="20"/>
+            <size key="intrinsicContentSize" width="82" height="20"/>
         </designable>
         <designable name="wdp-BV-GYw">
-            <size key="intrinsicContentSize" width="186" height="20"/>
+            <size key="intrinsicContentSize" width="106" height="20"/>
         </designable>
         <designable name="wl1-jA-KFw">
-            <size key="intrinsicContentSize" width="25" height="19"/>
+            <size key="intrinsicContentSize" width="5" height="19"/>
         </designable>
         <designable name="xvs-8o-vPF">
-            <size key="intrinsicContentSize" width="190.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="101.5" height="16.5"/>
         </designable>
     </designables>
     <resources>
@@ -8815,7 +8860,6 @@ that we recommend for you.</string>
         <image name="smallcircle.fill.circle.fill" catalog="system" width="128" height="121"/>
         <image name="smily" width="91" height="84"/>
         <image name="tick-icon" width="114" height="109"/>
-        <image name="txtSearchImage" width="16" height="16"/>
         <image name="uae-icon" width="118" height="98"/>
         <image name="workEx" width="70.5" height="70.5"/>
         <systemColor name="darkTextColor">

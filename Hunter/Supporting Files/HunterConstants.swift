@@ -16,7 +16,7 @@ enum API{
     
 //    static let candidateBaseURL = "https://huntrappst.chkdemo.com/api/candidate/"
 //    static let recruiterBaseURL = "https://huntrappst.chkdemo.com/api/recruiter/"
- 
+//
     //Candidate
     static let loginURl = "login"
     static let profileDetailsURL = "me"
