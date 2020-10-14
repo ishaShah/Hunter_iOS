@@ -67,6 +67,10 @@ class HunterPickerViewController: UIViewController{
 
         }else if isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "PrefWorkType" || isFrom == "CurrentLoc" {
             AllCount = passedDict.allValues.count
+            
+          
+
+
 
         }
         else {
@@ -108,38 +112,62 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
         AllCount
     }
     
-     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-      var allVals = [String]()
-      
-      var anyDict = [Int: String?]()
+        var allVals = [String]()
+        var allKys = [Int]()
+        var anyDict = [Int: String?]()
+        
+        for (key, value) in passedDict {
+            let newKey = Int(key as! String)
+            
+            anyDict[newKey!] = value as! String
+        }
+        
+        let sortedKeysAndValues = anyDict.sorted( by: { $0.key < $1.key })
+        
+        for (key, value) in sortedKeysAndValues {
+            allVals.append(value as! String)
+            allKys.append(key as! Int)
+        }
+        
+       
 
-             for (key, value) in passedDict {
-                let newKey = Int(key as! String)
-                
-                anyDict[newKey!] = value as! String
-              }
-              
-              let sortedKeysAndValues = anyDict.sorted( by: { $0.key < $1.key })
-
-             for (key, value) in sortedKeysAndValues {
-               allVals.append(value as! String)
-             }
-              
+        if isFrom == "companySize" || isFrom == "businessType"  || isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "CurrentLoc"  || isFrom == "EmpType"   || isFrom == "level_of_study" {
+            let dict = NSMutableDictionary()
+            if(allVals.count != 0){
+                dict["name"] = allVals[0]
+                dict["id"] = allKys[0]
+                selectedDict =
+                    ["name": allVals[0], "id": "\(allKys[0])"]
+            }
+        }
+        else if isFrom == "PrefWorkType" {
+            let dict = NSMutableDictionary()
+            if(allVals.count != 0){
+                dict["name"] = allVals[0]
+                dict["id"] = allKys[0]
+                selectedDict =
+                    ["name": allVals[0], "id": "\(allKys[0])", "index" : index]
+               
+            }
+        }else{
+            selectedDict = ["selectedYear" : years[0]]
+        }
+       
         
-        
-//        let result = anyDict.map { (key: $0.0, value: $0.1) }
-//                         .sorted(by:
-//                            if $0.value != $1.value {
-//                                return $0.value > $1.value
-//                            }
-//                            return $0.key < $1.key
-//                          )}
-//
-//        for r in result {
-//            print("\(r.key) \(r.value)")
-//        }
-//
+        //        let result = anyDict.map { (key: $0.0, value: $0.1) }
+        //                         .sorted(by:
+        //                            if $0.value != $1.value {
+        //                                return $0.value > $1.value
+        //                            }
+        //                            return $0.key < $1.key
+        //                          )}
+        //
+        //        for r in result {
+        //            print("\(r.key) \(r.value)")
+        //        }
+        //
         
         
         if isFrom == "companySize" {
@@ -159,36 +187,36 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
     {
         var allVals = [String]()
         var allKys = [Int]()
-
+        
         var anyDict = [Int: String?]()
-
-               for (key, value) in passedDict {
-                 let newKey = Int(key as! String)
-                 
-                 anyDict[newKey!] = value as! String
-               }
-                
-                let sortedKeysAndValues = anyDict.sorted( by: { $0.key < $1.key })
-
-               for (key, value) in sortedKeysAndValues {
-                 allVals.append(value as! String)
-                allKys.append(key as! Int)
-               }
-                
-               
-                 
+        
+        for (key, value) in passedDict {
+            let newKey = Int(key as! String)
+            
+            anyDict[newKey!] = value as! String
+        }
+        
+        let sortedKeysAndValues = anyDict.sorted( by: { $0.key < $1.key })
+        
+        for (key, value) in sortedKeysAndValues {
+            allVals.append(value as! String)
+            allKys.append(key as! Int)
+        }
+        
+        
+        
         
         if isFrom == "companySize" || isFrom == "businessType"  || isFrom == "WorkType" || isFrom == "SalaryRange" || isFrom == "YearsOfExp" || isFrom == "CurrentLoc"  || isFrom == "EmpType"   || isFrom == "level_of_study" {
             let selectedValue = allVals[row] as! String
- 
+            
             let allVal = allVals
             let indexOfA = allVal.firstIndex(of: selectedValue) // 0
-
             
-             let dict = NSMutableDictionary()
+            
+            let dict = NSMutableDictionary()
             dict["name"] = selectedValue
             dict["id"] = "\(allKys[indexOfA!])"
-
+            
             selectedDict =
                 ["name": selectedValue, "id": "\(allKys[indexOfA!])"]
             
@@ -204,7 +232,7 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
             let dict = NSMutableDictionary()
             dict["name"] = selectedValue
             dict["id"] = "\(allKys[indexOfA!])"
-
+            
             selectedDict =
                 ["name": selectedValue, "id": "\(allKys[indexOfA!])", "index" : index]
             
@@ -213,10 +241,10 @@ extension HunterPickerViewController : UIPickerViewDelegate,UIPickerViewDataSour
         else {
             print(years[row])
             selectedDict = ["selectedYear" : years[row]]
-           
-         }
-  
-}
+            
+        }
+        
+    }
 }
 class RoundedButtonWithShadow: UIView {
     override func awakeFromNib() {
