@@ -39,6 +39,7 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
             selectedCompanySize = selectedDict["name"] as! String
             selectedCompanySizeID = selectedDict["id"] as! String
         }
+        updateUIforSelection()
     }
     
 
@@ -75,10 +76,21 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
         
         connectToGetCompanyDataStep3()
         // Do any additional setup after loading the view.
-        self.txt_desc.delegate = self
+//        self.txt_desc.delegate = self
         txt_desc.text = "Add a bio to your profile"
         txt_desc.textColor = UIColor.officialApplePlaceholderGray
 
+        updateUIforSelection()
+    }
+    func updateUIforSelection() {
+        if txt_companySize.text != "" && txt_businessType.text != ""{
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
+        
     }
     @IBAction func companySizeClick(_ sender: Any) {
         
@@ -144,16 +156,17 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-         
-            if textField.text == ""{
-                self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
-                self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
-            }else{
-                if self.txt_companySize.text != "" && self.txt_businessType.text != "" && self.txt_desc.text != "" && self.txt_desc.text != "Description..."{
-                    self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
-                    self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
-                }
+        
+        if textField.text == ""{
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }else{
+            if self.txt_companySize.text != "" && self.txt_businessType.text != "" && self.txt_desc.text != "" && self.txt_desc.text != "Description..."{
+                self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+                self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
             }
+        }
+        updateUIforSelection()
         
     }
     //MARK:- Textview delegates
@@ -180,6 +193,7 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
                 self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
             }
         }
+        updateUIforSelection()
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView.textColor == UIColor.officialApplePlaceholderGray {

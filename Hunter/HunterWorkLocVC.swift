@@ -28,8 +28,18 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         self.connectToRegisterPreferedWorkLocations()
         self.hideKeyboardWhenTappedAround()
-        
+        updateUIforSelection()
 
+    }
+    func updateUIforSelection() {
+        if self.selectedlocationIDArr.count != 0{
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
 /*        let alignedFlowLayout = collView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
@@ -76,33 +86,34 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
     }
      
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
-             selectedlocationArr = []
+        selectedlocationArr = []
         selectedlocationIDArr = []
-                let selectedData = selectedDict["selectedData"] as! [NSDictionary]
-                var name = ""
-
-                for dict in selectedData{
-                   if name != ""{
-                       name = name + "," + "\(dict["name"] ?? "")"
-                   }else{
-                       name = dict["name"] as! String
-                   }
-                    
- 
-                    selectedlocationArr.append(dict["name"] as! String)
-
-                     let locID = Int(dict["id"] as! String)
-                    selectedlocationIDArr.append(locID!)
-
-                }
-
-             
-                    self.txt_loc.text = ""
-                       
-                       collView.reloadData()
-                       print(selectedDict)
-                
+        let selectedData = selectedDict["selectedData"] as! [NSDictionary]
+        var name = ""
+        
+        for dict in selectedData{
+            if name != ""{
+                name = name + "," + "\(dict["name"] ?? "")"
+            }else{
+                name = dict["name"] as! String
             }
+            
+            
+            selectedlocationArr.append(dict["name"] as! String)
+            
+            let locID = Int(dict["id"] as! String)
+            selectedlocationIDArr.append(locID!)
+            
+        }
+        
+        
+        self.txt_loc.text = ""
+        
+        collView.reloadData()
+        updateUIforSelection()
+        print(selectedDict)
+        
+    }
             
         
     var dict_loc = NSDictionary()

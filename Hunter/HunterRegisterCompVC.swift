@@ -107,7 +107,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
             lab_website.text = ""
         }
         stakc_threeDot.isHidden = isEdit
-
+        updateUIforSelection()
     }
     func autosizeCollectionView(_ collectionV: UICollectionView, _ collectionHeight: NSLayoutConstraint){
         DispatchQueue.main.async {
@@ -142,6 +142,7 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
                 }
             }
         }
+        updateUIforSelection()
     }
     @objc func selectedData(selectedDict: NSDictionary , isFrom : String) {
         if isFrom == "Industry" {
@@ -272,6 +273,19 @@ class HunterRegisterCompVC: UIViewController, UITextFieldDelegate,hunterDelegate
             print("no internet")
         }
     }
+    func updateUIforSelection() {
+        if txt_companyName.text != "" && txt_founded.text != "" && txt_headquaters.text != "" && txt_industry.text != "" && txt_website.text != ""{
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
+        
+    }
+    
+    
+    
      func connectToRegisterSaveCompanyDetails(){
         if isEdit == true {
             if HunterUtility.isConnectedToInternet(){

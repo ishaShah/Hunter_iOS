@@ -30,6 +30,7 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
  
         lab_max.text = "0 (Maximum 5)"
         connectToRegisterPreferedJobs()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
 /*        let alignedFlowLayout = collView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
@@ -41,6 +42,16 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
     }
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    func updateUIforSelection() {
+        if self.selectedjobFuncIDArr.count != 0{
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
+        
     }
     @IBAction func buttonRemoveFromSuggestions(_ sender: UIButton) {
         //add removed element to main array
@@ -64,33 +75,34 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
          
     }
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
-                selectedjobFuncArr = []
-                    selectedjobFuncIDArr = []
-                   let selectedData = selectedDict["selectedData"] as! [NSDictionary]
-                   var name = ""
-
-                   for dict in selectedData{
-                      if name != ""{
-                          name = name + "," + "\(dict["name"] ?? "")"
-                      }else{
-                          name = dict["name"] as! String
-                      }
-                       
-    
-                       selectedjobFuncArr.append(dict["name"] as! String)
-
-                        let locID = Int(dict["id"] as! String)
-                       selectedjobFuncIDArr.append(locID!)
-
-                   }
-
-                
-                       self.txt_jobFunc.text = ""
-                          
-                          collView.reloadData()
-                          print(selectedDict)
-                   
-               }
+        selectedjobFuncArr = []
+        selectedjobFuncIDArr = []
+        let selectedData = selectedDict["selectedData"] as! [NSDictionary]
+        var name = ""
+        
+        for dict in selectedData{
+            if name != ""{
+                name = name + "," + "\(dict["name"] ?? "")"
+            }else{
+                name = dict["name"] as! String
+            }
+            
+            
+            selectedjobFuncArr.append(dict["name"] as! String)
+            
+            let locID = Int(dict["id"] as! String)
+            selectedjobFuncIDArr.append(locID!)
+            
+        }
+        
+        
+        self.txt_jobFunc.text = ""
+        
+        collView.reloadData()
+        updateUIforSelection()
+        print(selectedDict)
+        
+    }
                
            
        var dict_jobFunc = NSDictionary()

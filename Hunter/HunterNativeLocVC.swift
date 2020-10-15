@@ -28,7 +28,7 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         self.connectToRegisterPreferedWorkLocations()
         self.hideKeyboardWhenTappedAround()
-        
+        updateUIforSelection()
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +41,18 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
         collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
 
     }
+    
+    func updateUIforSelection() {
+        if self.selectedlocationIDArr.count != 0{
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
+        
+    }
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -74,20 +86,21 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
 
         
     }
-     func selectedData(selectedDict: NSDictionary, isFrom: String) {
- selectedlocationArr = []
- selectedlocationIDArr = []
+    func selectedData(selectedDict: NSDictionary, isFrom: String) {
+        selectedlocationArr = []
+        selectedlocationIDArr = []
         let name = selectedDict["name"] as? String ?? ""
-
+        
         selectedlocationArr.append(name)
-         let locID = Int(selectedDict["id"] as! String)
+        let locID = Int(selectedDict["id"] as! String)
         selectedlocationIDArr.append(locID!)
-
+        
         self.txt_loc.text = ""
-                              
-                              collView.reloadData()
-                              print(selectedDict)
-     }
+        
+        collView.reloadData()
+        updateUIforSelection()
+        print(selectedDict)
+    }
     
   
             
