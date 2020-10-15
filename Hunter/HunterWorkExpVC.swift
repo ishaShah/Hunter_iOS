@@ -14,6 +14,7 @@ class HunterWorkExpVC: UIViewController {
     
     var isFromProfile = String()
 
+    @IBOutlet weak var btnContinue: UIButton!
     var isFrom = String()
     @IBOutlet weak var txtWorkExTitle: HunterTextField!
     @IBOutlet weak var txtWorkExCompany: HunterTextField!
@@ -60,6 +61,16 @@ class HunterWorkExpVC: UIViewController {
  
         getLookUpData()
         
+        updateUIforSelection()
+    }
+    func updateUIforSelection() {
+        if self.txtWorkExTitle.text != "" && self.txtWorkExCompany.text != "" && self.txtWorkExEmpType.text != ""  && self.txtWorkExLoc.text != "" && self.txtWorkStartDate.text != "" && (self.txtWorkEndDate.text != "" || currentWork == 1){
+            self.btnContinue.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.btnContinue.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.btnContinue.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.btnContinue.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
         
     }
     @IBAction func showMyProfile(_ sender: Any) {
@@ -78,20 +89,21 @@ class HunterWorkExpVC: UIViewController {
         }
     }
     @IBAction func workExp(_ sender: Any) {
-         
-         if currentWork == 0 {
-         currentWork = 1
-          
-             btn_currentlyWorking.backgroundColor = UIColor.init(hexString:"6B3E99" )
-         }
-         else {
-             currentWork = 0
-              
-             btn_currentlyWorking.backgroundColor = UIColor.white
-
-
-         }
-     }
+        
+        if currentWork == 0 {
+            currentWork = 1
+            
+            btn_currentlyWorking.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }
+        else {
+            currentWork = 0
+            
+            btn_currentlyWorking.backgroundColor = UIColor.white
+            
+            
+        }
+        updateUIforSelection()
+    }
     func getLookUpData(){
         if HunterUtility.isConnectedToInternet(){
             let url = API.candidateBaseURL + API.getWorkExpURL
@@ -301,40 +313,40 @@ extension HunterWorkExpVC : hunterDelegate{
         switch isFrom{
         case  "Location":
             
-                
-                self.selectedLoc = selectedDict["name"] as! String
-                self.selectedLocID = Int(selectedDict["id"] as! String)!
             
-
+            self.selectedLoc = selectedDict["name"] as! String
+            self.selectedLocID = Int(selectedDict["id"] as! String)!
+            
+            
             txtWorkExLoc.text = self.selectedLoc
- 
+            updateUIforSelection()
         case  "EmpType":
-             
+            
             guard selectedDict["name"]  != nil else {
                 return
             }
-                self.selectedEmpType = selectedDict["name"] as! String
-                self.selectedEmpTypeID = Int( selectedDict["id"] as! String)!
+            self.selectedEmpType = selectedDict["name"] as! String
+            self.selectedEmpTypeID = Int( selectedDict["id"] as! String)!
             
-
+            
             txtWorkExEmpType.text = self.selectedEmpType
+            updateUIforSelection()
+        case  "StartDate":
             
-          case  "StartDate":
-           
-              
-              self.selectedStartDate = selectedDict["selectedYear"] as! String
- 
-
-          txtWorkStartDate.text = self.selectedStartDate
             
-            case  "EndDate":
-             
-                
-                self.selectedEndDate = selectedDict["selectedYear"] as! String
- 
-
+            self.selectedStartDate = selectedDict["selectedYear"] as! String
+            
+            
+            txtWorkStartDate.text = self.selectedStartDate
+            updateUIforSelection()
+        case  "EndDate":
+            
+            
+            self.selectedEndDate = selectedDict["selectedYear"] as! String
+            
+            
             txtWorkEndDate.text = self.selectedEndDate
-         
+            updateUIforSelection()
         default:
             break
             

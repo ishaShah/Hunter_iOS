@@ -31,6 +31,7 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
         
 
         connectToRegisterPreferedSkills()
+        updateUIforSelection()
     }
     override func viewWillAppear(_ animated: Bool) {
 /*        let alignedFlowLayout = collView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
@@ -58,37 +59,48 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
         self.collView.reloadData()
         
     }
+    func updateUIforSelection() {
+        if self.selectedSkillsArr.count != 0{
+            self.contButton.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.contButton.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
+        
+    }
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
-                selectedSkillsArr = []
-                    selectedSkillsIDArr = []
-                   let selectedData = selectedDict["selectedData"] as! [NSDictionary]
-                   var name = ""
-
-                   for dict in selectedData{
-                      if name != ""{
-                          name = name + "," + "\(dict["name"] ?? "")"
-                      }else{
-                          name = dict["name"] as! String
-                      }
-                       
-    
-                       selectedSkillsArr.append(dict["name"] as! String)
-
-                        let locID = Int(dict["id"] as! String)
-                       selectedSkillsIDArr.append(locID!)
-
-                   }
-
-                
-                       self.txt_skill.text = ""
-                          
-                          collView.reloadData()
-                          print(selectedDict)
-                   
-               }
+        selectedSkillsArr = []
+        selectedSkillsIDArr = []
+        let selectedData = selectedDict["selectedData"] as! [NSDictionary]
+        var name = ""
+        
+        for dict in selectedData{
+            if name != ""{
+                name = name + "," + "\(dict["name"] ?? "")"
+            }else{
+                name = dict["name"] as! String
+            }
+            
+            
+            selectedSkillsArr.append(dict["name"] as! String)
+            
+            let locID = Int(dict["id"] as! String)
+            selectedSkillsIDArr.append(locID!)
+            
+        }
+        
+        
+        self.txt_skill.text = ""
+        
+        collView.reloadData()
+        updateUIforSelection()
+        print(selectedDict)
+        
+    }
                
            
        var dict_skill = NSDictionary()

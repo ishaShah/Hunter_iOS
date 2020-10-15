@@ -10,9 +10,12 @@ import UIKit
 
 class HunterEducationStep1VC: UIViewController {
 
+    @IBOutlet weak var btnContinue: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.btnContinue.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+        self.btnContinue.backgroundColor = UIColor.init(hexString:"6B3E99" )
         // Do any additional setup after loading the view.
     }
     @IBAction func backToVC(_ sender: Any) {

@@ -218,6 +218,17 @@ class HunterEducationStep2VC: UIViewController {
             }
         }
     }
+    func updateUIforSelection() {
+        if self.txtSchool.text != "" && self.txtLevelOfStudy.text != "" && self.txtFieldOfStudy.text != ""  && self.txtStartDate.text != "" && self.txtEndDate.text != ""{
+            self.btnAddEdu.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.btnAddEdu.backgroundColor = UIColor.init(hexString:"6B3E99" )
+        }else{
+            self.btnAddEdu.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.btnAddEdu.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+        }
+        
+    }
+    
     func showSelectionViewController(type : String)  {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let HunterSelectionViewController = storyboard.instantiateViewController(withIdentifier: "HunterSelectionViewController") as! HunterSelectionViewController
@@ -246,22 +257,27 @@ extension HunterEducationStep2VC : hunterDelegate{
         case  "school":
             txtSchool.text = selectedDict["name"] as? String ?? ""
             selectedData.school_ID = selectedDict["id"] as! String
+            updateUIforSelection()
             
         case  "level_of_study":
             txtLevelOfStudy.text = selectedDict["name"] as? String ?? ""
             selectedData.level_of_study_ID = selectedDict["id"] as! String
+            updateUIforSelection()
             
         case  "field_of_study":
             txtFieldOfStudy.text = selectedDict["name"] as? String ?? ""
             selectedData.field_of_study_ID = selectedDict["id"] as! String
+            updateUIforSelection()
             
         case  "startDate":
             txtStartDate.text = selectedDict["selectedYear"] as? String ?? ""
             selectedData.startDate = selectedDict["selectedYear"] as! String
+            updateUIforSelection()
             
         case  "endDate":
             txtEndDate.text = selectedDict["selectedYear"] as? String ?? ""
             selectedData.endDate = selectedDict["selectedYear"] as! String
+            updateUIforSelection()
             
         default:
             break
