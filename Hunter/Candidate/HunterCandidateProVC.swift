@@ -863,7 +863,31 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         
         
     }
-    
+    @objc func dismissFullscreenImage(sender: UIButton) {
+//        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        sender.superview?.removeFromSuperview()
+    }
+    func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
+        DispatchQueue.global().async { //1
+            let asset = AVAsset(url: url) //2
+            let avAssetImageGenerator = AVAssetImageGenerator(asset: asset) //3
+            avAssetImageGenerator.appliesPreferredTrackTransform = true //4
+            let thumnailTime = CMTimeMake(value: 2, timescale: 1) //5
+            do {
+                let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil) //6
+                let thumbNailImage = UIImage(cgImage: cgThumbImage) //7
+                DispatchQueue.main.async { //8
+                    completion(thumbNailImage) //9
+                }
+            } catch {
+                print(error.localizedDescription) //10
+                DispatchQueue.main.async {
+                    completion(nil) //11
+                }
+            }
+        }
+    }
     
     //MARK:- CollectionView Delegates
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -1144,23 +1168,28 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                         
                                         if self.arrayVideos.count != 0 {
                                             
-                                            self.player.url = URL(string:self.arrayVideos[0])
-                                            //                                            self.player.playFromBeginning()
-                                            
-                                            //                                                self.player.fillMode = .resizeAspectFill
-                                            
-                                            
-                                            
-                                            let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
-                                            
-                                            tapGestureRecognizer.numberOfTapsRequired = 1
-                                            
-                                            self.player.view.addGestureRecognizer(tapGestureRecognizer)
+                                            self.getThumbnailImageFromVideoUrl(url: URL(string:self.arrayVideos[0])!) { (thumbNailImage) in
+                                                self.imgVideoPreview.image = thumbNailImage
+                                            }
+                                            self.btnPlayVideo.isHidden = false
+//                                            self.player.url = URL(string:self.arrayVideos[0])
+//                                            //                                            self.player.playFromBeginning()
+//
+//                                            //                                                self.player.fillMode = .resizeAspectFill
+//
+//
+//
+//                                            let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
+//
+//                                            tapGestureRecognizer.numberOfTapsRequired = 1
+//
+//                                            self.player.view.addGestureRecognizer(tapGestureRecognizer)
                                         }
                                         
                                         else {
                                             
                                             self.view_viewHt.constant = 0.0
+                                            self.btnPlayVideo.isHidden = true
                                             
                                         }
                                         
