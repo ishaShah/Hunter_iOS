@@ -16,6 +16,7 @@
 		4B03A9D523F67890005CEDEB /* GillSansStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4B03A9D023F6788F005CEDEB /* GillSansStd-Light.otf */; };
 		4B03A9D623F67890005CEDEB /* GILLSANS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B03A9D123F6788F005CEDEB /* GILLSANS.ttf */; };
 		4B03A9D723F67890005CEDEB /* GillSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B03A9D223F6788F005CEDEB /* GillSans-Light.ttf */; };
+		4B03D5292538E42A00A1A09D /* CenterViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B03D5282538E42900A1A09D /* CenterViewFlowLayout.swift */; };
 		4B0A3C1623EAC1D400A1668B /* HunterJobListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0A3C1523EAC1D400A1668B /* HunterJobListTableViewCell.swift */; };
 		4B1BC7C323C459FC003EDEED /* HunterCompanyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BC7C223C459FC003EDEED /* HunterCompanyProfileVC.swift */; };
 		4B1D7B2B2334E9A60041288A /* HunterSecrectCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D7B2A2334E9A60041288A /* HunterSecrectCodeVC.swift */; };
@@ -161,6 +162,7 @@
 		4B03A9D023F6788F005CEDEB /* GillSansStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GillSansStd-Light.otf"; sourceTree = "<group>"; };
 		4B03A9D123F6788F005CEDEB /* GILLSANS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GILLSANS.ttf; sourceTree = "<group>"; };
 		4B03A9D223F6788F005CEDEB /* GillSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GillSans-Light.ttf"; sourceTree = "<group>"; };
+		4B03D5282538E42900A1A09D /* CenterViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewFlowLayout.swift; sourceTree = "<group>"; };
 		4B0A3C1523EAC1D400A1668B /* HunterJobListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterJobListTableViewCell.swift; sourceTree = "<group>"; };
 		4B1BC7C223C459FC003EDEED /* HunterCompanyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterCompanyProfileVC.swift; sourceTree = "<group>"; };
 		4B1D7B2A2334E9A60041288A /* HunterSecrectCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterSecrectCodeVC.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				D7486F3F23372B8C00ADC5B3 /* Jobs */,
 				D7486F4423372BFF00ADC5B3 /* Cells */,
 				4B00DE77231E937B00FF71A1 /* AppDelegate.swift */,
+				4B03D5282538E42900A1A09D /* CenterViewFlowLayout.swift */,
 				4B7770E92339E88B00DA37B7 /* HunterCreateAccountVC.swift */,
 				4BCA0FEA23F28DAF00CDCDC5 /* iOSDevCenters+GIF.swift */,
 				4B7770F12339EA3000DA37B7 /* HunterLoginVC.swift */,
@@ -750,6 +753,7 @@
 				4B8AA6D623C4A3A20068223D /* HunterRecSettingsVC.swift in Sources */,
 				4BC558632351A96800296E49 /* CarouselCollectionViewCell.swift in Sources */,
 				4BB0B5D023AB86C6007393EB /* Scheduler.swift in Sources */,
+				4B03D5292538E42A00A1A09D /* CenterViewFlowLayout.swift in Sources */,
 				4BE1182E23349B9D00FE866E /* HunterExtentions.swift in Sources */,
 				4BA4BF552347069800272EFA /* HunterDashboardVC.swift in Sources */,
 				D7F71DBF235041A00043F604 /* HunterFeedbackThankYouPage.swift in Sources */,

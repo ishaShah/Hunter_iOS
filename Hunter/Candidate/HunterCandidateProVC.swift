@@ -14,7 +14,8 @@ import SDWebImage
 import iOSDropDown
 import CropViewController
 import Player
-
+import AVFoundation
+import AVKit
 
 class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate , CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource,refreshProfileDelegate{
    
@@ -149,7 +150,9 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
     var achieveArrDict  = [NSDictionary]()
     var socPNGArr  = [NSDictionary]()
     
-    
+    @IBOutlet weak var imgVideoPreview: UIImageView!
+    @IBOutlet weak var btnPlayVideo: UIButton!
+
  
     
     @IBOutlet weak var editV1: UIView!
@@ -543,7 +546,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }
             else {
                 self.view_languages.isHidden = false
-                self.viewLanHt.constant = height2 + 126.0
+                self.viewLanHt.constant = height2 + 90.0
 
             }
             self.tbl_lang.layoutIfNeeded()
@@ -564,7 +567,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }
             else {
                 self.view_achievement.isHidden = false
-                self.viewAchHt.constant = height3 + 126.0
+                self.viewAchHt.constant = height3 + 90.0
 
             }
             self.tblAchievement.layoutIfNeeded()
@@ -672,13 +675,13 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                    }
                    else {
                        self.view_languages.isHidden = false
-                       self.viewLanHt.constant = height2 + 126.0
+                       self.viewLanHt.constant = height2 + 90.0
 
                    }
         }
         else {
             self.view_languages.isHidden = false
-            self.viewLanHt.constant = height2 + 126.0
+            self.viewLanHt.constant = height2 + 90.0
 
         }
                    self.tbl_lang.layoutIfNeeded()
@@ -699,13 +702,13 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                    }
                    else {
                        self.view_achievement.isHidden = false
-                       self.viewAchHt.constant = height3 + 126.0
+                       self.viewAchHt.constant = height3 + 90.0
 
                    }
         }
         else {
             self.view_achievement.isHidden = false
-            self.viewAchHt.constant = height3 + 126.0
+            self.viewAchHt.constant = height3 + 90.0
 
         }
                    self.tblAchievement.layoutIfNeeded()
@@ -1363,6 +1366,17 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         }else{
             print("no internet")
         }
+    }
+    
+    @IBAction func playVideo(_ sender: Any) {
+        let videoURL = URL(string: self.arrayVideos[0])!
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
+        
     }
 }
 

@@ -4897,7 +4897,7 @@ that we recommend for you.</string>
                                         <rect key="frame" x="132" y="160" width="70" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account is being verified. Our team will be in touch with you soon." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26G-Qb-M9A">
-                                        <rect key="frame" x="23" y="270" width="288" height="63"/>
+                                        <rect key="frame" x="23" y="270" width="288" height="66"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -4926,13 +4926,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjA-YU-Q2d">
-                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
+                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0Kh-WF-Pcf">
-                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sax-yD-tym">
-                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
+                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4941,7 +4941,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-xv-HoE">
-                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
+                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="72k-EA-aEE"/>
@@ -4958,7 +4958,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-bs-puJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4983,13 +4983,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-R6-Rqh">
-                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ij8-Kk-ay5">
-                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9p-Ud-akN">
-                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
+                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4998,7 +4998,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-jw-leh">
-                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="Ntf-yM-Cuf"/>
@@ -5015,7 +5015,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-ZD-gLQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5370,7 +5370,7 @@ that we recommend for you.</string>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="580" id="2NB-PZ-7NR"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uHK-m2-7O2">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uHK-m2-7O2" customClass="CenterViewFlowLayout" customModule="Hunter" customModuleProvider="target">
                                                     <size key="itemSize" width="308" height="448"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -5693,13 +5693,13 @@ that we recommend for you.</string>
                                     <action selector="postANewJob:" destination="zZ9-hg-iay" eventType="touchUpInside" id="F08-h1-Cjj"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AcA-oe-lgA">
-                                <rect key="frame" x="20" y="321.5" width="374" height="250"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AcA-oe-lgA">
+                                <rect key="frame" x="0.0" y="321.5" width="414" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="iqI-3D-28V"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BOM-pA-p3M">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BOM-pA-p3M" customClass="CenterViewFlowLayout" customModule="Hunter" customModuleProvider="target">
                                     <size key="itemSize" width="319" height="233"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -5814,12 +5814,17 @@ that we recommend for you.</string>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-round" translatesAutoresizingMaskIntoConstraints="NO" id="F6z-M6-EU2">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-round" translatesAutoresizingMaskIntoConstraints="NO" id="F6z-M6-EU2">
                                                     <rect key="frame" x="129.5" y="20" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="Xex-Ns-4Vj"/>
                                                         <constraint firstAttribute="width" constant="60" id="mQt-bK-M15"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                            <real key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -5919,11 +5924,11 @@ that we recommend for you.</string>
                             <constraint firstItem="agC-BL-Hou" firstAttribute="centerX" secondItem="Uy6-eE-ZsC" secondAttribute="centerX" id="HNj-nC-b28"/>
                             <constraint firstItem="T9L-gn-VOq" firstAttribute="centerX" secondItem="Uy6-eE-ZsC" secondAttribute="centerX" id="I4k-cf-qzT"/>
                             <constraint firstItem="rbZ-Bn-Hq4" firstAttribute="top" secondItem="T9L-gn-VOq" secondAttribute="bottom" constant="38" id="Qc8-DG-C8O"/>
-                            <constraint firstItem="AcA-oe-lgA" firstAttribute="leading" secondItem="Uy6-eE-ZsC" secondAttribute="leading" constant="20" id="Rcg-WF-uTM"/>
+                            <constraint firstItem="AcA-oe-lgA" firstAttribute="leading" secondItem="Uy6-eE-ZsC" secondAttribute="leading" id="Rcg-WF-uTM"/>
                             <constraint firstAttribute="bottom" secondItem="nGL-M7-zGZ" secondAttribute="bottom" constant="70" id="dc6-gZ-uDi"/>
                             <constraint firstItem="T9L-gn-VOq" firstAttribute="top" secondItem="agC-BL-Hou" secondAttribute="bottom" constant="15" id="fbq-hn-Eem"/>
                             <constraint firstItem="AcA-oe-lgA" firstAttribute="top" secondItem="rbZ-Bn-Hq4" secondAttribute="bottom" constant="35.329999999999998" id="k11-cg-3A4"/>
-                            <constraint firstAttribute="trailing" secondItem="AcA-oe-lgA" secondAttribute="trailing" constant="20" id="rOU-hv-ce8"/>
+                            <constraint firstAttribute="trailing" secondItem="AcA-oe-lgA" secondAttribute="trailing" id="rOU-hv-ce8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -8479,13 +8484,13 @@ that we recommend for you.</string>
                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yBN-OT-hZF">
-                                <rect key="frame" x="20" y="316" width="374" height="250"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yBN-OT-hZF">
+                                <rect key="frame" x="0.0" y="316" width="414" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="9aE-qr-XAq"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q80-UX-Fjl">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q80-UX-Fjl" customClass="CenterViewFlowLayout" customModule="Hunter" customModuleProvider="target">
                                     <size key="itemSize" width="319" height="233"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -8493,17 +8498,17 @@ that we recommend for you.</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HunterWorkExpCollectionViewCell" id="dFJ-JJ-zQd" customClass="HunterWorkExpCollectionViewCell" customModule="Hunter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="8.5" width="319" height="233"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Gi-03-7N0">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="233"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqN-y7-0VK">
-                                                    <rect key="frame" x="12" y="50" width="295" height="171"/>
+                                                    <rect key="frame" x="12" y="67" width="226" height="171"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Graphic Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40C-Ua-apL">
-                                                            <rect key="frame" x="35" y="25" width="225" height="40"/>
+                                                            <rect key="frame" x="35" y="25" width="156" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="IH5-Wj-iI9"/>
                                                             </constraints>
@@ -8512,10 +8517,10 @@ that we recommend for you.</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZZk-nS-mLW">
-                                                            <rect key="frame" x="15" y="73" width="265" height="99.5"/>
+                                                            <rect key="frame" x="15" y="73" width="196" height="99.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csk-lx-UT7">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="18.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="196" height="18.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18.670000000000002" id="8g7-Xf-LYR"/>
                                                                     </constraints>
@@ -8524,19 +8529,19 @@ that we recommend for you.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EED-3H-8IR">
-                                                                    <rect key="frame" x="0.0" y="26.5" width="265" height="19"/>
+                                                                    <rect key="frame" x="0.0" y="26.5" width="196" height="19"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                                                     <color key="textColor" red="0.32549019610000002" green="0.058823529409999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTK-42-iSV">
-                                                                    <rect key="frame" x="0.0" y="53.5" width="265" height="18.5"/>
+                                                                    <rect key="frame" x="0.0" y="53.5" width="196" height="18.5"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                                                     <color key="textColor" red="0.32549019610000002" green="0.058823529409999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="102 Matches" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxu-lT-HBg">
-                                                                    <rect key="frame" x="0.0" y="80" width="265" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="80" width="196" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="16"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -8580,7 +8585,7 @@ that we recommend for you.</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-nY-q6U">
-                                                    <rect key="frame" x="287" y="40" width="30" height="30"/>
+                                                    <rect key="frame" x="218" y="57" width="30" height="30"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1t0-E0-aIL">
                                                             <rect key="frame" x="3" y="3" width="24" height="24"/>
@@ -8603,12 +8608,17 @@ that we recommend for you.</string>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-round" translatesAutoresizingMaskIntoConstraints="NO" id="dbK-ps-x9E">
-                                                    <rect key="frame" x="129.5" y="20" width="60" height="60"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-round" translatesAutoresizingMaskIntoConstraints="NO" id="dbK-ps-x9E">
+                                                    <rect key="frame" x="95" y="37" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="CAN-LR-czM"/>
                                                         <constraint firstAttribute="width" constant="60" id="Idf-FW-Twv"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                            <real key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -8622,7 +8632,7 @@ that we recommend for you.</string>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="319" height="233"/>
+                                        <size key="customSize" width="250" height="250"/>
                                         <connections>
                                             <outlet property="btnDelete" destination="1t0-E0-aIL" id="SbX-WL-MJe"/>
                                             <outlet property="img_compImg" destination="dbK-ps-x9E" id="TaG-0a-t1w"/>
@@ -8678,12 +8688,12 @@ that we recommend for you.</string>
                             <constraint firstItem="Wt0-iS-hmR" firstAttribute="leading" secondItem="jie-Ev-hhi" secondAttribute="leading" constant="30" id="bLV-kV-OZ5"/>
                             <constraint firstItem="uUG-ig-ezH" firstAttribute="leading" secondItem="jie-Ev-hhi" secondAttribute="leading" constant="58" id="bSB-PZ-Cj6"/>
                             <constraint firstItem="hM1-uF-fAL" firstAttribute="centerX" secondItem="rqW-yd-gQf" secondAttribute="centerX" id="e8I-d4-pRk"/>
-                            <constraint firstItem="yBN-OT-hZF" firstAttribute="leading" secondItem="jie-Ev-hhi" secondAttribute="leading" constant="20" id="efb-bX-VUj"/>
+                            <constraint firstItem="yBN-OT-hZF" firstAttribute="leading" secondItem="jie-Ev-hhi" secondAttribute="leading" id="efb-bX-VUj"/>
                             <constraint firstItem="yBN-OT-hZF" firstAttribute="top" secondItem="hM1-uF-fAL" secondAttribute="bottom" constant="20" id="lwL-y5-e7O"/>
                             <constraint firstAttribute="bottom" secondItem="rqW-yd-gQf" secondAttribute="bottom" id="n0p-4f-qfC"/>
                             <constraint firstItem="rqW-yd-gQf" firstAttribute="top" secondItem="jie-Ev-hhi" secondAttribute="top" id="nkF-Eh-W4C"/>
                             <constraint firstItem="rqW-yd-gQf" firstAttribute="trailing" secondItem="jie-Ev-hhi" secondAttribute="trailing" id="pv3-rf-ouH"/>
-                            <constraint firstAttribute="trailing" secondItem="yBN-OT-hZF" secondAttribute="trailing" constant="20" id="ruX-wC-8wj"/>
+                            <constraint firstAttribute="trailing" secondItem="yBN-OT-hZF" secondAttribute="trailing" id="ruX-wC-8wj"/>
                             <constraint firstAttribute="bottom" secondItem="j4h-X4-NJQ" secondAttribute="bottom" constant="70" id="uVC-KY-YU6"/>
                             <constraint firstItem="Wt0-iS-hmR" firstAttribute="centerX" secondItem="jie-Ev-hhi" secondAttribute="centerX" id="zIR-lS-AAU"/>
                         </constraints>
@@ -8699,7 +8709,7 @@ that we recommend for you.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbU-sQ-OC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8400" y="923.23943661971828"/>
+            <point key="canvasLocation" x="13413" y="-1078"/>
         </scene>
     </scenes>
     <designables>
@@ -8848,7 +8858,7 @@ that we recommend for you.</string>
         <image name="login-icon" width="65" height="79"/>
         <image name="nil" width="128" height="128"/>
         <image name="note-icon" width="103" height="88"/>
-        <image name="play-round" width="122" height="122"/>
+        <image name="play-round" width="103" height="103"/>
         <image name="rec_1_screen18-24" width="375" height="812"/>
         <image name="rec_1_screen25-27" width="375" height="812"/>
         <image name="rec_1_screen7-17" width="375" height="812"/>

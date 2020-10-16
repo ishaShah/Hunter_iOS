@@ -545,7 +545,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 cell.selectionStyle = .none
                 tableView.separatorStyle = .none
                 
-                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 5.0)
+                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
 
 //                cell.viewChatCV.layer.cornerRadius = 5.0
 //                cell.viewChatCV.layer.masksToBounds = true
@@ -567,7 +567,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                     let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatSenderFileCell", for: indexPath) as! HunterChatSenderFileCell
                     cell.selectionStyle = .none
                     tableView.separatorStyle = .none
-                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 5.0)
+                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
 
 //                    cell.viewChatCV.layer.cornerRadius = 5.0
 //                    cell.viewChatCV.layer.masksToBounds = true
@@ -587,7 +587,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 cell.selectionStyle = .none
                 tableView.separatorStyle = .none
                         
-                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 5.0)
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
 
 //                cell.viewChatCV.layer.cornerRadius = 5.0
 //                cell.viewChatCV.layer.masksToBounds = true
@@ -606,7 +606,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                
 //               cell.viewChatCV.layer.cornerRadius = 5.0
 //               cell.viewChatCV.layer.masksToBounds = true
-                cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 5.0)
+                cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
 
                 cell.imgClick.tag = indexPath.row-1
 
@@ -623,7 +623,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                                    let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatRecieverFileCell", for: indexPath) as! HunterChatRecieverFileCell
                                    cell.selectionStyle = .none
                                    tableView.separatorStyle = .none
-                                   cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 5.0)
+                                   cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
 
 //                                   cell.viewChatCV.layer.cornerRadius = 5.0
 //                                   cell.viewChatCV.layer.masksToBounds = true
@@ -645,7 +645,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 tableView.separatorStyle = .none
                 
                     
-                    cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 5.0)
+                    cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
 
                     
                     
