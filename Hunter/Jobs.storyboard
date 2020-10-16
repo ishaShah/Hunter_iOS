@@ -1920,7 +1920,7 @@ Thank you for your feedback.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1JP-IZ-znv">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1JP-IZ-znv" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="180"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHT-n9-2Jx">
@@ -2556,7 +2556,7 @@ Thank you for your feedback.</string>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="22"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="15" minY="15" maxX="15" maxY="10"/>
-                                        <state key="normal" title="MATCHES"/>
+                                        <state key="normal" title="Matches"/>
                                         <connections>
                                             <action selector="matches:" destination="SCO-hq-hxF" eventType="touchUpInside" id="c7y-nd-GmF"/>
                                         </connections>
@@ -2601,7 +2601,7 @@ Thank you for your feedback.</string>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="21"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
-                                        <state key="normal" title="MESSAGES"/>
+                                        <state key="normal" title="Messages"/>
                                         <connections>
                                             <action selector="goToMessages:" destination="SCO-hq-hxF" eventType="touchUpInside" id="4mq-Bz-Ulr"/>
                                         </connections>

@@ -5384,9 +5384,12 @@ that we recommend for you.</string>
                                                             <rect key="frame" x="0.0" y="0.0" width="308" height="580"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-6V-baJ">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-6V-baJ" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
                                                                     <rect key="frame" x="12" y="12" width="284" height="556"/>
                                                                     <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SDP-EX-bcY">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="284" height="556"/>
+                                                                        </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Graphic Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4R-nq-WOV">
                                                                             <rect key="frame" x="35" y="65" width="214" height="60"/>
                                                                             <constraints>
@@ -5529,9 +5532,11 @@ that we recommend for you.</string>
                                                                         <constraint firstItem="r4R-nq-WOV" firstAttribute="centerX" secondItem="xW4-6V-baJ" secondAttribute="centerX" id="1sv-hs-eZb"/>
                                                                         <constraint firstAttribute="bottom" secondItem="s2v-8A-lQu" secondAttribute="bottom" constant="10" id="2Mk-KS-kBQ"/>
                                                                         <constraint firstItem="esc-Mi-bD7" firstAttribute="leading" secondItem="xW4-6V-baJ" secondAttribute="leading" constant="15" id="2r6-ek-w8V"/>
+                                                                        <constraint firstItem="SDP-EX-bcY" firstAttribute="top" secondItem="xW4-6V-baJ" secondAttribute="top" id="5jD-hK-G32"/>
                                                                         <constraint firstItem="v9e-Fj-QgQ" firstAttribute="top" secondItem="xW4-6V-baJ" secondAttribute="top" constant="18" id="6BA-ze-cVP"/>
                                                                         <constraint firstItem="esc-Mi-bD7" firstAttribute="top" secondItem="r4R-nq-WOV" secondAttribute="bottom" constant="18" id="8j1-3c-NUC"/>
                                                                         <constraint firstAttribute="trailing" secondItem="r4R-nq-WOV" secondAttribute="trailing" constant="35" id="98W-je-jl3"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="SDP-EX-bcY" secondAttribute="trailing" id="ES0-Gb-pXV"/>
                                                                         <constraint firstAttribute="width" constant="284" id="Pyx-Qt-KTb"/>
                                                                         <constraint firstAttribute="height" constant="456" id="Rqy-NW-x2B"/>
                                                                         <constraint firstItem="r4R-nq-WOV" firstAttribute="leading" secondItem="xW4-6V-baJ" secondAttribute="leading" constant="35" id="THP-nd-ggh"/>
@@ -5540,20 +5545,16 @@ that we recommend for you.</string>
                                                                         <constraint firstItem="v9e-Fj-QgQ" firstAttribute="centerX" secondItem="r4R-nq-WOV" secondAttribute="centerX" id="YPl-od-WGq"/>
                                                                         <constraint firstItem="0Cq-eY-QBc" firstAttribute="leading" secondItem="xW4-6V-baJ" secondAttribute="leading" constant="12" id="chi-sf-5Hj"/>
                                                                         <constraint firstItem="0Cq-eY-QBc" firstAttribute="top" secondItem="esc-Mi-bD7" secondAttribute="bottom" constant="20" id="i06-fY-OmF"/>
+                                                                        <constraint firstItem="SDP-EX-bcY" firstAttribute="leading" secondItem="xW4-6V-baJ" secondAttribute="leading" id="iMh-Kg-EVR"/>
                                                                         <constraint firstItem="s2v-8A-lQu" firstAttribute="centerX" secondItem="xW4-6V-baJ" secondAttribute="centerX" id="n1z-VF-qpO"/>
                                                                         <constraint firstAttribute="trailing" secondItem="0Cq-eY-QBc" secondAttribute="trailing" constant="12" id="u1E-2P-vxc"/>
                                                                         <constraint firstAttribute="trailing" secondItem="esc-Mi-bD7" secondAttribute="trailing" constant="15" id="uOW-lo-zRM"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="SDP-EX-bcY" secondAttribute="bottom" id="vHC-6d-Mjp"/>
                                                                         <constraint firstItem="r4R-nq-WOV" firstAttribute="top" secondItem="xW4-6V-baJ" secondAttribute="top" constant="65" id="whi-Si-2m9"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                            <real key="value" value="6"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                            <size key="value" width="1" height="1"/>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
@@ -5713,9 +5714,12 @@ that we recommend for you.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="319" height="233"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQf-1c-pA5">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQf-1c-pA5" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
                                                     <rect key="frame" x="12" y="50" width="295" height="171"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pf4-QB-lef">
+                                                            <rect key="frame" x="0.0" y="0.0" width="295" height="171"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Graphic Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGG-9B-Vah">
                                                             <rect key="frame" x="35" y="25" width="225" height="40"/>
                                                             <constraints>
@@ -5768,25 +5772,23 @@ that we recommend for you.</string>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.98823529409999999" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="pf4-QB-lef" firstAttribute="top" secondItem="TQf-1c-pA5" secondAttribute="top" id="Hxq-1I-S88"/>
                                                         <constraint firstAttribute="width" constant="284" id="SzI-vk-J7p"/>
                                                         <constraint firstItem="gIs-ze-53f" firstAttribute="top" secondItem="IGG-9B-Vah" secondAttribute="bottom" constant="8" id="bKL-7Y-WSl"/>
                                                         <constraint firstItem="IGG-9B-Vah" firstAttribute="top" secondItem="TQf-1c-pA5" secondAttribute="top" constant="25" id="bbz-eh-6nn"/>
                                                         <constraint firstAttribute="height" constant="171" id="c2i-Tz-YFV"/>
+                                                        <constraint firstItem="pf4-QB-lef" firstAttribute="leading" secondItem="TQf-1c-pA5" secondAttribute="leading" id="cjQ-Xq-Fdf"/>
                                                         <constraint firstAttribute="trailing" secondItem="gIs-ze-53f" secondAttribute="trailing" constant="15" id="dRf-ch-8iy"/>
                                                         <constraint firstItem="IGG-9B-Vah" firstAttribute="leading" secondItem="TQf-1c-pA5" secondAttribute="leading" constant="35" id="ez0-cg-B1N"/>
                                                         <constraint firstItem="gIs-ze-53f" firstAttribute="leading" secondItem="TQf-1c-pA5" secondAttribute="leading" constant="15" id="l6D-iM-3XJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pf4-QB-lef" secondAttribute="bottom" id="ldo-QZ-JUt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pf4-QB-lef" secondAttribute="trailing" id="lhd-JL-nyM"/>
                                                         <constraint firstAttribute="trailing" secondItem="IGG-9B-Vah" secondAttribute="trailing" constant="35" id="vdT-ub-NNX"/>
                                                         <constraint firstItem="IGG-9B-Vah" firstAttribute="centerX" secondItem="TQf-1c-pA5" secondAttribute="centerX" id="wvR-Pb-lob"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="6"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                            <size key="value" width="0.0" height="1"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -8504,9 +8506,12 @@ that we recommend for you.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqN-y7-0VK">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqN-y7-0VK" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
                                                     <rect key="frame" x="12" y="67" width="226" height="171"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-5a-MIq">
+                                                            <rect key="frame" x="0.0" y="0.0" width="226" height="171"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Graphic Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40C-Ua-apL">
                                                             <rect key="frame" x="35" y="25" width="156" height="40"/>
                                                             <constraints>
@@ -8559,8 +8564,12 @@ that we recommend for you.</string>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.98823529409999999" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="2L6-5a-MIq" firstAttribute="leading" secondItem="UqN-y7-0VK" secondAttribute="leading" id="1Bd-9E-AYv"/>
+                                                        <constraint firstItem="2L6-5a-MIq" firstAttribute="top" secondItem="UqN-y7-0VK" secondAttribute="top" id="8sO-8I-68e"/>
                                                         <constraint firstAttribute="trailing" secondItem="40C-Ua-apL" secondAttribute="trailing" constant="35" id="JmV-8m-GlE"/>
                                                         <constraint firstItem="40C-Ua-apL" firstAttribute="top" secondItem="UqN-y7-0VK" secondAttribute="top" constant="25" id="MwX-xN-zuL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2L6-5a-MIq" secondAttribute="bottom" id="NjK-Hh-rEB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2L6-5a-MIq" secondAttribute="trailing" id="RUc-Fe-8Um"/>
                                                         <constraint firstItem="40C-Ua-apL" firstAttribute="centerX" secondItem="UqN-y7-0VK" secondAttribute="centerX" id="d7r-1V-4Do"/>
                                                         <constraint firstItem="ZZk-nS-mLW" firstAttribute="top" secondItem="40C-Ua-apL" secondAttribute="bottom" constant="8" id="gxj-4q-uBb"/>
                                                         <constraint firstItem="ZZk-nS-mLW" firstAttribute="leading" secondItem="UqN-y7-0VK" secondAttribute="leading" constant="15" id="jtc-3b-lwH"/>
@@ -8570,17 +8579,8 @@ that we recommend for you.</string>
                                                         <constraint firstItem="40C-Ua-apL" firstAttribute="leading" secondItem="UqN-y7-0VK" secondAttribute="leading" constant="35" id="yP2-k3-Qjg"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="6"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                            <size key="value" width="0.0" height="1"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -8697,11 +8697,6 @@ that we recommend for you.</string>
                             <constraint firstAttribute="bottom" secondItem="j4h-X4-NJQ" secondAttribute="bottom" constant="70" id="uVC-KY-YU6"/>
                             <constraint firstItem="Wt0-iS-hmR" firstAttribute="centerX" secondItem="jie-Ev-hhi" secondAttribute="centerX" id="zIR-lS-AAU"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="collEducation" destination="yBN-OT-hZF" id="j6f-Wc-ut0"/>
@@ -8858,7 +8853,7 @@ that we recommend for you.</string>
         <image name="login-icon" width="65" height="79"/>
         <image name="nil" width="128" height="128"/>
         <image name="note-icon" width="103" height="88"/>
-        <image name="play-round" width="103" height="103"/>
+        <image name="play-round" width="90" height="90"/>
         <image name="rec_1_screen18-24" width="375" height="812"/>
         <image name="rec_1_screen25-27" width="375" height="812"/>
         <image name="rec_1_screen7-17" width="375" height="812"/>

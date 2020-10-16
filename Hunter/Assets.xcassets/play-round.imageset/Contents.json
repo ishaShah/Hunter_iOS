@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "HUNTR_LOGO_Icon.png",
+      "filename" : "App_icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "HUNTR_LOGO_Icon@2x.png",
+      "filename" : "App_icon-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "HUNTR_LOGO_Icon@3x.png",
+      "filename" : "App_icon-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

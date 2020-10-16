@@ -13,6 +13,7 @@ var accessToken = String()
 var screenWidth = UIScreen.main.bounds.width
 var screenHeight = UIScreen.main.bounds.height
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?

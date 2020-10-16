@@ -24,7 +24,8 @@ class HunterLanguageListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         setNeedsStatusBarAppearanceUpdate()
-         
+        collViewLangs.isPagingEnabled = true
+
         getAllLang()
         
     }

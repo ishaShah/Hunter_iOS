@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterAchieveListVC: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class HunterAchieveListVC: UIViewController{
 
     @IBOutlet weak var collVAchievements: UICollectionView!
     
@@ -24,7 +24,7 @@ class HunterAchieveListVC: UIViewController, UICollectionViewDelegate,UICollecti
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         setNeedsStatusBarAppearanceUpdate()
-         
+        collVAchievements.isPagingEnabled = true
         getAllAchievements()
         
     }
@@ -124,7 +124,9 @@ class HunterAchieveListVC: UIViewController, UICollectionViewDelegate,UICollecti
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
- 
+}
+extension HunterAchieveListVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return achievementArray.count
     }
@@ -145,8 +147,7 @@ class HunterAchieveListVC: UIViewController, UICollectionViewDelegate,UICollecti
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 280, height: 200)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {        CGSize(width: 280, height: 200)
     }
     
   

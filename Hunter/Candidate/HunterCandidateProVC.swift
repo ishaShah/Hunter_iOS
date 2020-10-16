@@ -546,7 +546,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }
             else {
                 self.view_languages.isHidden = false
-                self.viewLanHt.constant = height2 + 90.0
+                self.viewLanHt.constant = height2 + 120.0
 
             }
             self.tbl_lang.layoutIfNeeded()
@@ -567,7 +567,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             }
             else {
                 self.view_achievement.isHidden = false
-                self.viewAchHt.constant = height3 + 90.0
+                self.viewAchHt.constant = height3 + 120.0
 
             }
             self.tblAchievement.layoutIfNeeded()
@@ -675,13 +675,13 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                    }
                    else {
                        self.view_languages.isHidden = false
-                       self.viewLanHt.constant = height2 + 90.0
+                       self.viewLanHt.constant = height2 + 120.0
 
                    }
         }
         else {
             self.view_languages.isHidden = false
-            self.viewLanHt.constant = height2 + 90.0
+            self.viewLanHt.constant = height2 + 120.0
 
         }
                    self.tbl_lang.layoutIfNeeded()
@@ -702,13 +702,13 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                    }
                    else {
                        self.view_achievement.isHidden = false
-                       self.viewAchHt.constant = height3 + 90.0
+                       self.viewAchHt.constant = height3 + 120.0
 
                    }
         }
         else {
             self.view_achievement.isHidden = false
-            self.viewAchHt.constant = height3 + 90.0
+            self.viewAchHt.constant = height3 + 120.0
 
         }
                    self.tblAchievement.layoutIfNeeded()
