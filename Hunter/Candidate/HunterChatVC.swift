@@ -593,7 +593,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                         cell.selectionStyle = .none
                         tableView.separatorStyle = .none
                         
-                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .bottomRight], radius: 10.0)
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
                         
                         //                cell.viewChatCV.layer.cornerRadius = 5.0
                         //                cell.viewChatCV.layer.masksToBounds = true

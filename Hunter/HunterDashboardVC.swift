@@ -466,8 +466,19 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             for view in viewContainer.subviews {
                 view.removeFromSuperview()
             }
+            
+            
+            let animated = UserDefaults.standard.object(forKey: "animated") as? String
+ 
+            var isDummyShow = true
+            if animated != "true" {
+             
+                isDummyShow = false
+            }
+            
+            
         viewContainer.addSubview(swipeView)
-        swipeView.showTinderCards(with: userModels ,isDummyShow: true)
+        swipeView.showTinderCards(with: userModels ,isDummyShow: isDummyShow)
         }else {
             
             // Dynamically create view for each tinder card
@@ -495,8 +506,16 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             for view in viewContainer.subviews {
                 view.removeFromSuperview()
             }
+            
+            let animated = UserDefaults.standard.object(forKey: "animated") as? String
+ 
+            var isDummyShow = true
+            if animated != "true" {
+             
+                isDummyShow = false
+            }
             viewContainer.addSubview(swipeView)
-            swipeView.showTinderCards(with: userModels ,isDummyShow: true)
+            swipeView.showTinderCards(with: userModels ,isDummyShow: isDummyShow)
         }
     }
     private func programticViewForOverlay(frame:CGRect, userModel:UserModel) -> UIView{
@@ -901,17 +920,15 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
     
     func dummyAnimationDone() {
         
-        let animated = UserDefaults.standard.object(forKey: "animated") as? String
-
-        if animated != "true" {
+         
         
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveLinear, animations: {
 //            self.viewNavigation.alpha = 1.0
-            UserDefaults.standard.set("true", forKey: "animated")
+            UserDefaults.standard.set("false", forKey: "animated")
 
         }, completion: nil)
 
-        }
+        
         
         print("Watch out shake action")
     }

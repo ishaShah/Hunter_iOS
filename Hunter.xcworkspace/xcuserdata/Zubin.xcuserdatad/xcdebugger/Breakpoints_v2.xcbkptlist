@@ -5,31 +5,51 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            uuid = "454C500C-98DB-4E33-8ED8-B7098CE6531C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            breakpointStackSelectionBehavior = "1"
-            scope = "1"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "32351BCD-C0AD-4850-B3F2-612FFC1BC094"
+            uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hunter/HunterDashboardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "906"
-            endingLineNumber = "906"
-            landmarkName = "dummyAnimationDone()"
+            startingLineNumber = "993"
+            endingLineNumber = "993"
+            landmarkName = "endOfCardsReached()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 5fd6ef07f149b47f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hunter.HunterDashboardVC.endOfCardsReached() -&gt; ()"
+                  moduleName = "Hunter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Zubin/Documents/Hunter_iOS/Hunter/HunterDashboardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "993"
+                  endingLineNumber = "993"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 777d86c94ef263f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Hunter.HunterDashboardVC.endOfCardsReached() -&gt; ()"
+                  moduleName = "Hunter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Zubin/Documents/Hunter_iOS/Hunter/HunterDashboardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "997"
+                  endingLineNumber = "997"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
