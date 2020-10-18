@@ -471,11 +471,12 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             let animated = UserDefaults.standard.object(forKey: "animated") as? String
  
             var isDummyShow = true
+            if animated != nil {
             if animated != "true" {
              
                 isDummyShow = false
             }
-            
+            }
             
         viewContainer.addSubview(swipeView)
         swipeView.showTinderCards(with: userModels ,isDummyShow: isDummyShow)
@@ -510,9 +511,11 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             let animated = UserDefaults.standard.object(forKey: "animated") as? String
  
             var isDummyShow = true
+            if animated != nil {
             if animated != "true" {
              
                 isDummyShow = false
+            }
             }
             viewContainer.addSubview(swipeView)
             swipeView.showTinderCards(with: userModels ,isDummyShow: isDummyShow)

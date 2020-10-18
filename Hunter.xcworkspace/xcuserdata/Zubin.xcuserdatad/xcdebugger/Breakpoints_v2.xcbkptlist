@@ -14,13 +14,13 @@
             filePath = "Hunter/HunterDashboardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "993"
-            endingLineNumber = "993"
+            startingLineNumber = "996"
+            endingLineNumber = "996"
             landmarkName = "endOfCardsReached()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 5fd6ef07f149b47f"
+                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 5fd6ef07f149b4c0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/Zubin/Documents/Hunter_iOS/Hunter/HunterDashboardVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "993"
-                  endingLineNumber = "993"
+                  startingLineNumber = "996"
+                  endingLineNumber = "996"
                   offsetFromSymbolStart = "44">
                </Location>
                <Location
-                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 777d86c94ef263f7"
+                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 777d86c94ef26050"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,11 +45,27 @@
                   urlString = "file:///Users/Zubin/Documents/Hunter_iOS/Hunter/HunterDashboardVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "997"
-                  endingLineNumber = "997"
+                  startingLineNumber = "1000"
+                  endingLineNumber = "1000"
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A83ABB3E-E7AA-4DBE-BCD8-48DE3E6E7D75"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunter/HunterDashboardVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "521"
+            endingLineNumber = "521"
+            landmarkName = "createCards()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
