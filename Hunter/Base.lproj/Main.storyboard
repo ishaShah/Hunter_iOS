@@ -4738,13 +4738,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfL-3P-xWD">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bbd-VP-G4C">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nk4-pA-eHs">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4753,7 +4753,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-hO-0fb">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="GRI-fJ-P5z"/>
@@ -4770,7 +4770,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GE6-cd-9iE">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4795,13 +4795,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTe-hk-hf3">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-hY-Lgb">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAu-bW-2cT">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4810,7 +4810,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppf-op-ly2">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="6Lf-nm-3FL"/>
@@ -4827,7 +4827,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="do8-Qh-R8r">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4906,7 +4906,7 @@ that we recommend for you.</string>
                                         <rect key="frame" x="132" y="160" width="70" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account is being verified. Our team will be in touch with you soon." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26G-Qb-M9A">
-                                        <rect key="frame" x="23" y="270" width="288" height="66"/>
+                                        <rect key="frame" x="23" y="270" width="288" height="63"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -4935,13 +4935,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjA-YU-Q2d">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0Kh-WF-Pcf">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sax-yD-tym">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4950,7 +4950,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-xv-HoE">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="72k-EA-aEE"/>
@@ -4967,7 +4967,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-bs-puJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4992,13 +4992,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-R6-Rqh">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ij8-Kk-ay5">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9p-Ud-akN">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5007,7 +5007,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-jw-leh">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="Ntf-yM-Cuf"/>
@@ -5024,7 +5024,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-ZD-gLQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5103,13 +5103,13 @@ that we recommend for you.</string>
                                         <rect key="frame" x="121.5" y="160" width="91" height="84"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account could not be verified at this point of time. Please check our support page to know more." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksx-3j-zgR">
-                                        <rect key="frame" x="23" y="295" width="288" height="88"/>
+                                        <rect key="frame" x="23" y="294" width="288" height="63"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are sorry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxa-o4-nAs">
-                                        <rect key="frame" x="109.5" y="264" width="115.5" height="21"/>
+                                        <rect key="frame" x="117.5" y="264" width="99.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -5159,13 +5159,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riL-me-cAH">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gMx-ei-sdI">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAg-ja-Dc9">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5174,7 +5174,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-Nh-VYf">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="D84-I8-79O"/>
@@ -5191,7 +5191,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tQj-h4-9uJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5216,13 +5216,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7Y-Ta-H1t">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rgC-r9-Za4">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-Ow-wZW">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5231,7 +5231,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xao-2c-Xft">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="2nD-uz-Fkc"/>
@@ -5248,7 +5248,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ABD-M2-1NT">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
