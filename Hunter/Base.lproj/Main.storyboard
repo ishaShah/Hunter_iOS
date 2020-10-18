@@ -7089,10 +7089,10 @@ that we recommend for you.</string>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exi-im-PO7">
-                                <rect key="frame" x="0.0" y="182" width="414" height="547"/>
+                                <rect key="frame" x="0.0" y="182" width="414" height="680"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-vC-SeH">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="765"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="uFj-xh-OMu">
                                                 <rect key="frame" x="73.5" y="5" width="267" height="477"/>
@@ -7334,6 +7334,47 @@ that we recommend for you.</string>
                                                 <color key="textColor" red="0.44705882352941173" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Rdo-eT-eKS">
+                                                <rect key="frame" x="50" y="775" width="314" height="57"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-iD-vlM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="57"/>
+                                                        <color key="backgroundColor" red="0.32549019607843138" green="0.058823529411764705" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="57" id="CzC-c0-1zQ"/>
+                                                            <constraint firstAttribute="width" constant="150" id="o7E-K5-zd4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
+                                                        <state key="normal" title="Post Job">
+                                                            <color key="titleColor" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                <real key="value" value="28.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="actionPostAJob:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="oCs-D0-mri"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-12-TWh">
+                                                        <rect key="frame" x="164" y="0.0" width="150" height="57"/>
+                                                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
+                                                        <state key="normal" title="Save Draft">
+                                                            <color key="titleColor" red="0.20784313725490194" green="0.043137254901960784" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                <real key="value" value="28.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="actionSaveAsDraft:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="Qsk-4H-fcJ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -7341,8 +7382,9 @@ that we recommend for you.</string>
                                             <constraint firstItem="uFj-xh-OMu" firstAttribute="centerX" secondItem="pqw-vC-SeH" secondAttribute="centerX" id="HjI-vu-d4k"/>
                                             <constraint firstItem="trS-Z8-DVk" firstAttribute="top" secondItem="G8N-jR-exA" secondAttribute="bottom" constant="5" id="MUj-Da-xr0"/>
                                             <constraint firstItem="G8N-jR-exA" firstAttribute="top" secondItem="uFj-xh-OMu" secondAttribute="bottom" constant="13" id="ROJ-ec-nkn"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rdo-eT-eKS" secondAttribute="bottom" constant="20" id="hQA-g3-IVE"/>
                                             <constraint firstItem="G8N-jR-exA" firstAttribute="centerX" secondItem="uFj-xh-OMu" secondAttribute="centerX" id="kkI-ra-fsv"/>
-                                            <constraint firstAttribute="bottom" secondItem="trS-Z8-DVk" secondAttribute="bottom" constant="10" id="ubI-h4-UCQ"/>
+                                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="top" secondItem="trS-Z8-DVk" secondAttribute="bottom" constant="20" id="n0b-Tb-dhG"/>
                                             <constraint firstItem="trS-Z8-DVk" firstAttribute="trailing" secondItem="Z0H-nw-Qdf" secondAttribute="trailing" id="vDt-it-z6N"/>
                                         </constraints>
                                     </view>
@@ -7361,62 +7403,20 @@ that we recommend for you.</string>
                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Rdo-eT-eKS">
-                                <rect key="frame" x="50" y="749" width="314" height="57"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-iD-vlM">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="57"/>
-                                        <color key="backgroundColor" red="0.32549019607843138" green="0.058823529411764705" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="CzC-c0-1zQ"/>
-                                            <constraint firstAttribute="width" constant="150" id="o7E-K5-zd4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
-                                        <state key="normal" title="Post Job">
-                                            <color key="titleColor" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                <real key="value" value="28.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="actionPostAJob:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="oCs-D0-mri"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-12-TWh">
-                                        <rect key="frame" x="164" y="0.0" width="150" height="57"/>
-                                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
-                                        <state key="normal" title="Save Draft">
-                                            <color key="titleColor" red="0.20784313725490194" green="0.043137254901960784" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                <real key="value" value="28.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="actionSaveAsDraft:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="Qsk-4H-fcJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="exi-im-PO7" secondAttribute="trailing" id="8Mw-Hg-9iU"/>
                             <constraint firstItem="exi-im-PO7" firstAttribute="top" secondItem="YNT-b2-mQy" secondAttribute="bottom" constant="25" id="AUb-Ki-EMs"/>
+                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="D8R-8F-U9n"/>
                             <constraint firstItem="4mu-h0-VyC" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="EAG-6A-j2F"/>
                             <constraint firstItem="jtS-f9-qMq" firstAttribute="leading" secondItem="Jnk-CX-sY4" secondAttribute="leading" constant="40" id="Eck-pE-0Ck"/>
                             <constraint firstItem="jtS-f9-qMq" firstAttribute="top" secondItem="apd-NJ-zBM" secondAttribute="bottom" constant="30" id="FBS-gt-Y1t"/>
                             <constraint firstItem="exi-im-PO7" firstAttribute="leading" secondItem="Jnk-CX-sY4" secondAttribute="leading" id="d36-k7-mtI"/>
-                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="j54-dy-MGQ"/>
                             <constraint firstItem="YNT-b2-mQy" firstAttribute="top" secondItem="4mu-h0-VyC" secondAttribute="bottom" constant="15" id="lDy-Xm-hf4"/>
                             <constraint firstItem="YNT-b2-mQy" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="pAt-t2-Atm"/>
                             <constraint firstItem="4mu-h0-VyC" firstAttribute="centerY" secondItem="jtS-f9-qMq" secondAttribute="centerY" id="tD6-MR-1o1"/>
-                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="top" secondItem="exi-im-PO7" secondAttribute="bottom" constant="20" id="vYg-VA-9c6"/>
-                            <constraint firstAttribute="bottom" secondItem="Rdo-eT-eKS" secondAttribute="bottom" constant="90" id="vcf-vg-dPl"/>
+                            <constraint firstItem="e9V-c5-MnN" firstAttribute="top" secondItem="exi-im-PO7" secondAttribute="bottom" id="vYg-VA-9c6"/>
                         </constraints>
                     </view>
                     <connections>
