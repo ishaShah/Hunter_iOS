@@ -2078,6 +2078,9 @@
                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="huntr_Search_bar" translatesAutoresizingMaskIntoConstraints="NO" id="E1R-SY-9tC">
+                                <rect key="frame" x="67" y="227" width="280" height="83"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="founded" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-aM-9EK">
                                 <rect key="frame" x="183" y="84" width="48" height="48"/>
                                 <constraints>
@@ -2157,11 +2160,12 @@
                                     <outlet property="delegate" destination="aBg-cb-65A" id="NAF-gA-bWE"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOj-em-tdh">
+                            <stackView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOj-em-tdh">
                                 <rect key="frame" x="79.5" y="230.5" width="255" height="57"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter one or more locations" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nua-qb-ZzQ" customClass="HunterTextField" customModule="Hunter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="57"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2170,10 +2174,10 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                                <real key="value" value="0.10000000000000001"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
-                                                <color key="value" red="0.20784313725490194" green="0.0" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
                                                 <real key="value" value="10"/>
@@ -2192,7 +2196,7 @@
                                                 <size key="value" width="0.0" height="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.40780189630000002" green="0.24317812920000001" blue="0.66946464780000003" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                                 <real key="value" value="25"/>
@@ -2200,6 +2204,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="GjP-Gf-VNx"/>
                                     <constraint firstAttribute="height" constant="57" id="IXP-VN-jcx"/>
@@ -2236,6 +2241,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="y6A-1f-RDd" secondAttribute="trailing" constant="30" id="0EV-Vt-u8n"/>
                             <constraint firstAttribute="bottom" secondItem="2yd-4W-AYX" secondAttribute="bottom" id="24K-Tv-vpI"/>
+                            <constraint firstItem="E1R-SY-9tC" firstAttribute="trailing" secondItem="w47-jb-rge" secondAttribute="trailing" id="43H-nm-kD4"/>
                             <constraint firstItem="TpM-yM-bM4" firstAttribute="bottom" secondItem="rOj-em-tdh" secondAttribute="bottom" id="84a-Nr-UQ9"/>
                             <constraint firstItem="w47-jb-rge" firstAttribute="top" secondItem="TpM-yM-bM4" secondAttribute="bottom" constant="30" id="8W4-Dw-jRz"/>
                             <constraint firstItem="w47-jb-rge" firstAttribute="centerX" secondItem="Rys-w8-jOe" secondAttribute="centerX" id="COp-Bl-Ges"/>
@@ -2243,6 +2249,7 @@
                             <constraint firstItem="TpM-yM-bM4" firstAttribute="top" secondItem="y6A-1f-RDd" secondAttribute="bottom" constant="60" id="I7i-3t-P7p"/>
                             <constraint firstItem="y6A-1f-RDd" firstAttribute="centerX" secondItem="Rys-w8-jOe" secondAttribute="centerX" id="MpC-Ap-9uv"/>
                             <constraint firstAttribute="trailing" secondItem="2yd-4W-AYX" secondAttribute="trailing" id="UgE-31-gGO"/>
+                            <constraint firstItem="E1R-SY-9tC" firstAttribute="top" secondItem="y6A-1f-RDd" secondAttribute="bottom" constant="56.5" id="Vm0-7S-B4x"/>
                             <constraint firstItem="TpM-yM-bM4" firstAttribute="trailing" secondItem="rOj-em-tdh" secondAttribute="trailing" id="aOv-X3-lmN"/>
                             <constraint firstItem="y6A-1f-RDd" firstAttribute="leading" secondItem="Rys-w8-jOe" secondAttribute="leading" constant="30" id="edR-Be-uAh"/>
                             <constraint firstItem="TpM-yM-bM4" firstAttribute="top" secondItem="rOj-em-tdh" secondAttribute="top" id="gMX-LH-3FO"/>
@@ -2251,9 +2258,11 @@
                             <constraint firstItem="2yd-4W-AYX" firstAttribute="leading" secondItem="Rys-w8-jOe" secondAttribute="leading" id="oWY-Ri-tiU"/>
                             <constraint firstItem="TpM-yM-bM4" firstAttribute="centerX" secondItem="Rys-w8-jOe" secondAttribute="centerX" id="pzW-Jj-uzn"/>
                             <constraint firstItem="2yd-4W-AYX" firstAttribute="top" secondItem="Rys-w8-jOe" secondAttribute="top" id="r5V-Nc-L2o"/>
+                            <constraint firstItem="w47-jb-rge" firstAttribute="top" secondItem="E1R-SY-9tC" secondAttribute="bottom" constant="7.5" id="rle-F5-PuI"/>
                             <constraint firstAttribute="bottom" secondItem="2o1-Gt-fd4" secondAttribute="bottom" constant="32" id="rsH-f9-htj"/>
                             <constraint firstItem="2o1-Gt-fd4" firstAttribute="centerX" secondItem="Rys-w8-jOe" secondAttribute="centerX" id="t2F-JY-e9J"/>
                             <constraint firstItem="NpO-gF-8pY" firstAttribute="top" secondItem="Rys-w8-jOe" secondAttribute="top" constant="86" id="uc2-rY-89D"/>
+                            <constraint firstItem="E1R-SY-9tC" firstAttribute="leading" secondItem="w47-jb-rge" secondAttribute="leading" id="vDk-Ea-Luc"/>
                             <constraint firstItem="NpO-gF-8pY" firstAttribute="leading" secondItem="Rys-w8-jOe" secondAttribute="leading" constant="58" id="vcz-ZF-35b"/>
                             <constraint firstItem="ebR-aM-9EK" firstAttribute="centerX" secondItem="Rys-w8-jOe" secondAttribute="centerX" id="y0d-MB-SR4"/>
                         </constraints>
@@ -2271,7 +2280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FES-KS-0oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6086" y="129"/>
+            <point key="canvasLocation" x="6085.507246376812" y="128.57142857142856"/>
         </scene>
         <!--Hunter Native LocVC-->
         <scene sceneID="1Re-aO-OXE">
@@ -5387,7 +5396,7 @@ that we recommend for you.</string>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-6V-baJ" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
                                                                     <rect key="frame" x="12" y="12" width="284" height="556"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SDP-EX-bcY">
+                                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SDP-EX-bcY">
                                                                             <rect key="frame" x="0.0" y="0.0" width="284" height="556"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Graphic Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4R-nq-WOV">
@@ -8849,6 +8858,7 @@ that we recommend for you.</string>
         <image name="dummy-reload" width="70" height="60"/>
         <image name="founded" width="216" height="216"/>
         <image name="globe-icon" width="88" height="88"/>
+        <image name="huntr_Search_bar" width="323" height="101"/>
         <image name="lock-icon" width="74" height="88"/>
         <image name="login-icon" width="65" height="79"/>
         <image name="nil" width="128" height="128"/>

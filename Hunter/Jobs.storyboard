@@ -2157,7 +2157,7 @@ Thank you for your feedback.</string>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYn-rR-JYB">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYn-rR-JYB">
                                                                     <rect key="frame" x="236" y="22.5" width="27" height="10.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="10.5" id="No3-jt-tgd"/>
@@ -2344,7 +2344,7 @@ Thank you for your feedback.</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.91012769940000005" green="0.8934013247" blue="0.94510465860000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.92941176470588238" green="0.89803921568627454" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="QCV-hG-5gL" firstAttribute="centerY" secondItem="DQe-Bg-Qdv" secondAttribute="centerY" id="C1t-yv-hyf"/>
                                                         <constraint firstAttribute="trailing" secondItem="QCV-hG-5gL" secondAttribute="trailing" constant="19" id="DDP-yQ-hTN"/>
@@ -2400,7 +2400,7 @@ Thank you for your feedback.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.18855562810000001" green="0.014785761010000001" blue="0.4431651533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="0.36470588235294116" green="0.10196078431372549" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Rxa-xV-T78" secondAttribute="trailing" constant="5" id="9kC-rc-wXa"/>
                                                                 <constraint firstAttribute="width" constant="80" id="Rus-tl-fkq"/>

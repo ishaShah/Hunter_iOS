@@ -82,6 +82,7 @@ class HunterListAllEduVC: UIViewController {
     }
     @IBAction func actionAddEducation(_ sender: Any) {
         // additional image/video
+        
         if isFrom == "Profile" {
         let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterCandidateProVC") as! HunterCandidateProVC
         self.navigationController?.pushViewController(vc, animated: true)

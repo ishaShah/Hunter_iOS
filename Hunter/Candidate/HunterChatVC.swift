@@ -592,6 +592,11 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
 //                cell.viewChatCV.layer.cornerRadius = 5.0
 //                cell.viewChatCV.layer.masksToBounds = true
                 
+                    
+                    
+                    if let message_time = arrayChatList[indexPath.row-1].message_time{
+                        cell.textTime.text = message_time
+                    }
                 if let message = arrayChatList[indexPath.row-1].message{
                     cell.textChat.text = message
                 }

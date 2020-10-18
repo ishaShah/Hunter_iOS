@@ -421,7 +421,13 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 self.noCardLeft.isHidden = true
 
             }
-         
+        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.frame
+
+        self.tbl_jobs.backgroundView = blurEffectView
+        self.tbl_jobs.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
+
     }
     func createCards(){
         
@@ -901,8 +907,9 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveLinear, animations: {
 //            self.viewNavigation.alpha = 1.0
-        }, completion: nil)
             UserDefaults.standard.set("true", forKey: "animated")
+
+        }, completion: nil)
 
         }
         

@@ -95,7 +95,7 @@ class HunterWorkExpListVC: UIViewController {
     @IBAction func postANewJob(_ sender: Any) {
          
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterWorkExpVC") as! HunterWorkExpVC
-        vc.isFromProfile = "Profile"
+        vc.isFromProfile = isFrom
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
