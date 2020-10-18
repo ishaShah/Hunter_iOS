@@ -12,6 +12,7 @@ class HunterChatRecieverImageCell: UITableViewCell {
 
     @IBOutlet weak var imgRecievedImage: UIImageView!
     
+    @IBOutlet weak var time: UILabel!
     @IBOutlet weak var viewChatCV: UIView!
     
     @IBOutlet weak var imgClick: UIButton!

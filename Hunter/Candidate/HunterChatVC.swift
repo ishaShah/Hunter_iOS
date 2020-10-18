@@ -519,158 +519,175 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 }
             }
             else {
-                     if let logo = self.dictRecruiterDetails.profile_img{
-                        cell.imageLogo.contentMode = .scaleToFill
-                        let imageURL = URL(string: logo)
-                        cell.imageLogo.kf.setImage(with: imageURL, placeholder: UIImage(named: "placeholder"))
-                    }
-                    if let name = self.dictRecruiterDetails.candidate_name{
-                        cell.labelName.text = name
-                    }
-                    if let matchedOn = self.dictRecruiterDetails.matched_on{
-                        cell.labelMatchedOn.text = matchedOn
-                    }
+                if let logo = self.dictRecruiterDetails.profile_img{
+                    cell.imageLogo.contentMode = .scaleToFill
+                    let imageURL = URL(string: logo)
+                    cell.imageLogo.kf.setImage(with: imageURL, placeholder: UIImage(named: "placeholder"))
+                }
+                if let name = self.dictRecruiterDetails.candidate_name{
+                    cell.labelName.text = name
+                }
+                if let matchedOn = self.dictRecruiterDetails.matched_on{
+                    cell.labelMatchedOn.text = matchedOn
+                }
                 
             }
             return cell
-
+            
         }
         else {
-        if let postedBy = arrayChatList[indexPath.row-1].posted_by{
-            if postedBy == loginType{
-                
-                let type = arrayChatList[indexPath.row-1].type
-                if type == "image" {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatSenderImageCell", for: indexPath) as! HunterChatSenderImageCell
-                cell.selectionStyle = .none
-                tableView.separatorStyle = .none
-                
-                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
-
-//                cell.viewChatCV.layer.cornerRadius = 5.0
-//                cell.viewChatCV.layer.masksToBounds = true
+            if let postedBy = arrayChatList[indexPath.row-1].posted_by{
+                if postedBy == loginType{
                     
-                    cell.imgClick.tag = indexPath.row-1
-                    
-                if let postedBy = arrayChatList[indexPath.row-1].posted_by{
-                    if postedBy == loginType{
-                        if let message = arrayChatList[indexPath.row-1].message{
-                            let url = URL(string: message)
-                            cell.imgSentImage.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
-                            
-                        }
-                    }
-                }
-                return cell
-                }
-                    if type == "file" {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatSenderFileCell", for: indexPath) as! HunterChatSenderFileCell
-                    cell.selectionStyle = .none
-                    tableView.separatorStyle = .none
-                    cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
-
-//                    cell.viewChatCV.layer.cornerRadius = 5.0
-//                    cell.viewChatCV.layer.masksToBounds = true
-                    if let postedBy = arrayChatList[indexPath.row-1].posted_by{
-                        if postedBy == loginType{
-                            if let message = arrayChatList[indexPath.row-1].message{
-                                let url = URL(string: message)
-                                 
-                                
-                            }
-                        }
-                    }
-                    return cell
-                    }
-                else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "HunterSenderCell", for: indexPath) as! HunterChatCell
-                cell.selectionStyle = .none
-                tableView.separatorStyle = .none
+                    let type = arrayChatList[indexPath.row-1].type
+                    if type == "image" {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatSenderImageCell", for: indexPath) as! HunterChatSenderImageCell
+                        cell.selectionStyle = .none
+                        tableView.separatorStyle = .none
                         
                         cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
-
-//                cell.viewChatCV.layer.cornerRadius = 5.0
-//                cell.viewChatCV.layer.masksToBounds = true
-                
-                    
-                    
-                    if let message_time = arrayChatList[indexPath.row-1].message_time{
-                        cell.textTime.text = message_time
+                        
+                        //                cell.viewChatCV.layer.cornerRadius = 5.0
+                        //                cell.viewChatCV.layer.masksToBounds = true
+                        
+                        cell.imgClick.tag = indexPath.row-1
+                        
+                        if let postedBy = arrayChatList[indexPath.row-1].posted_by{
+                            if postedBy == loginType{
+                                if let message = arrayChatList[indexPath.row-1].message{
+                                    let url = URL(string: message)
+                                    cell.imgSentImage.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+                                    
+                                }
+                                if let message_time = arrayChatList[indexPath.row-1].message_time{
+                                    cell.time.text = message_time
+                                }
+                            }
+                        }
+                        return cell
                     }
-                if let message = arrayChatList[indexPath.row-1].message{
-                    cell.textChat.text = message
-                }
-                return cell
+                    if type == "file" {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatSenderFileCell", for: indexPath) as! HunterChatSenderFileCell
+                        cell.selectionStyle = .none
+                        tableView.separatorStyle = .none
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
+                        
+                        //                    cell.viewChatCV.layer.cornerRadius = 5.0
+                        //                    cell.viewChatCV.layer.masksToBounds = true
+                        if let postedBy = arrayChatList[indexPath.row-1].posted_by{
+                            if postedBy == loginType{
+                                if let message = arrayChatList[indexPath.row-1].message{
+                                    let url = URL(string: message)
+                                    
+                                    
+                                }
+                                if let message_time = arrayChatList[indexPath.row-1].message_time{
+                                    cell.time.text = message_time
+                                }
+                            }
+                        }
+                        return cell
                     }
-            }else{
-                 let type = arrayChatList[indexPath.row-1].type
-               if type == "image" {
-               let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatRecieverImageCell", for: indexPath) as! HunterChatRecieverImageCell
-               cell.selectionStyle = .none
-               tableView.separatorStyle = .none
-               
-//               cell.viewChatCV.layer.cornerRadius = 5.0
-//               cell.viewChatCV.layer.masksToBounds = true
-                cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
-
-                cell.imgClick.tag = indexPath.row-1
-
-               if let postedBy = arrayChatList[indexPath.row-1].posted_by{
-                   if postedBy != loginType{
-                       if let message = arrayChatList[indexPath.row-1].message{
-                           let url = URL(string: message)
-                           cell.imgRecievedImage.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))                        }
-                   }
-               }
-               return cell
-               }
-                if type == "file" {
-                                   let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatRecieverFileCell", for: indexPath) as! HunterChatRecieverFileCell
-                                   cell.selectionStyle = .none
-                                   tableView.separatorStyle = .none
-                                   cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
-
-//                                   cell.viewChatCV.layer.cornerRadius = 5.0
-//                                   cell.viewChatCV.layer.masksToBounds = true
-                                   if let postedBy = arrayChatList[indexPath.row-1].posted_by{
-                                       if postedBy == loginType{
-                                           if let message = arrayChatList[indexPath.row-1].message{
-                                               let url = URL(string: message)
-                                                
-                                               
-                                           }
-                                       }
-                                   }
-                                   return cell
-                                   }
-                               else {
-             
-                let cell = tableView.dequeueReusableCell(withIdentifier: "HunterReceiverCell", for: indexPath) as! HunterChatCell
-                cell.selectionStyle = .none
-                tableView.separatorStyle = .none
-                
-                    
-                    cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
-
-                    
-                    
-//                cell.viewChatCV.layer.cornerRadius = 5.0
-//                cell.viewChatCV.layer.masksToBounds = true
-                if let postedBy = arrayChatList[indexPath.row-1].posted_by{
-                    if postedBy != loginType{
+                    else {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterSenderCell", for: indexPath) as! HunterChatCell
+                        cell.selectionStyle = .none
+                        tableView.separatorStyle = .none
+                        
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
+                        
+                        //                cell.viewChatCV.layer.cornerRadius = 5.0
+                        //                cell.viewChatCV.layer.masksToBounds = true
+                        
+                        
+                        
+                        if let message_time = arrayChatList[indexPath.row-1].message_time{
+                            cell.textTime.text = message_time
+                        }
                         if let message = arrayChatList[indexPath.row-1].message{
                             cell.textChat.text = message
                         }
+                        return cell
+                    }
+                }else{
+                    let type = arrayChatList[indexPath.row-1].type
+                    if type == "image" {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatRecieverImageCell", for: indexPath) as! HunterChatRecieverImageCell
+                        cell.selectionStyle = .none
+                        tableView.separatorStyle = .none
+                        
+                        //               cell.viewChatCV.layer.cornerRadius = 5.0
+                        //               cell.viewChatCV.layer.masksToBounds = true
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
+                        
+                        cell.imgClick.tag = indexPath.row-1
+                        
+                        if let postedBy = arrayChatList[indexPath.row-1].posted_by{
+                            if postedBy != loginType{
+                                if let message = arrayChatList[indexPath.row-1].message{
+                                    let url = URL(string: message)
+                                    cell.imgRecievedImage.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+                                    
+                                }
+                                if let message_time = arrayChatList[indexPath.row-1].message_time{
+                                    cell.time.text = message_time
+                                }
+                            }
+                        }
+                        return cell
+                    }
+                    if type == "file" {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatRecieverFileCell", for: indexPath) as! HunterChatRecieverFileCell
+                        cell.selectionStyle = .none
+                        tableView.separatorStyle = .none
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
+                        
+                        //                                   cell.viewChatCV.layer.cornerRadius = 5.0
+                        //                                   cell.viewChatCV.layer.masksToBounds = true
+                        if let postedBy = arrayChatList[indexPath.row-1].posted_by{
+                            if postedBy == loginType{
+                                if let message = arrayChatList[indexPath.row-1].message{
+                                    let url = URL(string: message)
+                                    
+                                    
+                                }
+                                if let message_time = arrayChatList[indexPath.row-1].message_time{
+                                    cell.time.text = message_time
+                                }
+                            }
+                        }
+                        return cell
+                    }
+                    else {
+                        
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "HunterReceiverCell", for: indexPath) as! HunterChatCell
+                        cell.selectionStyle = .none
+                        tableView.separatorStyle = .none
+                        
+                        
+                        cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
+                        
+                        
+                        
+                        //                cell.viewChatCV.layer.cornerRadius = 5.0
+                        //                cell.viewChatCV.layer.masksToBounds = true
+                        if let postedBy = arrayChatList[indexPath.row-1].posted_by{
+                            if postedBy != loginType{
+                                if let message = arrayChatList[indexPath.row-1].message{
+                                    cell.textChat.text = message
+                                }
+                                if let message_time = arrayChatList[indexPath.row-1].message_time{
+                                    cell.textTime.text = message_time
+                                }
+                            }
+                        }
+                        return cell
                     }
                 }
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HunterReceiverCell", for: indexPath) as! HunterChatCell
                 return cell
-                }
             }
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HunterReceiverCell", for: indexPath) as! HunterChatCell
-            return cell
         }
-    }
     }
     @IBAction func matchClcik(_ sender: Any) {
         

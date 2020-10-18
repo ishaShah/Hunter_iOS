@@ -636,7 +636,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
  
 
         let closeButton = UIButton(frame: CGRect(x: 5, y:40, width: 35, height: 35))
-        closeButton.setImage(#imageLiteral(resourceName: "close-icon-white.png"), for: .normal)
+        closeButton.setImage(UIImage(named: "cancel"), for: .normal)
         closeButton.tintColor = UIColor.white
         closeButton.addTarget(self, action: #selector(dismissFullscreenImage), for: .touchUpInside)
         

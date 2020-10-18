@@ -10,6 +10,7 @@ import UIKit
 
 class HunterChatSenderImageCell: UITableViewCell {
 
+    @IBOutlet weak var time: UILabel!
     @IBOutlet weak var imgSentImage: UIImageView!
     @IBOutlet weak var viewChatCV: UIView!
 

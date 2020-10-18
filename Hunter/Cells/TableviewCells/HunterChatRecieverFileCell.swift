@@ -10,6 +10,7 @@ import UIKit
 
 class HunterChatRecieverFileCell: UITableViewCell {
     @IBOutlet weak var lab_fileName: UILabel!
+    @IBOutlet weak var time: UILabel!
     @IBOutlet weak var viewChatCV: UIView!
 
     override func awakeFromNib() {
