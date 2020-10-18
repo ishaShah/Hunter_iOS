@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -88,6 +89,7 @@
                                                                     </label>
                                                                 </subviews>
                                                             </view>
+                                                            <viewLayoutGuide key="safeArea" id="l6g-oZ-wVN"/>
                                                             <color key="backgroundColor" red="0.38823529410000002" green="0.16862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="caM-Qr-hAs" firstAttribute="centerY" secondItem="cAI-iv-IOh" secondAttribute="centerY" id="GsN-Tv-Stq"/>
@@ -95,7 +97,6 @@
                                                                 <constraint firstAttribute="trailing" secondItem="caM-Qr-hAs" secondAttribute="trailing" constant="5" id="mNf-o8-hVW"/>
                                                                 <constraint firstItem="caM-Qr-hAs" firstAttribute="centerX" secondItem="cAI-iv-IOh" secondAttribute="centerX" id="pVa-MF-7LT"/>
                                                             </constraints>
-                                                            <viewLayoutGuide key="safeArea" id="l6g-oZ-wVN"/>
                                                             <size key="customSize" width="100" height="40"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadiusV">
@@ -114,7 +115,7 @@
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="JuR-XR-dCS" firstAttribute="top" secondItem="uOV-ji-3or" secondAttribute="bottom" constant="10" id="2u1-s5-VJ5"/>
                                                 <constraint firstItem="uOV-ji-3or" firstAttribute="top" secondItem="8t6-Wj-dUH" secondAttribute="top" constant="10" id="9ox-B1-iie"/>
@@ -155,7 +156,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="p7v-fG-S78" firstAttribute="top" secondItem="2Ot-al-VyG" secondAttribute="top" constant="10" id="1b2-e3-GL6"/>
                                                 <constraint firstItem="p7v-fG-S78" firstAttribute="leading" secondItem="2Ot-al-VyG" secondAttribute="leading" constant="20" id="U3x-qY-1o2"/>
@@ -242,7 +243,7 @@
                                                     <color key="textColor" red="0.216491878" green="0.121322833" blue="0.46504807469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzz-Sj-uBK">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzz-Sj-uBK">
                                                     <rect key="frame" x="20" y="99.5" width="374" height="30"/>
                                                     <connections>
                                                         <action selector="profileView:" destination="-1" eventType="touchUpInside" id="Uiz-t5-JDY"/>
@@ -260,9 +261,6 @@
                                                             </constraints>
                                                             <state key="normal" image="clear-24px"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                    <real key="value" value="22"/>
-                                                                </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
@@ -273,7 +271,7 @@
                                                                     <real key="value" value="1"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                    <color key="value" red="0.40780189630000002" green="0.24317812920000001" blue="0.66946464780000003" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
@@ -289,9 +287,6 @@
                                                             </constraints>
                                                             <state key="normal" image="favorite-24px"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                    <real key="value" value="22"/>
-                                                                </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                                     <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
@@ -316,7 +311,7 @@
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="Vzz-Sj-uBK" firstAttribute="leading" secondItem="8BQ-eC-36u" secondAttribute="leading" id="19b-vX-Zta"/>
                                                 <constraint firstItem="WxL-SN-fpG" firstAttribute="top" secondItem="8BQ-eC-36u" secondAttribute="bottom" constant="4" id="1c4-tC-aYz"/>
@@ -395,7 +390,7 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand" translatesAutoresizingMaskIntoConstraints="NO" id="UxM-jx-KNl">
                                     <rect key="frame" x="10" y="10" width="24" height="24"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqT-qf-aF4">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqT-qf-aF4">
                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                     <connections>
                                         <action selector="fullViewWithSender:" destination="-1" eventType="touchUpInside" id="GRp-Mt-tYo"/>
@@ -431,7 +426,7 @@
                                         <constraint firstAttribute="height" constant="30" id="dhK-C4-bqg"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDl-XQ-aOt">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDl-XQ-aOt">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                                     <state key="normal">
@@ -539,7 +534,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="N7q-9s-TIK">
                                             <rect key="frame" x="46" y="543" width="220" height="30"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzJ-Rd-SJ6">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzJ-Rd-SJ6">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
@@ -561,7 +556,7 @@
                                                         <action selector="cancelMsg:" destination="-1" eventType="touchUpInside" id="MCT-dy-OAS"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ki-xv-7Fn">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ki-xv-7Fn">
                                                     <rect key="frame" x="120" y="0.0" width="100" height="30"/>
                                                     <color key="backgroundColor" red="0.17651039360000001" green="0.0144051183" blue="0.41571259500000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
@@ -655,13 +650,14 @@ makes them perfect fit!</string>
                                 <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="LMB-ji-c87"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wu-87-URA">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wu-87-URA">
                             <rect key="frame" x="20" y="101" width="120" height="120"/>
                             <connections>
                                 <action selector="profileView:" destination="-1" eventType="touchUpInside" id="mrf-KQ-HV5"/>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="XW6-oq-fgh"/>
                     <color key="backgroundColor" red="0.40443938969999998" green="0.18067890410000001" blue="0.60768622159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="0Nj-i7-MYG" firstAttribute="leading" secondItem="XW6-oq-fgh" secondAttribute="leading" constant="20" id="2Ug-vU-vIg"/>
@@ -693,9 +689,9 @@ makes them perfect fit!</string>
                         <constraint firstItem="F9r-cW-9IW" firstAttribute="top" secondItem="K28-lD-CrL" secondAttribute="bottom" constant="-4" id="qBn-le-rwt"/>
                         <constraint firstItem="3Wu-87-URA" firstAttribute="trailing" secondItem="0Nj-i7-MYG" secondAttribute="trailing" id="sEH-lc-I7q"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="XW6-oq-fgh"/>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="9Zm-Zy-gnL"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="RmP-Rv-pq2" firstAttribute="trailing" secondItem="9Zm-Zy-gnL" secondAttribute="trailing" id="bBZ-qI-ebX"/>
@@ -703,7 +699,6 @@ makes them perfect fit!</string>
                 <constraint firstItem="RmP-Rv-pq2" firstAttribute="leading" secondItem="9Zm-Zy-gnL" secondAttribute="leading" id="uqf-9h-caH"/>
                 <constraint firstItem="RmP-Rv-pq2" firstAttribute="top" secondItem="J9E-Yf-jIH" secondAttribute="top" id="zej-zn-Rcb"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="9Zm-Zy-gnL"/>
             <point key="canvasLocation" x="-410.14492753623193" y="101.78571428571428"/>
         </view>
     </objects>
@@ -711,12 +706,15 @@ makes them perfect fit!</string>
         <image name="Splash-screen-bg" width="720" height="1280"/>
         <image name="USER" width="227" height="227"/>
         <image name="arrow-left" width="22" height="41"/>
-        <image name="clear-24px" width="28.5" height="28.5"/>
+        <image name="clear-24px" width="144" height="144"/>
         <image name="codeHeader" width="454" height="61"/>
         <image name="expand" width="17" height="16"/>
-        <image name="favorite-24px" width="24" height="24"/>
+        <image name="favorite-24px" width="144" height="144"/>
         <image name="h-profile-banner" width="444" height="188"/>
         <image name="placeholder_map" width="16" height="16"/>
         <image name="upload" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

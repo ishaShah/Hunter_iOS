@@ -15,6 +15,8 @@ class HunterAchieveListVC: UIViewController{
     @IBOutlet weak var collVAchievements: UICollectionView!
     
     var achievementArray = NSArray()
+    @IBOutlet var dots: UIPageControl!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,10 +126,18 @@ class HunterAchieveListVC: UIViewController{
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dots.currentPage = Int(
+            (collVAchievements.contentOffset.x / collVAchievements.frame.width)
+            .rounded(.toNearestOrAwayFromZero)
+        )
+    }
 }
 extension HunterAchieveListVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dots.numberOfPages = achievementArray.count
+
         return achievementArray.count
     }
     
@@ -151,7 +161,7 @@ extension HunterAchieveListVC : UICollectionViewDelegate,UICollectionViewDataSou
     }
     
   
-    
+     
     
 }
 class HunterAchievementsCollectionViewCell: UICollectionViewCell {

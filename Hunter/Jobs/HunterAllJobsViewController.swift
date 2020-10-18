@@ -13,6 +13,7 @@ import SVProgressHUD
 class HunterAllJobsViewController: UIViewController {
     @IBOutlet weak var viewHeader: UIView!
     @IBOutlet weak var collViewJobs: UICollectionView!
+    @IBOutlet weak var dots: UIPageControl!
     
     var jobsArray = NSArray()
     
@@ -108,10 +109,18 @@ class HunterAllJobsViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dots.currentPage = Int(
+            (collViewJobs.contentOffset.x / collViewJobs.frame.width)
+            .rounded(.toNearestOrAwayFromZero)
+        )
+    }
 }
 
 extension HunterAllJobsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dots.numberOfPages = jobsArray.count
+
         return jobsArray.count
     }
     

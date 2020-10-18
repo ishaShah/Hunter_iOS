@@ -12,7 +12,8 @@ import SVProgressHUD
 
 class HunterLanguageListVC: UIViewController {
     @IBOutlet weak var collViewLangs: UICollectionView!
-    
+    @IBOutlet var dots: UIPageControl!
+
     var langArray = NSArray()
     
     override func viewDidLoad() {
@@ -89,13 +90,20 @@ class HunterLanguageListVC: UIViewController {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterLanguage1VC") as! HunterLanguage1VC
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dots.currentPage = Int(
+            (collViewLangs.contentOffset.x / collViewLangs.frame.width)
+            .rounded(.toNearestOrAwayFromZero)
+        )
+    }
 
 }
 
 extension HunterLanguageListVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dots.numberOfPages = langArray.count
+
         return langArray.count
     }
     

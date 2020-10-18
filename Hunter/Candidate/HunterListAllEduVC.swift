@@ -11,6 +11,7 @@ import Alamofire
 import SVProgressHUD
 
 class HunterListAllEduVC: UIViewController {
+    @IBOutlet var dots: UIPageControl!
 
     var isFrom = String()
 
@@ -93,11 +94,20 @@ class HunterListAllEduVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dots.currentPage = Int(
+            (collEducation.contentOffset.x / collEducation.frame.width)
+            .rounded(.toNearestOrAwayFromZero)
+        )
+    }
 }
 
 extension HunterListAllEduVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dots.numberOfPages = educationArray.count
+
         return educationArray.count
     }
     

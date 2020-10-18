@@ -856,8 +856,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         newImageView.isUserInteractionEnabled = true
         
         
-        let closeButton = UIButton(frame: CGRect(x: 5, y:40, width: 35, height: 35))
-        closeButton.setImage(UIImage(named: "cancel"), for: .normal)
+        let closeButton = UIButton(frame: CGRect(x: self.view.frame.width - 45, y:40, width: 35, height: 35))
+        closeButton.setImage(UIImage(named: "clear-24px"), for: .normal)
         closeButton.tintColor = UIColor.white
         closeButton.addTarget(self, action: #selector(dismissFullscreenImage), for: .touchUpInside)
         

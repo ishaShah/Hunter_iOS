@@ -13,7 +13,8 @@ import SVProgressHUD
 class HunterWorkExpListVC: UIViewController {
 
     @IBOutlet weak var collViewJobs: UICollectionView!
-    
+    @IBOutlet var dots: UIPageControl!
+
     var jobsArray = NSArray()
     var isFrom = String()
 
@@ -99,13 +100,20 @@ class HunterWorkExpListVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dots.currentPage = Int(
+            (collViewJobs.contentOffset.x / collViewJobs.frame.width)
+            .rounded(.toNearestOrAwayFromZero)
+        )
+    }
 
 }
 
 extension HunterWorkExpListVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dots.numberOfPages = jobsArray.count
+
         return jobsArray.count
     }
     
