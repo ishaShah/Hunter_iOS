@@ -3264,17 +3264,17 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-u0-ios">
-                                        <rect key="frame" x="125" y="393.5" width="164.5" height="109.5"/>
+                                        <rect key="frame" x="111.5" y="392.5" width="191.5" height="111"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-bS-5wI">
-                                                <rect key="frame" x="52" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="65.5" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="gZU-0n-9Dh"/>
                                                     <constraint firstAttribute="height" constant="60" id="wb1-v0-1qv"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Created!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nt-Br-PIx">
-                                                <rect key="frame" x="0.0" y="85" width="164.5" height="24.5"/>
+                                                <rect key="frame" x="0.0" y="85" width="191.5" height="26"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="21"/>
                                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4738,13 +4738,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfL-3P-xWD">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bbd-VP-G4C">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nk4-pA-eHs">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4753,7 +4753,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-hO-0fb">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="GRI-fJ-P5z"/>
@@ -4770,7 +4770,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GE6-cd-9iE">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4795,13 +4795,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTe-hk-hf3">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-hY-Lgb">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAu-bW-2cT">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4810,7 +4810,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppf-op-ly2">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="6Lf-nm-3FL"/>
@@ -4827,7 +4827,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="do8-Qh-R8r">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4906,7 +4906,7 @@ that we recommend for you.</string>
                                         <rect key="frame" x="132" y="160" width="70" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account is being verified. Our team will be in touch with you soon." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26G-Qb-M9A">
-                                        <rect key="frame" x="23" y="270" width="288" height="66"/>
+                                        <rect key="frame" x="23" y="270" width="288" height="63"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -4935,13 +4935,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjA-YU-Q2d">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0Kh-WF-Pcf">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sax-yD-tym">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -4950,7 +4950,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-xv-HoE">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="72k-EA-aEE"/>
@@ -4967,7 +4967,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-bs-puJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4992,13 +4992,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-R6-Rqh">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ij8-Kk-ay5">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9p-Ud-akN">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5007,7 +5007,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-jw-leh">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="Ntf-yM-Cuf"/>
@@ -5024,7 +5024,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-ZD-gLQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5103,13 +5103,13 @@ that we recommend for you.</string>
                                         <rect key="frame" x="121.5" y="160" width="91" height="84"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account could not be verified at this point of time. Please check our support page to know more." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksx-3j-zgR">
-                                        <rect key="frame" x="23" y="295" width="288" height="88"/>
+                                        <rect key="frame" x="23" y="294" width="288" height="63"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are sorry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxa-o4-nAs">
-                                        <rect key="frame" x="109.5" y="264" width="115.5" height="21"/>
+                                        <rect key="frame" x="117.5" y="264" width="99.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -5159,13 +5159,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riL-me-cAH">
-                                <rect key="frame" x="-300.5" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="-267.5" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gMx-ei-sdI">
-                                        <rect key="frame" x="124.5" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAg-ja-Dc9">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5174,7 +5174,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-Nh-VYf">
-                                        <rect key="frame" x="50" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="33.5" y="238" width="240.5" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="D84-I8-79O"/>
@@ -5191,7 +5191,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tQj-h4-9uJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5216,13 +5216,13 @@ that we recommend for you.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7Y-Ta-H1t">
-                                <rect key="frame" x="374" y="248" width="340.5" height="400"/>
+                                <rect key="frame" x="374" y="248" width="307.5" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief-case-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rgC-r9-Za4">
-                                        <rect key="frame" x="125" y="160" width="91" height="79"/>
+                                        <rect key="frame" x="108.5" y="160" width="91" height="79"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-Ow-wZW">
-                                        <rect key="frame" x="23" y="289" width="294.5" height="73.5"/>
+                                        <rect key="frame" x="23" y="289" width="261.5" height="70"/>
                                         <string key="text">Post a job to see candidates
 This is where you'll see talent
 that we recommend for you.</string>
@@ -5231,7 +5231,7 @@ that we recommend for you.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xao-2c-Xft">
-                                        <rect key="frame" x="50.5" y="238" width="240" height="64"/>
+                                        <rect key="frame" x="34" y="238" width="240" height="64"/>
                                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="2nD-uz-Fkc"/>
@@ -5248,7 +5248,7 @@ that we recommend for you.</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ABD-M2-1NT">
-                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="400"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -7089,10 +7089,10 @@ that we recommend for you.</string>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exi-im-PO7">
-                                <rect key="frame" x="0.0" y="182" width="414" height="547"/>
+                                <rect key="frame" x="0.0" y="182" width="414" height="680"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-vC-SeH">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="765"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="uFj-xh-OMu">
                                                 <rect key="frame" x="73.5" y="5" width="267" height="477"/>
@@ -7334,6 +7334,47 @@ that we recommend for you.</string>
                                                 <color key="textColor" red="0.44705882352941173" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Rdo-eT-eKS">
+                                                <rect key="frame" x="50" y="775" width="314" height="57"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-iD-vlM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="57"/>
+                                                        <color key="backgroundColor" red="0.32549019607843138" green="0.058823529411764705" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="57" id="CzC-c0-1zQ"/>
+                                                            <constraint firstAttribute="width" constant="150" id="o7E-K5-zd4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
+                                                        <state key="normal" title="Post Job">
+                                                            <color key="titleColor" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                <real key="value" value="28.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="actionPostAJob:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="oCs-D0-mri"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-12-TWh">
+                                                        <rect key="frame" x="164" y="0.0" width="150" height="57"/>
+                                                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
+                                                        <state key="normal" title="Save Draft">
+                                                            <color key="titleColor" red="0.20784313725490194" green="0.043137254901960784" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                                <real key="value" value="28.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="actionSaveAsDraft:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="Qsk-4H-fcJ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -7341,8 +7382,9 @@ that we recommend for you.</string>
                                             <constraint firstItem="uFj-xh-OMu" firstAttribute="centerX" secondItem="pqw-vC-SeH" secondAttribute="centerX" id="HjI-vu-d4k"/>
                                             <constraint firstItem="trS-Z8-DVk" firstAttribute="top" secondItem="G8N-jR-exA" secondAttribute="bottom" constant="5" id="MUj-Da-xr0"/>
                                             <constraint firstItem="G8N-jR-exA" firstAttribute="top" secondItem="uFj-xh-OMu" secondAttribute="bottom" constant="13" id="ROJ-ec-nkn"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rdo-eT-eKS" secondAttribute="bottom" constant="20" id="hQA-g3-IVE"/>
                                             <constraint firstItem="G8N-jR-exA" firstAttribute="centerX" secondItem="uFj-xh-OMu" secondAttribute="centerX" id="kkI-ra-fsv"/>
-                                            <constraint firstAttribute="bottom" secondItem="trS-Z8-DVk" secondAttribute="bottom" constant="10" id="ubI-h4-UCQ"/>
+                                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="top" secondItem="trS-Z8-DVk" secondAttribute="bottom" constant="20" id="n0b-Tb-dhG"/>
                                             <constraint firstItem="trS-Z8-DVk" firstAttribute="trailing" secondItem="Z0H-nw-Qdf" secondAttribute="trailing" id="vDt-it-z6N"/>
                                         </constraints>
                                     </view>
@@ -7361,62 +7403,20 @@ that we recommend for you.</string>
                                 <color key="textColor" red="0.2156862745" green="0.1215686275" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Rdo-eT-eKS">
-                                <rect key="frame" x="50" y="749" width="314" height="57"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-iD-vlM">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="57"/>
-                                        <color key="backgroundColor" red="0.32549019607843138" green="0.058823529411764705" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="CzC-c0-1zQ"/>
-                                            <constraint firstAttribute="width" constant="150" id="o7E-K5-zd4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
-                                        <state key="normal" title="Post Job">
-                                            <color key="titleColor" red="0.89411764709999997" green="0.87058823529999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                <real key="value" value="28.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="actionPostAJob:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="oCs-D0-mri"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-12-TWh">
-                                        <rect key="frame" x="164" y="0.0" width="150" height="57"/>
-                                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
-                                        <state key="normal" title="Save Draft">
-                                            <color key="titleColor" red="0.20784313725490194" green="0.043137254901960784" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                <real key="value" value="28.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="actionSaveAsDraft:" destination="OHp-9v-8Xf" eventType="touchUpInside" id="Qsk-4H-fcJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="exi-im-PO7" secondAttribute="trailing" id="8Mw-Hg-9iU"/>
                             <constraint firstItem="exi-im-PO7" firstAttribute="top" secondItem="YNT-b2-mQy" secondAttribute="bottom" constant="25" id="AUb-Ki-EMs"/>
+                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="D8R-8F-U9n"/>
                             <constraint firstItem="4mu-h0-VyC" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="EAG-6A-j2F"/>
                             <constraint firstItem="jtS-f9-qMq" firstAttribute="leading" secondItem="Jnk-CX-sY4" secondAttribute="leading" constant="40" id="Eck-pE-0Ck"/>
                             <constraint firstItem="jtS-f9-qMq" firstAttribute="top" secondItem="apd-NJ-zBM" secondAttribute="bottom" constant="30" id="FBS-gt-Y1t"/>
                             <constraint firstItem="exi-im-PO7" firstAttribute="leading" secondItem="Jnk-CX-sY4" secondAttribute="leading" id="d36-k7-mtI"/>
-                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="j54-dy-MGQ"/>
                             <constraint firstItem="YNT-b2-mQy" firstAttribute="top" secondItem="4mu-h0-VyC" secondAttribute="bottom" constant="15" id="lDy-Xm-hf4"/>
                             <constraint firstItem="YNT-b2-mQy" firstAttribute="centerX" secondItem="Jnk-CX-sY4" secondAttribute="centerX" id="pAt-t2-Atm"/>
                             <constraint firstItem="4mu-h0-VyC" firstAttribute="centerY" secondItem="jtS-f9-qMq" secondAttribute="centerY" id="tD6-MR-1o1"/>
-                            <constraint firstItem="Rdo-eT-eKS" firstAttribute="top" secondItem="exi-im-PO7" secondAttribute="bottom" constant="20" id="vYg-VA-9c6"/>
-                            <constraint firstAttribute="bottom" secondItem="Rdo-eT-eKS" secondAttribute="bottom" constant="90" id="vcf-vg-dPl"/>
+                            <constraint firstItem="e9V-c5-MnN" firstAttribute="top" secondItem="exi-im-PO7" secondAttribute="bottom" id="vYg-VA-9c6"/>
                         </constraints>
                     </view>
                     <connections>

@@ -250,14 +250,14 @@
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-GI-HR7">
-                                                    <rect key="frame" x="326" y="48" width="68" height="30"/>
+                                                    <rect key="frame" x="266" y="48" width="128" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-x8-Z6r">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="Ova-BX-dbA"/>
-                                                                <constraint firstAttribute="width" constant="30" id="fIK-Cq-Zzm"/>
+                                                                <constraint firstAttribute="height" constant="60" id="Ova-BX-dbA"/>
+                                                                <constraint firstAttribute="width" constant="60" id="fIK-Cq-Zzm"/>
                                                             </constraints>
                                                             <state key="normal" image="clear-24px"/>
                                                             <userDefinedRuntimeAttributes>
@@ -279,11 +279,11 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGn-Gh-mh1">
-                                                            <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                                                            <rect key="frame" x="68" y="0.0" width="60" height="60"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="2he-gz-HNI"/>
-                                                                <constraint firstAttribute="width" constant="30" id="y9s-eB-aWh"/>
+                                                                <constraint firstAttribute="height" constant="60" id="2he-gz-HNI"/>
+                                                                <constraint firstAttribute="width" constant="60" id="y9s-eB-aWh"/>
                                                             </constraints>
                                                             <state key="normal" image="favorite-24px"/>
                                                             <userDefinedRuntimeAttributes>
@@ -477,7 +477,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Dz-GY2" customClass="CardViewNew" customModule="Hunter" customModuleProvider="target">
-                                    <rect key="frame" x="51" y="100" width="312" height="604"/>
+                                    <rect key="frame" x="-449" y="100" width="312" height="604"/>
                                     <subviews>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6r3-ll-yYm" customClass="GradientView" customModule="Hunter" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="312" height="50"/>
@@ -579,7 +579,7 @@
                                             </constraints>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOR-iA-Quv">
-                                            <rect key="frame" x="34.5" y="183.5" width="243.5" height="37"/>
+                                            <rect key="frame" x="34" y="183.5" width="243.5" height="37"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="37" id="7aQ-eY-CEO"/>
                                                 <constraint firstAttribute="width" constant="243.5" id="MOn-mC-she"/>
@@ -633,7 +633,7 @@ makes them perfect fit!</string>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="0.49063570210000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="bML-Dz-GY2" firstAttribute="centerX" secondItem="0gk-qU-Qpl" secondAttribute="centerX" id="Gef-Z9-xoS"/>
+                                <constraint firstItem="bML-Dz-GY2" firstAttribute="centerX" secondItem="0gk-qU-Qpl" secondAttribute="centerX" constant="-500" id="Gef-Z9-xoS"/>
                                 <constraint firstAttribute="bottom" secondItem="bML-Dz-GY2" secondAttribute="bottom" constant="100" id="T3n-O5-sgc"/>
                                 <constraint firstItem="bML-Dz-GY2" firstAttribute="top" secondItem="0gk-qU-Qpl" secondAttribute="top" constant="100" id="ovK-YI-u8G"/>
                                 <constraint firstItem="bML-Dz-GY2" firstAttribute="centerY" secondItem="0gk-qU-Qpl" secondAttribute="centerY" id="xgZ-OF-flF"/>
