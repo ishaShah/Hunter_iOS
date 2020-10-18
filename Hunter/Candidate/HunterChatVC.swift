@@ -593,12 +593,14 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                         cell.selectionStyle = .none
                         tableView.separatorStyle = .none
                         
-                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
+//                        cell.viewChatCV.roundCorners([.topLeft, .bottomLeft, .topRight], radius: 10.0)
                         
                         //                cell.viewChatCV.layer.cornerRadius = 5.0
                         //                cell.viewChatCV.layer.masksToBounds = true
                         
-                        
+                        cell.viewChatCV.layer.cornerRadius = 10
+                        cell.viewChatCV.layer.masksToBounds = true
+                        cell.viewChatCV.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner]
                         
                         if let message_time = arrayChatList[indexPath.row-1].message_time{
                             cell.textTime.text = message_time
@@ -618,6 +620,11 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                         //               cell.viewChatCV.layer.cornerRadius = 5.0
                         //               cell.viewChatCV.layer.masksToBounds = true
                         cell.viewChatCV.roundCorners([.topLeft, .bottomRight, .topRight], radius: 10.0)
+                        
+                        
+                        
+
+                        
                         
                         cell.imgClick.tag = indexPath.row-1
                         
