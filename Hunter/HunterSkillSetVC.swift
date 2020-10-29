@@ -11,7 +11,8 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterSkillSetVC: UIViewController,hunterDelegate {
+class HunterSkillSetVC: UIViewController,hunterDelegate,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var contButton: UIButton!
 
     var skillsArr = [String]()
@@ -39,7 +40,12 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
         alignedFlowLayout?.minimumInteritemSpacing = 5.0
         alignedFlowLayout?.horizontalAlignment = .justified
         alignedFlowLayout?.verticalAlignment = .center*/
-        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left,
+                                                                            verticalAlignment: .top)
+                    alignedFlowLayout.minimumInteritemSpacing = 10
+                    alignedFlowLayout.minimumLineSpacing = 10
+                    collView.collectionViewLayout = alignedFlowLayout
+//        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
     }
     @IBAction func buttonRemoveFromSuggestions(_ sender: UIButton) {
         //add removed element to main array
@@ -55,7 +61,8 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
             self.contButton.backgroundColor = UIColor.init(hexString:"E9E4F2" )
         }
 
-        
+        self.tblView.reloadData()
+
         self.collView.reloadData()
         
     }
@@ -95,7 +102,7 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
         
         
         self.txt_skill.text = ""
-        
+        self.tblView.reloadData()
         collView.reloadData()
         updateUIforSelection()
         print(selectedDict)
@@ -290,6 +297,20 @@ class HunterSkillSetVC: UIViewController,hunterDelegate {
             print("no internet")
         }
     }
+    // MARK: - Navigation
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return selectedSkillsArr.count
+        }
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 40
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HunterWorkLocTableViewCell", for: indexPath) as! HunterWorkLocTableViewCell
+            tableView.separatorStyle = .none
+            cell.selectionStyle = .none
+            cell.titleLabel.text = selectedSkillsArr[indexPath.row].capitalized
+            return cell
+        }
 }
 extension HunterSkillSetVC : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -342,10 +363,15 @@ extension HunterSkillSetVC: UICollectionViewDelegateFlowLayout {
 //            return CGSize(width: label.frame.width+55, height: 30)
 //        }
 //        else {
-            let label = UILabel(frame: CGRect.zero)
-            label.text = selectedSkillsArr[indexPath.row].uppercased()
-            label.sizeToFit()
-            return CGSize(width: label.frame.width+55, height: 30)
+         
+                let width = (selectedSkillsArr[indexPath.row].uppercased()).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
+                let label = UILabel(frame: CGRect.zero)
+                label.text = selectedSkillsArr[indexPath.row].capitalized
+                label.sizeToFit()
+                return CGSize(width: width + 40, height: 30)
+
+    //            return CGSize(width: label.frame.width+55, height: 30)
+             
 //        }
     }
 }

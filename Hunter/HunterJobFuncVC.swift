@@ -12,7 +12,10 @@ import iOSDropDown
 import Alamofire
 import SVProgressHUD
 
-class HunterJobFuncVC: UIViewController, hunterDelegate {
+class HunterJobFuncVC: UIViewController, hunterDelegate,UITableViewDelegate,UITableViewDataSource {
+    
+    @IBOutlet weak var tblView: UITableView!
+
     @IBOutlet weak var contButton: UIButton!
 
     @IBOutlet weak var txt_jobFunc: HunterTextField!
@@ -38,7 +41,19 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
         alignedFlowLayout?.minimumInteritemSpacing = 5.0
         alignedFlowLayout?.horizontalAlignment = .justified
         alignedFlowLayout?.verticalAlignment = .center*/
-        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+//        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left,
+//                                                                            verticalAlignment: .top)
+//                    alignedFlowLayout.minimumInteritemSpacing = 10
+//                    alignedFlowLayout.minimumLineSpacing = 10
+//                    collView.collectionViewLayout = alignedFlowLayout
+//        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+        
+        
+        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left,
+                                                                            verticalAlignment: .top)
+                    alignedFlowLayout.minimumInteritemSpacing = 5
+                    alignedFlowLayout.minimumLineSpacing = 5
+        collView.collectionViewLayout = alignedFlowLayout
     }
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -71,7 +86,8 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
 
         
         self.collView.reloadData()
-        
+        self.tblView.reloadData()
+
          
     }
     func selectedData(selectedDict: NSDictionary, isFrom: String) {
@@ -97,6 +113,7 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
         
         
         self.txt_jobFunc.text = ""
+        tblView.reloadData()
         
         collView.reloadData()
         updateUIforSelection()
@@ -130,6 +147,20 @@ class HunterJobFuncVC: UIViewController, hunterDelegate {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    // MARK: - Navigation
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return selectedjobFuncArr.count
+        }
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 40
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HunterWorkLocTableViewCell", for: indexPath) as! HunterWorkLocTableViewCell
+            tableView.separatorStyle = .none
+            cell.selectionStyle = .none
+            cell.titleLabel.text = selectedjobFuncArr[indexPath.row].capitalized
+            return cell
+        }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -204,7 +235,8 @@ extension HunterJobFuncVC : UICollectionViewDataSource {
                                  
                                 
 
-                                
+                                self.tblView.reloadData()
+
                                 self.collView.reloadData()
                             }
                             else if status as! Int == 2 {
@@ -331,21 +363,25 @@ extension HunterJobFuncVC : UICollectionViewDataSource {
 }
 extension HunterJobFuncVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        
         if self.selectedjobFuncArr.count == 0 {
-            let label = UILabel(frame: CGRect.zero)
-            label.text = jobFuncArr[indexPath.row].uppercased()
-            label.sizeToFit()
-            return CGSize(width: label.frame.width+55, height: 30)
+            let width = (jobFuncArr[indexPath.row].capitalized).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
+
+//            let label = UILabel(frame: CGRect.zero)
+//            label.text = jobFuncArr[indexPath.row].capitalized()
+//            label.sizeToFit()
+            return CGSize(width: width + 38, height: 30)
+
+//            return CGSize(width: label.frame.width+55, height: 30)
         }
         else {
-            let label = UILabel(frame: CGRect.zero)
-            label.text = selectedjobFuncArr[indexPath.row].uppercased()
-            label.sizeToFit()
-            return CGSize(width: label.frame.width+55, height: 30)
+            let width = (selectedjobFuncArr[indexPath.row].capitalized).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
+//            let label = UILabel(frame: CGRect.zero)
+//            label.text = selectedjobFuncArr[indexPath.row].capitalized()
+//            label.sizeToFit()
+            return CGSize(width: width + 38, height: 30)
+
+//            return CGSize(width: label.frame.width+55, height: 30)
         }
-        
     }
 }
 extension HunterJobFuncVC : UICollectionViewDelegate {

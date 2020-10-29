@@ -218,7 +218,7 @@ extension HunterAllJobsViewController : UICollectionViewDelegate,UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 308, height: 580)
+        CGSize(width: 308, height: 448)
     }
     
     

@@ -35,18 +35,18 @@ class HunterLanguage1VC: UIViewController {
         txtLevelOfProf.delegate = self
          
         getLookUpData()
-//        updateUI()
+        updateUI()
         // Do any additional setup after loading the view.
     }
     func updateUI() {
+         
+        
         if txtLevelOfProf.text != "" && txtLang.text != ""   {
-            btnAddLang.backgroundColor = UIColor(hex: "#350B76")
-            btnAddLang.setTitleColor(UIColor.white, for: .normal)
-            
-            
+            self.btnAddLang.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+            self.btnAddLang.backgroundColor = UIColor.init(hexString:"6B3E99" )
         }else{
-            btnAddLang.backgroundColor = UIColor(hex: "#EDEDED")
-            btnAddLang.setTitleColor(UIColor(hex: "#350B76"), for: .normal)
+            self.btnAddLang.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+            self.btnAddLang.backgroundColor = UIColor.init(hexString:"E9E4F2" )
         }
     }
 
@@ -175,7 +175,7 @@ extension HunterLanguage1VC : hunterDelegate{
             
             
         }
-//        updateUI()
+        updateUI()
         
     }
     func showPickerViewController(type : String) {

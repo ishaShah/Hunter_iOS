@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterWorkLocVC: UIViewController,hunterDelegate {
+class HunterWorkLocVC: UIViewController,hunterDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var txt_loc: HunterTextField!
     var locationArr = [String]()
     var locationIDArr = [Int]()
@@ -47,8 +48,12 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
         alignedFlowLayout?.minimumInteritemSpacing = 5.0
         alignedFlowLayout?.horizontalAlignment = .justified
         alignedFlowLayout?.verticalAlignment = .center*/
-        
-        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .justified,
+                                                                            verticalAlignment: .center)
+                    alignedFlowLayout.minimumInteritemSpacing = 10
+                    alignedFlowLayout.minimumLineSpacing = 10
+                    collView.collectionViewLayout = alignedFlowLayout
+//        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
 
     }
     @IBAction func backBtn(_ sender: Any) {
@@ -81,6 +86,7 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
  
         
         self.collView.reloadData()
+        self.tblView.reloadData()
 
         
     }
@@ -110,6 +116,8 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
         self.txt_loc.text = ""
         
         collView.reloadData()
+        self.tblView.reloadData()
+
         updateUIforSelection()
         print(selectedDict)
         
@@ -278,6 +286,20 @@ class HunterWorkLocVC: UIViewController,hunterDelegate {
             print("no internet")
         }
     }
+    // MARK: - Navigation
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return selectedlocationArr.count
+        }
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 40
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HunterWorkLocTableViewCell", for: indexPath) as! HunterWorkLocTableViewCell
+            tableView.separatorStyle = .none
+            cell.selectionStyle = .none
+            cell.titleLabel.text = selectedlocationArr[indexPath.row].capitalized
+            return cell
+        }
 }
 
 extension HunterWorkLocVC : UICollectionViewDataSource {
@@ -319,21 +341,29 @@ extension HunterWorkLocVC : UICollectionViewDataSource {
     }
 }
 extension HunterWorkLocVC: UICollectionViewDelegateFlowLayout {
-    
+     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.selectedlocationArr.count == 0 {
+            let width = (locationArr[indexPath.row].uppercased()).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
+
             let label = UILabel(frame: CGRect.zero)
             label.text = locationArr[indexPath.row].uppercased()
             label.sizeToFit()
-            return CGSize(width: label.frame.width+55, height: 30)
+            return CGSize(width: width + 36, height: 30)
+
+//            return CGSize(width: label.frame.width+55, height: 30)
         }
         else {
+            let width = (selectedlocationArr[indexPath.row].uppercased()).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
             let label = UILabel(frame: CGRect.zero)
             label.text = selectedlocationArr[indexPath.row].uppercased()
             label.sizeToFit()
-            return CGSize(width: label.frame.width+55, height: 30)
+            return CGSize(width: width + 36, height: 30)
+
+//            return CGSize(width: label.frame.width+55, height: 30)
         }
     }
+    
 }
 extension HunterWorkLocVC : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -341,6 +371,10 @@ extension HunterWorkLocVC : UICollectionViewDelegate {
 }
 class HunterWorkLocCollectionCell: UICollectionViewCell {
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var buttonRemove: UIButton!
+}
+class HunterWorkLocTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonRemove: UIButton!
 }

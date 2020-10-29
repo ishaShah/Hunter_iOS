@@ -20,6 +20,7 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
      
     @IBOutlet weak var coll_video: UICollectionView!
      @IBOutlet weak var contButton: UIButton!
+    @IBOutlet weak var btn_play: UIButton!
     
     var isFromCandidate = false
     var isVideo = false
@@ -31,6 +32,7 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
 
     let videoFileName = "/video.mp4"
 
+    @IBOutlet weak var videoThumb: UIImageView!
     private var croppingStyle = CropViewCroppingStyle.default
     var isSquarePics = false
 
@@ -67,7 +69,12 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
             // 3
             
             arr_video.append(generateThumbnail(url: dataPath!)!)
- 
+            if arr_video.count == 0 {
+                btn_play.isHidden = true
+            }
+            else {
+                btn_play.isHidden = false
+            }
             coll_video.reloadData()
             coll_video.isHidden = false
             
@@ -204,6 +211,14 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
         connectToGetAdditionalMedia()
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        if arr_video.count == 0 {
+            btn_play.isHidden = true
+        }
+        else {
+            btn_play.isHidden = false
+        }
+    }
     //MARK:- Webservice
     func connectToGetAdditionalMedia(){
         if HunterUtility.isConnectedToInternet(){
@@ -238,6 +253,25 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
                                     self.coll_squarePics.reloadData()
                                     self.coll_squarePics.isHidden = false
                                     }
+                                    
+                                    
+                                    if let additional_videos = profile.value(forKey: "additional_videos") as? [NSDictionary] {
+                                        for imag in additional_videos {
+                                            let url = URL(string: imag["filename"] as! String)
+                                            self.arr_video.append(self.generateThumbnail(url:url! )!)
+
+                                        }
+                                        if self.arr_video.count == 0 {
+                                            self.btn_play.isHidden = true
+                                        }
+                                        else {
+                                            self.btn_play.isHidden = false
+                                        }
+                                         
+
+                                        self.coll_video.reloadData()
+                                        self.coll_video.isHidden = false
+                                        }
                                 }
                             }
                         }
@@ -844,7 +878,7 @@ extension HunterImagesVC : UICollectionViewDataSource {
                 cell.cropImageView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
             }
         }else if collectionView == coll_video {
-            cell.cropImageView.applyshadowWithCorner(containerView: cell.contentView, cornerRadious:10)
+            
             cell.cropImageView.image = self.arr_video[indexPath.row]
         }
 
@@ -860,7 +894,7 @@ extension HunterImagesVC: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 180, height: 180)
         }
         else {
-            return CGSize(width: 220, height: 150)
+            return CGSize(width: self.view.frame.width - 100 , height: 150)
             
         }
     }

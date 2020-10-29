@@ -128,8 +128,8 @@ extension HunterListAllEduVC : UICollectionViewDelegate,UICollectionViewDataSour
         cell.lbl_compName.text = dataDic["company_name"] as? String ?? ""
          
         
-         let start_date = dataDic["start_date"] as? String ?? ""
-         let end_date = dataDic["end_date"] as? String ?? ""
+         let start_date = "\(dataDic["start_date"] as? Int ?? 0)"
+         let end_date = "\(dataDic["end_date"] as? Int ?? 0)"
         cell.lbl_date.text =  "\(start_date) - \(end_date)"
         
         

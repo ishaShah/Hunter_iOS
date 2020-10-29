@@ -142,6 +142,7 @@ class HunterCompanyProfileNewViewController: UIViewController ,hunterDelegate,re
         let player = AVPlayer(url: videoURL)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
+        playerViewController.player?.volume = 10.0
         self.present(playerViewController, animated: true) {
             playerViewController.player!.play()
         }

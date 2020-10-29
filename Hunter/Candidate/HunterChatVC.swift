@@ -481,6 +481,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             let vc = UIStoryboard(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterImageVC") as! HunterImageVC
             vc.modalPresentationStyle = .overFullScreen
             vc.imgUrl = message
+            vc.titleStr = "\(arrayChatList[tag].posted_by!)\n\(arrayChatList[tag].message_time!)"
             self.present(vc, animated: true, completion: nil)
         }
 
@@ -491,6 +492,7 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             let vc = UIStoryboard(name: "Jobs", bundle: nil).instantiateViewController(withIdentifier: "HunterImageVC") as! HunterImageVC
             vc.modalPresentationStyle = .overFullScreen
             vc.imgUrl = message
+            vc.titleStr = "\(arrayChatList[tag].posted_by!)\n\(arrayChatList[tag].message_time!)"
             self.present(vc, animated: true, completion: nil)
         }
     }
@@ -500,6 +502,11 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             let cell = tableView.dequeueReusableCell(withIdentifier: "HunterChatHeaderTableViewCell", for: indexPath) as! HunterChatHeaderTableViewCell
             cell.selectionStyle = .none
             tableView.separatorStyle = .none
+            
+            
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+            cell.layer.shadowOpacity = 0.6
             
             if loginType == "candidate" {
                 
@@ -526,6 +533,9 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 }
                 if let name = self.dictRecruiterDetails.candidate_name{
                     cell.labelName.text = name
+                }
+                if let designation = self.dictRecruiterDetails.job_title{
+                    cell.labelDesignation.text = designation
                 }
                 if let matchedOn = self.dictRecruiterDetails.matched_on{
                     cell.labelMatchedOn.text = matchedOn
@@ -742,8 +752,12 @@ class HunterChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                                             }
                                         }
                                         if let recruiterDict = chatDict.value(forKey: "candidate_details") as? NSDictionary {
+                                            self.dictRecruiterDetails = HunterChatDescriptionModel().initWithDict(dictionary: recruiterDict)
+                                            DispatchQueue.main.async {
                                             self.tableChat.reloadData()
+                                             
 //                                            self.autosizeChatTable()
+                                            }
                                         }
                                         if let messagesDict = chatDict.value(forKey: "messages") as? [NSDictionary]{
                                             self.arrayChatList = [HunterChatModel]()

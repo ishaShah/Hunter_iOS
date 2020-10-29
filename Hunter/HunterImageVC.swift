@@ -12,11 +12,14 @@ import Toast_Swift
 
 class HunterImageVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate   {
 
+    @IBOutlet weak var titleLab: UILabel!
     var imgUrl = String()
     @IBOutlet weak var ingV: UIImageView!
+    var titleStr = String()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        titleLab.text = titleStr
         let url = URL(string: imgUrl)
         self.ingV.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
         // Do any additional setup after loading the view.

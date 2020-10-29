@@ -85,11 +85,17 @@ class RecCustomView: UIView {
         //        imageViewProfile.contentMode = .scaleAspectFill
         //        imageViewProfile.layer.cornerRadius = 30
         //        imageViewProfile.clipsToBounds = true
-        let alignedFlowLayout = coll_industry?.collectionViewLayout as? AlignedCollectionViewFlowLayout
-        alignedFlowLayout?.minimumLineSpacing = 5.0
-        alignedFlowLayout?.minimumInteritemSpacing = 5.0
-        alignedFlowLayout?.horizontalAlignment = .left
-        alignedFlowLayout?.verticalAlignment = .center
+//        let alignedFlowLayout = coll_industry?.collectionViewLayout as? AlignedCollectionViewFlowLayout
+//        alignedFlowLayout?.minimumLineSpacing = 5.0
+//        alignedFlowLayout?.minimumInteritemSpacing = 5.0
+//        alignedFlowLayout?.horizontalAlignment = .left
+//        alignedFlowLayout?.verticalAlignment = .top
+        
+        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left,
+                                                                            verticalAlignment: .top)
+                    alignedFlowLayout.minimumInteritemSpacing = 5
+                    alignedFlowLayout.minimumLineSpacing = 5
+        coll_industry.collectionViewLayout = alignedFlowLayout
         
     }
     
@@ -158,11 +164,16 @@ extension RecCustomView : UICollectionViewDataSource {
 extension RecCustomView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var label = UILabel(frame: CGRect.zero)
+//        var label = UILabel(frame: CGRect.zero)
         let skills = userModel.skills[indexPath.row] as! String
-        label.text = skills.uppercased()
+//        label.text = skills.uppercased()
+//        label.sizeToFit()
+        
+        let width = (skills.capitalized).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
+        let label = UILabel(frame: CGRect.zero)
+        label.text = skills.capitalized
         label.sizeToFit()
-        return CGSize(width: label.frame.width + 3, height: 25)
+        return CGSize(width: label.frame.width + 3, height: 20)
     }
 }
 extension RecCustomView : UICollectionViewDelegate {

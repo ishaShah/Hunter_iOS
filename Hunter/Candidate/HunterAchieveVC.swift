@@ -78,20 +78,19 @@ class HunterAchieveVC: UIViewController {
             
             txtIssueDate.delegate = self
  
-     //        updateUI()
+             updateUI()
             // Do any additional setup after loading the view.
         }
         func updateUI() {
             if txtTitle.text != "" && txtIssueDate.text != ""  && txtIssueBy.text != ""  && tv_desc.text != ""   {
-                btnAddAcheive.backgroundColor = UIColor(hex: "#350B76")
-                btnAddAcheive.setTitleColor(UIColor.white, for: .normal)
-                
-                
-            }else{
-                btnAddAcheive.backgroundColor = UIColor(hex: "#EDEDED")
-                btnAddAcheive.setTitleColor(UIColor(hex: "#350B76"), for: .normal)
-            }
-        }
+                          self.btnAddAcheive.setTitleColor(UIColor.init(hexString:"E9E4F2" ), for: UIControl.State.normal)
+                        self.btnAddAcheive.backgroundColor = UIColor.init(hexString:"6B3E99" )
+                    }else{
+                        self.btnAddAcheive.setTitleColor(UIColor.init(hexString:"350B76" ), for: UIControl.State.normal)
+                        self.btnAddAcheive.backgroundColor = UIColor.init(hexString:"E9E4F2" )
+                    }
+                }
+        
 
  
  
@@ -135,7 +134,7 @@ class HunterAchieveVC: UIViewController {
                 
                 
             }
-    //        updateUI()
+            updateUI()
             
         }
         func showPickerViewController(type : String) {
@@ -149,10 +148,12 @@ class HunterAchieveVC: UIViewController {
     }
     extension HunterAchieveVC : UITextFieldDelegate{
         func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-            
+            updateUI()
+
             switch textField {
             case txtIssueDate:
                 showPickerViewController(type: "IssueDate")
+                
             default:
                 break
             }

@@ -134,8 +134,8 @@ extension HunterWorkExpListVC : UICollectionViewDelegate,UICollectionViewDataSou
         cell.lbl_compName.text = dataDic["company_name"] as? String ?? ""
          
         
-         let experience_start = dataDic["experience_start"] as? String ?? ""
-         let experience_end = dataDic["experience_end"] as? String ?? ""
+         let experience_start = "\(dataDic["experience_start"] as? Int ?? 0)"
+         let experience_end = "\(dataDic["experience_end"] as? Int ?? 0)"
         cell.lbl_date.text =  "\(experience_start) - \(experience_end)"
         
         

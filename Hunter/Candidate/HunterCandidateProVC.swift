@@ -206,12 +206,16 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         scrlCV.roundCorners([.topLeft, .topRight], radius: 20.0)
         scrlV.roundCorners([.topLeft, .topRight], radius: 20.0)
         
-        let alignedFlowLayout = collectionSkills?.collectionViewLayout as? AlignedCollectionViewFlowLayout
-        alignedFlowLayout?.minimumLineSpacing = 5.0
-        alignedFlowLayout?.minimumInteritemSpacing = 5.0
-        alignedFlowLayout?.horizontalAlignment = .left
-        alignedFlowLayout?.verticalAlignment = .center
-        
+//        let alignedFlowLayout = collectionSkills?.collectionViewLayout as? AlignedCollectionViewFlowLayout
+//        alignedFlowLayout?.minimumLineSpacing = 5.0
+//        alignedFlowLayout?.minimumInteritemSpacing = 5.0
+//        alignedFlowLayout?.horizontalAlignment = .left
+//        alignedFlowLayout?.verticalAlignment = .center
+        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left,
+                                                                            verticalAlignment: .top)
+                    alignedFlowLayout.minimumInteritemSpacing = 5
+                    alignedFlowLayout.minimumLineSpacing = 5
+        collectionSkills.collectionViewLayout = alignedFlowLayout
     }
     
     @IBAction func threeLine(_ sender: Any) {
@@ -930,7 +934,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             cell.titleLabel.text = selectedSkillsArr[indexPath.row].capitalized
             cell.buttonDelete.tag = indexPath.item
             
-            cell.buttonDelete.isHidden = editMode
+            cell.buttonDelete.isHidden = true
             
             return cell
         }
@@ -941,10 +945,16 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
             
         }
         else {
+            
+            let width = (selectedSkillsArr[indexPath.row].capitalized).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 12.0) ?? ""]).width
             let label = UILabel(frame: CGRect.zero)
-            label.text = selectedSkillsArr[indexPath.row].uppercased()
+            label.text = selectedSkillsArr[indexPath.row].capitalized
             label.sizeToFit()
-            return CGSize(width: label.frame.width + 18, height: 25)
+            
+//            let label = UILabel(frame: CGRect.zero)
+//            label.text = selectedSkillsArr[indexPath.row].uppercased()
+//            label.sizeToFit()
+            return CGSize(width: label.frame.width + 20, height: 25)
         }
         
     }
@@ -1354,7 +1364,8 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                             
                                             //                                                self.player.fillMode = .resizeAspectFill
                                             
-                                            
+                                            self.btnPlayVideo.isHidden = false
+
                                             
                                             let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGestureRecognizer(_:)))
                                             
@@ -1364,7 +1375,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
                                         }
                                         
                                         else {
-                                            
+                                            self.btnPlayVideo.isHidden = true
                                             self.view_viewHt.constant = 0.0
                                             
                                         }
@@ -1436,6 +1447,7 @@ class HunterCandidateProVC: UIViewController , UICollectionViewDelegate, UIColle
         let player = AVPlayer(url: videoURL)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
+        playerViewController.player?.volume = 10.0
         self.present(playerViewController, animated: true) {
             playerViewController.player!.play()
         }

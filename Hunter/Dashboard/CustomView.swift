@@ -57,7 +57,7 @@ class CustomView: UIView {
             
             let education = (userModel.job_details["education"] as! [String])
             let edu_string = education.joined(separator: ", ")
-            self.lab_otherDetails.text = "\(userModel.job_details["experience"] as! String) Experience\nEducation: \(edu_string.capitalized)\nSalary: \(userModel.job_details["salary_range"] as! String)"
+            self.lab_otherDetails.text = "\(userModel.job_details["experience"] as! String) Experience\nEducation: \(edu_string.capitalized)\n \(userModel.job_details["salary_range"] as! String)"
             self.recruiter_id = userModel.job_details["recruiter_id"] as! Int
 //            self.imageViewBackground.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
         }
@@ -105,13 +105,17 @@ class CustomView: UIView {
 //        imageViewProfile.contentMode = .scaleAspectFill
 //        imageViewProfile.layer.cornerRadius = 30
 //        imageViewProfile.clipsToBounds = true
-        let alignedFlowLayout = coll_industry?.collectionViewLayout as? AlignedCollectionViewFlowLayout
-        alignedFlowLayout?.minimumLineSpacing = 5.0
-        alignedFlowLayout?.minimumInteritemSpacing = 5.0
-        alignedFlowLayout?.horizontalAlignment = .left
-        alignedFlowLayout?.verticalAlignment = .center
+//        let alignedFlowLayout = coll_industry?.collectionViewLayout as? AlignedCollectionViewFlowLayout
+//        alignedFlowLayout?.minimumLineSpacing = 5.0
+//        alignedFlowLayout?.minimumInteritemSpacing = 5.0
+//        alignedFlowLayout?.horizontalAlignment = .left
+//        alignedFlowLayout?.verticalAlignment = .center
         
- 
+        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left,
+                                                                            verticalAlignment: .top)
+                    alignedFlowLayout.minimumInteritemSpacing = 5
+                    alignedFlowLayout.minimumLineSpacing = 5
+        coll_industry.collectionViewLayout = alignedFlowLayout
     }
     
     @IBAction func backBtnClick(_ sender: Any) {
@@ -404,11 +408,14 @@ extension CustomView : UICollectionViewDataSource {
 extension CustomView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var label = UILabel(frame: CGRect.zero)
+
         let skills = userModel.skills[indexPath.row] as! String
-        label.text = skills.uppercased()
+        let width = (skills.capitalized).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
+
+        let label = UILabel(frame: CGRect.zero)
+        label.text = skills.capitalized
         label.sizeToFit()
-        return CGSize(width: label.frame.width + 3, height: 20)
+        return CGSize(width: width + 20, height: 20)
     }
 }
 extension CustomView : UICollectionViewDelegate {

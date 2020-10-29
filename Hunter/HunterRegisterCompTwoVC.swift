@@ -1031,8 +1031,10 @@ extension HunterRegisterCompTwoVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView == coll_rectPics || collectionView == coll_video {
+        if collectionView == coll_rectPics   {
             return CGSize(width: 191, height: 57)
+        }else if  collectionView == coll_video {
+            return CGSize(width: 220, height: 135)
         }
         else { return CGSize(width: 57, height: 57) }
  }

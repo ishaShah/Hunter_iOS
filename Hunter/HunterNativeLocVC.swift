@@ -10,8 +10,10 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
-class HunterNativeLocVC: UIViewController ,hunterDelegate {
+class HunterNativeLocVC: UIViewController ,hunterDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var tblView: UITableView!
+
     @IBOutlet weak var txt_loc: HunterTextField!
     var locationArr = [String]()
     var locationIDArr = [Int]()
@@ -38,7 +40,13 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
         alignedFlowLayout?.horizontalAlignment = .justified
         alignedFlowLayout?.verticalAlignment = .center*/
         
-        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+        let alignedFlowLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left,
+                                                                            verticalAlignment: .top)
+                    alignedFlowLayout.minimumInteritemSpacing = 10
+                    alignedFlowLayout.minimumLineSpacing = 10
+                    collView.collectionViewLayout = alignedFlowLayout
+        
+//        collView.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
 
     }
     
@@ -81,7 +89,7 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
         }
         
  
-        
+        self.tblView.reloadData()
         self.collView.reloadData()
 
         
@@ -96,7 +104,7 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
         selectedlocationIDArr.append(locID!)
         
         self.txt_loc.text = ""
-        
+        self.tblView.reloadData()
         collView.reloadData()
         updateUIforSelection()
         print(selectedDict)
@@ -267,6 +275,20 @@ class HunterNativeLocVC: UIViewController ,hunterDelegate {
             print("no internet")
         }
     }
+    // MARK: - Navigation
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return selectedlocationArr.count
+        }
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 40
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HunterWorkLocTableViewCell", for: indexPath) as! HunterWorkLocTableViewCell
+            tableView.separatorStyle = .none
+            cell.selectionStyle = .none
+            cell.titleLabel.text = selectedlocationArr[indexPath.row].capitalized
+            return cell
+        }
 }
 
 extension HunterNativeLocVC : UICollectionViewDataSource {
@@ -311,16 +333,23 @@ extension HunterNativeLocVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.selectedlocationArr.count == 0 {
+            let width = (locationArr[indexPath.row].capitalized).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
+
             let label = UILabel(frame: CGRect.zero)
-            label.text = locationArr[indexPath.row].uppercased()
+            label.text = locationArr[indexPath.row].capitalized
             label.sizeToFit()
-            return CGSize(width: label.frame.width+55, height: 30)
+            return CGSize(width: width + 36, height: 30)
+
+//            return CGSize(width: label.frame.width+55, height: 30)
         }
         else {
+            let width = (selectedlocationArr[indexPath.row].capitalized).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 17.0) ?? ""]).width
             let label = UILabel(frame: CGRect.zero)
-            label.text = selectedlocationArr[indexPath.row].uppercased()
+            label.text = selectedlocationArr[indexPath.row].capitalized
             label.sizeToFit()
-            return CGSize(width: label.frame.width+55, height: 30)
+            return CGSize(width: width + 36, height: 30)
+
+//            return CGSize(width: label.frame.width+55, height: 30)
         }
     }
 }
