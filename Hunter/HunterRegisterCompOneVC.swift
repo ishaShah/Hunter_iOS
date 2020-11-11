@@ -202,12 +202,12 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
             textView.textColor = UIColor.init(hexString: "530F8B")
             
         }
-        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        let isUnRestrict = newText.count <= 100
-        if(isUnRestrict){
-            lblNumbOfChars.text = "\(newText.count)/100"
-        }
-        return isUnRestrict
+//        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+//        let isUnRestrict = newText.count <= 100
+//        if(isUnRestrict){
+//            lblNumbOfChars.text = "\(newText.count)/100"
+//        }
+        return true
     }
     //MARK:- Webservice
     func connectToGetCompanyDataStep3(){

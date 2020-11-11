@@ -753,13 +753,13 @@ extension HunterPostAJobNewViewController : UITextViewDelegate{
             textView.textColor = UIColor.init(hexString: "530F8B")
             
         }
-        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        let isUnRestrict = newText.count <= 100
-        if(isUnRestrict){
-            lblNumbOfChars.text = "\(newText.count)/100"
-        }
+//        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+//        let isUnRestrict = newText.count <= 100
+//        if(isUnRestrict){
+//            lblNumbOfChars.text = "\(newText.count)/100"
+//        }
         
-        return isUnRestrict
+        return true
     }
     
 }

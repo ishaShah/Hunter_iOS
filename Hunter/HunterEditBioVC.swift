@@ -129,7 +129,7 @@ class HunterEditBioVC: UIViewController,UITextViewDelegate {
      
     //MARK:- Textview delegates
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Add a bio to your profile"{
+        if textView.text == "Type description here"{
             textView.text = ""
             textView.textColor = Color.darkVioletColor
         }
@@ -138,7 +138,7 @@ class HunterEditBioVC: UIViewController,UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == ""{
             lblCharacterCount.text = "0/100"
-            textView.text = "Add a bio to your profile"
+            textView.text = "Type description here"
             textView.textColor = UIColor.officialApplePlaceholderGray
             
             self.contBtn.setTitleColor(UIColor.init(hexString:"300471" ), for: UIControl.State.normal)
@@ -160,12 +160,12 @@ class HunterEditBioVC: UIViewController,UITextViewDelegate {
             textView.textColor = UIColor.init(hexString: "530F8B")
             
         }
-        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        let isUnRestrict = newText.count <= 100
-        if(isUnRestrict){
-            lblCharacterCount.text = "\(newText.count)/100"
-        }
-        return isUnRestrict
+//        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+//        let isUnRestrict = newText.count <= 100
+//        if(isUnRestrict){
+//            lblCharacterCount.text = "\(newText.count)/100"
+//        }
+        return true
     }
  
 

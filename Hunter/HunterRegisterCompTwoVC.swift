@@ -784,8 +784,8 @@ class HunterRegisterCompTwoVC: UIViewController, CropViewControllerDelegate, UII
             self.view.makeToast("Please upload square logo")
         }else if arr_rectPics.count == 0{
             self.view.makeToast("Please upload rectangle logo")
-        }else if arr_picMin.count < 4{
-            self.view.makeToast("Please upload minimum 4 Additional Pics.")
+//        }else if arr_picMin.count < 4{
+//            self.view.makeToast("Please upload minimum 4 Additional Pics.")
         }
 /*        else if isSocialMedia == false {
             self.view.makeToast("Please upload Social Media link")
