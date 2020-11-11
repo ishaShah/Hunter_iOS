@@ -89,7 +89,8 @@ class HunterRecAccInfoVC: UIViewController, UITableViewDelegate, UITableViewData
             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterProfileVC") as! HunterProfileVC
             self.present(vc, animated: true, completion: nil)
         case 1:
-            print("privacy information page here")
+            guard let url = URL(string: "https://huntr.app/privacy-policy") else { return }
+            UIApplication.shared.open(url)
         case 2:
             print("Turn Notification On/Off here")
         case 3:

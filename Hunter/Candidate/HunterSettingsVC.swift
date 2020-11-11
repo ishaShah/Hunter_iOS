@@ -34,7 +34,7 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         // Do any additional setup after loading the view.
         arrayMenuNames = ["Basic Infomation", "Privacy", "Notifications", "Help and Support", "Sign Out"]
-        arrayMenuImages = ["email-icon-color", "password-icon", "notifications", "support", "logoutnew"]
+        arrayMenuImages = ["email-icon-color", "lock-icon", "notifications", "support", "logoutnew"]
        
         if UIDevice.current.hasNotch {
             //... consider notch
@@ -164,7 +164,8 @@ class HunterSettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let vc = UIStoryboard.init(name: "Candidate", bundle: nil).instantiateViewController(withIdentifier: "HunterProfileVC") as! HunterProfileVC
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
-            print("privacy information page here")
+            guard let url = URL(string: "https://huntr.app/privacy-policy") else { return }
+            UIApplication.shared.open(url)
         case 2:
             print("Turn Notification On/Off here")
         case 3:
