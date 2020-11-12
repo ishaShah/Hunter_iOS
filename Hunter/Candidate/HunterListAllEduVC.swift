@@ -78,6 +78,7 @@ class HunterListAllEduVC: UIViewController {
     @IBAction func actionAddNewEducation(_ sender: Any)
         {
             let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HunterEducationStep2VC") as! HunterEducationStep2VC
+        vc.isFrom = isFrom
             self.navigationController?.pushViewController(vc, animated: true)
             
     }
