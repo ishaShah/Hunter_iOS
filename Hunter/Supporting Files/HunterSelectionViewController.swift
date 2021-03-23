@@ -97,6 +97,13 @@ class HunterSelectionViewController: UIViewController, UITableViewDelegate , UIT
 
         }
         
+        if isMultiSelect == true {
+            self.lblSelectedCount.text = "\(selectedIDArray.count)/5"
+        }
+        else {
+            self.lblSelectedCount.text = "\(selectedIDArray.count)/1"
+        }
+        
 //        switch  isFrom{
 //        case "JobFunction":
 //            self.lblHeader.text = "Select your job function"

@@ -44,6 +44,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
             self.swipeView.delegate = self
         }
     }
+    @IBOutlet weak var innerNoCardView: UIView!
+    @IBOutlet weak var verification_view: UIView!
     @IBOutlet weak var jobListHt: NSLayoutConstraint!
     @IBOutlet weak var lab_selectedJob: UILabel!
     @IBOutlet weak var lab_intro: UILabel!
@@ -102,7 +104,13 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 
     }
     @IBAction func sendMsg(_ sender: Any) {
+        if txt_msg.text == "" || txt_msg.text == "Type your message here..."{
+            self.view.makeToast("Enter a message to send", duration: 1.0, point: CGPoint(x: screenWidth/2, y: screenHeight-130), title: nil, image: nil) { didTap in}
+
+        }
+        else {
         connectToSendIntroMsgs()
+        }
     }
     
     @IBAction func plusClick(_ sender: Any) {
@@ -415,7 +423,8 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
 
               if userModels.count == 0 {
                 self.noCardLeft.isHidden = false
-
+                self.innerNoCardView.isHidden = false
+                self.verification_view.isHidden = true
             }
             else {
                 self.noCardLeft.isHidden = true
@@ -646,9 +655,24 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     var n = 0
                                 
                                 let job_cards = data.value(forKey: "job_cards") as! [NSDictionary]
+                                    
+                                    let account_status = data.value(forKey: "account_status") as! Int
+                                    if account_status != 1 {
+                                        self.noCardLeft.isHidden = false
+                                        self.innerNoCardView.isHidden = true
+                                        self.verification_view.isHidden = false
 
+                                    }
+                                    else {
                                     if job_cards.count == 0 {
-                                      self.noCardLeft.isHidden = false
+                                        
+                                        
+                                            self.noCardLeft.isHidden = false
+                                            self.innerNoCardView.isHidden = false
+                                            self.verification_view.isHidden = true
+
+                                        
+                                        
                                      
                                     }
                                     else {
@@ -667,14 +691,16 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                             n = n + 1
                                         }
                                     }
- 
+                                    }
                                 self.createCards()
 
                                 
                                 }
                                 else {
-                                        self.noCardLeft.isHidden = false
-                                        UserDefaults.standard.set("", forKey: "swiped")
+                                    self.noCardLeft.isHidden = false
+                                    self.innerNoCardView.isHidden = false
+                                    self.verification_view.isHidden = true
+                                    UserDefaults.standard.set("", forKey: "swiped")
 
                                     
                                     }
@@ -761,8 +787,21 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                 var n = 0
                                 let candidate_cards = data.value(forKey: "candidate_cards") as! NSDictionary
                                 let candidates = candidate_cards.value(forKey: "cards") as! [NSDictionary]
+                                let account_status = data.value(forKey: "account_status") as! Int
+                                    if account_status != 1 {
+                                        self.noCardLeft.isHidden = false
+                                        self.innerNoCardView.isHidden = true
+                                        self.verification_view.isHidden = false
+
+                                    }
+                                    else {
+
                                 if candidates.count == 0 {
-                                      self.noCardLeft.isHidden = false
+                                    
+                                    self.noCardLeft.isHidden = false
+                                            self.innerNoCardView.isHidden = false
+                                            self.verification_view.isHidden = true
+
                                         
                                     
                                     
@@ -792,6 +831,7 @@ class HunterDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
                                     n = n + 1
                                 }
                                 }
+                                    }
                                 self.createCards()
 
                                 self.jobList = []
@@ -1000,7 +1040,8 @@ extension HunterDashboardVC : TinderSwipeViewDelegate{
         }, completion: nil)
         print("End of all cards")
         self.noCardLeft.isHidden = false
-
+        self.innerNoCardView.isHidden = false
+        self.verification_view.isHidden = true
     }
     func currentCardStatus(card object: Any, distance: CGFloat) {
          

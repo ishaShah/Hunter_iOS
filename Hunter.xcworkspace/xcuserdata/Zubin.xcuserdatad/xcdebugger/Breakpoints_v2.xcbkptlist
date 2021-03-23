@@ -7,95 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F"
+            uuid = "B941554E-731D-4D19-9D14-1256A4F3C3B9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/HunterDashboardVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "996"
-            endingLineNumber = "996"
-            landmarkName = "endOfCardsReached()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 5fd6ef07f149b4c0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Hunter.HunterDashboardVC.endOfCardsReached() -&gt; ()"
-                  moduleName = "Hunter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Zubin/Documents/Hunter_iOS/Hunter/HunterDashboardVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "996"
-                  endingLineNumber = "996"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "D96E6612-AA71-42F7-960A-C065BC85EC3F - 777d86c94ef26050"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Hunter.HunterDashboardVC.endOfCardsReached() -&gt; ()"
-                  moduleName = "Hunter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Zubin/Documents/Hunter_iOS/Hunter/HunterDashboardVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1000"
-                  endingLineNumber = "1000"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A83ABB3E-E7AA-4DBE-BCD8-48DE3E6E7D75"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hunter/HunterDashboardVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
-            landmarkName = "createCards()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C2BB0508-8571-4CAB-AE26-A8D91B67E493"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterChatVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "530"
-            endingLineNumber = "530"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E583E152-E8BE-4351-8471-F574BFF4947B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterChatVC.swift"
+            filePath = "Hunter/Jobs/HunterPostAJobNewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "529"
             endingLineNumber = "529"
+            landmarkName = "showSelectionViewController(type:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "765F72CD-0B99-4411-97F0-A44981B2B9F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunter/Supporting Files/HunterSelectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8770658-823D-4340-87AE-60BA138152CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunter/Supporting Files/HunterSelectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -103,145 +55,161 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "76F7682E-AE8E-4CA7-B06D-830215FC4331"
+            uuid = "BA3EA422-2205-43B0-BFC8-80E21BA54F28"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterChatVC.swift"
+            filePath = "Hunter/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "746"
-            endingLineNumber = "746"
-            landmarkName = "connectToGetMessages()"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "application(application:didReceiveRemoteNotification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "25FB0A9C-A82F-4B97-B55F-D84CF5709715"
+            uuid = "D7F88439-F33A-4881-9CC8-9A48B9C9BB60"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterCandidateProVC.swift"
+            filePath = "Hunter/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1184"
-            endingLineNumber = "1184"
-            landmarkName = "connectToGetProfileData()"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "41DC758A-F76C-4CC3-A84A-9E4328EF0DFC"
+            uuid = "FCFEA2C3-669C-42F7-8C88-64F59D03E381"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterCandidateProVC.swift"
+            filePath = "Hunter/HunterLoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1079"
-            endingLineNumber = "1079"
-            landmarkName = "connectToGetProfileData()"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "connectToLogin()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6BC223B4-E6E6-49EE-8FC7-744E6EC3A188"
+            uuid = "DBE8FA8E-8E2C-4F28-95C5-52B69B5BCF64"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterCandidateProVC.swift"
+            filePath = "Hunter/HunterLoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1078"
-            endingLineNumber = "1078"
-            landmarkName = "connectToGetProfileData()"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "connectToLogin()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CBEB3C01-C33D-4584-9EBB-4F6672A33106"
+            uuid = "23FBAF41-8B0C-4749-8708-97F7246FACA9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/Candidate/HunterCandidateProVC.swift"
+            filePath = "Hunter/HunterLoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1108"
-            endingLineNumber = "1108"
-            landmarkName = "connectToGetProfileData()"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "connectToLogin()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "305554B1-5210-49DB-9CEE-09A9B668675C"
+            uuid = "D181DC8A-7946-48F1-BDB7-D96B80572057"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/HunterWorkExpListVC.swift"
+            filePath = "Hunter/HunterLoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "connectToLogin()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2E45C39-6856-4DB2-B926-7A6015F51F2A"
+            uuid = "850E5AAA-70CB-40FC-ADDF-56AE2F5236A1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/HunterJobFuncVC.swift"
+            filePath = "Hunter/Candidate/HunterEducationStep2VC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "textFieldShouldBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "950736EA-8856-4B52-B97A-211D036954B6"
+            uuid = "4300BC96-F53A-4E76-B624-D2B8E54EEA51"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/Dashboard/RecCustomView.swift"
+            filePath = "Hunter/Candidate/HunterListAllEduVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "fixInViewOne(_:)"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "delEducation(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "59F4AE00-0D33-4CBE-B271-165A6713946A"
+            uuid = "3B8728B6-D8A5-435B-8678-1EB6DA1F70EE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunter/Dashboard/RecCustomView.swift"
+            filePath = "Hunter/Jobs/HunterPostAJobNewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "expandClick(_:)"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "getEditData()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83F1741F-106C-4F63-91D4-077E71E4849B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunter/HunterImagesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

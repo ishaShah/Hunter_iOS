@@ -109,7 +109,14 @@ class HunterLoginVC: UIViewController, UITextFieldDelegate {
     //MARK:- Webservice
     func connectToLogin(){
         if HunterUtility.isConnectedToInternet(){
-            let paramsDict = ["email": textUsername.text ?? "", "password": textPassword.text ?? ""]
+            let device_id = UIDevice.current.identifierForVendor!.uuidString
+             
+            var device_token = ""
+            if let type = UserDefaults.standard.object(forKey: "device_token") as? String{
+                device_token = type
+            }
+            
+            let paramsDict = ["email": textUsername.text ?? "", "password": textPassword.text ?? "" , "device_type" : 0 , "device_id" : device_id , "device_token" : device_token ] as [String : Any]
             print(paramsDict)
             var url = String()
             if loginType == "candidate"{

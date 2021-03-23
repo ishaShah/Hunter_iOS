@@ -250,14 +250,33 @@ class CustomView: UIView {
         }
         }
     
-    
+    //MARK:- Textview delegates
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Type your message here ..." {
+            textView.text = nil
+            txt_view.textColor = UIColor.darkGray
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            txt_view.text = "Type your message here ..."
+            txt_view.textColor = UIColor.lightGray
+        }
+    }
     @IBAction func cancelMsg(_ sender: Any) {
                
                view_txt.isHidden = true
     
            }
            @IBAction func sendMsg(_ sender: Any) {
+            if txt_view.text == "" || txt_view.text == "Type your message here..."{
+                self.makeToast("Enter a message to send", duration: 1.0, point: CGPoint(x: screenWidth/2, y: screenHeight-130), title: nil, image: nil) { didTap in}
+
+            }
+            else {
                connectToSendIntroMsgs()
+                
+            }
            }
            
             

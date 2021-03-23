@@ -130,7 +130,7 @@ class HunterReportAProblemVC: UIViewController {
                                 print("Logout api")
                                 
                                 UserDefaults.standard.removeObject(forKey: "accessToken")
-    UserDefaults.standard.removeObject(forKey: "loggedInStat")
+                                UserDefaults.standard.removeObject(forKey: "loggedInStat")
                                 accessToken = String()
                                 
                                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)

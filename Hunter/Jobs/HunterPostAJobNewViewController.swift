@@ -124,21 +124,21 @@ class HunterPostAJobNewViewController: UIViewController {
                                         self.txtYearsOfExp.text = experience.allValues[0] as! String
                                         
                                     
-                                    let job_education = data["job_education"] as! NSDictionary
-                                         let educationKey = job_education.allKeys
-                                        let educationVal = job_education.allValues as! [String]
-                                    
-                                    self.selectedData.field_of_education_IDs_Dict = []
-                                    for jobs in job_education {
-                                        var dict = [String:Any]()
-                                        dict["name"] = jobs.value
-                                        dict["id"] = jobs.key
-                                        self.selectedData.field_of_education_IDs_Dict.append(dict as NSDictionary)
-
-                                    }
-                                         
-                                        self.selectedData.field_of_education_IDs = educationKey as! [String]
-                                        self.txtFieldOfEdu.text = educationVal.joined(separator:",")
+//                                    let job_education = data["job_education"] as! NSDictionary
+//                                         let educationKey = job_education.allKeys
+//                                        let educationVal = job_education.allValues as! [String]
+//
+//                                    self.selectedData.field_of_education_IDs_Dict = []
+//                                    for jobs in job_education {
+//                                        var dict = [String:Any]()
+//                                        dict["name"] = jobs.value
+//                                        dict["id"] = jobs.key
+//                                        self.selectedData.field_of_education_IDs_Dict.append(dict as NSDictionary)
+//
+//                                    }
+//
+//                                        self.selectedData.field_of_education_IDs = educationKey as! [String]
+//                                        self.txtFieldOfEdu.text = educationVal.joined(separator:",")
                                         
                                     
                                     let job_skill = data["job_skill"] as! NSDictionary
@@ -218,7 +218,7 @@ class HunterPostAJobNewViewController: UIViewController {
                                 if let data = responseDict.value(forKey: "data") as? NSDictionary{
                                     if let lookup_job_data = data.value(forKey: "lookup_job_data") as? NSDictionary{
                                         self.dict_job_function = lookup_job_data.value(forKey: "job_function") as! NSDictionary
-                                        self.dict_field_of_education = lookup_job_data.value(forKey: "field_of_education") as! NSDictionary
+//                                        self.dict_field_of_education = lookup_job_data.value(forKey: "field_of_education") as! NSDictionary
                                         self.dict_salary_range = lookup_job_data.value(forKey: "salary_range") as! NSDictionary
                                         self.dict_skill = lookup_job_data.value(forKey: "skill") as! NSDictionary
                                         self.dict_work_type = lookup_job_data.value(forKey: "work_type") as! NSDictionary
@@ -311,7 +311,7 @@ class HunterPostAJobNewViewController: UIViewController {
                                   "job_summary": txtViewSummary.text ?? "",
                                   "job_function_ids": selectedData.job_function_IDs ,
                                   "skill_ids": selectedData.skill_IDs ,
-                                  "education_id": selectedData.field_of_education_IDs
+                                  "education": txtFieldOfEdu.text ?? ""
                     ] as [String : Any]
                 
                 Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
@@ -398,7 +398,7 @@ class HunterPostAJobNewViewController: UIViewController {
                               "job_summary": txtViewSummary.text ?? "",
                               "job_function_ids": selectedData.job_function_IDs ,
                               "skill_ids": selectedData.skill_IDs ,
-                              "education_id": selectedData.field_of_education_IDs
+                "education": txtFieldOfEdu.text ?? ""
                 ] as [String : Any]
             
             Alamofire.request(url, method: .post, parameters: paramsDict, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
@@ -535,15 +535,15 @@ class HunterPostAJobNewViewController: UIViewController {
 
             }
 
-        case "FieldOfEdu":
-            HunterSelectionViewController.passedDict = self.dict_field_of_education
-            HunterSelectionViewController.isMultiSelect = true
-            HunterSelectionViewController.headerText = "Select Field Of Education"
-            if isEdit == "true" {
-                HunterSelectionViewController.selectedIDArray = selectedData.field_of_education_IDs
-                HunterSelectionViewController.selectedData = selectedData.field_of_education_IDs_Dict
-
-            }
+//        case "FieldOfEdu":
+//            HunterSelectionViewController.passedDict = self.dict_field_of_education
+//            HunterSelectionViewController.isMultiSelect = true
+//            HunterSelectionViewController.headerText = "Select Field Of Education"
+//            if isEdit == "true" {
+//                HunterSelectionViewController.selectedIDArray = selectedData.field_of_education_IDs
+//                HunterSelectionViewController.selectedData = selectedData.field_of_education_IDs_Dict
+//
+//            }
 
         default:
             break
@@ -667,21 +667,21 @@ extension HunterPostAJobNewViewController : hunterDelegate{
             txtSkills.text = name
 //            selectedData.skill_ID = selectedDict["id"] as! String
             
-        case  "FieldOfEdu":
-            let selectedData = selectedDict["selectedData"] as! [NSDictionary]
-            var name = ""
-            self.selectedData.field_of_education_IDs = []
-            for dict in selectedData{
-                if name != ""{
-                    name = name + "," + "\(dict["name"] ?? "")"
-                }else{
-                    name = dict["name"] as! String
-                }
-                self.selectedData.field_of_education_IDs.append(dict["id"] as! String)
-                
-            }
-            txtFieldOfEdu.text = name
-//            selectedData.field_of_education_ID = selectedDict["id"] as! String
+//        case  "FieldOfEdu":
+//            let selectedData = selectedDict["selectedData"] as! [NSDictionary]
+//            var name = ""
+//            self.selectedData.field_of_education_IDs = []
+//            for dict in selectedData{
+//                if name != ""{
+//                    name = name + "," + "\(dict["name"] ?? "")"
+//                }else{
+//                    name = dict["name"] as! String
+//                }
+//                self.selectedData.field_of_education_IDs.append(dict["id"] as! String)
+//
+//            }
+//            txtFieldOfEdu.text = name
+////            selectedData.field_of_education_ID = selectedDict["id"] as! String
             
         case  "WorkType":
             txtWorkType.text = selectedDict["name"] as? String ?? ""
@@ -720,7 +720,8 @@ extension HunterPostAJobNewViewController : UITextFieldDelegate{
         case txtYearsOfExp:
             showPickerViewController(type: "YearsOfExp")
         case txtFieldOfEdu:
-            showSelectionViewController(type: "FieldOfEdu")
+            return true
+//            showSelectionViewController(type: "FieldOfEdu")
         default:
             break
         }

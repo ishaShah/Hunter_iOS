@@ -24,7 +24,10 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
     
     var isFromCandidate = false
     var isVideo = false
- 
+    
+      
+    var additional_imagesData = [NSDictionary]()
+    
     var arr_squarePics = [UIImage]()
     
     var arr_video = [UIImage]()
@@ -247,7 +250,9 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
                             if let dataDict = responseDict.value(forKey: "data") as? NSDictionary {
                                 if let profile = dataDict.value(forKey: "profile") as? NSDictionary {
                                 if let additional_images = profile.value(forKey: "additional_images") as? [NSDictionary] {
-                                    for imag in additional_images {
+                                    self.additional_imagesData = additional_images
+                                    
+                                    for imag in self.additional_imagesData {
                                         self.arrayImages.append(imag["filename"] as! String)
                                     }
                                     self.coll_squarePics.reloadData()
@@ -274,6 +279,60 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
                                         }
                                 }
                             }
+                        }
+                        else{
+                            let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }else{
+                        SVProgressHUD.dismiss()
+                        //                        let alert = UIAlertController(title: "", message: (response.result.value as! NSDictionary).value(forKey: "msg") as? String, preferredStyle: .alert)
+                        //                        alert.addAction(UIAlertAction(title: "ok".localized(), style: .cancel, handler: nil))
+                        //                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error)
+                    let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }else{
+            print("no internet")
+        }
+    }
+    func connectToDelAdditionalMedia(_ media_id : Int){
+        if HunterUtility.isConnectedToInternet(){
+            self.arrayImages = []
+            var url = ""
+            if isFromCandidate == true {
+                 url = API.candidateBaseURL + API.delAdditionalImagesURL
+
+            }
+            else {
+             url = API.recruiterBaseURL + API.delAdditionalImagesURL
+            }
+            print(url)
+            HunterUtility.showProgressBar()
+            
+            let parameters = ["media_id": media_id ] as [String : Any]
+            print(parameters)
+
+            let headers = [ "Authorization" : "Bearer " + accessToken]
+            
+            Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                
+                switch response.result {
+                case .success:
+                    if let responseDict = response.result.value as? NSDictionary{
+                        print(responseDict)
+                        SVProgressHUD.dismiss()
+                        if let status = responseDict.value(forKey: "status"){
+                            self.connectToGetAdditionalMedia()
                         }
                         else{
                             let alert = UIAlertController(title: "", message: responseDict.value(forKey: "error") as? String, preferredStyle: .alert)
@@ -849,6 +908,14 @@ class HunterImagesVC: UIViewController, CropViewControllerDelegate, UIImagePicke
         self.dismiss(animated: true, completion: nil)
         }
     }
+    @objc func btnDeleteClick(sender: UIButton) {
+        let dataDic = additional_imagesData[sender.tag] as? [String:Any]
+        connectToDelAdditionalMedia(dataDic!["media_id"] as! Int)
+
+     }
+    @IBAction func close(sender: UIButton) {
+
+    }
 }
 extension HunterImagesVC : UICollectionViewDataSource {
     
@@ -876,6 +943,9 @@ extension HunterImagesVC : UICollectionViewDataSource {
         if collectionView == coll_squarePics {
             if let url = arrayImages[indexPath.row] as? String{
                 cell.cropImageView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "app-icon"))
+
+                cell.btnClose.tag = indexPath.row
+                   cell.btnClose.addTarget(self, action: #selector(btnDeleteClick(sender:)), for: .touchUpInside)
             }
         }else if collectionView == coll_video {
             

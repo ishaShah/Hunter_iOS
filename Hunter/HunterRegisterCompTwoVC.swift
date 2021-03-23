@@ -1064,7 +1064,8 @@ class HunterRegisterCompTwoCollectionCell: UICollectionViewCell {
     @IBOutlet weak var cropImageView: UIImageView!
  
     @IBOutlet weak var labelMoreImageCount: UILabel!
- 
+    @IBOutlet weak var btnClose: UIButton!
+
 }
 extension UIViewController {
     func showInputDialog(title:String? = nil,

@@ -10,12 +10,12 @@ import UIKit
 
 enum API{
      //Base url
-
-    static let candidateBaseURL = "https://huntrapp.chkdemo.com/api/candidate/"
-    static let recruiterBaseURL = "https://huntrapp.chkdemo.com/api/recruiter/"
+//    https://app.huntr.app/api/ - Live URL
+//    static let candidateBaseURL = "https://app.huntr.app/api/candidate/"
+//    static let recruiterBaseURL = "https://app.huntr.app/api/recruiter/"
     
-//    static let candidateBaseURL = "https://huntrappst.chkdemo.com/api/candidate/"
-//    static let recruiterBaseURL = "https://huntrappst.chkdemo.com/api/recruiter/"
+    static let candidateBaseURL = "https://huntr.app/api/candidate/"
+    static let recruiterBaseURL = "https://huntr.app/api/recruiter/"
 //
     //Candidate
     static let loginURl = "login"
@@ -47,7 +47,7 @@ enum API{
     static let registerEduLookUpDataURL = "registration/get-lookup-data-educational-qualification"
     static let saveEduQualificationURL = "registration/save-candidate-educational-qualification"
     static let getEducationQualification = "registration/get-educational-qualification"
-    static let delEducationQualification = "registration/get-educational-qualification"
+    static let delEducationQualification = "registration/delete-educational-qualification"
     static let delLanguagesURL = "profile/delete-languages"
     static let delAchievementsURL = "profile/delete-achievements"
 static let delExperienceURL = "registration/delete-experience"

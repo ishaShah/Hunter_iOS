@@ -102,7 +102,7 @@ class HunterEducationStep2VC: UIViewController {
             print(url)
             HunterUtility.showProgressBar()
             
-            let paramsDict = ["school": selectedData.school_ID , "level_of_study" : selectedData.level_of_study_ID, "field_of_study" : selectedData.field_of_study_ID, "start_date":selectedData.startDate , "end_date": selectedData.endDate ] as [String : Any]
+            let paramsDict = ["school": txtSchool.text! , "level_of_study" : selectedData.level_of_study_ID, "field_of_study" : txtFieldOfStudy.text! , "start_date":selectedData.startDate , "end_date": selectedData.endDate ] as [String : Any]
             
             let headers    = [ "Authorization" : "Bearer " + accessToken]
             
@@ -198,9 +198,9 @@ class HunterEducationStep2VC: UIViewController {
                             if status as! Int == 1{
                                 if let data = responseDict.value(forKey: "data") as? NSDictionary{
                                     if let lookup_data = data.value(forKey: "lookup_data") as? NSDictionary{
-                                       self.field_of_study = lookup_data.value(forKey: "field_of_study") as! NSDictionary
+//                                       self.field_of_study = lookup_data.value(forKey: "field_of_study") as! NSDictionary
                                         self.level_of_study = lookup_data.value(forKey: "level_of_study") as! NSDictionary
-                                        self.school = lookup_data.value(forKey: "school") as! NSDictionary
+//                                        self.school = lookup_data.value(forKey: "school") as! NSDictionary
                                         
                                     }
                                 }
@@ -233,16 +233,16 @@ class HunterEducationStep2VC: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let HunterSelectionViewController = storyboard.instantiateViewController(withIdentifier: "HunterSelectionViewController") as! HunterSelectionViewController
         
-        switch type {
-        case "field_of_study":
-            HunterSelectionViewController.passedDict = self.field_of_study
-            HunterSelectionViewController.headerText = "Select Field Of Study"
-        case "school":
-            HunterSelectionViewController.passedDict = self.school
-            HunterSelectionViewController.headerText = "Select School"
-        default:
-            break
-        }
+//        switch type {
+//        case "field_of_study":
+//            HunterSelectionViewController.passedDict = self.field_of_study
+//            HunterSelectionViewController.headerText = "Select Field Of Study"
+//        case "school":
+//            HunterSelectionViewController.passedDict = self.school
+//            HunterSelectionViewController.headerText = "Select School"
+//        default:
+//            break
+//        }
         HunterSelectionViewController.isMultiSelect = false
         HunterSelectionViewController.delegate = self
         HunterSelectionViewController.isFrom = type
@@ -306,11 +306,11 @@ extension HunterEducationStep2VC : UITextFieldDelegate{
         
         switch textField {
         case txtSchool:
-            showSelectionViewController(type: "school")
+            return true
         case txtLevelOfStudy:
             showPickerViewController(type: "level_of_study")
         case txtFieldOfStudy:
-            showSelectionViewController(type: "field_of_study")
+            return true
         case txtStartDate:
             showPickerViewController(type: "startDate")
         case txtEndDate:

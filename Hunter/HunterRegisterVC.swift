@@ -28,14 +28,14 @@ class HunterRegisterVC: UIViewController, UITextFieldDelegate {
         self.hideKeyboardWhenTappedAround()
     }
     override func viewWillAppear(_ animated: Bool) {
-        if loginType == "candidate" {
-            phoneStackView.isHidden = true
-//            phoneStcakHeight.constant = 0
-        }
-        else {
-           phoneStackView.isHidden = false
-//            phoneStcakHeight.constant = 67.5
-        }
+//        if loginType == "candidate" {
+//            phoneStackView.isHidden = true
+////            phoneStcakHeight.constant = 0
+//        }
+//        else {
+//           phoneStackView.isHidden = false
+////            phoneStcakHeight.constant = 67.5
+//        }
             setNeedsStatusBarAppearanceUpdate()
             
         }
@@ -65,9 +65,9 @@ class HunterRegisterVC: UIViewController, UITextFieldDelegate {
         else if (textEmail.text?.isValidEmail())! == false {
             HunterUtility.notifiyUser(viewController: self, title: "", message: "Please enter valid Email ID!!")
         }
-/*        else if textPhone.text == ""{
+        else if textPhone.text == ""{
             HunterUtility.notifiyUser(viewController: self, title: "", message: "Phone number cannot be empty!!")
-        }*/
+        }
              
         else if isValidated(textPassword.text!) == false {
             HunterUtility.notifiyUser(viewController: self, title: "", message: "Password must contain at least 8 characters including Upper/lower case and number.")
@@ -133,7 +133,13 @@ class HunterRegisterVC: UIViewController, UITextFieldDelegate {
     //MARK:- Webservice
     func connectToRegisterCandidate(){
         if HunterUtility.isConnectedToInternet(){
-            var paramsDict = ["first_name": textFirstname.text ?? "", "last_name": textLastname.text ?? "", "email": textEmail.text ?? "", "password": textPassword.text ?? "", "password_confirmation": textRePassword.text ?? ""]
+            let device_id = UIDevice.current.identifierForVendor!.uuidString
+             
+            var device_token = ""
+            if let type = UserDefaults.standard.object(forKey: "device_token") as? String{
+                device_token = type
+            }
+            var paramsDict = ["first_name": textFirstname.text ?? "", "last_name": textLastname.text ?? "", "email": textEmail.text ?? "", "password": textPassword.text ?? "", "password_confirmation": textRePassword.text ?? "", "phone_number": textPhone.text ?? "" , "device_type" : 0 , "device_id" : device_id , "device_token" : device_token ] as [String : Any]
             print(paramsDict)
             
             
@@ -147,7 +153,7 @@ class HunterRegisterVC: UIViewController, UITextFieldDelegate {
             }
             else {
                 url = API.recruiterBaseURL + API.registerRecruiterURL
-                paramsDict = ["first_name": textFirstname.text ?? "", "last_name": textLastname.text ?? "", "email": textEmail.text ?? "", "password": textPassword.text ?? "", "password_confirmation": textRePassword.text ?? "", "phone_number": textPhone.text ?? ""]
+                paramsDict = ["first_name": textFirstname.text ?? "", "last_name": textLastname.text ?? "", "email": textEmail.text ?? "", "password": textPassword.text ?? "", "password_confirmation": textRePassword.text ?? "", "phone_number": textPhone.text ?? "" , "device_type" : 0 , "device_id" : device_id , "device_token" : device_token ]
             }
             print(url)
             HunterUtility.showProgressBar()

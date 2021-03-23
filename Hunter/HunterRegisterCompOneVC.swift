@@ -212,8 +212,7 @@ class HunterRegisterCompOneVC: UIViewController, UITextViewDelegate, UITextField
     //MARK:- Webservice
     func connectToGetCompanyDataStep3(){
         if HunterUtility.isConnectedToInternet(){
-//            https://huntrapp.chkdemo.com/api/recruiter/registration/get-company-data-step-3
-            let url = API.recruiterBaseURL + API.registerGetCompanyDataStep3URL
+             let url = API.recruiterBaseURL + API.registerGetCompanyDataStep3URL
             print(url)
             HunterUtility.showProgressBar()
             
